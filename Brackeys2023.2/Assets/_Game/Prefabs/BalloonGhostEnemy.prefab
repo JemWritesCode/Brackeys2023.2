@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5005537759434404543}
   - component: {fileID: 4361494780429516013}
   m_Layer: 0
-  m_Name: Balloon_Ghost
+  m_Name: BalloonGhostEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
