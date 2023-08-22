@@ -267,9 +267,9 @@ Ch09_nonPBR@Right Strafe Walking.fbx
 
 ## STRAFE RIGHT RUN
 
-### Name: Left Strafe
+### Name: Right Strafe
 
-### Description: Running Strafe To The Left
+### Description: Running Strafe To The Right
 
 ### Animation Parameters
 
@@ -295,4 +295,4 @@ Ch09_nonPBR@Right Strafe Walking.fbx
 
 ### Name
 
-Ch09_nonPBR@Left Strafe.fbx
+Ch09_nonPBR@Right Strafe.fbx
