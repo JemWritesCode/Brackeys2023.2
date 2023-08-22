@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{279b46ce-1cdc-41ee-b55f-c87b1dbfb0c9}">
+		<property name="assetPath">
+			<value>food level.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>56.666666666666664</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4310d54c-e4ea-4d34-8a1d-8701c9e2c25d}</destination>
+		</relationship>
+	</object>
+</objects>
