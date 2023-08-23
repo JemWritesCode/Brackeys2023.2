@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  itemTMP: {fileID: 9053993868304165082}
 --- !u!114 &5288447424268998375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Health (10%)
+  m_text: PowerUp Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e92243c28f547c54d9869f83b831650c, type: 2}
   m_sharedMaterial: {fileID: 540904802122098951, guid: e92243c28f547c54d9869f83b831650c, type: 2}

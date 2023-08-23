@@ -1,10 +1,12 @@
 using octr.Loot;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider), typeof(ILootable))]
 public class Pickup : MonoBehaviour
 {
     public Drop item;
+    public TextMeshPro itemTMP;
 
     public ILootable powerUp;
 
@@ -21,6 +23,8 @@ public class Pickup : MonoBehaviour
         {
             Debug.LogError($"Please attach an ILootable to {gameObject.name}");
         }
+
+        itemTMP.text = item.name;
     }
 
     private void OnTriggerEnter(Collider other)
