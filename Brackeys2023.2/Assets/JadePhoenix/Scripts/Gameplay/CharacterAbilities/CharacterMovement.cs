@@ -54,6 +54,7 @@ namespace JadePhoenix.Gameplay
         protected Vector2 _normalizedInput;
         protected Vector2 _lerpedInput = Vector2.zero;
         protected float _acceleration = 0f;
+        protected Camera _mainCamera;
 
         protected const string _walkingAnimationParameterName = "Walking";
         protected const string _idleAnimationParameterName = "Idle";
@@ -72,6 +73,8 @@ namespace JadePhoenix.Gameplay
         protected override void Initialization()
         {
             base.Initialization();
+
+            _mainCamera = Camera.main;
             MovementSpeed = WalkSpeed;
             _movement.ChangeState(CharacterStates.MovementStates.Idle);
             MovementSpeedMultiplier = 1f;
@@ -202,10 +205,21 @@ namespace JadePhoenix.Gameplay
                 }
             }
 
-            // Assign the x components of the lerped input to the movement vector
-            _movementVector.x = _lerpedInput.x;
-            _movementVector.y = 0;
-            _movementVector.z = _lerpedInput.y;
+            if (_mainCamera != null)
+            {
+                // Adjust the movement vector according to the camera's orientation
+                Vector3 cameraForward = Vector3.Scale(_mainCamera.transform.forward, new Vector3(1, 0, 1)).normalized;
+                Vector3 cameraRight = Vector3.Scale(_mainCamera.transform.right, new Vector3(1, 0, 1)).normalized;
+
+                _movementVector = (_lerpedInput.y * cameraForward + _lerpedInput.x * cameraRight);
+            }
+            else
+            {
+                // Assign the x components of the lerped input to the movement vector
+                _movementVector.x = _lerpedInput.x;
+                _movementVector.y = 0;
+                _movementVector.z = _lerpedInput.y;
+            }
 
             // Adjust the movement speed based on interpolation and movement speed multiplier
             if (InterpolateMovementSpeed)
