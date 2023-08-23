@@ -1,3 +1,4 @@
+using System.Xml.Linq;
 using UnityEngine;
 
 namespace octr.Loot
@@ -5,6 +6,9 @@ namespace octr.Loot
     public class DropSpawner : MonoBehaviour
     {
         [SerializeField] private DropTable table;
+        [SerializeField] private float spawnRadius = 5f;
+        [SerializeField] private int maxSpawnAttempts = 10;
+        [SerializeField] private float overlapRadius = 1f;
 
         public void GenerateDrops()
         {
@@ -13,29 +17,47 @@ namespace octr.Loot
                 int seed = Random.Range(1, 101);
                 Debug.Log($"[GenerateDrops] Seed: {seed}");
                 if (seed >= element.dropRate) continue;
-                DropItem(element.drop);
+
+                // Spawn The Item (In World) using the SpawnZone
+                SpawnObject(element.drop.prefab, element);
+
                 if (table.isSingular) return;
             }
         }
 
-        public void DropItem(Drop drop)
+        private void OnDrawGizmosSelected()
         {
-            Debug.Log($"Dropped Item: {drop.name}");
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, spawnRadius);
+        }
 
-            //Spawn The Item (In World)
-            GameObject newDrop = Instantiate(drop.prefab, gameObject.transform);
-            newDrop.name = drop.name;
-
-            Pickup pickup;
-
-            if (newDrop.TryGetComponent(out pickup))
+        public void SpawnObject(GameObject spawnObject, DropTableElement element)
+        {
+            for (int i = 0; i < maxSpawnAttempts; i++)
             {
-                pickup.item = drop;
-                Debug.Log($"{newDrop.name} Assigned: {drop.name}");
-            }
-            else
-            {
-                Debug.LogError($"Please attach a Pickup Component to {newDrop.name}");
+                Vector3 randomPoint = transform.position + Random.insideUnitSphere * spawnRadius;
+                randomPoint.y = 0f; // If you want objects to spawn at ground level
+                Collider[] colliders = Physics.OverlapSphere(randomPoint, overlapRadius); // Adjust the radius for overlap check
+
+                if (colliders.Length == 0)
+                {
+                    GameObject newDrop = Instantiate(spawnObject, randomPoint, Quaternion.identity);
+                    newDrop.transform.parent = gameObject.transform;
+                    newDrop.name = element.drop.name;
+
+                    Pickup pickup;
+
+                    if (newDrop.TryGetComponent(out pickup))
+                    {
+                        pickup.item = element.drop;
+                        Debug.Log($"{newDrop.name} Assigned: {element.drop.name}");
+                    }
+                    else
+                    {
+                        Debug.LogError($"Please attach a Pickup Component to {newDrop.name}");
+                    }
+                    break;
+                }
             }
         }
     }

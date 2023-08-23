@@ -8,5 +8,6 @@ namespace octr.Loot
     [CreateAssetMenu(fileName = "New Timed Buff", menuName = "_Loot/Drops/Timed Buff")]
     public class TimedBuff : Drop
     {
+        public float buffDuration = 5;
     }
 }

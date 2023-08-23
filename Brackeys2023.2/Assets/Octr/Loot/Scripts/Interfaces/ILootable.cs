@@ -10,7 +10,7 @@ namespace octr.Loot
     /// 
     public interface ILootable
     {
-        void Collect(Drop item);
+        void Collect<T>(T item);
     }
 }
 

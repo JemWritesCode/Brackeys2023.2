@@ -22,4 +22,4 @@ MonoBehaviour:
   - elementName: 50% Health (2)
     drop: {fileID: 11400000, guid: c2abebb473688c44fbde90d41ef4fe58, type: 2}
     dropRate: 5
-  isSingular: 1
+  isSingular: 0

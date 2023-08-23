@@ -2,7 +2,7 @@ using octr.Loot;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider), typeof(ILootable))]
+[RequireComponent(typeof(Collider))]
 public class Pickup : MonoBehaviour
 {
     public Drop item;
