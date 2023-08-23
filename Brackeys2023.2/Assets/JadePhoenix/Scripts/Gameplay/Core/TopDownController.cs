@@ -24,6 +24,12 @@ namespace JadePhoenix.Gameplay
         [ReadOnly, Tooltip("The current acceleration of the character.")]
         public Vector3 Acceleration;
 
+        [ReadOnly, Tooltip("Whether or not the character is grounded.")]
+        public bool Grounded;
+
+        [ReadOnly, Tooltip("Whether or not the character got grounded this frame.")]
+		public bool JustGotGrounded;
+
         [ReadOnly, Tooltip("The current movement direction and magnitude.")]
         public Vector3 CurrentMovement;
 
@@ -43,10 +49,25 @@ namespace JadePhoenix.Gameplay
         [Tooltip("Layer mask to define what layers are considered as obstacles.")]
         public LayerMask ObstaclesLayerMask;
 
+        [Header("Gravity")]
+        [ReadOnly, Tooltip("The current gravity to apply to our character (negative goes down, positive goes up, higher value, higher acceleration).")]
+        public float Gravity = -30f;
+
+        [Tooltip("Whether or not the gravity is currently being applied to this character.")]
+        public bool GravityActive = true;
+
+        [Header("Movement")]
+        [Tooltip("The maximum vertical velocity the character can have while falling.")]
+        public float MaximumFallSpeed = 20.0f;
+
         public enum UpdateModes { Update, FixedUpdate }
 
         [Header("Settings")]
-        public UpdateModes UpdateMode = UpdateModes.FixedUpdate;
+        ///<summary>
+        /// FixedUpdate is currently bugged; use Update ONLY.
+        ///</summary>
+        [Tooltip("Decides which update step movement calculations are processed.")]
+        public UpdateModes UpdateMode = UpdateModes.Update;
 
         public Rigidbody Rigidbody { get { return _rigidBody; } }
         public Collider Collider { get { return _collider; } }
@@ -54,10 +75,12 @@ namespace JadePhoenix.Gameplay
         #endregion
 
         protected Vector3 _positionLastFrame;
+        protected bool _groundedLastFrame;
         protected Vector3 _impact;
         protected Rigidbody _rigidBody;
         protected Collider _collider;
         protected CharacterController _characterController;
+        protected Vector3 _groundNormal = Vector3.zero;
 
         // char movement
         protected CollisionFlags _collisionFlags;
@@ -97,6 +120,7 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         protected virtual void Update()
         {
+            CheckIfGrounded();
             DetermineDirection();
             if (UpdateMode == UpdateModes.Update)
             {
@@ -127,22 +151,6 @@ namespace JadePhoenix.Gameplay
         }
 
         /// <summary>
-        /// Draws Ground check gizmos
-        /// </summary>
-        //private void OnDrawGizmos()
-        //{
-        //    Vector3 rayOrigin = transform.position + GroundCheckStartOffset;
-        //    Vector3 rayOriginLeft = rayOrigin - new Vector3(GroundCheckWidth / 2, 0);
-        //    Vector3 rayOriginRight = rayOrigin + new Vector3(GroundCheckWidth / 2, 0);
-        //    Vector3 rayEndLeft = rayOriginLeft + GroundCheckDirection * GroundCheckLength;
-        //    Vector3 rayEndRight = rayOriginRight + GroundCheckDirection * GroundCheckLength;
-
-        //    Gizmos.color = _isGrounded ? Color.green : Color.red;
-        //    Gizmos.DrawLine(rayOriginLeft, rayEndLeft);
-        //    Gizmos.DrawLine(rayOriginRight, rayEndRight);
-        //}
-
-        /// <summary>
         /// Resets all values for the character's movement.
         /// </summary>
         public virtual void Reset()
@@ -168,6 +176,17 @@ namespace JadePhoenix.Gameplay
             _collider = GetComponent<Collider>();
         }
 
+        /// <summary>
+        /// Computes the direction of the controller based on the CurrentMovement variable.
+        /// </summary>
+        protected virtual void DetermineDirection()
+        {
+            if (CurrentMovement != Vector3.zero)
+            {
+                CurrentDirection = CurrentMovement.normalized;
+            }
+        }
+
         protected virtual void ProcessUpdate()
         {
             if (transform == null) return;
@@ -177,23 +196,33 @@ namespace JadePhoenix.Gameplay
             _positionLastFrame = transform.position;
 
             AddInput();
+            AddGravity();
             ComputeVelocityDelta();
             HandleMovement();
             ComputeNewVelocity();
+            StickToTheGround();
         }
 
         protected virtual void AddInput()
         {
-            Debug.Log($"{this.GetType()}.AddInput: Started.", gameObject);
-
             _idealVelocity = CurrentMovement;
-
-            Debug.Log($"{this.GetType()}.AddInput: _idealVelocity set to {_idealVelocity}.", gameObject);
 
             _newVelocity = _idealVelocity;
             _newVelocity.y = Mathf.Min(_newVelocity.y, 0);
+        }
 
-            Debug.Log($"{this.GetType()}.AddInput: _newVelocity set to {_newVelocity}.", gameObject);
+        /// <summary>
+        /// Adds the gravity to the new velocity and any AddedForce we may have
+        /// </summary>
+        protected virtual void AddGravity()
+        {
+            if (GravityActive)
+            {
+                _newVelocity.y += Gravity * Time.deltaTime;
+                _newVelocity.y = Mathf.Max(_newVelocity.y, -MaximumFallSpeed);
+            }
+            _newVelocity += AddedForce;
+            AddedForce = Vector3.zero;
         }
 
         /// <summary>
@@ -250,14 +279,37 @@ namespace JadePhoenix.Gameplay
         }
 
         /// <summary>
-        /// Computes the direction of the controller based on the CurrentMovement variable.
+        /// We make sure our character sticks to the ground
         /// </summary>
-        protected virtual void DetermineDirection()
+        protected virtual void StickToTheGround()
         {
-            if (CurrentMovement != Vector3.zero)
+            if (Grounded && !IsGroundedTest())
             {
-                CurrentDirection = CurrentMovement.normalized;
+                Grounded = false;
+                transform.position += _stickyOffset * Vector3.up;
             }
+            else if (!Grounded && IsGroundedTest())
+            {
+                Grounded = true;
+            }
+        }
+
+        /// <summary>
+        /// Whether or not the character is grounded
+        /// </summary>
+        /// <returns></returns>
+        protected virtual bool IsGroundedTest()
+        {
+            return (_groundNormal.y > 0.01);
+        }
+
+        /// <summary>
+        /// Grounded check
+        /// </summary>
+        protected virtual void CheckIfGrounded()
+        {
+            JustGotGrounded = (!_groundedLastFrame && Grounded);
+            _groundedLastFrame = Grounded;
         }
 
         /// <summary>
@@ -272,21 +324,6 @@ namespace JadePhoenix.Gameplay
             Speed.z = Mathf.Round(Speed.z * 100f) / 100f;
             _positionLastFrame = this.transform.position;
         }
-
-        /// <summary>
-        /// Checks if the character is on the ground using a raycast.
-        /// </summary>
-        //protected virtual void CheckGround()
-        //{
-        //    Vector3 rayOrigin = transform.position + GroundCheckStartOffset;
-        //    Vector3 rayOriginLeft = rayOrigin - new Vector3(GroundCheckWidth / 2, 0);
-        //    Vector3 rayOriginRight = rayOrigin + new Vector3(GroundCheckWidth / 2, 0);
-
-        //    Physics.Raycast(rayOriginLeft, GroundCheckDirection, out RaycastHit hitLeft, GroundCheckLength, GroundLayerMask);
-        //    Physics.Raycast(rayOriginRight, GroundCheckDirection, out RaycastHit hitRight, GroundCheckLength, GroundLayerMask);
-
-        //    _isGrounded = hitLeft.collider != null || hitRight.collider != null;
-        //}
 
         /// <summary>
         /// Applies an impact to the character's movement.

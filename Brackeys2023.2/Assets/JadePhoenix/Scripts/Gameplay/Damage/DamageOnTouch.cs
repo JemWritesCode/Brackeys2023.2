@@ -122,7 +122,7 @@ namespace JadePhoenix.Gameplay
             {
                 OwnerCharacter = Owner.GetComponent<Character>();
                 _health = OwnerCharacter.Health;
-                _topDownController = OwnerCharacter.PlatformerController;
+                _topDownController = OwnerCharacter.TopDownController;
             }
             _ignoredGameObjects = new List<GameObject>();
             _health = GetComponent<Health>();
