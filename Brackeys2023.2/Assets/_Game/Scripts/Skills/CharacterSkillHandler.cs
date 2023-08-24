@@ -99,34 +99,44 @@ namespace _Game
             }
         }
 
+        /// <summary>
+        /// Handles user input to determine when to start, stop, or modify character skills.
+        /// </summary>
         protected override void HandleInput()
         {
+            // Check if the character's condition is not normal (e.g. if the character is dead, stunned, etc.)
             if (_condition.CurrentState != CharacterStates.CharacterConditions.Normal)
             {
+                // Log a message indicating the character's condition is not normal and hence input will not be processed
                 Debug.Log("HandleInput: Condition is not normal. Skipping input processing.");
-                return;
+                return; // Exit the method without processing further inputs
             }
 
+            // Iterate through each skill in the character's skill set
             for (int i = 0; i < _skills.Count; i++)
             {
-                Skill skill = _skills[i];
-                JP_Input.Button button = _buttons[i];
+                Skill skill = _skills[i]; // Get the current skill from the list
+                JP_Input.Button button = _buttons[i]; // Get the corresponding button assigned to this skill
 
+                // Check if the button was just pressed down or if the skill has an 'Auto' trigger mode 
+                // and the button is currently being pressed
                 if (button.State.CurrentState == JP_Input.ButtonStates.ButtonDown
                 || (skill.TriggerMode == Skill.TriggerModes.Auto && button.State.CurrentState == JP_Input.ButtonStates.ButtonPressed))
                 {
-                    SkillStart(skill);
+                    SkillStart(skill); // Start the skill as the condition met
                 }
 
+                // Check if the button was just released up
                 if (button.State.CurrentState == JP_Input.ButtonStates.ButtonUp)
                 {
-                    SkillStop(skill);
+                    SkillStop(skill); // Stop the skill as the button was released
                 }
 
+                // Check if the skill is currently in a cooldown state and the button is in an 'Off' state
                 if (skill.SkillState.CurrentState == Skill.SkillStates.SkillCooldown
                 && button.State.CurrentState == JP_Input.ButtonStates.Off)
                 {
-                    skill.SkillInputStop();
+                    skill.SkillInputStop(); // Stop any ongoing input actions for this skill
                 }
             }
         }
