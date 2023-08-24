@@ -1,6 +1,7 @@
 using JadePhoenix.Tools;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace JadePhoenix.Gameplay
@@ -181,39 +182,26 @@ namespace JadePhoenix.Gameplay
         {
             _movement.ChangeState(CharacterStates.MovementStates.Idle);
 
-            if (CurrentWeapon == null)
-            {
-                return;
-            }
+            if (CurrentWeapon == null) return;
 
-            if (CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponIdle)
-            {
-                return;
-            }
+            var weaponState = CurrentWeapon.WeaponState.CurrentState;
 
-            if ((CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReload)
-            || (CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStart)
-            || (CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponReloadStop))
-            {
-                return;
-            }
+            if (weaponState == Weapon.WeaponStates.WeaponIdle) return;
 
-            if ((CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBeforeUse) 
-            && (!CurrentWeapon.DelayBeforeUseReleaseInterruption))
+            var reloadingStates = new[]
             {
-                return;
-            }
+                Weapon.WeaponStates.WeaponReload,
+                Weapon.WeaponStates.WeaponReloadStart,
+                Weapon.WeaponStates.WeaponReloadStop
+            };
 
-            if ((CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponDelayBetweenUses) 
-            && (!CurrentWeapon.TimeBetweenUsesReleaseInterruption))
-            {
-                return;
-            }
+            if (reloadingStates.Contains(weaponState)) return;
 
-            if (CurrentWeapon.WeaponState.CurrentState == Weapon.WeaponStates.WeaponUse)
-            {
-                return;
-            }
+            if (weaponState == Weapon.WeaponStates.WeaponDelayBeforeUse && !CurrentWeapon.DelayBeforeUseReleaseInterruption) return;
+
+            if (weaponState == Weapon.WeaponStates.WeaponDelayBetweenUses && !CurrentWeapon.TimeBetweenUsesReleaseInterruption) return;
+
+            if (weaponState == Weapon.WeaponStates.WeaponUse) return;
 
             CurrentWeapon.TurnWeaponOff();
         }

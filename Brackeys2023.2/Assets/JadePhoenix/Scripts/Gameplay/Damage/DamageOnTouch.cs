@@ -50,8 +50,8 @@ namespace JadePhoenix.Gameplay
         protected List<GameObject> _ignoredGameObjects;
         protected Vector3 _collisionPoint;
         protected Vector3 _knockbackForceApplied;
-        protected CircleCollider2D _circleCollider;
-        protected BoxCollider2D _boxCollider;
+        protected SphereCollider _circleCollider;
+        protected BoxCollider _boxCollider;
         protected Color _gizmosColor;
         protected Vector3 _gizmoSize;
         protected Vector3 _gizmoOffset;
@@ -90,18 +90,18 @@ namespace JadePhoenix.Gameplay
             {
                 if (_boxCollider.enabled)
                 {
-                    JP_Debug.DrawGizmoCube(this.transform, _boxCollider.offset, _boxCollider.size, false);
+                    JP_Debug.DrawGizmoCube(this.transform, _boxCollider.center, _boxCollider.size, false);
                 }
                 else
                 {
-                    JP_Debug.DrawGizmoCube(this.transform, _boxCollider.offset, _boxCollider.size, true);
+                    JP_Debug.DrawGizmoCube(this.transform, _boxCollider.center, _boxCollider.size, true);
                 }
             }
 
             if (_circleCollider != null)
             {
                 // Rotate the circle offset by the transform's rotation
-                Vector2 rotatedOffset = this.transform.rotation * _circleCollider.offset;
+                Vector2 rotatedOffset = this.transform.rotation * _circleCollider.center;
 
                 if (_circleCollider.enabled)
                 {
@@ -122,13 +122,13 @@ namespace JadePhoenix.Gameplay
             {
                 OwnerCharacter = Owner.GetComponent<Character>();
                 _health = OwnerCharacter.Health;
-                _topDownController = OwnerCharacter.PlatformerController;
+                _topDownController = OwnerCharacter.TopDownController;
             }
             _ignoredGameObjects = new List<GameObject>();
             _health = GetComponent<Health>();
             _topDownController = GetComponent<TopDownController>();
-            _boxCollider = GetComponent<BoxCollider2D>();
-            _circleCollider = GetComponent<CircleCollider2D>();
+            _boxCollider = GetComponent<BoxCollider>();
+            _circleCollider = GetComponent<SphereCollider>();
 
             _gizmosColor = Color.red;
             _gizmosColor.a = 0.25f;
@@ -147,33 +147,27 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         protected virtual void Colliding(GameObject collision)
         {
-            //Debug.Log($"{this.GetType()}.Colliding: Collision detected, triggering method.", gameObject);
-
             // We keep these if statements seperate for ease of debugging.
             if (!this.isActiveAndEnabled)
             {
-                //Debug.Log($"{this.GetType()}.Colliding: isActiveAndEnabled returned false.", gameObject);
                 return;
             }
 
             // if the object we're colliding with is part of our ignore list, we do nothing and exit
             if (_ignoredGameObjects.Contains(collision))
             {
-                //Debug.Log($"{this.GetType()}.Colliding: _ignoredGameObjects contains collision.", gameObject);
                 return;
             }
 
             // if what we're colliding with isn't part of the target layers, we do nothing and exit
             if (!JP_Layers.LayerInLayerMask(collision.layer, TargetLayerMask))
             {
-                //Debug.Log($"{this.GetType()}.Colliding: Collision layer [{LayerMask.LayerToName(collision.layer)}] is missing from TargetLayerMask.", gameObject);
                 return;
             }
 
             // if we're on our first frame, we don't apply damage
             if (Time.time == 0f)
             {
-                //Debug.Log($"{this.GetType()}.Colliding: Projectile is on first frame.", gameObject);
                 return;
             }
 
@@ -294,8 +288,8 @@ namespace JadePhoenix.Gameplay
 
         public virtual void SetGizmoSize(Vector3 newGizmoSize)
         {
-            _boxCollider = GetComponent<BoxCollider2D>();
-            _circleCollider = GetComponent<CircleCollider2D>();
+            _boxCollider = GetComponent<BoxCollider>();
+            _circleCollider = GetComponent<SphereCollider>();
             _gizmoSize = newGizmoSize;
         }
 
@@ -312,16 +306,16 @@ namespace JadePhoenix.Gameplay
         /// When a collision with the player is triggered, we give damage to the player and knock it back
         /// </summary>
         /// <param name="collider">what's colliding with the object.</param>
-        public virtual void OnTriggerStay2D(Collider2D collider)
+        public virtual void OnTriggerStay(Collider collider)
         {
             Colliding(collider.gameObject);
         }
 
         /// <summary>
-        /// On trigger enter 2D, we call our colliding endpoint
+        /// On trigger enter , we call our colliding endpoint
         /// </summary>
         /// <param name="collider"></param>S
-        public virtual void OnTriggerEnter2D(Collider2D collider)
+        public virtual void OnTriggerEnter(Collider collider)
         {
             Colliding(collider.gameObject);
         }
@@ -330,7 +324,7 @@ namespace JadePhoenix.Gameplay
         /// On trigger stay, we call our colliding endpoint
         /// </summary>
         /// <param name="collider"></param>
-        public virtual void OnTriggerStay(Collider collider)
+        public virtual void OnTriggerStay2D(Collider2D collider)
         {
             Colliding(collider.gameObject);
         }
@@ -339,7 +333,7 @@ namespace JadePhoenix.Gameplay
         /// On trigger enter, we call our colliding endpoint
         /// </summary>
         /// <param name="collider"></param>
-        public virtual void OnTriggerEnter(Collider collider)
+        public virtual void OnTriggerEnter2D(Collider2D collider)
         {
             Colliding(collider.gameObject);
         }

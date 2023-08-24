@@ -5,19 +5,23 @@ using UnityEngine;
 namespace JadePhoenix.Gameplay
 {
     /// <summary>
-    /// Allows a character to aim based on the mouse position in a 2D environment.
+    /// Allows a character to aim based on the mouse position in a 3D environment.
     /// </summary>
     public class CharacterAiming : CharacterAbility
     {
         [Tooltip("The speed at which the character rotates to face the aim direction.")]
         public float RotationSpeed = 10f;
+
         [Tooltip("A model to use instead of the owner's CharacterModel. Can be safely left null.")]
         public GameObject OverrideModel;
 
+        [Tooltip("If true, character will not rotate.")]
+        public bool RotationForbidden = false;
+
         protected Camera _mainCamera;
-        protected Vector2 _mousePosition;
-        protected Vector2 _direction;
-        protected Vector2 _currentAim;
+        protected Vector3 _mousePosition;
+        protected Vector3 _direction;
+        protected Vector3 _currentAim;
 
         /// <summary>
         /// Initialization function for setting up character aiming.
@@ -45,12 +49,18 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         public virtual void GetMouseAim()
         {
-            _mousePosition = Input.mousePosition;
-            Vector3 worldMousePos = _mainCamera.ScreenToWorldPoint(_mousePosition);
-            _direction = worldMousePos;
+            Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
-            // This gets the direction from the character's position to the mouse position
-            _currentAim = (_direction - (Vector2)transform.position).normalized;
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Default")))
+            {
+                _direction = hit.point;
+            }
+
+            // We get a flat direction (ignoring Y differences)
+            Vector3 flatDirection = _direction - transform.position;
+            flatDirection.y = 0;  // Reset Y difference to ensure flat direction
+            _currentAim = flatDirection.normalized;
         }
 
         /// <summary>
@@ -58,12 +68,13 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         public virtual void RotateTowardsMouse()
         {
-            // Calculate the angle needed to point towards the direction
-            float angle = Mathf.Atan2(_currentAim.y, _currentAim.x) * Mathf.Rad2Deg;
+            if (RotationForbidden) { return; }
 
-            // Smoothly interpolate current rotation towards the target rotation
-            _model.transform.rotation = Quaternion.Euler(0, 0, angle);
+            Quaternion targetRotation = Quaternion.LookRotation(_currentAim);
+            _model.transform.rotation = Quaternion.Slerp(_model.transform.rotation, targetRotation, Time.deltaTime * RotationSpeed);
+
+            // Reset rotations on X and Z axes
+            _model.transform.eulerAngles = new Vector3(0, _model.transform.eulerAngles.y, 0);
         }
     }
 }
-

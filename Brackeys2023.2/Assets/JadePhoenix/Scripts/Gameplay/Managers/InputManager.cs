@@ -25,6 +25,11 @@ namespace JadePhoenix.Gameplay
         public JP_Input.Button PauseButton { get; protected set; }
         public JP_Input.Button ShootButton { get; protected set; }
         public JP_Input.Button DashButton { get; protected set; }
+        public JP_Input.Button Skill_0Button { get; protected set; }
+        public JP_Input.Button Skill_1Button { get; protected set; }
+        public JP_Input.Button Skill_2Button { get; protected set; }
+        public JP_Input.Button Skill_3Button { get; protected set; }
+
         public Vector2 PrimaryMovement { get { return _primaryMovement; } }
 
         public List<JP_Input.Button> ButtonList;
@@ -65,7 +70,10 @@ namespace JadePhoenix.Gameplay
             ButtonList = new List<JP_Input.Button>
             {
                 //(PauseButton = new JP_Input.Button(PlayerID, "Pause", PauseButtonDown, PauseButtonPressed, PauseButtonUp)),
-                //(ShootButton = new JP_Input.Button(PlayerID, "Shoot", ShootButtonDown, ShootButtonPressed, ShootButtonUp)),
+                (Skill_0Button = new JP_Input.Button(PlayerID, "Skill_0", Skill_0ButtonDown, Skill_0ButtonPressed, Skill_0ButtonUp)),
+                (Skill_1Button = new JP_Input.Button(PlayerID, "Skill_1", Skill_1ButtonDown, Skill_1ButtonPressed, Skill_1ButtonUp)),
+                (Skill_2Button = new JP_Input.Button(PlayerID, "Skill_2", Skill_2ButtonDown, Skill_2ButtonPressed, Skill_2ButtonUp)),
+                (Skill_3Button = new JP_Input.Button(PlayerID, "Skill_3", Skill_3ButtonDown, Skill_3ButtonPressed, Skill_3ButtonUp)),
                 //(DashButton = new JP_Input.Button(PlayerID, "Dash", DashButtonDown, DashButtonPressed, DashButtonUp)),
             };
         }
@@ -173,9 +181,21 @@ namespace JadePhoenix.Gameplay
         public virtual void PauseButtonPressed() { PauseButton.State.ChangeState(JP_Input.ButtonStates.ButtonPressed); }
         public virtual void PauseButtonUp() { PauseButton.State.ChangeState(JP_Input.ButtonStates.ButtonUp); }
 
-        public virtual void ShootButtonDown() { ShootButton.State.ChangeState(JP_Input.ButtonStates.ButtonDown); }
-        public virtual void ShootButtonPressed() { ShootButton.State.ChangeState(JP_Input.ButtonStates.ButtonPressed); }
-        public virtual void ShootButtonUp() { ShootButton.State.ChangeState(JP_Input.ButtonStates.ButtonUp); }
+        public virtual void Skill_0ButtonDown() { Skill_0Button.State.ChangeState(JP_Input.ButtonStates.ButtonDown); }
+        public virtual void Skill_0ButtonPressed() { Skill_0Button.State.ChangeState(JP_Input.ButtonStates.ButtonPressed); }
+        public virtual void Skill_0ButtonUp() { Skill_0Button.State.ChangeState(JP_Input.ButtonStates.ButtonUp); }
+
+        public virtual void Skill_1ButtonDown() { Skill_1Button.State.ChangeState(JP_Input.ButtonStates.ButtonDown); }
+        public virtual void Skill_1ButtonPressed() { Skill_1Button.State.ChangeState(JP_Input.ButtonStates.ButtonPressed); }
+        public virtual void Skill_1ButtonUp() { Skill_1Button.State.ChangeState(JP_Input.ButtonStates.ButtonUp); }
+
+        public virtual void Skill_2ButtonDown() { Skill_2Button.State.ChangeState(JP_Input.ButtonStates.ButtonDown); }
+        public virtual void Skill_2ButtonPressed() { Skill_2Button.State.ChangeState(JP_Input.ButtonStates.ButtonPressed); }
+        public virtual void Skill_2ButtonUp() { Skill_2Button.State.ChangeState(JP_Input.ButtonStates.ButtonUp); }
+
+        public virtual void Skill_3ButtonDown() { Skill_3Button.State.ChangeState(JP_Input.ButtonStates.ButtonDown); }
+        public virtual void Skill_3ButtonPressed() { Skill_3Button.State.ChangeState(JP_Input.ButtonStates.ButtonPressed); }
+        public virtual void Skill_3ButtonUp() { Skill_3Button.State.ChangeState(JP_Input.ButtonStates.ButtonUp); }
 
         public virtual void DashButtonDown() { DashButton.State.ChangeState(JP_Input.ButtonStates.ButtonDown); }
         public virtual void DashButtonPressed() { DashButton.State.ChangeState(JP_Input.ButtonStates.ButtonPressed); }
