@@ -35,17 +35,20 @@ namespace _Game
         [Tooltip("Visual representation of the skill.")]
         public Sprite Icon;
 
-        [Tooltip("Layers that can be targeted or affected by this skill.")]
-        public LayerMask TargetLayers;
+        //[Tooltip("Layers that can be targeted or affected by this skill.")]
+        //public LayerMask TargetLayers;
 
         [Tooltip("The skill's state machine.")]
         public StateMachine<SkillStates> SkillState;
+
+        [Tooltip("Percentage modifier of the skill. Used for damage calculations and can be safely left 0.")]
+        public float PercentageModifier = 0f;
 
         [Header("Use")]
         [Tooltip("The trigger mode of the skill (SemiAuto or Auto).")]
         public TriggerModes TriggerMode = TriggerModes.Auto;
 
-        [Tooltip("The delay before the skill can be used for every activation.")]
+        [Tooltip("The delay (in seconds) before the skill can be used for every activation.")]
         public float DelayBeforeUse = 0f;
 
         [Tooltip("Determines if the delay before use can be interrupted by releasing the button.")]
@@ -53,6 +56,9 @@ namespace _Game
 
         [Tooltip("Time (in seconds) required for the skill to be ready for use again after activation.")]
         public float Cooldown = 1f;
+
+        [Tooltip("Time (in seconds) that the skill takes to finish. Will usually be the length of the animation.")]
+        public float SkillDuration = 0f;
 
         [Header("Settings")]
         [Tooltip("Whether this skill's button can be held to repeatedly cast.")]
@@ -70,17 +76,20 @@ namespace _Game
         [Tooltip("Determines if the skill restricts the owner's movement.")]
         public bool RestrictMovement = false;
 
+        [Tooltip("Determines if the skill restricts the player's rotation.")]
+        public bool RestrictRotation = false;
+
         [Tooltip("The character that owns this skill.")]
         public Character Owner { get; protected set; }
 
-        [Tooltip("The skill's owner's CharacterSkillHandler component.")]
-        public CharacterSkillHandler OwnerSkillHandler { get; set; }
-
         protected Timer _cooldownTimer;
         protected Timer _delayBeforeUseTimer;
+        protected Timer _skillDurationTimer;
         protected bool _triggerReleased = false;
         protected TopDownController _controller;
-        protected CharacterMovement _characterMovement;
+        protected CharacterSkillHandler _skillHandler;
+        protected CharacterMovement _movement;
+        protected CharacterAiming _aiming;
 
         /// <summary>
         /// Initializes the skill, setting up necessary properties and references.
@@ -89,8 +98,11 @@ namespace _Game
         public virtual void Initialization(Character owner)
         {
             SetOwner(owner);
-            SkillState = new StateMachine<SkillStates>(Owner.gameObject, true);
+            SkillState = new StateMachine<SkillStates>(owner.gameObject, true);
             SkillState.ChangeState(SkillStates.SkillIdle);
+
+            _cooldownTimer = new Timer(Cooldown, OnCooldownStart, OnCooldownEnd);
+            _delayBeforeUseTimer = new Timer(DelayBeforeUse);
         }
 
         public virtual void SetOwner(Character owner)
@@ -98,9 +110,10 @@ namespace _Game
             Owner = owner;
             if (Owner != null)
             {
-                this.OwnerSkillHandler = Owner.GetAbility<CharacterSkillHandler>();
-                _characterMovement = Owner.GetAbility<CharacterMovement>();
                 _controller = Owner.TopDownController;
+                _skillHandler = Owner.GetAbility<CharacterSkillHandler>();
+                _movement = Owner.GetAbility<CharacterMovement>();
+                _aiming = Owner.GetAbility<CharacterAiming>();
             }
         }
 
@@ -152,13 +165,21 @@ namespace _Game
         {
             if (RestrictMovement)
             {
-                _characterMovement.MovementForbidden = true;
+                _movement.MovementForbidden = true;
+            }
+
+            if (RestrictRotation)
+            {
+                _aiming.RotationForbidden = true;
             }
 
             if (DelayBeforeUse > 0)
             {
-                _delayBeforeUseTimer = new Timer(DelayBeforeUse);
-                _delayBeforeUseTimer.StartTimer();
+                if (!_delayBeforeUseTimer.IsRunning)
+                {
+                    _delayBeforeUseTimer = new Timer(DelayBeforeUse);
+                    _delayBeforeUseTimer.StartTimer();
+                }
                 SkillState.ChangeState(SkillStates.SkillDelayBeforeUse);
             }
             else
@@ -181,15 +202,38 @@ namespace _Game
         {
             SkillUse();
 
+            _skillDurationTimer.UpdateTimer();
+
+            if (!_skillDurationTimer.IsRunning)
+            {
+                SkillStop();
+            }
+        }
+
+        protected virtual void CaseSkillStop()
+        {
+            if (RestrictMovement)
+            {
+                _movement.MovementForbidden = false;
+            }
+
+            if (RestrictRotation)
+            {
+                _aiming.RotationForbidden = false;
+            }
+
             if (Cooldown > 0)
             {
-                _cooldownTimer = new Timer(Cooldown, OnCooldownStart, OnCooldownEnd);
-                _cooldownTimer.StartTimer();
+                if (!_cooldownTimer.IsRunning)
+                {
+                    _cooldownTimer = new Timer(Cooldown, OnCooldownStart, OnCooldownEnd);
+                    _cooldownTimer.StartTimer();
+                }
                 SkillState.ChangeState(SkillStates.SkillCooldown);
             }
             else
             {
-                TurnSkillOff();
+                SkillState.ChangeState(SkillStates.SkillIdle);
             }
         }
 
@@ -200,29 +244,18 @@ namespace _Game
             {
                 if ((TriggerMode == TriggerModes.Auto) && !_triggerReleased)
                 {
-                    //Debug.Log($"{this.GetType()}.CaseSkillCooldown: Skill TriggerMode is Auto and TriggerReleased equals = {_triggerReleased}, ShootRequest called.", gameObject);
                     ActivateRequest();
                 }
                 else
                 {
-                    TurnSkillOff();
+                    SkillState.ChangeState(SkillStates.SkillIdle);
                 }
             }
         }
 
-        protected virtual void CaseSkillStop()
-        {
-            if (RestrictMovement)
-            {
-                _characterMovement.MovementForbidden = true;
-            }
-
-            SkillState.ChangeState(SkillStates.SkillIdle);
-        }
-
         protected virtual void CaseSkillInterrupted()
         {
-            TurnSkillOff();
+            SkillStop();
             SkillState.ChangeState(SkillStates.SkillIdle);
         }
 
@@ -235,7 +268,7 @@ namespace _Game
             if (SkillState.CurrentState == SkillStates.SkillIdle)
             {
                 _triggerReleased = false;
-                TurnSkillOn();
+                SkillStart();
             }
         }
 
@@ -249,6 +282,8 @@ namespace _Game
         /// </summary>
         public virtual void ActivateRequest()
         {
+            _skillDurationTimer = new Timer(SkillDuration);
+            _skillDurationTimer.StartTimer();
             SkillState.ChangeState(SkillStates.SkillUse);
         }
 
@@ -266,7 +301,7 @@ namespace _Game
         /// <summary>
         /// Handle what happens when the skill starts
         /// </summary>
-        public virtual void TurnSkillOn()
+        public virtual void SkillStart()
         {
             SkillState.ChangeState(SkillStates.SkillStart);
         }
@@ -274,7 +309,7 @@ namespace _Game
         /// <summary>
         /// Turns the skill off, primarily ending its current state of operation.
         /// </summary>
-        public virtual void TurnSkillOff()
+        public virtual void SkillStop()
         {
             if ((SkillState.CurrentState == SkillStates.SkillIdle || SkillState.CurrentState == SkillStates.SkillStop))
             {

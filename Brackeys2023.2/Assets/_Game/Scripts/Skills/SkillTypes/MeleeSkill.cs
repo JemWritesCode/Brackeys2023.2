@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace _Game
 {
-    [CreateAssetMenu(fileName = "New MeleeSkill", menuName = "Skills/MeleeSkill")]
+    [CreateAssetMenu(fileName = "New MeleeSkill", menuName = "Skills/Melee")]
     public class MeleeSkill : Skill
     {
         public enum MeleeDamageAreaShapes { Box, Sphere }
@@ -26,18 +26,9 @@ namespace _Game
         [Tooltip("The initial delay before the damage area becomes active.")]
         public float InitialDelay = 0f;
 
-        [Tooltip("Base duration the damage area stays active.")]
-        public float BaseActiveDuration = 2f;
-
-        [Tooltip("Variable to modify or extend the active duration dynamically.")]
-        public float ActiveDuration;
-
         [Header("Damage Caused")]
         [Tooltip("LayerMask determining which objects can be damaged.")]
         public LayerMask TargetLayerMask;
-
-        [Tooltip("Amount of damage dealt by the area.")]
-        public int DamageCaused = 10;
 
         [Tooltip("Style or type of knockback applied when damaged.")]
         public DamageOnTouch.KnockbackStyles Knockback;
@@ -51,15 +42,16 @@ namespace _Game
         [Tooltip("Determines if the owner can be damaged by this damage area.")]
         public bool CanDamageOwner = false;
 
-        protected Collider _damageAreaCollider;
+        [SerializeField, ReadOnly]
         protected bool _attackInProgress = false;
         protected Color _gizmosColor;
         protected Vector3 _gizmoSize;
+        protected Vector3 _gizmoOffset;
         protected BoxCollider _boxCollider;
         protected SphereCollider _sphereCollider;
-        protected Vector3 _gizmoOffset;
         protected DamageOnTouch _damageOnTouch;
         protected GameObject _damageArea;
+        protected Collider _damageAreaCollider;
 
         public override void Initialization(Character owner)
         {
@@ -74,8 +66,6 @@ namespace _Game
             {
                 _damageOnTouch.Owner = Owner.gameObject;
             }
-
-            ActiveDuration = BaseActiveDuration;
         }
 
         protected virtual void CreateDamageArea()
@@ -111,7 +101,7 @@ namespace _Game
             _damageOnTouch.SetGizmoSize(AreaSize);
             _damageOnTouch.SetGizmoOffset(AreaOffset);
             _damageOnTouch.TargetLayerMask = TargetLayerMask;
-            _damageOnTouch.DamageCaused = DamageCaused;
+            _damageOnTouch.DamageCaused = _skillHandler.GetDamageTotal(this);
             _damageOnTouch.DamageCausedKnockbackType = Knockback;
             _damageOnTouch.DamageCausedKnockbackForce = KnockbackForce;
             _damageOnTouch.InvincibilityDuration = InvincibilityDuration;
@@ -126,6 +116,7 @@ namespace _Game
         {
             if (_damageAreaCollider != null)
             {
+                _damageOnTouch.DamageCaused = _skillHandler.GetDamageTotal(this);
                 _damageAreaCollider.enabled = true;
             }
         }
@@ -145,19 +136,22 @@ namespace _Game
         public override void SkillUse()
         {
             base.SkillUse();
-            Owner.StartCoroutine(MeleeSkillAttackCoroutine());
+            _skillHandler.StartCoroutine(MeleeSkillAttackCoroutine());
         }
 
         protected virtual IEnumerator MeleeSkillAttackCoroutine()
         {
-            if (_attackInProgress) { yield break; }
+            if (_attackInProgress) 
+            {
+                yield break; 
+            }
 
             _attackInProgress = true;
 
             yield return new WaitForSeconds(InitialDelay);
             EnableDamageArea();
 
-            yield return new WaitForSeconds(ActiveDuration);
+            yield return new WaitForSeconds(SkillDuration);
             DisableDamageArea();
 
             _attackInProgress = false;

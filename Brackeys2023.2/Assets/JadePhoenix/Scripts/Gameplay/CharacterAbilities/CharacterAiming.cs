@@ -11,8 +11,12 @@ namespace JadePhoenix.Gameplay
     {
         [Tooltip("The speed at which the character rotates to face the aim direction.")]
         public float RotationSpeed = 10f;
+
         [Tooltip("A model to use instead of the owner's CharacterModel. Can be safely left null.")]
         public GameObject OverrideModel;
+
+        [Tooltip("If true, character will not rotate.")]
+        public bool RotationForbidden = false;
 
         protected Camera _mainCamera;
         protected Vector3 _mousePosition;
@@ -64,6 +68,8 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         public virtual void RotateTowardsMouse()
         {
+            if (RotationForbidden) { return; }
+
             Quaternion targetRotation = Quaternion.LookRotation(_currentAim);
             _model.transform.rotation = Quaternion.Slerp(_model.transform.rotation, targetRotation, Time.deltaTime * RotationSpeed);
 

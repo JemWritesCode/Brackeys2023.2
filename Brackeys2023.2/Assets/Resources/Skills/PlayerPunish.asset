@@ -9,39 +9,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33ed2993485c8844a6c3cf340b24b36, type: 3}
-  m_Name: BasicMelee
+  m_Script: {fileID: 11500000, guid: e10ff8c11693bd94b9bc4d6edc8acdef, type: 3}
+  m_Name: PlayerPunish
   m_EditorClassIdentifier: 
-  ID: BasicMelee
-  Name: Basic Melee
+  ID: Punish
+  Name: Punish
   Description: Test
   Icon: {fileID: 0}
-  TargetLayers:
-    serializedVersion: 2
-    m_Bits: 0
   SkillState:
     Target: {fileID: 0}
     DebugCurrentState: 0
-  TriggerMode: 1
-  DelayBeforeUse: 0
+  PercentageModifier: 0
+  TriggerMode: 0
+  DelayBeforeUse: 1.6
   DelayBeforeUseReleaseInterruption: 0
-  Cooldown: 1
+  Cooldown: 3
+  SkillDuration: 0.1
   ContinuousPress: 1
   GettingHitInterruptsSkill: 0
   RecoilForce: 0
   Interruptible: 0
   RestrictMovement: 0
+  RestrictRotation: 0
   DamageAreaShape: 0
-  AreaSize: {x: 3, y: 1, z: 2}
-  AreaOffset: {x: 0, y: 1, z: 1}
-  InitialDelay: 0
-  BaseActiveDuration: 2
-  ActiveDuration: 2
+  AreaSize: {x: 1, y: 1, z: 2}
+  AreaOffset: {x: 1, y: 1, z: 1}
+  InitialDelay: 1.6
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  DamageCaused: 10
-  Knockback: 0
+  Knockback: 1
   KnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
   CanDamageOwner: 0
+  _attackInProgress: 0
+  ParryBonus: 50

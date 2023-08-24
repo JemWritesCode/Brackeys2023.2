@@ -13,6 +13,7 @@ namespace _Game
         [Header("Skills")]
         /// the position from which projectiles will be spawned (can be safely left empty)
         public Transform ProjectileSpawn;
+        [Tooltip("The list of skills for this character to use. Copies will be created at runtime for the purpose of modifications.")]
         public List<Skill> Skills;
 
         [Header("Buffering")]
@@ -20,6 +21,13 @@ namespace _Game
         public bool NewInputExtendsBuffer = true;
         public float MaxBufferDuration = .25f;
 
+        [Header("Damage Calculation")]
+        public int BaseDamage = 10;
+        [Tooltip("The current overall bonus percentage used in damage calculations.")]
+        public float DamageBonusPercentage = 0f;
+
+        [SerializeField, ReadOnly]
+        protected List<Skill> _skills = new List<Skill>();
         protected List<JP_Input.Button> _buttons = new List<JP_Input.Button>();
         protected float _bufferTimer = 0f;
         protected bool _buffering = false;
@@ -41,15 +49,16 @@ namespace _Game
             for (int i = 0; i < Skills.Count; i++)
             {
                 _buttons.Add(InputManager.Instance.GetButtonFromID($"Skill_{i}"));
-                Skills[i].Initialization(_character);
+                _skills.Add(Instantiate(Skills[i]));
+                _skills[i].Initialization(_character);
             }
         }
 
         public override void ProcessAbility()
         {
-            for (int i = 0; i < Skills.Count; i++)
+            for (int i = 0; i < _skills.Count; i++)
             {
-                Skill skill = Skills[i];
+                Skill skill = _skills[i];
 
                 HandleBuffer(skill);
             }
@@ -57,9 +66,9 @@ namespace _Game
 
         public override void LateProcessAbility()
         {
-            for (int i = 0; i < Skills.Count; i++)
+            for (int i = 0; i < _skills.Count; i++)
             {
-                Skill skill = Skills[i];
+                Skill skill = _skills[i];
 
                 skill.ProcessSkillState();
             }
@@ -98,9 +107,9 @@ namespace _Game
                 return;
             }
 
-            for (int i = 0; i < Skills.Count; i++)
+            for (int i = 0; i < _skills.Count; i++)
             {
-                Skill skill = Skills[i];
+                Skill skill = _skills[i];
                 JP_Input.Button button = _buttons[i];
 
                 if (button.State.CurrentState == JP_Input.ButtonStates.ButtonDown
@@ -177,15 +186,20 @@ namespace _Game
             if (skillState == Skill.SkillStates.SkillUse) return;
 
             // Turn off the skill
-            skill.TurnSkillOff();
+            skill.SkillStop();
+        }
+
+        public virtual int GetDamageTotal(Skill skill)
+        {
+            return Mathf.RoundToInt(BaseDamage + (DamageBonusPercentage / 100 + skill.PercentageModifier / 100));
         }
 
         protected override void OnHit(GameObject instigator)
         {
             base.OnHit(instigator);
-            for (int i = 0; i < Skills.Count; i++)
+            for (int i = 0; i < _skills.Count; i++)
             {
-                Skill skill = Skills[i];
+                Skill skill = _skills[i];
                 skill.OnHit(instigator);
             }
         }
@@ -193,9 +207,9 @@ namespace _Game
         protected override void OnDeath()
         {
             base.OnDeath();
-            for (int i = 0; i < Skills.Count; i++)
+            for (int i = 0; i < _skills.Count; i++)
             {
-                Skill skill = Skills[i];
+                Skill skill = _skills[i];
                 SkillStop(skill);
             }
         }
@@ -208,9 +222,9 @@ namespace _Game
 
         protected virtual void OnDrawGizmos()
         {
-            for (int i = 0; i < Skills.Count; i++)
+            for (int i = 0; i < _skills.Count; i++)
             {
-                Skill skill = Skills[i];
+                Skill skill = _skills[i];
                 skill.DrawGizmos();
             }
         }
