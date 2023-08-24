@@ -147,33 +147,27 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         protected virtual void Colliding(GameObject collision)
         {
-            //Debug.Log($"{this.GetType()}.Colliding: Collision detected, triggering method.", gameObject);
-
             // We keep these if statements seperate for ease of debugging.
             if (!this.isActiveAndEnabled)
             {
-                //Debug.Log($"{this.GetType()}.Colliding: isActiveAndEnabled returned false.", gameObject);
                 return;
             }
 
             // if the object we're colliding with is part of our ignore list, we do nothing and exit
             if (_ignoredGameObjects.Contains(collision))
             {
-                //Debug.Log($"{this.GetType()}.Colliding: _ignoredGameObjects contains collision.", gameObject);
                 return;
             }
 
             // if what we're colliding with isn't part of the target layers, we do nothing and exit
             if (!JP_Layers.LayerInLayerMask(collision.layer, TargetLayerMask))
             {
-                //Debug.Log($"{this.GetType()}.Colliding: Collision layer [{LayerMask.LayerToName(collision.layer)}] is missing from TargetLayerMask.", gameObject);
                 return;
             }
 
             // if we're on our first frame, we don't apply damage
             if (Time.time == 0f)
             {
-                //Debug.Log($"{this.GetType()}.Colliding: Projectile is on first frame.", gameObject);
                 return;
             }
 

@@ -779,10 +779,12 @@ MonoBehaviour:
   AbilityPermitted: 1
   ProjectileSpawn: {fileID: 0}
   Skills:
-  - {fileID: 11400000, guid: 3364b242e43f32c49989ec6ec63cd257, type: 2}
+  - {fileID: 11400000, guid: 3a32358a9075c7740ad146a04965a0c0, type: 2}
   BufferInput: 1
   NewInputExtendsBuffer: 1
   MaxBufferDuration: 0.25
+  BaseDamage: 10
+  DamageBonusPercentage: 0
 --- !u!114 &3187622634026670037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,6 +825,7 @@ MonoBehaviour:
   AbilityPermitted: 1
   RotationSpeed: 10
   OverrideModel: {fileID: 5644774687886365600}
+  RotationForbidden: 0
 --- !u!1 &5741136631010450594
 GameObject:
   m_ObjectHideFlags: 0
