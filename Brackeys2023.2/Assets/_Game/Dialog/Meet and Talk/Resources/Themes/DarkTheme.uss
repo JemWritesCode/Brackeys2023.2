@@ -1,0 +1,168 @@
+GridBackground {
+	--grid-background-color: #282828;
+	--line-color: rgba(193, 196, 192, 0.1);
+	--thick-line-color: rgba(193, 196, 192, 0.1);
+	--spacing: 10;
+}
+
+.nameOfDialogueContainer
+{
+	margin-top: 3px;
+	margin-left: 5px;
+	padding-right: 5px;
+}
+
+
+.node #title{
+	background-color: #923842;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	min-height: 36px;
+}
+
+#node-border{
+	background-color: #383838;
+}
+#node-border{
+	flex-shrink: 0;
+}
+
+.Label{
+	margin-top: 5px;
+	margin-left: 4px;
+}
+.TextBox{
+	white-space: Normal;
+}
+
+#title-label {
+	color: #ffffff;
+}
+
+.Colorfield
+{
+	width: 200px; 
+}
+.TextTime
+{
+	padding-bottom: 2px;
+}
+.TextDuration
+{
+	padding-bottom: 2px;
+}
+
+.unity-object-field
+{
+	padding-bottom: 2px;
+}
+.unity-enum-field
+{
+	padding-bottom: 2px;
+}
+#collapse-button
+{
+	height: 0px;
+}
+
+.node .ChoiceLabel{
+	width: 75px;
+	max-width: 75px;
+}
+.node .ChoiceLabel .unity-text-field__input{
+	-unity-text-align: middle-right;
+}
+
+#Choice {
+	max-width: 300px; 
+	width: 300px; 
+}
+#Choice #output{
+	width: 200px;
+}
+#Choice #output .port{
+	max-width: 215px; 
+	width: 215px;
+}
+#Choice #output .port .ChoiceLabel{
+	max-width: 145px; 
+	width: 145px;
+}
+
+
+#Dialog {
+	max-width: 200px; 
+	width: 200px; 
+}
+
+
+
+
+#Start #node-border #title {
+	background-color: #149A3E;
+}
+
+#Start #node-border #contents #top #output .port {
+	--port-color: rgba(34, 153, 71, 1.0);
+}
+
+#Start #node-border #contents #top #input .port {
+	--port-color: rgba(34, 153, 71, 1.0);
+}
+
+
+
+#Dialog #node-border #title {
+	background-color: #F9C22E;
+}
+
+#Dialog #node-border #title #title-label{
+	color: #000000;
+}
+
+#Dialog #node-border #contents #top #output .port {
+	--port-color: rgba(249, 194, 46, 1.0);
+}
+
+#Dialog #node-border #contents #top #input .port {
+	--port-color: rgba(249, 194, 46, 1.0);
+}
+
+
+#Choice #node-border #title {
+	background-color: #22AED1;
+}
+
+#Choice #node-border #title .unity-button {
+	background-color: #1f9dbc;
+	border-width: 0px;
+}
+
+#Choice #node-border #contents #top #output .port {
+	--port-color: rgba(83, 179, 203, 1.0);
+}
+
+#Choice #node-border #contents #top #input .port {
+	--port-color: rgba(83, 179, 203, 1.0);
+}
+
+
+
+#End #node-border #title {
+	background-color: #A8323F;
+}
+
+#End #node-border #contents #top #output .port {
+	--port-color: rgba(204, 61, 77, 1.0);
+}
+
+#End #node-border #contents #top #input .port {
+	--port-color: rgba(204, 61, 77, 1.0);
+}
+
+
+
+.port .unity-button{
+	background-color: #3F3F3F !important;
+}
+

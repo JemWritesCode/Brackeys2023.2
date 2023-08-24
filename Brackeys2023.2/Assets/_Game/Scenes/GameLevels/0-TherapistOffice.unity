@@ -1253,6 +1253,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1456936206490393221, guid: 63f560f42bbfe7e4684dde7e57c6f251, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 1872704606846157490, guid: 63f560f42bbfe7e4684dde7e57c6f251, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1320,7 +1324,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2069524685122301655, guid: 63f560f42bbfe7e4684dde7e57c6f251, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 775769015}
   m_SourcePrefab: {fileID: 100100000, guid: 63f560f42bbfe7e4684dde7e57c6f251, type: 3}
 --- !u!4 &156108839 stripped
 Transform:
@@ -5828,6 +5835,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 70, y: 120, z: 0}
+--- !u!114 &712942884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6750716295316983515, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+  m_PrefabInstance: {fileID: 627963471}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c971cf79a675b548a5f8f84b13e53a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &718730369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6390,6 +6408,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6916827040964754665, guid: 2bd5455a29123e64287c30781ba4c46b, type: 3}
   m_PrefabInstance: {fileID: 765273773}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &775769013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2069524685122301655, guid: 63f560f42bbfe7e4684dde7e57c6f251, type: 3}
+  m_PrefabInstance: {fileID: 155383956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &775769015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775769013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ddd432979fb28748ac483830c7288ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Interactable: 0
+  playerCamera: {fileID: 1482961273}
+  walkSpeed: 6
+  runSpeed: 12
+  jumpPower: 7
+  gravity: 10
+  lookSpeed: 2
+  lookXLimit: 45
+  canMove: 1
 --- !u!1001 &777571249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12190,7 +12234,7 @@ GameObject:
   - component: {fileID: 1482961272}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18656,13 +18700,13 @@ MonoBehaviour:
   OnEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 9c971cf79a675b548a5f8f84b13e53a5, type: 3}
+      - m_Target: {fileID: 712942884}
         m_TargetAssemblyTypeName: MEET_AND_TALK.DialogueManager, Assembly-CSharp
         m_MethodName: StartDialogue
-        m_Mode: 2
+        m_Mode: 5
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 4dc24575c2df7804e8d73ce6717ccac3, type: 2}
-          m_ObjectArgumentAssemblyTypeName: MEET_AND_TALK.DialogueContainerSO, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

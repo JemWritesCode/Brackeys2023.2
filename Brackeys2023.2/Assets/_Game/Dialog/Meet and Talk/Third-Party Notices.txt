@@ -1,0 +1,4 @@
+Font
+  - Digital Disco (https://www.dafont.com/digital-disco.font)
+    Author: jeti
+    Licence: CC BY 4.0
