@@ -638,7 +638,9 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: MEET_AND_TALK
+    WebGL: MEET_AND_TALK
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

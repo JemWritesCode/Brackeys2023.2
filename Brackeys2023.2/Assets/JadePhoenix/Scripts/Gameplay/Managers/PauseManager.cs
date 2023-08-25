@@ -30,6 +30,12 @@ namespace JadePhoenix.Gameplay
 
         #region Unity Lifecycle Methods
 
+        protected override void Awake()
+        {
+            base.Awake();
+            Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
+        }
+
         /// <summary>
         /// Monitors input for the pause command. If the Escape key is pressed, it toggles the pause state.
         /// </summary>

@@ -374,7 +374,8 @@ namespace JadePhoenix.Gameplay
         /// <param name="newPosition">The desired position.</param>
         public virtual void MovePosition(Vector3 newPosition)
         {
-            _rigidBody.MovePosition(newPosition);
+            Vector3 motionVector = newPosition - transform.position;
+            _characterController.Move(motionVector);
         }
 
         /// <summary>

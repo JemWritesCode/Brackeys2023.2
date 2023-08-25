@@ -1,0 +1,194 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: TherapyIntro
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 9d113ae3-aa9f-4cb8-9bab-6dc4df886d32
+    TargetNodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
+  - BaseNodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
+    TargetNodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
+  - BaseNodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
+    TargetNodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
+  - BaseNodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
+    TargetNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+  - BaseNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
+    TargetNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+  - BaseNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
+    TargetNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+  - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+    TargetNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
+  - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+    TargetNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
+  - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+    TargetNodeGuid: 7187faa9-3131-478a-916d-786974f7991c
+  - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+    TargetNodeGuid: 7187faa9-3131-478a-916d-786974f7991c
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+    Position: {x: 329.4, y: -103.799995}
+    DialogueNodePorts:
+    - InputGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
+      OutputGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I want to deal with my problems, head-on. I'll figure
+          it out as I go.
+      - languageEnum: 1
+        LanguageGenericType: "Odpowied\u017A Pierwsza"
+    - InputGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
+      OutputGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I like to learn a bit more first, then handle things
+          once I know better how.
+      - languageEnum: 1
+        LanguageGenericType: Odpowiedz Druga
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 8300000, guid: 56ef6313c5e50d040ac1e663643dc0a9, type: 3}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: ffff11e940c85354e985a24a220d5f97, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 'No matter how you want to continue, please remember:
+        there are no wrong answers.'
+    - languageEnum: 1
+      LanguageGenericType: "To teraz wybierz jedn\u0105 z dw\xF3ch odpowiedzi"
+    Duration: 5
+  - NodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+    Position: {x: 968.99994, y: -31.199997}
+    DialogueNodePorts:
+    - InputGuid: 7187faa9-3131-478a-916d-786974f7991c
+      OutputGuid: 4542346f-7053-456b-a064-2b92ddcac511
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Well, I'm just so tired, all the time. I'm getting sick
+          of it, y'know?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+    - InputGuid: 7187faa9-3131-478a-916d-786974f7991c
+      OutputGuid: 4542346f-7053-456b-a064-2b92ddcac511
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I'm going to a birthday party next week, but... I'm
+          kinda scared of balloons.
+      - languageEnum: 1
+        LanguageGenericType: Choice 02
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: So what would you like to work on today? Is there anything
+        weighing on your mind?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  DialogueNodeDatas:
+  - NodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
+    Position: {x: -160.2, y: -103.799995}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: 5bdb55298bae76e4695de14d7a9f7f87, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I'll be your therapist, and we can chat about anything
+        on your mind.
+    - languageEnum: 1
+      LanguageGenericType: Will, a ty?
+    Duration: 5
+  - NodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
+    Position: {x: 89.399994, y: -103.799995}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: 1f7b32acaf980cf4894bb19fb1a15ce2, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: But before we begin, I'd like to know more about how you'd
+        like our sessions to go.
+    - languageEnum: 1
+      LanguageGenericType: Jayden
+    Duration: 5
+  - NodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
+    Position: {x: 700.8, y: 97.799995}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I can appreciate that. The more tools you have, the more
+        ways you can tackle life on your own terms.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
+    Position: {x: 700.8, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 8300000, guid: 8438d2309e29930429761d6fcce62d9e, type: 3}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: 3184d7db1708f40429277de97485e464, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Absolutely. Sometimes, we just need to stand up and face
+        our fears, and we can work through anything.
+    - languageEnum: 1
+      LanguageGenericType: "Dobra odpowied\u017C, obie prowadzi\u0142y do tego samego
+        ale mo\u017Cesz poprowadzi\u0107 wiele opcji dialogowych"
+    Duration: 10
+  - NodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
+    Position: {x: -400.19998, y: -103.799995}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 8300000, guid: 5dda1ead42fd2714395cadd0b9374915, type: 3}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: 2d60e2dd402bc55429dd4f8444cc3ab1, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Hello, and good morning! Thank you for taking the time
+        to talk today.
+    - languageEnum: 1
+      LanguageGenericType: "Kim jeste\u015B?"
+    Duration: 5
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 7187faa9-3131-478a-916d-786974f7991c
+    Position: {x: 1334.3999, y: -2.999998}
+    EndNodeType: 0
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 9d113ae3-aa9f-4cb8-9bab-6dc4df886d32
+    Position: {x: -500.99997, y: -103.799995}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
