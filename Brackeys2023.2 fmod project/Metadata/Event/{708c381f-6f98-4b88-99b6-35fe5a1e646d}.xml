@@ -23,9 +23,6 @@
 			<destination>{a30ea076-9f4a-4a93-a24e-e4bb09f6c3cf}</destination>
 		</relationship>
 		<relationship name="markerTracks">
-			<destination>{edddcb34-c71c-4000-a11a-48f7b5d8fb34}</destination>
-			<destination>{cfe1fd64-8fbc-4909-b784-eb88e46a94ba}</destination>
-			<destination>{bfd2df1a-52e4-422c-bd06-e9ada78142be}</destination>
 			<destination>{bf2617a5-db19-475e-bcb4-17b45c5d65bb}</destination>
 			<destination>{862fdb44-8441-459c-b3bf-b697c3776bcd}</destination>
 		</relationship>
@@ -65,9 +62,6 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{a30ea076-9f4a-4a93-a24e-e4bb09f6c3cf}" />
-	<object class="MarkerTrack" id="{edddcb34-c71c-4000-a11a-48f7b5d8fb34}" />
-	<object class="MarkerTrack" id="{cfe1fd64-8fbc-4909-b784-eb88e46a94ba}" />
-	<object class="MarkerTrack" id="{bfd2df1a-52e4-422c-bd06-e9ada78142be}" />
 	<object class="MarkerTrack" id="{bf2617a5-db19-475e-bcb4-17b45c5d65bb}" />
 	<object class="MarkerTrack" id="{862fdb44-8441-459c-b3bf-b697c3776bcd}" />
 	<object class="GroupTrack" id="{af540353-dce4-4ec1-b876-2122c0d2e540}">
@@ -185,7 +179,7 @@
 			<destination>{6f40fe76-75c7-400b-81ec-38a115367702}</destination>
 		</relationship>
 		<relationship name="markerTrack">
-			<destination>{edddcb34-c71c-4000-a11a-48f7b5d8fb34}</destination>
+			<destination>{bf2617a5-db19-475e-bcb4-17b45c5d65bb}</destination>
 		</relationship>
 	</object>
 	<object class="ADSRModulator" id="{5441bbd6-5111-4166-afa0-8e167f41eaab}">
