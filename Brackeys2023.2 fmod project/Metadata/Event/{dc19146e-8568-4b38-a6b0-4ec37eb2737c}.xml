@@ -8,7 +8,7 @@
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{6d5b8280-f670-4754-8756-fc0031f997df}</destination>
+			<destination>{47746cd7-0485-4704-8048-f991e14fbc69}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{f34b3ee5-f239-4eb1-b0c6-89dae484b01f}</destination>
@@ -60,9 +60,9 @@
 	<object class="MarkerTrack" id="{45308dd6-134a-45ed-a1c8-2e84fb20d223}" />
 	<object class="GroupTrack" id="{8cb9e67b-5d84-4bbe-a384-eae8d570b5fa}">
 		<relationship name="modules">
-			<destination>{49af7da5-5809-42de-bd40-0a84c1dfa566}</destination>
 			<destination>{f93e8601-5bc1-47c5-bfb9-bc574f98edd2}</destination>
 			<destination>{65aa4ff9-a4b2-499f-8773-fc5a5061ca06}</destination>
+			<destination>{49af7da5-5809-42de-bd40-0a84c1dfa566}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{6e14d817-4efb-4c43-90f5-74a664f62bca}</destination>
@@ -92,17 +92,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e78d773e-e150-4b9f-b9ee-34c536468c1f}" />
-	<object class="SingleSound" id="{49af7da5-5809-42de-bd40-0a84c1dfa566}">
-		<property name="length">
-			<value>0.80639593156812506</value>
-		</property>
-		<property name="timelockedOffset">
-			<value>46.73624110016118</value>
-		</property>
-		<relationship name="audioFile">
-			<destination>{6a8d9cd2-96dd-4a6f-b8cd-c43a4cdb1e91}</destination>
-		</relationship>
-	</object>
 	<object class="SingleSound" id="{f93e8601-5bc1-47c5-bfb9-bc574f98edd2}">
 		<property name="start">
 			<value>1.988443574469279</value>
@@ -126,6 +115,17 @@
 		</property>
 		<property name="timelockedOffset">
 			<value>48.924684674630456</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{6a8d9cd2-96dd-4a6f-b8cd-c43a4cdb1e91}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{49af7da5-5809-42de-bd40-0a84c1dfa566}">
+		<property name="length">
+			<value>0.80639593156812506</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>46.73624110016118</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{6a8d9cd2-96dd-4a6f-b8cd-c43a4cdb1e91}</destination>
