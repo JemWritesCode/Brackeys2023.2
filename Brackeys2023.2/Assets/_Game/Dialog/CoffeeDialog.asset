@@ -1,0 +1,244 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: CoffeeDialog
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 6d3f32e6-c3ef-4f8e-aade-da89c1fc34e6
+    TargetNodeGuid: 375f129c-7116-4cc0-b30e-c1eebb17fd3b
+  - BaseNodeGuid: 375f129c-7116-4cc0-b30e-c1eebb17fd3b
+    TargetNodeGuid: b861dac4-c645-430e-b990-90cd842f2c7f
+  - BaseNodeGuid: b861dac4-c645-430e-b990-90cd842f2c7f
+    TargetNodeGuid: 9bf533e0-3e63-423e-a6f2-89464a92690c
+  - BaseNodeGuid: 9bf533e0-3e63-423e-a6f2-89464a92690c
+    TargetNodeGuid: 28dfb58f-496e-4793-bfe6-575c26810df2
+  - BaseNodeGuid: 28dfb58f-496e-4793-bfe6-575c26810df2
+    TargetNodeGuid: f9fac1a1-cf34-49ef-b7b1-589b56167793
+  - BaseNodeGuid: f9fac1a1-cf34-49ef-b7b1-589b56167793
+    TargetNodeGuid: eff2a21d-4c3c-498b-91b2-e3547330693e
+  - BaseNodeGuid: eff2a21d-4c3c-498b-91b2-e3547330693e
+    TargetNodeGuid: 83877f99-d434-4035-848b-fe0c13291b1f
+  - BaseNodeGuid: 83877f99-d434-4035-848b-fe0c13291b1f
+    TargetNodeGuid: 147a63df-90a3-467b-9240-c8904262609b
+  - BaseNodeGuid: 147a63df-90a3-467b-9240-c8904262609b
+    TargetNodeGuid: bd40634a-5625-414d-a79a-19e23476846e
+  - BaseNodeGuid: bd40634a-5625-414d-a79a-19e23476846e
+    TargetNodeGuid: b943bc5e-bc83-4fa3-8e6c-2d1644944bbd
+  - BaseNodeGuid: b943bc5e-bc83-4fa3-8e6c-2d1644944bbd
+    TargetNodeGuid: 6805bd34-fa06-4f95-8cc0-dfd465e90a95
+  - BaseNodeGuid: 6805bd34-fa06-4f95-8cc0-dfd465e90a95
+    TargetNodeGuid: 841b9c11-0fff-405a-b283-e7ff471d5a29
+  - BaseNodeGuid: 841b9c11-0fff-405a-b283-e7ff471d5a29
+    TargetNodeGuid: f43b86bb-a343-4afb-83ad-01149e4ccea4
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 375f129c-7116-4cc0-b30e-c1eebb17fd3b
+    Position: {x: -620, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: ace7c2be048253444957a39e7f3221e8, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Hey, hey you, over there! Yeah, you, with the mouth!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: b861dac4-c645-430e-b990-90cd842f2c7f
+    Position: {x: -367.6, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ... Are you a talking coffee cup?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 9bf533e0-3e63-423e-a6f2-89464a92690c
+    Position: {x: -99.2, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: ace7c2be048253444957a39e7f3221e8, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: So what if I am? Listen, we don't have enough time. We
+        don't have enough time!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 28dfb58f-496e-4793-bfe6-575c26810df2
+    Position: {x: 166, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Slow down, what are you talking about? What don't we have
+        enough time for?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: f9fac1a1-cf34-49ef-b7b1-589b56167793
+    Position: {x: 428, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: ace7c2be048253444957a39e7f3221e8, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Slow down? SLOW DOWN? We can't "slow down", we have to
+        go, go, GO! We need to get rolling!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: eff2a21d-4c3c-498b-91b2-e3547330693e
+    Position: {x: 702.39996, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Some coffee once in a while can be helpful, but how you
+        feel about your current consumption?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 83877f99-d434-4035-848b-fe0c13291b1f
+    Position: {x: 968.39996, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I always thought it was a bit much, but I figured I needed
+        it because I was always so tired.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 147a63df-90a3-467b-9240-c8904262609b
+    Position: {x: 1227.2001, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Do you think the caffeine is doing you a service at this
+        point?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: bd40634a-5625-414d-a79a-19e23476846e
+    Position: {x: 1490.4, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: You know what? Probably not... It might even be getting
+        in my way.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: b943bc5e-bc83-4fa3-8e6c-2d1644944bbd
+    Position: {x: 1726.4, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: ace7c2be048253444957a39e7f3221e8, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Come on, come on! You need to get some caffeine in you!
+        You gotta drink me!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 6805bd34-fa06-4f95-8cc0-dfd465e90a95
+    Position: {x: 1975.2001, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: No, not today. I think I want to kick the habit.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 841b9c11-0fff-405a-b283-e7ff471d5a29
+    Position: {x: 2234.8, y: -147.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: ace7c2be048253444957a39e7f3221e8, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: What? WHAT? No, no, NO, this can't be right. We... we
+        gotta teach you a lesson!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: f43b86bb-a343-4afb-83ad-01149e4ccea4
+    Position: {x: 2511.2, y: -147.59999}
+    EndNodeType: 0
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 6d3f32e6-c3ef-4f8e-aade-da89c1fc34e6
+    Position: {x: -802.4, y: -78.4}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
