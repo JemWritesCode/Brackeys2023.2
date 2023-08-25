@@ -15,6 +15,7 @@ namespace JadePhoenix.Tools
         /// Whether the timer is currently running
         public bool IsRunning { get; private set; }
 
+        protected Action _onTimerUpdate;
         protected Action _onTimerStarted;
         protected Action _onTimerCompleted;
 
@@ -22,10 +23,10 @@ namespace JadePhoenix.Tools
         /// A generic class that allows us to attach methods and functions.
         /// </summary>
         /// <param name="duration">The total duration of the timer.</param>
-        public Timer(float duration, Action onTimerStarted = null, Action onTimerCompleted = null)
-            : this(string.Empty, duration, onTimerStarted, onTimerCompleted) { }
+        public Timer(float duration, Action onTimerStarted = null, Action onTimerCompleted = null, Action onTimerUpdate = null)
+        : this(string.Empty, duration, onTimerStarted, onTimerCompleted, onTimerUpdate) { }
 
-        public Timer(string label, float duration, Action onTimerStarted = null, Action onTimerCompleted = null)
+        public Timer(string label, float duration, Action onTimerStarted = null, Action onTimerCompleted = null, Action onTimerUpdate = null)
         {
             Label = label;
             Duration = duration;
@@ -33,6 +34,7 @@ namespace JadePhoenix.Tools
             IsRunning = false;
             _onTimerStarted = onTimerStarted;
             _onTimerCompleted = onTimerCompleted;
+            _onTimerUpdate = onTimerUpdate;
         }
 
         /// <summary>
@@ -68,6 +70,8 @@ namespace JadePhoenix.Tools
             if (!IsRunning) return;
 
             ElapsedTime += Time.deltaTime;
+
+            _onTimerUpdate?.Invoke();
 
             if (ElapsedTime >= Duration)
             {

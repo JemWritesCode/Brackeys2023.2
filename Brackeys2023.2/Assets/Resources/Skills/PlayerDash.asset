@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9ba021ec1749f4bb169715cb06b4ab, type: 3}
   m_Name: PlayerDash
   m_EditorClassIdentifier: 
-  ID: Dash
+  ID: roll
   Name: Dash
   Description: Test
   Icon: {fileID: 0}
@@ -21,6 +21,7 @@ MonoBehaviour:
     DebugCurrentState: 0
   PercentageModifier: 0
   UpdateMode: 1
+  ActiveState: 3
   TriggerMode: 1
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 0

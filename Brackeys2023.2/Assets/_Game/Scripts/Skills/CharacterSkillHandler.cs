@@ -11,7 +11,7 @@ namespace _Game
     public class CharacterSkillHandler : CharacterAbility
     {
         [Header("Skills")]
-        /// the position from which projectiles will be spawned (can be safely left empty)
+        [Tooltip("The position from which projectiles will be spawned (can be safely left empty).")]
         public Transform ProjectileSpawn;
         [Tooltip("The list of skills for this character to use. Copies will be created at runtime for the purpose of modifications. DO NOT MODIFY THESE AT RUNTIME.")]
         public List<Skill> Skills;
