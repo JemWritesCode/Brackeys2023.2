@@ -40915,6 +40915,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DonutNPC
       objectReference: {fileID: 0}
+    - target: {fileID: 8653210766413364533, guid: 70dbbb13f85b4cf44932e8b4518a414e, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 902966942}
+    - target: {fileID: 8653210766413364533, guid: 70dbbb13f85b4cf44932e8b4518a414e, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 847f5444f3b4fb5469ba15a0c45c9ba7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40989,6 +40997,10 @@ PrefabInstance:
       propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 902966942}
+    - target: {fileID: 1186909872425762508, guid: d78510a33af95d6449e80d03451ed0de, type: 3}
+      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 9e0b4fc15be595f4e97cd5582113c25e, type: 2}
     - target: {fileID: 4488305937379907048, guid: d78510a33af95d6449e80d03451ed0de, type: 3}
       propertyPath: m_Camera
       value: 

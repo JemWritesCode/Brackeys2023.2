@@ -12,12 +12,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
   m_Name: DonutDialog
   m_EditorClassIdentifier: 
-  NodeLinkDatas: []
+  NodeLinkDatas:
+  - BaseNodeGuid: 71a8ab2e-0347-47d4-ae6c-1737974e0e6e
+    TargetNodeGuid: 9cadf28a-a1b8-423c-be10-c6d44946551b
+  - BaseNodeGuid: 9cadf28a-a1b8-423c-be10-c6d44946551b
+    TargetNodeGuid: f4b008f5-699f-432f-bcba-c41cc7e066e2
   DialogueChoiceNodeDatas: []
-  DialogueNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 9cadf28a-a1b8-423c-be10-c6d44946551b
+    Position: {x: 416, y: 172}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 6e569df94d37c6f499f5de4321d219b3, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Why, hello there. I've got a hole in my heart, and you're
+        the only one who can fill it.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: f4b008f5-699f-432f-bcba-c41cc7e066e2
+    Position: {x: 658.4, y: 172}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ... Me?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
   TimerChoiceNodeDatas: []
   EndNodeDatas: []
   EventNodeDatas: []
-  StartNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 71a8ab2e-0347-47d4-ae6c-1737974e0e6e
+    Position: {x: 255.2, y: 204.8}
+    startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
