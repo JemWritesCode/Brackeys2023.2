@@ -13,24 +13,34 @@ namespace _Game
         [Header("Skills")]
         /// the position from which projectiles will be spawned (can be safely left empty)
         public Transform ProjectileSpawn;
-        [Tooltip("The list of skills for this character to use. Copies will be created at runtime for the purpose of modifications.")]
+        [Tooltip("The list of skills for this character to use. Copies will be created at runtime for the purpose of modifications. DO NOT MODIFY THESE AT RUNTIME.")]
         public List<Skill> Skills;
-
-        [Header("Buffering")]
-        public bool BufferInput = true;
-        public bool NewInputExtendsBuffer = true;
-        public float MaxBufferDuration = .25f;
 
         [Header("Damage Calculation")]
         public int BaseDamage = 10;
         [Tooltip("The current overall bonus percentage used in damage calculations.")]
         public float DamageBonusPercentage = 0f;
 
+        [Header("Settings")]
+        [Tooltip("A list of character states where input is permitted.")]
+        public CharacterStates.MovementStates PermittedInputStates;
+
         [SerializeField, ReadOnly]
         protected List<Skill> _skills = new List<Skill>();
         protected List<JP_Input.Button> _buttons = new List<JP_Input.Button>();
-        protected float _bufferTimer = 0f;
-        protected bool _buffering = false;
+        protected bool _usingSkill;
+
+        protected virtual void FixedUpdate()
+        {
+            for (int i = 0; i < _skills.Count; i++)
+            {
+                Skill skill = _skills[i];
+
+                if (skill.UpdateMode != Skill.UpdateModes.FixedUpdate) continue;
+
+                skill.ProcessSkillState();
+            }
+        }
 
         protected override void Initialization()
         {
@@ -54,48 +64,15 @@ namespace _Game
             }
         }
 
-        public override void ProcessAbility()
-        {
-            for (int i = 0; i < _skills.Count; i++)
-            {
-                Skill skill = _skills[i];
-
-                HandleBuffer(skill);
-            }
-        }
-
         public override void LateProcessAbility()
         {
             for (int i = 0; i < _skills.Count; i++)
             {
                 Skill skill = _skills[i];
 
+                if (skill.UpdateMode != Skill.UpdateModes.Update) continue;
+
                 skill.ProcessSkillState();
-            }
-        }
-
-        /// <summary>
-        /// Triggers a skill if the skill is idle and an input has been buffered
-        /// </summary>
-        protected virtual void HandleBuffer(Skill skill)
-        {
-            if (skill == null)
-            {
-                return;
-            }
-
-            // If we are currently buffering an input and if the skill is now idle
-            if (_buffering && skill.SkillState.CurrentState == Skill.SkillStates.SkillIdle)
-            {
-                // and if our buffer is still valid, we trigger an attack
-                if (Time.time < _bufferTimer)
-                {
-                    SkillStart(skill);
-                }
-                else
-                {
-                    _buffering = false;
-                }
             }
         }
 
@@ -108,8 +85,15 @@ namespace _Game
             if (_condition.CurrentState != CharacterStates.CharacterConditions.Normal)
             {
                 // Log a message indicating the character's condition is not normal and hence input will not be processed
-                Debug.Log("HandleInput: Condition is not normal. Skipping input processing.");
-                return; // Exit the method without processing further inputs
+                Debug.LogWarning($"{this.GetType()}.HandleInput: Condition is not normal. Skipping input processing.", gameObject);
+                return;
+            }
+
+            // Do not allow inputs if player is not idle.
+            if ((_movement.CurrentState & PermittedInputStates) != _movement.CurrentState)
+            {
+                //Debug.LogWarning($"{this.GetType()}.HandleInput: Movement State is not permitted. Skipping input processing.", gameObject);
+                return;
             }
 
             // Iterate through each skill in the character's skill set
@@ -123,13 +107,13 @@ namespace _Game
                 if (button.State.CurrentState == JP_Input.ButtonStates.ButtonDown
                 || (skill.TriggerMode == Skill.TriggerModes.Auto && button.State.CurrentState == JP_Input.ButtonStates.ButtonPressed))
                 {
-                    SkillStart(skill); // Start the skill as the condition met
+                    StartSkill(skill); // Start the skill as the condition met
                 }
 
                 // Check if the button was just released up
                 if (button.State.CurrentState == JP_Input.ButtonStates.ButtonUp)
                 {
-                    SkillStop(skill); // Stop the skill as the button was released
+                    StopSkill(skill); // Stop the skill as the button was released
                 }
 
                 // Check if the skill is currently in a cooldown state and the button is in an 'Off' state
@@ -141,7 +125,7 @@ namespace _Game
             }
         }
 
-        public virtual void SkillStart(Skill skill)
+        public virtual void StartSkill(Skill skill)
         {
             // If the Shoot action is enabled in the permissions, we continue, if not we do nothing. If the player is dead we do nothing.
             if ((skill == null)
@@ -150,32 +134,14 @@ namespace _Game
                 return;
             }
 
-            // If we've decided to buffer input, and if the skill is in use right now
-            if (BufferInput && (skill.SkillState.CurrentState != Skill.SkillStates.SkillIdle))
-            {
-                ExtendBuffer();
-            }
-
-            _movement.ChangeState(CharacterStates.MovementStates.Attacking);
-
             skill.SkillInputStart();
-        }
-
-        protected virtual void ExtendBuffer()
-        {
-            // If we're not already buffering, or if each new input extends the buffer, we turn our buffering state to true
-            if (!_buffering || NewInputExtendsBuffer)
-            {
-                _buffering = true;
-                _bufferTimer = Time.time + MaxBufferDuration;
-            }
         }
 
         /// <summary>
         /// Stops the provided skill based on its current state and related conditions.
         /// </summary>
         /// <param name="skill">The skill to be stopped.</param>
-        public virtual void SkillStop(Skill skill)
+        public virtual void StopSkill(Skill skill)
         {
             // Set character movement to idle
             _movement.ChangeState(CharacterStates.MovementStates.Idle);
@@ -220,7 +186,7 @@ namespace _Game
             for (int i = 0; i < _skills.Count; i++)
             {
                 Skill skill = _skills[i];
-                SkillStop(skill);
+                StopSkill(skill);
             }
         }
 
@@ -236,6 +202,26 @@ namespace _Game
             {
                 Skill skill = _skills[i];
                 skill.DrawGizmos();
+            }
+        }
+
+        protected override void InitializeAnimatorParameters()
+        {
+            for (int i = 0; i < Skills.Count; i++)
+            {
+                Skill skill = _skills[i];
+
+                skill.InitializeAnimatorParameters();
+            }
+        }
+
+        public override void UpdateAnimator()
+        {
+            for (int i = 0; i < Skills.Count; i++)
+            {
+                Skill skill = _skills[i];
+
+                skill.UpdateAnimator(_animator, _movement.CurrentState);
             }
         }
     }

@@ -780,11 +780,12 @@ MonoBehaviour:
   ProjectileSpawn: {fileID: 0}
   Skills:
   - {fileID: 11400000, guid: 3a32358a9075c7740ad146a04965a0c0, type: 2}
-  BufferInput: 1
-  NewInputExtendsBuffer: 1
-  MaxBufferDuration: 0.25
+  - {fileID: 11400000, guid: 9b14d0e9a0c1af24ca5b4cade44d1026, type: 2}
+  - {fileID: 11400000, guid: bc3f3e3d6e89da043a36a4c91c091316, type: 2}
   BaseDamage: 10
   DamageBonusPercentage: 0
+  PermittedInputStates: 3
+  _skills: []
 --- !u!114 &3187622634026670037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1038,7 +1039,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7831945750421795319}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33474293, y: -0.000000016213736, z: 0.0000000057597154, w: 0.9423095}
+  m_LocalRotation: {x: 0.33474293, y: 0.000000016213734, z: -0.0000000057597136, w: 0.9423095}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

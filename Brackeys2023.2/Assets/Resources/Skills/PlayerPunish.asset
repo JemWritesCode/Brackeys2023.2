@@ -20,7 +20,7 @@ MonoBehaviour:
     Target: {fileID: 0}
     DebugCurrentState: 0
   PercentageModifier: 0
-  TriggerMode: 0
+  TriggerMode: 1
   DelayBeforeUse: 1.6
   DelayBeforeUseReleaseInterruption: 0
   Cooldown: 3
@@ -29,18 +29,18 @@ MonoBehaviour:
   GettingHitInterruptsSkill: 0
   RecoilForce: 0
   Interruptible: 0
-  RestrictMovement: 0
-  RestrictRotation: 0
+  RestrictMovement: 1
+  RestrictRotation: 1
   DamageAreaShape: 0
   AreaSize: {x: 1, y: 1, z: 2}
-  AreaOffset: {x: 1, y: 1, z: 1}
-  InitialDelay: 1.6
+  AreaOffset: {x: 0, y: 1, z: 1}
+  AdditionalDelay: 0
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
   Knockback: 1
   KnockbackForce: {x: 10, y: 2}
-  InvincibilityDuration: 0.5
+  InvincibilityDuration: 0.1
   CanDamageOwner: 0
   _attackInProgress: 0
   ParryBonus: 50

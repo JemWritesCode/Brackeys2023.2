@@ -23,8 +23,8 @@ namespace _Game
         public Vector3 AreaOffset = new Vector3(1, 0);
 
         [Header("Damage Area Timing")]
-        [Tooltip("The initial delay before the damage area becomes active.")]
-        public float InitialDelay = 0f;
+        [Tooltip("The additional delay before the damage area becomes active. This is added on to the skill's delay on use.")]
+        public float AdditionalDelay = 0f;
 
         [Header("Damage Caused")]
         [Tooltip("LayerMask determining which objects can be damaged.")]
@@ -148,7 +148,7 @@ namespace _Game
 
             _attackInProgress = true;
 
-            yield return new WaitForSeconds(InitialDelay);
+            yield return new WaitForSeconds(AdditionalDelay);
             EnableDamageArea();
 
             yield return new WaitForSeconds(SkillDuration);

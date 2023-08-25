@@ -92,24 +92,22 @@ namespace JadePhoenix.Gameplay
         public virtual void UpdateHealthBar(float healthPercentage)
         {
             if (HealthSegment == null) { return; }
-            if (DamageSegment == null) { return; }
 
-            Debug.Log($"{this.GetType()}.UpdateHealthBar: Health % before clamp = {healthPercentage}.", gameObject);
+            //Debug.Log($"{this.GetType()}.UpdateHealthBar: Health % before clamp = {healthPercentage}.", gameObject);
 
             healthPercentage = Mathf.Clamp01(healthPercentage);  // Ensure it's between 0 and 1
 
-            Debug.Log($"{this.GetType()}.UpdateHealthBar: Health % after clamp = {healthPercentage}.", gameObject);
+            //Debug.Log($"{this.GetType()}.UpdateHealthBar: Health % after clamp = {healthPercentage}.", gameObject);
 
             HealthSegment.fillAmount = healthPercentage;
+
+            if (DamageSegment == null) { return; }
 
             float damageTaken = 1.0f - healthPercentage;
             DamageSegment.fillAmount = damageTaken;
         }
 
-        public virtual void ToggleChatBox(string text)
-        {
 
-        }
 
         #region BUTTON METHODS
 

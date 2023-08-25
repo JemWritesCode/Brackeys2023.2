@@ -151,7 +151,7 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         /// <param name="parameterName">Parameter name.</param>
         /// <param name="parameterType">Parameter type.</param>
-        protected virtual void RegisterAnimatorParameter(string parameterName, AnimatorControllerParameterType parameterType, out int parameter)
+        public virtual void RegisterAnimatorParameter(string parameterName, AnimatorControllerParameterType parameterType, out int parameter)
         {
             parameter = Animator.StringToHash(parameterName);
 
@@ -243,6 +243,16 @@ namespace JadePhoenix.Gameplay
         /// Override this to reset this ability's parameters. It'll be automatically called when the character gets killed, in anticipation for its respawn.
         /// </summary>
         public virtual void ResetAbility() { }
+
+        /// <summary>
+        /// Allows scripts to modify the movement state externally. 
+        /// This is primarily used for the Skill system to know when a skill ends within it's state machine.
+        /// </summary>
+        /// <param name="state">The state to change to.</param>
+        public virtual void SetMovementState(CharacterStates.MovementStates state) 
+        { 
+            _movement.ChangeState(state);
+        }
 
         #endregion
     }
