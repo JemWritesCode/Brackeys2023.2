@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10ff8c11693bd94b9bc4d6edc8acdef, type: 3}
   m_Name: PlayerPunish
   m_EditorClassIdentifier: 
-  ID: Punish
+  ID: punish
   Name: Punish
   Description: Test
   Icon: {fileID: 0}
@@ -20,6 +20,8 @@ MonoBehaviour:
     Target: {fileID: 0}
     DebugCurrentState: 0
   PercentageModifier: 0
+  UpdateMode: 0
+  ActiveState: 4
   TriggerMode: 1
   DelayBeforeUse: 1.6
   DelayBeforeUseReleaseInterruption: 0

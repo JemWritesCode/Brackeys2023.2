@@ -21,17 +21,12 @@ namespace _Game
         protected Vector3 _dashDestination;
         protected Vector3 _newPosition;
 
-        protected const string _dashingAnimationParameterName = "Dashing";
-        protected const string _idleAnimationParameterName = "Idle";
-        protected int _dashingAnimationParameter;
-        protected int _idleAnimationParameter;
-
         /// <summary>
         /// Handle what happens when the skill starts
         /// </summary>
         public override void SkillStart()
         {
-            _skillHandler.SetMovementState(CharacterStates.MovementStates.Dashing);
+            _skillHandler.SetMovementState(ActiveState);
             SkillState.ChangeState(SkillStates.SkillStart);
 
             _dashOrigin = Owner.transform.position;
@@ -66,18 +61,6 @@ namespace _Game
         {
             base.SkillStop();
             _controller.Rigidbody.velocity = Vector2.zero;
-        }
-
-        public override void InitializeAnimatorParameters()
-        {
-            _skillHandler.RegisterAnimatorParameter(_dashingAnimationParameterName, AnimatorControllerParameterType.Bool, out _dashingAnimationParameter);
-            _skillHandler.RegisterAnimatorParameter(_idleAnimationParameterName, AnimatorControllerParameterType.Bool, out _idleAnimationParameter);
-        }
-
-        public override void UpdateAnimator(Animator animator, CharacterStates.MovementStates currentState)
-        {
-            AnimatorExtensions.UpdateAnimatorBool(animator, _dashingAnimationParameter, currentState == CharacterStates.MovementStates.Dashing, Owner.AnimatorParameters);
-            AnimatorExtensions.UpdateAnimatorBool(animator, _idleAnimationParameter, currentState == CharacterStates.MovementStates.Idle, Owner.AnimatorParameters);
         }
     }
 }

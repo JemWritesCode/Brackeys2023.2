@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33ed2993485c8844a6c3cf340b24b36, type: 3}
   m_Name: PlayerPunch
   m_EditorClassIdentifier: 
-  ID: Punch
+  ID: punch
   Name: Punch
   Description: Test
   Icon: {fileID: 0}
@@ -20,6 +20,8 @@ MonoBehaviour:
     Target: {fileID: 0}
     DebugCurrentState: 0
   PercentageModifier: 100
+  UpdateMode: 0
+  ActiveState: 4
   TriggerMode: 1
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 0

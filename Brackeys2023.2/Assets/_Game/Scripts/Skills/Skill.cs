@@ -24,7 +24,7 @@ namespace _Game
         }
 
         [Header("Skill Data")]
-        [Tooltip("Unique identifier for the skill.")]
+        [Tooltip("Unique identifier for the skill. Used for animations.")]
         public string ID;
 
         [Tooltip("Display name of the skill.")]
@@ -46,6 +46,9 @@ namespace _Game
         public UpdateModes UpdateMode = UpdateModes.Update;
 
         [Header("Use")]
+        [SingleFlagSelection, Tooltip("What state this skill should put the state machine in when activated.")]
+        public CharacterStates.MovementStates ActiveState = CharacterStates.MovementStates.Attacking;
+
         [Tooltip("The trigger mode of the skill (SemiAuto or Auto).")]
         public TriggerModes TriggerMode = TriggerModes.Auto;
 
@@ -91,6 +94,12 @@ namespace _Game
         protected CharacterSkillHandler _skillHandler;
         protected CharacterMovement _movement;
         protected CharacterAiming _aiming;
+
+        protected const string _skillAnimationParameterName = "skill_";
+        protected const string _idleAnimationParameterName = "Idle";
+        protected int _skillAnimationParameter;
+        protected int _idleAnimationParameter;
+
 
         /// <summary>
         /// Initializes the skill, setting up necessary properties and references.
@@ -304,7 +313,7 @@ namespace _Game
         /// </summary>
         public virtual void SkillStart()
         {
-            _skillHandler.SetMovementState(CharacterStates.MovementStates.Attacking);
+            _skillHandler.SetMovementState(ActiveState);
             SkillState.ChangeState(SkillStates.SkillStart);
         }
 
@@ -318,7 +327,7 @@ namespace _Game
                 return;
             }
             _triggerReleased = true;
-            _skillHandler.SetMovementState(CharacterStates.MovementStates.Idle);
+            _skillHandler.SetMovementState(ActiveState);
             SkillState.ChangeState(SkillStates.SkillStop);
         }
 
@@ -343,9 +352,17 @@ namespace _Game
 
         public virtual void DrawGizmos() { }
 
-        public virtual void InitializeAnimatorParameters() { }
+        public virtual void InitializeAnimatorParameters()
+        {
+            _skillHandler.RegisterAnimatorParameter(_skillAnimationParameterName, AnimatorControllerParameterType.Bool, out _skillAnimationParameter);
+            _skillHandler.RegisterAnimatorParameter(_idleAnimationParameterName, AnimatorControllerParameterType.Bool, out _idleAnimationParameter);
+        }
 
-        public virtual void UpdateAnimator(Animator animator, CharacterStates.MovementStates currentState) { }
+        public virtual void UpdateAnimator(Animator animator, CharacterStates.MovementStates currentState)
+        {
+            AnimatorExtensions.UpdateAnimatorBool(animator, _skillAnimationParameter, currentState == ActiveState, Owner.AnimatorParameters);
+            AnimatorExtensions.UpdateAnimatorBool(animator, _idleAnimationParameter, currentState == CharacterStates.MovementStates.Idle, Owner.AnimatorParameters);
+        }
 
         #endregion
     }
