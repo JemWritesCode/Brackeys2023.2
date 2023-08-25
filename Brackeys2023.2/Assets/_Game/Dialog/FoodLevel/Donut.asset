@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
   m_Name: Donut
   m_EditorClassIdentifier: 
-  characterName: []
-  textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: Donut
+  - languageEnum: 1
+    LanguageGenericType: Donut
+  textColor: {r: 1, g: 0.8117648, b: 0.8352942, a: 1}

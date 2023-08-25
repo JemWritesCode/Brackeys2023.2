@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
   m_Name: MacaronTower
   m_EditorClassIdentifier: 
-  characterName: []
-  textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: Macaron Tower
+  - languageEnum: 1
+    LanguageGenericType: Macaron Tower
+  textColor: {r: 0.2509804, g: 1, b: 0.8078432, a: 1}

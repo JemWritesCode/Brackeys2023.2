@@ -1,0 +1,276 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: CupcakeDialog
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 9bca8ee5-0ef1-4ae6-9b96-48b2e778ca1c
+    TargetNodeGuid: 435be5b7-d053-4cde-b162-36d6874862fb
+  - BaseNodeGuid: 435be5b7-d053-4cde-b162-36d6874862fb
+    TargetNodeGuid: 9ddd6143-2753-4b56-a2ff-0d19b9ec6917
+  - BaseNodeGuid: 9ddd6143-2753-4b56-a2ff-0d19b9ec6917
+    TargetNodeGuid: bde66824-5b9d-4b22-8053-d1d151b21b8b
+  - BaseNodeGuid: bde66824-5b9d-4b22-8053-d1d151b21b8b
+    TargetNodeGuid: 706d5da7-83ac-49a8-9702-3635c4fe1f90
+  - BaseNodeGuid: 706d5da7-83ac-49a8-9702-3635c4fe1f90
+    TargetNodeGuid: 1f101c69-afbe-4e54-a76c-6a8c1ea6592b
+  - BaseNodeGuid: 1f101c69-afbe-4e54-a76c-6a8c1ea6592b
+    TargetNodeGuid: ba999fc6-cd50-4a64-a7af-430066ab72dd
+  - BaseNodeGuid: ba999fc6-cd50-4a64-a7af-430066ab72dd
+    TargetNodeGuid: f8dc3d11-c4d4-4e52-8142-7debe6b4fc17
+  - BaseNodeGuid: f8dc3d11-c4d4-4e52-8142-7debe6b4fc17
+    TargetNodeGuid: 9e041efe-f8a5-4eaf-b76b-c224dd116fae
+  - BaseNodeGuid: 9e041efe-f8a5-4eaf-b76b-c224dd116fae
+    TargetNodeGuid: 88c3ce8b-eeeb-4e6f-b31c-95ee115be35f
+  - BaseNodeGuid: 88c3ce8b-eeeb-4e6f-b31c-95ee115be35f
+    TargetNodeGuid: a788d7c2-4783-40f8-a89a-baeb5ce8201f
+  - BaseNodeGuid: a788d7c2-4783-40f8-a89a-baeb5ce8201f
+    TargetNodeGuid: 02caa033-24fe-4edb-bbd2-708f1a247302
+  - BaseNodeGuid: 02caa033-24fe-4edb-bbd2-708f1a247302
+    TargetNodeGuid: 03016a57-c3a0-4f7c-91d3-3c11aeffbd16
+  - BaseNodeGuid: 03016a57-c3a0-4f7c-91d3-3c11aeffbd16
+    TargetNodeGuid: f9b6db76-8f79-4d1f-8dc2-0207f526abff
+  - BaseNodeGuid: f9b6db76-8f79-4d1f-8dc2-0207f526abff
+    TargetNodeGuid: ecdb8ac4-53dc-4e60-88df-2841463f74db
+  - BaseNodeGuid: ecdb8ac4-53dc-4e60-88df-2841463f74db
+    TargetNodeGuid: d6e00609-aa1c-4ca3-aedb-ebdec7b40aa2
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 435be5b7-d053-4cde-b162-36d6874862fb
+    Position: {x: 362, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: d5d1e7d6f8844d447b02696f3532b273, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Hi, hi, hi! I missed you!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 9ddd6143-2753-4b56-a2ff-0d19b9ec6917
+    Position: {x: 626.8, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Oh, hello. You missed me?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 706d5da7-83ac-49a8-9702-3635c4fe1f90
+    Position: {x: 1111.6, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I guess rewards are pretty sweet, yeah.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: bde66824-5b9d-4b22-8053-d1d151b21b8b
+    Position: {x: 860.8, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: d5d1e7d6f8844d447b02696f3532b273, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Yes, yes! We have so much fun together! You always get
+        the best prizes!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 1f101c69-afbe-4e54-a76c-6a8c1ea6592b
+    Position: {x: 1375.2, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Did you prefer the snacks for any other reasons aside
+        from convenience?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: ba999fc6-cd50-4a64-a7af-430066ab72dd
+    Position: {x: 1673.6, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I like sweets a lot, they taste great and I was always
+        happy to get them. Really big for my mood.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: f8dc3d11-c4d4-4e52-8142-7debe6b4fc17
+    Position: {x: 1974.8, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: d5d1e7d6f8844d447b02696f3532b273, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Yeah! Rewards! Rewards are good, sweets are rewards! Eat
+        sweets all the time and be happy!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 9e041efe-f8a5-4eaf-b76b-c224dd116fae
+    Position: {x: 2227.6, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: But if you had them all the time, would they stay rewarding?
+        Did they start feeling a little boring after a while?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 88c3ce8b-eeeb-4e6f-b31c-95ee115be35f
+    Position: {x: 2485.6, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I tried getting something different each time, but you
+        have a point. They haven't felt as special lately.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: a788d7c2-4783-40f8-a89a-baeb5ce8201f
+    Position: {x: 2745.2, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: d5d1e7d6f8844d447b02696f3532b273, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: All the time! All the time! Have fun all the time!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 02caa033-24fe-4edb-bbd2-708f1a247302
+    Position: {x: 3009.2, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: d5d1e7d6f8844d447b02696f3532b273, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ' I can''t, not right now. I need to take a break, so
+        everything that''s fun can stay that way.'
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: f9b6db76-8f79-4d1f-8dc2-0207f526abff
+    Position: {x: 3528.4, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: d5d1e7d6f8844d447b02696f3532b273, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ' I''m sorry. I have to go.'
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 03016a57-c3a0-4f7c-91d3-3c11aeffbd16
+    Position: {x: 3291.2, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: d5d1e7d6f8844d447b02696f3532b273, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: No... no, you can't leave! You can't! I won't let you!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: ecdb8ac4-53dc-4e60-88df-2841463f74db
+    Position: {x: 3782, y: 332}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: d5d1e7d6f8844d447b02696f3532b273, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Then maybe... maybe it's my turn to win the prize now!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: d6e00609-aa1c-4ca3-aedb-ebdec7b40aa2
+    Position: {x: 4056, y: 378.4}
+    EndNodeType: 0
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 9bca8ee5-0ef1-4ae6-9b96-48b2e778ca1c
+    Position: {x: 224, y: 332}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []

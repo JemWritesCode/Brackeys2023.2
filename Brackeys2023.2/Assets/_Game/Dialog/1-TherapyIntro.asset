@@ -15,26 +15,40 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: 9d113ae3-aa9f-4cb8-9bab-6dc4df886d32
     TargetNodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
+  - BaseNodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
+    TargetNodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
   - BaseNodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
     TargetNodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
   - BaseNodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
     TargetNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+  - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+    TargetNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
+  - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+    TargetNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
   - BaseNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
     TargetNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
   - BaseNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
     TargetNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
-  - BaseNodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
-    TargetNodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
+  - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+    TargetNodeGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
+  - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+    TargetNodeGuid: 602d0cf3-517c-43dd-bacd-79d34af05406
   - BaseNodeGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
     TargetNodeGuid: 92073d22-7af9-4a5a-ab54-267b910d498d
+  - BaseNodeGuid: 92073d22-7af9-4a5a-ab54-267b910d498d
+    TargetNodeGuid: 6ba44d72-d4ae-4b22-98e3-18b90701bba1
   - BaseNodeGuid: 6ba44d72-d4ae-4b22-98e3-18b90701bba1
     TargetNodeGuid: 379917ea-59c6-4003-9ffe-d2fb4a66d4cc
-  - BaseNodeGuid: 01fce7c4-8d11-48bc-b3f6-72503dbfb930
-    TargetNodeGuid: 86337beb-a58b-4723-9487-f6afa60e960c
   - BaseNodeGuid: 379917ea-59c6-4003-9ffe-d2fb4a66d4cc
     TargetNodeGuid: 01fce7c4-8d11-48bc-b3f6-72503dbfb930
+  - BaseNodeGuid: 01fce7c4-8d11-48bc-b3f6-72503dbfb930
+    TargetNodeGuid: 86337beb-a58b-4723-9487-f6afa60e960c
   - BaseNodeGuid: 86337beb-a58b-4723-9487-f6afa60e960c
     TargetNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
+  - BaseNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
+    TargetNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
+  - BaseNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
+    TargetNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
   - BaseNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
     TargetNodeGuid: 8db75f3e-f027-4208-a8af-247554df719b
   - BaseNodeGuid: 8db75f3e-f027-4208-a8af-247554df719b
@@ -53,74 +67,6 @@ MonoBehaviour:
     TargetNodeGuid: cbe0f216-0126-4b1e-a621-7737943b8ed7
   - BaseNodeGuid: cbe0f216-0126-4b1e-a621-7737943b8ed7
     TargetNodeGuid: 1113a50a-ca6c-4951-bde4-e3f722628bbe
-  - BaseNodeGuid: 92073d22-7af9-4a5a-ab54-267b910d498d
-    TargetNodeGuid: 6ba44d72-d4ae-4b22-98e3-18b90701bba1
-  - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
-    TargetNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
-  - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
-    TargetNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
-  - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
-    TargetNodeGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
-  - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
-    TargetNodeGuid: 602d0cf3-517c-43dd-bacd-79d34af05406
-  - BaseNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
-    TargetNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
-  - BaseNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
-    TargetNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
-  - BaseNodeGuid: 9d113ae3-aa9f-4cb8-9bab-6dc4df886d32
-    TargetNodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
-  - BaseNodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
-    TargetNodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
-  - BaseNodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
-    TargetNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
-  - BaseNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
-    TargetNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
-  - BaseNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
-    TargetNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
-  - BaseNodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
-    TargetNodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
-  - BaseNodeGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
-    TargetNodeGuid: 92073d22-7af9-4a5a-ab54-267b910d498d
-  - BaseNodeGuid: 6ba44d72-d4ae-4b22-98e3-18b90701bba1
-    TargetNodeGuid: 379917ea-59c6-4003-9ffe-d2fb4a66d4cc
-  - BaseNodeGuid: 01fce7c4-8d11-48bc-b3f6-72503dbfb930
-    TargetNodeGuid: 86337beb-a58b-4723-9487-f6afa60e960c
-  - BaseNodeGuid: 379917ea-59c6-4003-9ffe-d2fb4a66d4cc
-    TargetNodeGuid: 01fce7c4-8d11-48bc-b3f6-72503dbfb930
-  - BaseNodeGuid: 86337beb-a58b-4723-9487-f6afa60e960c
-    TargetNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
-  - BaseNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
-    TargetNodeGuid: 8db75f3e-f027-4208-a8af-247554df719b
-  - BaseNodeGuid: 8db75f3e-f027-4208-a8af-247554df719b
-    TargetNodeGuid: 1fd6679f-7776-419a-8a2a-dbce4fbdbd1d
-  - BaseNodeGuid: 1fd6679f-7776-419a-8a2a-dbce4fbdbd1d
-    TargetNodeGuid: 38b582e9-33db-46f9-afec-a0aaf56ecea6
-  - BaseNodeGuid: 38b582e9-33db-46f9-afec-a0aaf56ecea6
-    TargetNodeGuid: d5e0fc7a-0e65-4824-89d1-3414ee63ba43
-  - BaseNodeGuid: d5e0fc7a-0e65-4824-89d1-3414ee63ba43
-    TargetNodeGuid: 52e49099-c63a-4ce8-8a52-35001ec5cee3
-  - BaseNodeGuid: 52e49099-c63a-4ce8-8a52-35001ec5cee3
-    TargetNodeGuid: 937c2c54-114f-4151-bd98-c6371e8cba0d
-  - BaseNodeGuid: 937c2c54-114f-4151-bd98-c6371e8cba0d
-    TargetNodeGuid: 5bf43a88-ef16-4441-805d-be847342d9b1
-  - BaseNodeGuid: 602d0cf3-517c-43dd-bacd-79d34af05406
-    TargetNodeGuid: cbe0f216-0126-4b1e-a621-7737943b8ed7
-  - BaseNodeGuid: cbe0f216-0126-4b1e-a621-7737943b8ed7
-    TargetNodeGuid: 1113a50a-ca6c-4951-bde4-e3f722628bbe
-  - BaseNodeGuid: 92073d22-7af9-4a5a-ab54-267b910d498d
-    TargetNodeGuid: 6ba44d72-d4ae-4b22-98e3-18b90701bba1
-  - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
-    TargetNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
-  - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
-    TargetNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
-  - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
-    TargetNodeGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
-  - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
-    TargetNodeGuid: 602d0cf3-517c-43dd-bacd-79d34af05406
-  - BaseNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
-    TargetNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
-  - BaseNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
-    TargetNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
   - BaseNodeGuid: 1113a50a-ca6c-4951-bde4-e3f722628bbe
     TargetNodeGuid: 58c10a67-2cd1-414c-9077-0d412f7e8422
   - BaseNodeGuid: 58c10a67-2cd1-414c-9077-0d412f7e8422
@@ -152,38 +98,6 @@ MonoBehaviour:
   - BaseNodeGuid: 049fed63-207d-4524-ad7d-533f461979b1
     TargetNodeGuid: 947440e7-14e6-4f8d-9476-8a8123bad996
   DialogueChoiceNodeDatas:
-  - NodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
-    Position: {x: 329.59998, y: -104}
-    DialogueNodePorts:
-    - InputGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
-      OutputGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
-      TextLanguage:
-      - languageEnum: 0
-        LanguageGenericType: I want to deal with my problems, head-on. I'll figure
-          it out as I go.
-      - languageEnum: 1
-        LanguageGenericType: "Odpowied\u017A Pierwsza"
-    - InputGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
-      OutputGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
-      TextLanguage:
-      - languageEnum: 0
-        LanguageGenericType: I like to learn a bit more first, then handle things
-          once I know better how.
-      - languageEnum: 1
-        LanguageGenericType: Odpowiedz Druga
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 8300000, guid: 56ef6313c5e50d040ac1e663643dc0a9, type: 3}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 8300000, guid: ffff11e940c85354e985a24a220d5f97, type: 3}
-    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: 'No matter how you want to continue, please remember:
-        there are no wrong answers.'
-    - languageEnum: 1
-      LanguageGenericType: "To teraz wybierz jedn\u0105 z dw\xF3ch odpowiedzi"
-    Duration: 5
   - NodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
     Position: {x: 969.2, y: -31.2}
     DialogueNodePorts:
@@ -248,24 +162,41 @@ MonoBehaviour:
     - languageEnum: 1
       LanguageGenericType: 
     Duration: 5
-  DialogueNodeDatas:
-  - NodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
-    Position: {x: -160, y: -104}
-    DialogueNodePorts: []
+  - NodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+    Position: {x: 329.6, y: -104}
+    DialogueNodePorts:
+    - InputGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
+      OutputGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I want to deal with my problems, head-on. I'll figure
+          it out as I go.
+      - languageEnum: 1
+        LanguageGenericType: "Odpowied\u017A Pierwsza"
+    - InputGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
+      OutputGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I like to learn a bit more first, then handle things
+          once I know better how.
+      - languageEnum: 1
+        LanguageGenericType: Odpowiedz Druga
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 0}
     - languageEnum: 1
-      LanguageGenericType: {fileID: 8300000, guid: 5bdb55298bae76e4695de14d7a9f7f87, type: 3}
+      LanguageGenericType: {fileID: 8300000, guid: ffff11e940c85354e985a24a220d5f97, type: 3}
     Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
     TextType:
     - languageEnum: 0
-      LanguageGenericType: We can chat about anything on your mind.
+      LanguageGenericType: 'No matter how you want to continue, please remember:
+        there are no wrong answers.'
     - languageEnum: 1
-      LanguageGenericType: Will, a ty?
+      LanguageGenericType: "To teraz wybierz jedn\u0105 z dw\xF3ch odpowiedzi"
     Duration: 5
+  DialogueNodeDatas:
   - NodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
-    Position: {x: 89.600006, y: -104}
+    Position: {x: 89.6, y: -104}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -293,55 +224,6 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I can appreciate that. The more tools you have, the more
         ways you can tackle life on your own terms.
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 10
-  - NodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
-    Position: {x: 700.8, y: -179.59999}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 8300000, guid: 8438d2309e29930429761d6fcce62d9e, type: 3}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 8300000, guid: 3184d7db1708f40429277de97485e464, type: 3}
-    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: Absolutely. Sometimes, we just need to stand up and face
-        our fears, and we can work through anything.
-    - languageEnum: 1
-      LanguageGenericType: "Dobra odpowied\u017C, obie prowadzi\u0142y do tego samego
-        ale mo\u017Cesz poprowadzi\u0107 wiele opcji dialogowych"
-    Duration: 10
-  - NodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
-    Position: {x: -400, y: -104}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 8300000, guid: 5dda1ead42fd2714395cadd0b9374915, type: 3}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 8300000, guid: 2d60e2dd402bc55429dd4f8444cc3ab1, type: 3}
-    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: Hello, and good morning! Thank you for taking the time
-        to talk today.
-    - languageEnum: 1
-      LanguageGenericType: "Kim jeste\u015B?"
-    Duration: 5
-  - NodeGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
-    Position: {x: 1402.8, y: -179.59999}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: I'm sorry to hear that, it must be hard getting through
-        the day. Are you having trouble sleeping?
     - languageEnum: 1
       LanguageGenericType: 
     Duration: 10
@@ -378,7 +260,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 379917ea-59c6-4003-9ffe-d2fb4a66d4cc
-    Position: {x: 2190.4001, y: -179.59999}
+    Position: {x: 2190.4, y: -179.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -442,7 +324,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 92073d22-7af9-4a5a-ab54-267b910d498d
-    Position: {x: 1661.2001, y: -179.59999}
+    Position: {x: 1661.2, y: -179.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -490,7 +372,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: cbe0f216-0126-4b1e-a621-7737943b8ed7
-    Position: {x: 1661.2001, y: 165.6}
+    Position: {x: 1661.2, y: 165.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -506,7 +388,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 58c10a67-2cd1-414c-9077-0d412f7e8422
-    Position: {x: 2190.4001, y: 149.6}
+    Position: {x: 2190.4, y: 149.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -534,52 +416,6 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: I think her brother was popping them. Just a boy having
         fun, but I don't remember much of him.
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 10
-  - NodeGuid: 4cb152f9-8102-4295-aebd-2db997c2de4e
-    Position: {x: 2719.6, y: 149.6}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: Do you remember anything else about that day?
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 10
-  - NodeGuid: a68ed1af-c26c-47f7-afe2-9913c2d73923
-    Position: {x: 2995.6, y: 149.6}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: There were these big inflatable guys too. Like, really
-        big. I remember they were pretty scary.
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 10
-  - NodeGuid: 5db0a1f9-b3e4-46d0-85a6-4973275855fb
-    Position: {x: 3317.2, y: 149.6}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: That does sound like it could have been a traumatic experience.
     - languageEnum: 1
       LanguageGenericType: 
     Duration: 10
@@ -695,7 +531,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 52e49099-c63a-4ce8-8a52-35001ec5cee3
-    Position: {x: 5623.5996, y: -179.59999}
+    Position: {x: 5623.6, y: -179.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -740,23 +576,6 @@ MonoBehaviour:
       LanguageGenericType: "Okay, let's start with some meditation before we dive
         into your psyche. Picture a giant pool, you\u2019re a diver and you climb
         up the high dive. "
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 10
-  - NodeGuid: ed63c15e-42ec-451d-b908-1d96ebb5cd2b
-    Position: {x: 5623.5996, y: 149.6}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: You come to the end of the diving board and start to bounce.
-        Bounce one, two, three, times and as your feet leave the board you dive down
-        into the water.
     - languageEnum: 1
       LanguageGenericType: 
     Duration: 10
@@ -808,18 +627,145 @@ MonoBehaviour:
     - languageEnum: 1
       LanguageGenericType: 
     Duration: 10
+  - NodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
+    Position: {x: -400, y: -104}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: 2d60e2dd402bc55429dd4f8444cc3ab1, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Hello, and good morning! Thank you for taking the time
+        to talk today.
+    - languageEnum: 1
+      LanguageGenericType: "Kim jeste\u015B?"
+    Duration: 5
+  - NodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
+    Position: {x: -160, y: -104}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: 5bdb55298bae76e4695de14d7a9f7f87, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: We can chat about anything on your mind.
+    - languageEnum: 1
+      LanguageGenericType: Will, a ty?
+    Duration: 5
+  - NodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
+    Position: {x: 700.8, y: -179.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: 3184d7db1708f40429277de97485e464, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Absolutely. Sometimes, we just need to stand up and face
+        our fears, and we can work through anything.
+    - languageEnum: 1
+      LanguageGenericType: "Dobra odpowied\u017C, obie prowadzi\u0142y do tego samego
+        ale mo\u017Cesz poprowadzi\u0107 wiele opcji dialogowych"
+    Duration: 10
+  - NodeGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
+    Position: {x: 1402.8, y: -179.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I'm sorry to hear that, it must be hard getting through
+        the day. Are you having trouble sleeping?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 4cb152f9-8102-4295-aebd-2db997c2de4e
+    Position: {x: 2719.6, y: 149.6}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Do you remember anything else about that day?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: a68ed1af-c26c-47f7-afe2-9913c2d73923
+    Position: {x: 2995.6, y: 149.6}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: There were these big inflatable guys too. Like, really
+        big. I remember they were pretty scary.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 5db0a1f9-b3e4-46d0-85a6-4973275855fb
+    Position: {x: 3316.4, y: 149.6}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: That does sound like it could have been a traumatic experience.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: ed63c15e-42ec-451d-b908-1d96ebb5cd2b
+    Position: {x: 5623.6, y: 149.6}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: You come to the end of the diving board and start to bounce.
+        Bounce one, two, three, times and as your feet leave the board you dive down
+        into the water.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 5bf43a88-ef16-4441-805d-be847342d9b1
     Position: {x: 6212.8, y: -179.59999}
     EndNodeType: 0
   - NodeGuid: 947440e7-14e6-4f8d-9476-8a8123bad996
-    Position: {x: 6515.1997, y: 149.6}
+    Position: {x: 6515.2, y: 149.6}
     EndNodeType: 0
   EventNodeDatas: []
   StartNodeDatas:
   - NodeGuid: 9d113ae3-aa9f-4cb8-9bab-6dc4df886d32
-    Position: {x: -500.80002, y: -104}
+    Position: {x: -500.8, y: -104}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
