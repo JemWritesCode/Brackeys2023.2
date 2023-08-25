@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Game/Scenes/JemWorkScenes/TherapistOffice v1 PreDialog.unity
-    guid: a3bcd7f058376cb4d8d34a9d133aa9aa
+    path: Assets/_Game/Scenes/GameLevels/0-TherapistOffice.unity
+    guid: d175ab55005b4924daf3818458d7c5bf
   m_configObjects: {}
