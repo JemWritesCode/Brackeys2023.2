@@ -10,6 +10,7 @@ namespace _Game
     public abstract class Skill : ScriptableObject
     {
         public enum TriggerModes { SemiAuto, Auto }
+        public enum UpdateModes { Update, FixedUpdate }
 
         public enum SkillStates
         {
@@ -35,14 +36,14 @@ namespace _Game
         [Tooltip("Visual representation of the skill.")]
         public Sprite Icon;
 
-        //[Tooltip("Layers that can be targeted or affected by this skill.")]
-        //public LayerMask TargetLayers;
-
         [Tooltip("The skill's state machine.")]
         public StateMachine<SkillStates> SkillState;
 
         [Tooltip("Percentage modifier of the skill. Used for damage calculations and can be safely left 0.")]
         public float PercentageModifier = 0f;
+
+        [Tooltip("The update mode of the skill (Update or FixedUpdate).")]
+        public UpdateModes UpdateMode = UpdateModes.Update;
 
         [Header("Use")]
         [Tooltip("The trigger mode of the skill (SemiAuto or Auto).")]
@@ -303,6 +304,7 @@ namespace _Game
         /// </summary>
         public virtual void SkillStart()
         {
+            _skillHandler.SetMovementState(CharacterStates.MovementStates.Attacking);
             SkillState.ChangeState(SkillStates.SkillStart);
         }
 
@@ -316,6 +318,7 @@ namespace _Game
                 return;
             }
             _triggerReleased = true;
+            _skillHandler.SetMovementState(CharacterStates.MovementStates.Idle);
             SkillState.ChangeState(SkillStates.SkillStop);
         }
 
@@ -339,6 +342,10 @@ namespace _Game
         }
 
         public virtual void DrawGizmos() { }
+
+        public virtual void InitializeAnimatorParameters() { }
+
+        public virtual void UpdateAnimator(Animator animator, CharacterStates.MovementStates currentState) { }
 
         #endregion
     }

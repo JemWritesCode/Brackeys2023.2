@@ -460,10 +460,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1056699727078928779, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
       propertyPath: Skills.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1056699727078928779, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
       propertyPath: Skills.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b14d0e9a0c1af24ca5b4cade44d1026, type: 2}
+    - target: {fileID: 1056699727078928779, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
+      propertyPath: Skills.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: bc3f3e3d6e89da043a36a4c91c091316, type: 2}
     - target: {fileID: 2073542228940434680, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}

@@ -106,10 +106,7 @@ namespace JadePhoenix.Gameplay
             DamageSegment.fillAmount = damageTaken;
         }
 
-        public virtual void ToggleChatBox(string text)
-        {
 
-        }
 
         #region BUTTON METHODS
 
