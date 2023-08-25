@@ -409,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3347429, y: 0.00000003242747, z: -0.000000011519427, w: 0.9423095}
+  m_LocalRotation: {x: 0.3347429, y: -0.000000032427472, z: 0.000000011519429, w: 0.9423095}
   m_LocalPosition: {x: 0, y: 10, z: -9.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -458,25 +458,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1056699727078928779, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
-      propertyPath: Skills.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1056699727078928779, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
-      propertyPath: Skills.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 9b14d0e9a0c1af24ca5b4cade44d1026, type: 2}
-    - target: {fileID: 1056699727078928779, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
-      propertyPath: Skills.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: bc3f3e3d6e89da043a36a4c91c091316, type: 2}
     - target: {fileID: 2073542228940434680, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016213734
+      value: -0.000000016213736
       objectReference: {fileID: 0}
     - target: {fileID: 2073542228940434680, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000057597136
+      value: 0.0000000057597154
       objectReference: {fileID: 0}
     - target: {fileID: 6622444280359759646, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
       propertyPath: m_Name
