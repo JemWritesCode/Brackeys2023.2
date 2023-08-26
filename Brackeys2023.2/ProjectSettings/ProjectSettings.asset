@@ -44,8 +44,8 @@ PlayerSettings:
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
-  defaultScreenWidthWeb: 960
-  defaultScreenHeightWeb: 600
+  defaultScreenWidthWeb: 1280
+  defaultScreenHeightWeb: 800
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 0
   m_SpriteBatchVertexThreshold: 300
@@ -638,7 +638,9 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: MEET_AND_TALK
+    WebGL: MEET_AND_TALK
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

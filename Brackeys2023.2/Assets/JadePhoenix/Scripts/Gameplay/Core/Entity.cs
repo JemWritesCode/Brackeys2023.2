@@ -56,9 +56,6 @@ namespace JadePhoenix.Gameplay
         /// <summary>
         /// Processes entity's actions and updates the state.
         /// </summary>
-        protected virtual void EveryFrame()
-        {
-            // Entity-specific processing logic
-        }
+        protected virtual void EveryFrame() { }
     }
 }

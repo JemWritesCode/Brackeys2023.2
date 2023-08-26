@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace _Game
 {
-    [CreateAssetMenu(fileName = "New MeleeSkill", menuName = "Skills/MeleeSkill")]
+    [CreateAssetMenu(fileName = "New MeleeSkill", menuName = "Skills/Melee")]
     public class MeleeSkill : Skill
     {
         public enum MeleeDamageAreaShapes { Box, Sphere }
@@ -23,21 +23,12 @@ namespace _Game
         public Vector3 AreaOffset = new Vector3(1, 0);
 
         [Header("Damage Area Timing")]
-        [Tooltip("The initial delay before the damage area becomes active.")]
-        public float InitialDelay = 0f;
-
-        [Tooltip("Base duration the damage area stays active.")]
-        public float BaseActiveDuration = 2f;
-
-        [Tooltip("Variable to modify or extend the active duration dynamically.")]
-        public float ActiveDuration;
+        [Tooltip("The additional delay before the damage area becomes active. This is added on to the skill's delay on use.")]
+        public float AdditionalDelay = 0f;
 
         [Header("Damage Caused")]
         [Tooltip("LayerMask determining which objects can be damaged.")]
         public LayerMask TargetLayerMask;
-
-        [Tooltip("Amount of damage dealt by the area.")]
-        public int DamageCaused = 10;
 
         [Tooltip("Style or type of knockback applied when damaged.")]
         public DamageOnTouch.KnockbackStyles Knockback;
@@ -51,19 +42,20 @@ namespace _Game
         [Tooltip("Determines if the owner can be damaged by this damage area.")]
         public bool CanDamageOwner = false;
 
-        protected Collider _damageAreaCollider;
+        [SerializeField, ReadOnly]
         protected bool _attackInProgress = false;
         protected Color _gizmosColor;
         protected Vector3 _gizmoSize;
+        protected Vector3 _gizmoOffset;
         protected BoxCollider _boxCollider;
         protected SphereCollider _sphereCollider;
-        protected Vector3 _gizmoOffset;
         protected DamageOnTouch _damageOnTouch;
         protected GameObject _damageArea;
+        protected Collider _damageAreaCollider;
 
-        public override void Initialization(Character owner)
+        public override void Initialization(Character owner, int index)
         {
-            base.Initialization(owner);
+            base.Initialization(owner, index);
 
             if (_damageArea == null)
             {
@@ -74,8 +66,43 @@ namespace _Game
             {
                 _damageOnTouch.Owner = Owner.gameObject;
             }
+        }
 
-            ActiveDuration = BaseActiveDuration;
+        protected override void ProvideCharge()
+        {
+            base.ProvideCharge();
+            _skillHandler.ModifyCharge(_skillHandler.ChargeDamageIncrement);
+        }
+
+        public override void SkillUse()
+        {
+            base.SkillUse();
+            _skillHandler.StartCoroutine(MeleeSkillAttackCoroutine());
+        }
+
+        public override void DrawGizmos()
+        {
+            if (Owner == null) return;
+
+            // Store the original Gizmos matrix
+            Matrix4x4 oldGizmosMatrix = Gizmos.matrix;
+
+            // Set the Gizmos matrix to the Owner's transform matrix
+            Gizmos.matrix = Matrix4x4.TRS(Owner.transform.position, Owner.transform.rotation, Vector3.one);
+
+            switch (DamageAreaShape)
+            {
+                case MeleeDamageAreaShapes.Box:
+                    Gizmos.DrawWireCube(AreaOffset, AreaSize);
+                    break;
+
+                case MeleeDamageAreaShapes.Sphere:
+                    Gizmos.DrawWireSphere(AreaOffset, AreaSize.x / 2);
+                    break;
+            }
+
+            // Restore the original Gizmos matrix
+            Gizmos.matrix = oldGizmosMatrix;
         }
 
         protected virtual void CreateDamageArea()
@@ -111,7 +138,7 @@ namespace _Game
             _damageOnTouch.SetGizmoSize(AreaSize);
             _damageOnTouch.SetGizmoOffset(AreaOffset);
             _damageOnTouch.TargetLayerMask = TargetLayerMask;
-            _damageOnTouch.DamageCaused = DamageCaused;
+            _damageOnTouch.DamageCaused = _skillHandler.GetDamageTotal(this);
             _damageOnTouch.DamageCausedKnockbackType = Knockback;
             _damageOnTouch.DamageCausedKnockbackForce = KnockbackForce;
             _damageOnTouch.InvincibilityDuration = InvincibilityDuration;
@@ -126,6 +153,11 @@ namespace _Game
         {
             if (_damageAreaCollider != null)
             {
+                if (ProvidesCharge)
+                {
+                    _damageOnTouch.DamageDealt += ProvideCharge;
+                }
+                _damageOnTouch.DamageCaused = _skillHandler.GetDamageTotal(this);
                 _damageAreaCollider.enabled = true;
             }
         }
@@ -134,6 +166,10 @@ namespace _Game
         {
             if (_damageAreaCollider != null)
             {
+                if (ProvidesCharge)
+                {
+                    _damageOnTouch.DamageDealt -= ProvideCharge;
+                }
                 _damageAreaCollider.enabled = false;
             }
             else
@@ -142,50 +178,22 @@ namespace _Game
             }
         }
 
-        public override void SkillUse()
-        {
-            base.SkillUse();
-            Owner.StartCoroutine(MeleeSkillAttackCoroutine());
-        }
-
         protected virtual IEnumerator MeleeSkillAttackCoroutine()
         {
-            if (_attackInProgress) { yield break; }
+            if (_attackInProgress) 
+            {
+                yield break; 
+            }
 
             _attackInProgress = true;
 
-            yield return new WaitForSeconds(InitialDelay);
+            yield return new WaitForSeconds(AdditionalDelay);
             EnableDamageArea();
 
-            yield return new WaitForSeconds(ActiveDuration);
+            yield return new WaitForSeconds(SkillDuration);
             DisableDamageArea();
 
             _attackInProgress = false;
-        }
-
-        public override void DrawGizmos()
-        {
-            if (Owner == null) return;
-
-            // Store the original Gizmos matrix
-            Matrix4x4 oldGizmosMatrix = Gizmos.matrix;
-
-            // Set the Gizmos matrix to the Owner's transform matrix
-            Gizmos.matrix = Matrix4x4.TRS(Owner.transform.position, Owner.transform.rotation, Vector3.one);
-
-            switch (DamageAreaShape)
-            {
-                case MeleeDamageAreaShapes.Box:
-                    Gizmos.DrawWireCube(AreaOffset, AreaSize);
-                    break;
-
-                case MeleeDamageAreaShapes.Sphere:
-                    Gizmos.DrawWireSphere(AreaOffset, AreaSize.x / 2);
-                    break;
-            }
-
-            // Restore the original Gizmos matrix
-            Gizmos.matrix = oldGizmosMatrix;
         }
     }
 }

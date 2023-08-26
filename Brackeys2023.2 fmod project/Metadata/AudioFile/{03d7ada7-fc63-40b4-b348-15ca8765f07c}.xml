@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{03d7ada7-fc63-40b4-b348-15ca8765f07c}">
+		<property name="assetPath">
+			<value>Cupcake_EnemyBarks.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>168.60710416666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4310d54c-e4ea-4d34-8a1d-8701c9e2c25d}</destination>
+		</relationship>
+	</object>
+</objects>

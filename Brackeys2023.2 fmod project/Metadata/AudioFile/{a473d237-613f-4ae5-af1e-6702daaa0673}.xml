@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{a473d237-613f-4ae5-af1e-6702daaa0673}">
+		<property name="assetPath">
+			<value>enemy barks/macaron tower enemy barks/attacking/Macaron Tower - You will pay for your insolence.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>2.4165759637188207</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4310d54c-e4ea-4d34-8a1d-8701c9e2c25d}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec9ba021ec1749f4bb169715cb06b4ab, type: 3}
+  m_Name: PlayerDash
+  m_EditorClassIdentifier: 
+  ID: roll
+  Name: Dash
+  Description: Test
+  Icon: {fileID: 21300000, guid: ac2c554446458b64da3a6d5b54ef5941, type: 3}
+  SkillState:
+    Target: {fileID: 0}
+    DebugCurrentState: 0
+  PercentageModifier: 0
+  UpdateMode: 1
+  ActiveState: 4
+  TriggerMode: 1
+  DelayBeforeUse: 0
+  DelayBeforeUseReleaseInterruption: 0
+  Cooldown: 2
+  SkillDuration: 1.2
+  ChargeConsumption: 0
+  PartialChargeConsumeAmount: 25
+  ProvidesCharge: 0
+  ContinuousPress: 1
+  GettingHitInterruptsSkill: 0
+  RecoilForce: 0
+  Interruptible: 0
+  RestrictMovement: 1
+  RestrictRotation: 1
+  DashMode: 1
+  DashDirection: {x: 0, y: 0, z: 1}
+  DashDistance: 12
+  DashCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.56603795
+      outSlope: 0.56603795
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.14583331
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

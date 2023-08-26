@@ -1,5 +1,6 @@
 using JadePhoenix.Gameplay;
 using JadePhoenix.Tools;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -10,6 +11,8 @@ namespace _Game
     public abstract class Skill : ScriptableObject
     {
         public enum TriggerModes { SemiAuto, Auto }
+        public enum UpdateModes { Update, FixedUpdate }
+        public enum ChargeConsumptionModes { None, Partial, Full }
 
         public enum SkillStates
         {
@@ -23,7 +26,7 @@ namespace _Game
         }
 
         [Header("Skill Data")]
-        [Tooltip("Unique identifier for the skill.")]
+        [Tooltip("Unique identifier for the skill. Used for animations.")]
         public string ID;
 
         [Tooltip("Display name of the skill.")]
@@ -35,17 +38,23 @@ namespace _Game
         [Tooltip("Visual representation of the skill.")]
         public Sprite Icon;
 
-        [Tooltip("Layers that can be targeted or affected by this skill.")]
-        public LayerMask TargetLayers;
-
         [Tooltip("The skill's state machine.")]
         public StateMachine<SkillStates> SkillState;
 
+        [Tooltip("Percentage modifier of the skill. Used for damage calculations and can be safely left 0.")]
+        public float PercentageModifier = 0f;
+
+        [Tooltip("The update mode of the skill (Update or FixedUpdate).")]
+        public UpdateModes UpdateMode = UpdateModes.Update;
+
         [Header("Use")]
+        [Tooltip("What state this skill should put the state machine in when activated.")]
+        public CharacterStates.MovementStates ActiveState = CharacterStates.MovementStates.Attacking;
+
         [Tooltip("The trigger mode of the skill (SemiAuto or Auto).")]
         public TriggerModes TriggerMode = TriggerModes.Auto;
 
-        [Tooltip("The delay before the skill can be used for every activation.")]
+        [Tooltip("The delay (in seconds) before the skill can be used for every activation.")]
         public float DelayBeforeUse = 0f;
 
         [Tooltip("Determines if the delay before use can be interrupted by releasing the button.")]
@@ -53,6 +62,19 @@ namespace _Game
 
         [Tooltip("Time (in seconds) required for the skill to be ready for use again after activation.")]
         public float Cooldown = 1f;
+
+        [Tooltip("Time (in seconds) that the skill takes to finish. Will usually be the length of the animation.")]
+        public float SkillDuration = 0f;
+
+        [Header("Charge")]
+        [Tooltip("The mode of charge consumption for the skill.")]
+        public ChargeConsumptionModes ChargeConsumption = ChargeConsumptionModes.None;
+
+        [Tooltip("The amount of charge consumed on use. Only used if ChargeConsumption is set to Partial.")]
+        public float PartialChargeConsumeAmount = 25f;
+
+        [Tooltip("Determines if the skill provides charge to the SkillHandler.")]
+        public bool ProvidesCharge = false;
 
         [Header("Settings")]
         [Tooltip("Whether this skill's button can be held to repeatedly cast.")]
@@ -70,27 +92,43 @@ namespace _Game
         [Tooltip("Determines if the skill restricts the owner's movement.")]
         public bool RestrictMovement = false;
 
+        [Tooltip("Determines if the skill restricts the player's rotation.")]
+        public bool RestrictRotation = false;
+
         [Tooltip("The character that owns this skill.")]
         public Character Owner { get; protected set; }
 
-        [Tooltip("The skill's owner's CharacterSkillHandler component.")]
-        public CharacterSkillHandler OwnerSkillHandler { get; set; }
-
         protected Timer _cooldownTimer;
         protected Timer _delayBeforeUseTimer;
+        protected Timer _skillDurationTimer;
         protected bool _triggerReleased = false;
         protected TopDownController _controller;
-        protected CharacterMovement _characterMovement;
+        protected CharacterSkillHandler _skillHandler;
+        protected CharacterMovement _movement;
+        protected CharacterAiming _aiming;
+        protected int _skillIndex;
+
+        protected const string _skillAnimationParameterName = "skill_";
+        protected const string _idleAnimationParameterName = "Idle";
+        protected int _skillAnimationParameter;
+        protected int _idleAnimationParameter;
+
 
         /// <summary>
         /// Initializes the skill, setting up necessary properties and references.
         /// </summary>
         /// <param name="owner">The game object that will use or activate the skill.</param>
-        public virtual void Initialization(Character owner)
+        public virtual void Initialization(Character owner, int index)
         {
             SetOwner(owner);
-            SkillState = new StateMachine<SkillStates>(Owner.gameObject, true);
+            SkillState = new StateMachine<SkillStates>(owner.gameObject, true);
             SkillState.ChangeState(SkillStates.SkillIdle);
+
+            _cooldownTimer = new Timer(Cooldown, OnCooldownStart, OnCooldownEnd, OnCooldownUpdate);
+            _delayBeforeUseTimer = new Timer(DelayBeforeUse);
+            _skillDurationTimer = new Timer(SkillDuration);
+
+            _skillIndex = index;
         }
 
         public virtual void SetOwner(Character owner)
@@ -98,21 +136,45 @@ namespace _Game
             Owner = owner;
             if (Owner != null)
             {
-                this.OwnerSkillHandler = Owner.GetAbility<CharacterSkillHandler>();
-                _characterMovement = Owner.GetAbility<CharacterMovement>();
                 _controller = Owner.TopDownController;
+                _skillHandler = Owner.GetAbility<CharacterSkillHandler>();
+                _movement = Owner.GetAbility<CharacterMovement>();
+                _aiming = Owner.GetAbility<CharacterAiming>();
             }
         }
 
         /// <summary>
         /// Is called when the skill's cooldown starts.
         /// </summary>
-        public virtual void OnCooldownStart() { }
+        protected virtual void OnCooldownStart()
+        {
+            if (Owner.PlayerID == "Player")
+            {
+                UIManager.Instance.SkillCooldownSetFill(_skillIndex, 1);
+            }
+        }
 
         /// <summary>
         /// Is called when the skill's cooldown ends.
         /// </summary>
-        public virtual void OnCooldownEnd() { }
+        protected virtual void OnCooldownEnd()
+        {
+            if (Owner.PlayerID == "Player")
+            {
+                UIManager.Instance.SkillCooldownSetFill(_skillIndex, 0);
+            }
+        }
+
+        /// <summary>
+        /// Is called when the skill's cooldown updates.
+        /// </summary>
+        protected virtual void OnCooldownUpdate()
+        {
+            if (Owner.PlayerID == "Player")
+            {
+                UIManager.Instance.SkillCooldownSetFill(_skillIndex, _cooldownTimer.GetNormalisedTime());
+            }
+        }
 
         #region Skill STATE MACHINE CASE METHODS
 
@@ -146,19 +208,33 @@ namespace _Game
             }
         }
 
-        protected virtual void CaseSkillIdle() { }
+        protected virtual void CaseSkillIdle()
+        {
+            if (ChargeConsumption != ChargeConsumptionModes.None)
+            {
+                UIManager.Instance.SkillCooldownSetFill(_skillIndex, 1f - Mathf.Clamp01(_skillHandler.Charge / _skillHandler.MaxCharge));
+            }
+        }
 
         protected virtual void CaseSkillStart()
         {
             if (RestrictMovement)
             {
-                _characterMovement.MovementForbidden = true;
+                _movement.MovementForbidden = true;
+            }
+
+            if (RestrictRotation)
+            {
+                _aiming.RotationForbidden = true;
             }
 
             if (DelayBeforeUse > 0)
             {
-                _delayBeforeUseTimer = new Timer(DelayBeforeUse);
-                _delayBeforeUseTimer.StartTimer();
+                if (!_delayBeforeUseTimer.IsRunning)
+                {
+                    _delayBeforeUseTimer.Duration = DelayBeforeUse;
+                    _delayBeforeUseTimer.StartTimer(true, true);
+                }
                 SkillState.ChangeState(SkillStates.SkillDelayBeforeUse);
             }
             else
@@ -181,15 +257,39 @@ namespace _Game
         {
             SkillUse();
 
+            _skillDurationTimer.UpdateTimer();
+
+            if (!_skillDurationTimer.IsRunning)
+            {
+                SkillStop();
+            }
+        }
+
+        protected virtual void CaseSkillStop()
+        {
+            if (RestrictMovement)
+            {
+                _movement.MovementForbidden = false;
+            }
+
+            if (RestrictRotation)
+            {
+                _aiming.RotationForbidden = false;
+            }
+
             if (Cooldown > 0)
             {
-                _cooldownTimer = new Timer(Cooldown, OnCooldownStart, OnCooldownEnd);
-                _cooldownTimer.StartTimer();
+                if (!_cooldownTimer.IsRunning)
+                {
+                    _cooldownTimer.Duration = Cooldown;
+                    _cooldownTimer.StartTimer(true, true);
+                }
+
                 SkillState.ChangeState(SkillStates.SkillCooldown);
             }
             else
             {
-                TurnSkillOff();
+                SkillState.ChangeState(SkillStates.SkillIdle);
             }
         }
 
@@ -200,29 +300,18 @@ namespace _Game
             {
                 if ((TriggerMode == TriggerModes.Auto) && !_triggerReleased)
                 {
-                    //Debug.Log($"{this.GetType()}.CaseSkillCooldown: Skill TriggerMode is Auto and TriggerReleased equals = {_triggerReleased}, ShootRequest called.", gameObject);
                     ActivateRequest();
                 }
                 else
                 {
-                    TurnSkillOff();
+                    SkillState.ChangeState(SkillStates.SkillIdle);
                 }
             }
         }
 
-        protected virtual void CaseSkillStop()
-        {
-            if (RestrictMovement)
-            {
-                _characterMovement.MovementForbidden = true;
-            }
-
-            SkillState.ChangeState(SkillStates.SkillIdle);
-        }
-
         protected virtual void CaseSkillInterrupted()
         {
-            TurnSkillOff();
+            SkillStop();
             SkillState.ChangeState(SkillStates.SkillIdle);
         }
 
@@ -230,14 +319,67 @@ namespace _Game
 
         #region PUBLIC METHODS
 
+        public virtual bool CanCastSkill()
+        {
+            bool canCast = true;
+
+            if (SkillState.CurrentState != SkillStates.SkillIdle)
+            {
+                canCast = false;
+            }
+
+            switch (ChargeConsumption)
+            {
+                case ChargeConsumptionModes.None: 
+                    break;
+
+                case ChargeConsumptionModes.Partial:
+                    if (_skillHandler.Charge < PartialChargeConsumeAmount)
+                    {
+                        canCast = false;
+                    }
+                    break;
+
+                case ChargeConsumptionModes.Full:
+                    if (_skillHandler.Charge < _skillHandler.MaxCharge)
+                    {
+                        canCast = false;
+                    }
+                    break;
+            }
+
+            //Debug.Log($"CanCast = {canCast}");
+            return canCast;
+        }
+
         public virtual void SkillInputStart()
         {
-            if (SkillState.CurrentState == SkillStates.SkillIdle)
+            if (CanCastSkill())
             {
                 _triggerReleased = false;
-                TurnSkillOn();
+                ConsumeCharge();
+                SkillStart();
             }
         }
+
+        protected virtual void ConsumeCharge()
+        {
+            switch (ChargeConsumption)
+            {
+                case ChargeConsumptionModes.None:
+                    break;
+
+                case ChargeConsumptionModes.Partial:
+                    _skillHandler.ModifyCharge(-PartialChargeConsumeAmount);
+                    break;
+
+                case ChargeConsumptionModes.Full:
+                    _skillHandler.ModifyCharge(-_skillHandler.MaxCharge);
+                    break;
+            }
+        }
+
+        protected virtual void ProvideCharge() { }
 
         public virtual void SkillInputStop()
         {
@@ -245,10 +387,27 @@ namespace _Game
         }
 
         /// <summary>
+        /// Handle what happens when the skill starts
+        /// </summary>
+        public virtual void SkillStart()
+        {
+            if (Owner.PlayerID == "Player")
+            {
+                UIManager.Instance.SkillCooldownSetFill(_skillIndex, 1);
+            }
+
+            _skillHandler.SetMovementState(ActiveState);
+            SkillState.ChangeState(SkillStates.SkillStart);
+        }
+
+        /// <summary>
         /// Makes a request for the skill to shoot.
         /// </summary>
         public virtual void ActivateRequest()
         {
+            _skillDurationTimer.Duration = SkillDuration;
+            _skillDurationTimer.StartTimer(true, true);
+
             SkillState.ChangeState(SkillStates.SkillUse);
         }
 
@@ -264,23 +423,16 @@ namespace _Game
         }
 
         /// <summary>
-        /// Handle what happens when the skill starts
-        /// </summary>
-        public virtual void TurnSkillOn()
-        {
-            SkillState.ChangeState(SkillStates.SkillStart);
-        }
-
-        /// <summary>
         /// Turns the skill off, primarily ending its current state of operation.
         /// </summary>
-        public virtual void TurnSkillOff()
+        public virtual void SkillStop()
         {
             if ((SkillState.CurrentState == SkillStates.SkillIdle || SkillState.CurrentState == SkillStates.SkillStop))
             {
                 return;
             }
             _triggerReleased = true;
+            _skillHandler.SetMovementState(CharacterStates.MovementStates.Idle);
             SkillState.ChangeState(SkillStates.SkillStop);
         }
 
@@ -304,6 +456,18 @@ namespace _Game
         }
 
         public virtual void DrawGizmos() { }
+
+        public virtual void InitializeAnimatorParameters()
+        {
+            _skillHandler.RegisterAnimatorParameter(_skillAnimationParameterName, AnimatorControllerParameterType.Bool, out _skillAnimationParameter);
+            _skillHandler.RegisterAnimatorParameter(_idleAnimationParameterName, AnimatorControllerParameterType.Bool, out _idleAnimationParameter);
+        }
+
+        public virtual void UpdateAnimator(Animator animator, CharacterStates.MovementStates currentState)
+        {
+            AnimatorExtensions.UpdateAnimatorBool(animator, _skillAnimationParameter, currentState == ActiveState, Owner.AnimatorParameters);
+            AnimatorExtensions.UpdateAnimatorBool(animator, _idleAnimationParameter, currentState == CharacterStates.MovementStates.Idle, Owner.AnimatorParameters);
+        }
 
         #endregion
     }

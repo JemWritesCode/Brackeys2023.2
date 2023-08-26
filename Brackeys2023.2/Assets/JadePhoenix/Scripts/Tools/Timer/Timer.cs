@@ -7,14 +7,15 @@ namespace JadePhoenix.Tools
 {
     public class Timer
     {
-        public string Label { get; private set; }
+        public string Label { get; set; }
         /// The total duration of the timer
-        public float Duration { get; private set; }
+        public float Duration { get; set; }
         /// The elapsed time of the timer
         public float ElapsedTime { get; private set; }
         /// Whether the timer is currently running
         public bool IsRunning { get; private set; }
 
+        protected Action _onTimerUpdate;
         protected Action _onTimerStarted;
         protected Action _onTimerCompleted;
 
@@ -22,10 +23,10 @@ namespace JadePhoenix.Tools
         /// A generic class that allows us to attach methods and functions.
         /// </summary>
         /// <param name="duration">The total duration of the timer.</param>
-        public Timer(float duration, Action onTimerStarted = null, Action onTimerCompleted = null)
-            : this(string.Empty, duration, onTimerStarted, onTimerCompleted) { }
+        public Timer(float duration, Action onTimerStarted = null, Action onTimerCompleted = null, Action onTimerUpdate = null)
+        : this(string.Empty, duration, onTimerStarted, onTimerCompleted, onTimerUpdate) { }
 
-        public Timer(string label, float duration, Action onTimerStarted = null, Action onTimerCompleted = null)
+        public Timer(string label, float duration, Action onTimerStarted = null, Action onTimerCompleted = null, Action onTimerUpdate = null)
         {
             Label = label;
             Duration = duration;
@@ -33,6 +34,7 @@ namespace JadePhoenix.Tools
             IsRunning = false;
             _onTimerStarted = onTimerStarted;
             _onTimerCompleted = onTimerCompleted;
+            _onTimerUpdate = onTimerUpdate;
         }
 
         /// <summary>
@@ -69,6 +71,8 @@ namespace JadePhoenix.Tools
 
             ElapsedTime += Time.deltaTime;
 
+            _onTimerUpdate?.Invoke();
+
             if (ElapsedTime >= Duration)
             {
                 ElapsedTime = Duration;
@@ -96,14 +100,14 @@ namespace JadePhoenix.Tools
         }
 
         /// <summary>
-        /// Returns the normalized value of the timer's progress (0 to 1).
+        /// Returns the normalized value of the timer's progress (1 to 0).
         /// </summary>
         /// <returns></returns>
         public virtual float GetNormalisedTime()
         {
-            if (Duration <= 0f) return 0f;
+            if (Duration <= 0f) return 1f;
 
-            return Mathf.Clamp01(ElapsedTime / Duration);
+            return 1f - Mathf.Clamp01(ElapsedTime / Duration);
         }
     }
 }

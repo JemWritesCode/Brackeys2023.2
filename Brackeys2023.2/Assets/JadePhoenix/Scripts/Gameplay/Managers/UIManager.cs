@@ -13,15 +13,15 @@ namespace JadePhoenix.Gameplay
     /// </summary>
     public class UIManager : Singleton<UIManager>
     {
-        public Image HealthSegment;
-        public Image DamageSegment;
+        public Slider HealthBar;
 
         public GameObject PauseScreen;
         public GameObject DeathScreen;
         public GameObject VictoryScreen;
         public GameObject CreditsScreen;
 
-        public GameObject ChatBox;
+        public List<Image> SkillImages;
+        public List<Image> SkillCooldownImages;
 
         protected virtual void Start()
         {
@@ -91,24 +91,25 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         public virtual void UpdateHealthBar(float healthPercentage)
         {
-            if (HealthSegment == null) { return; }
-            if (DamageSegment == null) { return; }
-
-            Debug.Log($"{this.GetType()}.UpdateHealthBar: Health % before clamp = {healthPercentage}.", gameObject);
+            if (HealthBar == null) { return; }
 
             healthPercentage = Mathf.Clamp01(healthPercentage);  // Ensure it's between 0 and 1
 
-            Debug.Log($"{this.GetType()}.UpdateHealthBar: Health % after clamp = {healthPercentage}.", gameObject);
-
-            HealthSegment.fillAmount = healthPercentage;
-
-            float damageTaken = 1.0f - healthPercentage;
-            DamageSegment.fillAmount = damageTaken;
+            HealthBar.value = healthPercentage;
         }
 
-        public virtual void ToggleChatBox(string text)
+        public virtual void SkillCooldownSetFill(int index, float amount)
         {
+            if (SkillCooldownImages[index] == null) return;
 
+            SkillCooldownImages[index].fillAmount = amount;
+        }
+
+        public virtual void SetSkillImage(int index, Sprite image)
+        {
+            if (SkillImages[index] == null) return;
+
+            SkillImages[index].sprite = image;
         }
 
         #region BUTTON METHODS

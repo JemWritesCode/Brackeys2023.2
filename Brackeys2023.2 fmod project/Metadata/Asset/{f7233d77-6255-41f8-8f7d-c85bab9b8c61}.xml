@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{f7233d77-6255-41f8-8f7d-c85bab9b8c61}">
+		<property name="assetPath">
+			<value>enemy barks/balloon cluster enemy barks/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4310d54c-e4ea-4d34-8a1d-8701c9e2c25d}</destination>
+		</relationship>
+	</object>
+</objects>

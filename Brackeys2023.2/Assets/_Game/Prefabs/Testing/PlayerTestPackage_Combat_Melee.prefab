@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 4964187462209233356}
   m_Layer: 0
   m_Name: PlayerTest
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -681,7 +681,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
@@ -779,10 +779,18 @@ MonoBehaviour:
   AbilityPermitted: 1
   ProjectileSpawn: {fileID: 0}
   Skills:
-  - {fileID: 11400000, guid: 3364b242e43f32c49989ec6ec63cd257, type: 2}
-  BufferInput: 1
-  NewInputExtendsBuffer: 1
-  MaxBufferDuration: 0.25
+  - {fileID: 11400000, guid: 3a32358a9075c7740ad146a04965a0c0, type: 2}
+  - {fileID: 11400000, guid: 9b14d0e9a0c1af24ca5b4cade44d1026, type: 2}
+  - {fileID: 11400000, guid: bc3f3e3d6e89da043a36a4c91c091316, type: 2}
+  - {fileID: 11400000, guid: c51ace3bc356c5b48ac629aff0fdccb5, type: 2}
+  Charge: 0
+  MaxCharge: 100
+  ChargeTimeIncrement: 0
+  ChargeDamageIncrement: 5
+  BaseDamage: 10
+  DamageBonusPercentage: 0
+  PermittedInputStates: 3
+  _currentActiveSkills: []
 --- !u!114 &3187622634026670037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,6 +831,7 @@ MonoBehaviour:
   AbilityPermitted: 1
   RotationSpeed: 10
   OverrideModel: {fileID: 5644774687886365600}
+  RotationForbidden: 0
 --- !u!1 &5741136631010450594
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +915,7 @@ MonoBehaviour:
     m_DecelTime: 0.1
     m_InputAxisName: Mouse ScrollWheel
     m_InputAxisValue: 0
-    m_InvertInput: 0
+    m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
     m_Wrap: 0
@@ -1035,7 +1044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7831945750421795319}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33474293, y: -0.000000016213736, z: 0.0000000057597154, w: 0.9423095}
+  m_LocalRotation: {x: 0.33474293, y: 0.000000016213734, z: -0.0000000057597136, w: 0.9423095}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
