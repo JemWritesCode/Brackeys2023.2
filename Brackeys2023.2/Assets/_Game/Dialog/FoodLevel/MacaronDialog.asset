@@ -12,12 +12,233 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
   m_Name: MacaronDialog
   m_EditorClassIdentifier: 
-  NodeLinkDatas: []
+  NodeLinkDatas:
+  - BaseNodeGuid: bf386413-20b7-4bd4-acec-353c99998944
+    TargetNodeGuid: 4267a5af-13ba-4c3e-80a0-376e3fd2c088
+  - BaseNodeGuid: 23777ea3-af9e-4087-9b01-4fbdee0b6f80
+    TargetNodeGuid: eb9b2051-4116-4af0-ba79-242b86952827
+  - BaseNodeGuid: eb9b2051-4116-4af0-ba79-242b86952827
+    TargetNodeGuid: 421ed741-1e32-4e1d-85fe-485de97d9b46
+  - BaseNodeGuid: 421ed741-1e32-4e1d-85fe-485de97d9b46
+    TargetNodeGuid: a546726e-329d-40c4-985b-1906a3d78c7e
+  - BaseNodeGuid: a546726e-329d-40c4-985b-1906a3d78c7e
+    TargetNodeGuid: 1e16ab3c-a542-4ab8-815a-d674a1b56344
+  - BaseNodeGuid: 1e16ab3c-a542-4ab8-815a-d674a1b56344
+    TargetNodeGuid: bdd39ea4-a9ce-4bdb-a099-724cb3299e03
+  - BaseNodeGuid: bdd39ea4-a9ce-4bdb-a099-724cb3299e03
+    TargetNodeGuid: 62cf7bda-152a-4367-9c0b-de6ae7802691
+  - BaseNodeGuid: 62cf7bda-152a-4367-9c0b-de6ae7802691
+    TargetNodeGuid: 3da49630-fece-4981-8764-80fbdfab8df3
+  - BaseNodeGuid: 3da49630-fece-4981-8764-80fbdfab8df3
+    TargetNodeGuid: 11008167-aac1-4358-aaf8-b5294f6b1478
+  - BaseNodeGuid: 11008167-aac1-4358-aaf8-b5294f6b1478
+    TargetNodeGuid: edf78654-64f0-4b18-bb7a-f8e7db6b7208
+  - BaseNodeGuid: edf78654-64f0-4b18-bb7a-f8e7db6b7208
+    TargetNodeGuid: b7b93fa3-0744-46cf-98b6-6248d2a82472
+  - BaseNodeGuid: 4267a5af-13ba-4c3e-80a0-376e3fd2c088
+    TargetNodeGuid: 78215d95-eb93-4c29-b86b-0eeba9a85ea2
+  - BaseNodeGuid: 78215d95-eb93-4c29-b86b-0eeba9a85ea2
+    TargetNodeGuid: 23777ea3-af9e-4087-9b01-4fbdee0b6f80
   DialogueChoiceNodeDatas: []
-  DialogueNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 4267a5af-13ba-4c3e-80a0-376e3fd2c088
+    Position: {x: 439, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52fdf54836efb98448de072da5775bf2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I must admit, we are rather disappointed.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 78215d95-eb93-4c29-b86b-0eeba9a85ea2
+    Position: {x: 682, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Well, I'm definitely not. Things are going to change,
+        they're going to get better.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 23777ea3-af9e-4087-9b01-4fbdee0b6f80
+    Position: {x: 925, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52fdf54836efb98448de072da5775bf2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Why would you need a change? Has the coffee not given
+        you the energy to keep going?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: eb9b2051-4116-4af0-ba79-242b86952827
+    Position: {x: 1164, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: It wasn't real energy. It was just covering up how tired
+        I really was.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 421ed741-1e32-4e1d-85fe-485de97d9b46
+    Position: {x: 1410, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52fdf54836efb98448de072da5775bf2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: If you were so tired, then the convenience of the donuts
+        and other snacks would be perfection, no?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: a546726e-329d-40c4-985b-1906a3d78c7e
+    Position: {x: 1665, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Sure, they were easy. But I need to make the effort to
+        take better care of myself.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 1e16ab3c-a542-4ab8-815a-d674a1b56344
+    Position: {x: 1918, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52fdf54836efb98448de072da5775bf2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: To what end? The sweets were happy to give you all the
+        good rewarding feelings you could want.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: bdd39ea4-a9ce-4bdb-a099-724cb3299e03
+    Position: {x: 2169, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: But if I only ever ate them, then they wouldn't feel special
+        anymore.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 62cf7bda-152a-4367-9c0b-de6ae7802691
+    Position: {x: 2424, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52fdf54836efb98448de072da5775bf2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: So you believe you're better than us? You arrogant fool!
+        What makes you think you can change on a whim?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 3da49630-fece-4981-8764-80fbdfab8df3
+    Position: {x: 2674, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: It may not be today, and it may not be tomorrow. But as
+        long as I keep trying... then someday, I'll find my balance.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 11008167-aac1-4358-aaf8-b5294f6b1478
+    Position: {x: 2948, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52fdf54836efb98448de072da5775bf2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Balance? BALANCE?! You don't need "balance."
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: edf78654-64f0-4b18-bb7a-f8e7db6b7208
+    Position: {x: 3227, y: 201}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52fdf54836efb98448de072da5775bf2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: What you really need... is more of US.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
   TimerChoiceNodeDatas: []
-  EndNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: b7b93fa3-0744-46cf-98b6-6248d2a82472
+    Position: {x: 3497, y: 201}
+    EndNodeType: 0
   EventNodeDatas: []
-  StartNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: bf386413-20b7-4bd4-acec-353c99998944
+    Position: {x: 314, y: 201}
+    startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []

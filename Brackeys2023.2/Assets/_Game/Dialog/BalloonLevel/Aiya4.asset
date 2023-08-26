@@ -12,12 +12,194 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
   m_Name: Aiya4
   m_EditorClassIdentifier: 
-  NodeLinkDatas: []
+  NodeLinkDatas:
+  - BaseNodeGuid: 42ebbbbd-8ba2-4ae6-a593-8fc17abc7c9b
+    TargetNodeGuid: 061b3d79-ea65-48f1-9679-1274833c29e2
+  - BaseNodeGuid: 061b3d79-ea65-48f1-9679-1274833c29e2
+    TargetNodeGuid: ba76354e-e631-4f8f-bafe-c5bff872a0b4
+  - BaseNodeGuid: ba76354e-e631-4f8f-bafe-c5bff872a0b4
+    TargetNodeGuid: 07aa3a91-6c36-411b-a31b-3fd2cea253db
+  - BaseNodeGuid: 07aa3a91-6c36-411b-a31b-3fd2cea253db
+    TargetNodeGuid: b6abf918-e51f-48f6-8a74-9ca90c91be8d
+  - BaseNodeGuid: b6abf918-e51f-48f6-8a74-9ca90c91be8d
+    TargetNodeGuid: 312b2b45-83c2-46b6-b047-ad76f9841cd7
+  - BaseNodeGuid: 312b2b45-83c2-46b6-b047-ad76f9841cd7
+    TargetNodeGuid: 293126a6-c73e-442e-b922-b38a4bab2cba
+  - BaseNodeGuid: 293126a6-c73e-442e-b922-b38a4bab2cba
+    TargetNodeGuid: 86cf3593-8a1d-4745-9e5a-e02456131da4
+  - BaseNodeGuid: 86cf3593-8a1d-4745-9e5a-e02456131da4
+    TargetNodeGuid: dfffa959-5eaa-4127-8d9b-23d7ff592bfd
+  - BaseNodeGuid: dfffa959-5eaa-4127-8d9b-23d7ff592bfd
+    TargetNodeGuid: cbe7e635-330c-4713-adc9-05d867dbf1c8
+  - BaseNodeGuid: cbe7e635-330c-4713-adc9-05d867dbf1c8
+    TargetNodeGuid: 5ed27895-5a8a-4f03-8336-5d1260ba5f23
   DialogueChoiceNodeDatas: []
-  DialogueNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 061b3d79-ea65-48f1-9679-1274833c29e2
+    Position: {x: 583, y: 277}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 'ARG! Jerrold ruins everything. All he does is pick on
+        us. '
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: ba76354e-e631-4f8f-bafe-c5bff872a0b4
+    Position: {x: 864, y: 415}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Someone should definitely do something about him. This
+        has gone too far.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 07aa3a91-6c36-411b-a31b-3fd2cea253db
+    Position: {x: 1110, y: 277}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Did you feel like you should have done something about
+        him?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: b6abf918-e51f-48f6-8a74-9ca90c91be8d
+    Position: {x: 1378, y: 415}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Everyone said it was normal. That he would get bored eventually...
+        But he never did...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 312b2b45-83c2-46b6-b047-ad76f9841cd7
+    Position: {x: 1648, y: 277}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Do you feel that it was healthy, to ignore your feelings,
+        instead of facing them head on?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 293126a6-c73e-442e-b922-b38a4bab2cba
+    Position: {x: 1920, y: 415}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Jerrold made parties really hard for me, and they still
+        are. But I guess I can't keep running away from it forever, can I?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 86cf3593-8a1d-4745-9e5a-e02456131da4
+    Position: {x: 2186, y: 277}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Then, thinking back, how would you have approached things
+        differently?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: dfffa959-5eaa-4127-8d9b-23d7ff592bfd
+    Position: {x: 2439, y: 415}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: You know what? I'd stand up to him, and make him stop.
+        What he did wasn't OK, and he needed to be taught a lesson.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: cbe7e635-330c-4713-adc9-05d867dbf1c8
+    Position: {x: 2707, y: 277}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Oh no, it's Jerrold. Let's get outta here before he sees
+        us!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 5ed27895-5a8a-4f03-8336-5d1260ba5f23
+    Position: {x: 2978, y: 415}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: No. I'm ending this.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
   TimerChoiceNodeDatas: []
   EndNodeDatas: []
   EventNodeDatas: []
-  StartNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 42ebbbbd-8ba2-4ae6-a593-8fc17abc7c9b
+    Position: {x: 438, y: 338}
+    startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
