@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{71030fa8-ba36-4973-9481-2c5f047bdb6f}">
+		<property name="assetPath">
+			<value>enemy barks/cupcake enemy barks/defeated/cupcake i've been put on icing 4.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.0226250000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4310d54c-e4ea-4d34-8a1d-8701c9e2c25d}</destination>
+		</relationship>
+	</object>
+</objects>

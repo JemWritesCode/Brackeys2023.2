@@ -53,7 +53,7 @@
 			<destination>{b4114c90-ff1c-45ca-a0cc-cc3789c23145}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{b5a407a5-e14e-4ebe-867e-53f7a33a244f}</destination>
+			<destination>{1ff692f5-c287-4406-ace3-e68f9a0484a2}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{93c3cf1f-694c-4657-9161-9b9f5e3c52f1}" />
@@ -92,11 +92,8 @@
 		<property name="length">
 			<value>2.0759167043650795</value>
 		</property>
-		<property name="timelockedOffset">
-			<value>4.1764434526289689</value>
-		</property>
 		<relationship name="audioFile">
-			<destination>{02a55fa6-aa1a-488a-8170-9d77d2c39195}</destination>
+			<destination>{945c3c0a-0a85-4a88-be3e-569f0bc477b9}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{fe9e1e4c-a749-437e-8584-db01cb7126db}">

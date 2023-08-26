@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{a24c2965-99e6-4646-b257-13e493c21932}">
 		<property name="assetPath">
-			<value>BalloonGhost_Lines - Trimmed (5).wav</value>
+			<value>enemy barks/balloon ghost enemy barks/attacking/balloon ghost Hyah! 1.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
