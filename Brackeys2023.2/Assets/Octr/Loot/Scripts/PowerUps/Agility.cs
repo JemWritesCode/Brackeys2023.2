@@ -32,7 +32,7 @@ namespace octr.Loot.PowerUps
             }
         }
 
-        private void EnablePowerup(Character character)
+        protected virtual void EnablePowerup(Character character)
         {
             CharacterSkillHandler skillHandler = character.GetAbility<CharacterSkillHandler>();
             _skills = skillHandler.GetActiveSkillsOfType(Skill.SkillTypes.Mobility);
@@ -42,7 +42,7 @@ namespace octr.Loot.PowerUps
             }
         }
 
-        public virtual void DisablePowerup()
+        protected virtual void DisablePowerup()
         {
             foreach (Skill skill in _skills)
             {

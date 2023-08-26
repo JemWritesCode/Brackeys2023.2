@@ -18,7 +18,7 @@ namespace _Game
             base.OnHit(instigator);
 
             _wasHit = true;
-            PercentageModifier += ParryBonus;
+            ImpactPercentageModifier += ParryBonus;
         }
 
         public override void SkillStop()
@@ -26,7 +26,7 @@ namespace _Game
             base.SkillStop();
 
             _wasHit = false;
-            PercentageModifier -= ParryBonus;
+            ImpactPercentageModifier -= ParryBonus;
         }
     }
 }

@@ -52,8 +52,8 @@ namespace _Game
         [Tooltip("The skill's state machine.")]
         public StateMachine<SkillStates> SkillState;
 
-        [Tooltip("Percentage modifier of the skill. Used for damage calculations and can be safely left 0.")]
-        public float PercentageModifier = 0f;
+        [Tooltip("Percentage modifier of the skill. Used for damage calculations where 1 = 1%.")]
+        public float ImpactPercentageModifier = 100f;
 
         [Tooltip("The update mode of the skill (Update or FixedUpdate).")]
         public UpdateModes UpdateMode = UpdateModes.Update;

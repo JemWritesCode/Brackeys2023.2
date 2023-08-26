@@ -230,7 +230,7 @@ namespace _Game
 
         public virtual int GetDamageTotal(Skill skill)
         {
-            return Mathf.RoundToInt(BaseDamage + (DamageBonusPercentage / 100 + skill.PercentageModifier / 100));
+            return Mathf.RoundToInt(BaseDamage * (DamageBonusPercentage / 100 + skill.ImpactPercentageModifier / 100));
         }
 
         public virtual void ModifyCharge(float amount)

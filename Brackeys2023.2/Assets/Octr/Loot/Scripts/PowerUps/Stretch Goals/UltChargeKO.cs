@@ -1,3 +1,4 @@
+using JadePhoenix.Gameplay;
 using UnityEngine;
 
 namespace octr.Loot.PowerUps
@@ -9,7 +10,7 @@ namespace octr.Loot.PowerUps
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="item"></param>
-        public void Collect<T>(T item)
+        public void Collect<T>(T item, Character character)
         {
             //put logic here to return if ultimate buff is already active
 

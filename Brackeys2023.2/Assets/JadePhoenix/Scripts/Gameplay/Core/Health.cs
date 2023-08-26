@@ -279,6 +279,38 @@ namespace JadePhoenix.Gameplay
         }
 
         /// <summary>
+        /// Called when the character gets health (from a stimpack for example)
+        /// </summary>
+        /// <param name="percentageToHeal">The percentage of MaxHealth the character gets.</param>
+        /// <param name="instigator">The thing that gives the character health.</param>
+        public virtual void Heal(float percentageToHeal, GameObject instigator)
+        {
+            // convert percentage to actual health amount
+            int amountToHeal = Mathf.RoundToInt(MaxHealth * percentageToHeal / 100);
+
+            // this function adds health to the character's Health and prevents it to go above MaxHealth.
+            CurrentHealth = Mathf.Min(CurrentHealth + amountToHeal, MaxHealth);
+
+            if (_entity is Character && (_entity as Character).CharacterType == Character.CharacterTypes.Player)
+            {
+                UIManager.Instance.UpdateHealthBar(HealthPercentage);
+            }
+        }
+
+        /// <summary>
+        /// Increases the player's max health by a specified percentage.
+        /// </summary>
+        /// <param name="percentageIncrease">The percentage by which to increase the player's max health.</param>
+        public void IncreaseMaxHealth(float percentageIncrease, GameObject instigator)
+        {
+            // convert percentage to actual health amount
+            int increaseAmount = Mathf.RoundToInt(MaxHealth * percentageIncrease / 100);
+
+            // increase the MaxHealth
+            MaxHealth += increaseAmount;
+        }
+
+        /// <summary>
         /// Resets the character's health to its max value
         /// </summary>
         public virtual void ResetHealthToMaxHealth()
