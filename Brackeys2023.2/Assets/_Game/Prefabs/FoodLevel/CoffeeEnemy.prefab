@@ -102,7 +102,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -208,7 +208,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -230,14 +230,13 @@ GameObject:
   - component: {fileID: 5865601656225912848}
   - component: {fileID: 8006490189015514204}
   - component: {fileID: 4877323662350788408}
-  - component: {fileID: 6809308844994589690}
   - component: {fileID: 8552626734195418832}
-  - component: {fileID: 5799019059393243147}
   - component: {fileID: 2371776182172778882}
   - component: {fileID: 3862295385949644347}
   - component: {fileID: 1774166486952272834}
   - component: {fileID: 7164153866814050886}
   - component: {fileID: 7994167100033995618}
+  - component: {fileID: 1813968031260766151}
   m_Layer: 9
   m_Name: CoffeeEnemy
   m_TagString: Untagged
@@ -349,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
   CharacterType: 1
-  PlayerID: 
+  PlayerID: Steve
   MovementState:
     Target: {fileID: 0}
     DebugCurrentState: 0
@@ -445,7 +444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityPermitted: 1
   ProjectileSpawn: {fileID: 0}
-  Skills: []
+  Skills:
+  - {fileID: 11400000, guid: eb6b1f069dd7a9d418e59b82c69640ae, type: 2}
   Charge: 0
   MaxCharge: 100
   ChargeTimeIncrement: 0
@@ -454,26 +454,6 @@ MonoBehaviour:
   DamageBonusPercentage: 0
   PermittedInputStates: 3
   _currentActiveSkills: []
---- !u!114 &6809308844994589690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4072534383238379809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3430658adad9364296507edfe57f038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AbilityPermitted: 1
-  Target: {fileID: 0}
-  DistanceToWaypointThreshold: 1
-  DebugDrawPath: 0
-  Waypoints: []
-  NextWaypointIndex: 0
-  NextWaypointDirection: {x: 0, y: 0, z: 0}
-  DistanceToNextWaypoint: 0
 --- !u!114 &8552626734195418832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,7 +479,7 @@ MonoBehaviour:
   - StateName: Chase
     Actions:
       array:
-      - {fileID: 5799019059393243147}
+      - {fileID: 1813968031260766151}
     Transitions:
       array:
       - Decision: {fileID: 7164153866814050886}
@@ -525,19 +505,6 @@ MonoBehaviour:
   Target: {fileID: 0}
   ActionsFrequency: 0
   DecisionFrequency: 0
---- !u!114 &5799019059393243147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4072534383238379809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4bcd6a9ddfa0ed49960951e7e4cdf51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Label: 
 --- !u!114 &2371776182172778882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,6 +580,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e524693d31e3eeb43b63495ec529d121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 
+--- !u!114 &1813968031260766151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072534383238379809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e0be1746587614486f2888e2b87039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 

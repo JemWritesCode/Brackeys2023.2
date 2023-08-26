@@ -174,7 +174,9 @@ namespace _Game
             
             for (int i = 0; i < Skills.Count; i++)
             {
-                _buttons.Add(_inputManager.GetButtonFromID($"Skill_{i}"));
+                if (_inputManager != null)
+                    _buttons.Add(_inputManager.GetButtonFromID($"Skill_{i}"));
+
                 Skill skill = Instantiate(Skills[i]);
                 _currentActiveSkills.Add(skill);
                 skill.Initialization(_character, i);
@@ -277,6 +279,11 @@ namespace _Game
             }
 
             return activeSkillsOfType;
+        }
+
+        public virtual Skill GetActiveSkillByIndex(int index)
+        {
+            return _currentActiveSkills[index];
         }
 
         #endregion

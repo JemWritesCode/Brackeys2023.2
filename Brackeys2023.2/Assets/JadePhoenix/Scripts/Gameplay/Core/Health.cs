@@ -174,11 +174,11 @@ namespace JadePhoenix.Gameplay
 
                     if (DelayBeforeDestruction > 0f)
                     {
-                        GameManager.Instance.TriggerGameOver(DelayBeforeDestruction);
+                        //GameManager.Instance.TriggerGameOver(DelayBeforeDestruction);
                     }
                     else
                     {
-                        GameManager.Instance.TriggerGameOver();
+                        //GameManager.Instance.TriggerGameOver();
                     }
                 }
             }

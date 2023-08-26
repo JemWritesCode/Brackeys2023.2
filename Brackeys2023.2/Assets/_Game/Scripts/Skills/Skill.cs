@@ -107,7 +107,7 @@ namespace _Game
         public bool RestrictRotation = false;
 
         [Tooltip("The character that owns this skill.")]
-        public Character Owner { get; protected set; }
+        public Character Owner;
 
         [Tooltip("The total cooldown of the skill (in seconds) including modifiers.")]
         public float TotalCooldown { get { return Cooldown * _cooldownPercentageModifier; } }

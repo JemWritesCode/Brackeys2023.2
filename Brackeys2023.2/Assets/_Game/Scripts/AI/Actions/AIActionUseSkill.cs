@@ -26,7 +26,7 @@ namespace _Game
         {
             if (skillHandler != null && skillHandler.Skills.Count > skillIndex)
             {
-                Skill skill = skillHandler.Skills[skillIndex];
+                Skill skill = skillHandler.GetActiveSkillByIndex(skillIndex);
                 skillHandler.StartSkill(skill);
             }
             else
