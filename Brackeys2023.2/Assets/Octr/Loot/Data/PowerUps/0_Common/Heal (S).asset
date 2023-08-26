@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55666f44482ce074499336db2face238, type: 3}
-  m_Name: +5% Max HP
+  m_Name: Heal (S)
   m_EditorClassIdentifier: 
   rarity: 0
-  description: 5% HP increase permanently
-  icon: {fileID: 0}
-  value: 5
-  prefab: {fileID: 0}
+  description: Restores 10% Health
+  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  value: 10
+  prefab: {fileID: 4960616439437761730, guid: 93003cf55a290044f80b4eabd2413bb9, type: 3}

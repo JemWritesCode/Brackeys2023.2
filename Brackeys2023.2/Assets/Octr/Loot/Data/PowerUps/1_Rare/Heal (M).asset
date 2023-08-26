@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55666f44482ce074499336db2face238, type: 3}
-  m_Name: 3% Attack Increase
+  m_Name: Heal (M)
   m_EditorClassIdentifier: 
-  rarity: 3
-  description: 3% Permanent Attack Increase
-  icon: {fileID: 0}
-  value: 3
-  prefab: {fileID: 0}
+  rarity: 1
+  description: Restores 25% Health
+  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  value: 25
+  prefab: {fileID: 4960616439437761730, guid: 93003cf55a290044f80b4eabd2413bb9, type: 3}

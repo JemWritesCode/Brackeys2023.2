@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0f6a7830ad43c345b4ab942c8749a22, type: 3}
-  m_Name: 15% Ultimate Charge
+  m_Name: Power (L)
   m_EditorClassIdentifier: 
   rarity: 1
-  description: Increased Ultimate Charge from dodging and hitting enemies by 15%
-    for 20 seconds
+  description: 10% attack increase for 30 seconds
   icon: {fileID: 0}
-  value: 15
+  value: 10
   prefab: {fileID: 0}
-  buffDuration: 20
+  buffDuration: 30
