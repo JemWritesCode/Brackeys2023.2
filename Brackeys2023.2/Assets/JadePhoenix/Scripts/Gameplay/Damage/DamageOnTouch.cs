@@ -102,15 +102,15 @@ namespace JadePhoenix.Gameplay
             if (_circleCollider != null)
             {
                 // Rotate the circle offset by the transform's rotation
-                Vector2 rotatedOffset = this.transform.rotation * _circleCollider.center;
+                Vector3 rotatedOffset = this.transform.rotation * _circleCollider.center;
 
                 if (_circleCollider.enabled)
                 {
-                    Gizmos.DrawSphere((Vector2)this.transform.position + rotatedOffset, _circleCollider.radius * transform.localScale.x);
+                    Gizmos.DrawSphere(this.transform.position + rotatedOffset, _circleCollider.radius * transform.localScale.x);
                 }
                 else
                 {
-                    Gizmos.DrawWireSphere((Vector2)this.transform.position + rotatedOffset, _circleCollider.radius * transform.localScale.x);
+                    Gizmos.DrawWireSphere(this.transform.position + rotatedOffset, _circleCollider.radius * transform.localScale.x);
                 }
             }
         }

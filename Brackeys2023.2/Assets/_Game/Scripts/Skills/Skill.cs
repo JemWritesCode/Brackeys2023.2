@@ -208,7 +208,13 @@ namespace _Game
             }
         }
 
-        protected virtual void CaseSkillIdle() { }
+        protected virtual void CaseSkillIdle()
+        {
+            if (ChargeConsumption != ChargeConsumptionModes.None)
+            {
+                UIManager.Instance.SkillCooldownSetFill(_skillIndex, 1f - Mathf.Clamp01(_skillHandler.Charge / _skillHandler.MaxCharge));
+            }
+        }
 
         protected virtual void CaseSkillStart()
         {

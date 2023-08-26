@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: punch
   Name: Punch
   Description: Test
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 1fe5e06005a58434bb370d34462197d9, type: 3}
   SkillState:
     Target: {fileID: 0}
     DebugCurrentState: 0

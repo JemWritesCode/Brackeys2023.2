@@ -79,6 +79,7 @@ namespace _Game
                 Skill skill = Instantiate(Skills[i]);
                 _currentActiveSkills.Add(skill);
                 skill.Initialization(_character, i);
+                UIManager.Instance.SetSkillImage(i, skill.Icon);
             }
         }
 
