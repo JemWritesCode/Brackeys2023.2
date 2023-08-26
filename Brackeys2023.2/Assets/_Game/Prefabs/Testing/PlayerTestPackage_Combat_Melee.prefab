@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 4964187462209233356}
   m_Layer: 0
   m_Name: PlayerTest
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -782,10 +782,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a32358a9075c7740ad146a04965a0c0, type: 2}
   - {fileID: 11400000, guid: 9b14d0e9a0c1af24ca5b4cade44d1026, type: 2}
   - {fileID: 11400000, guid: bc3f3e3d6e89da043a36a4c91c091316, type: 2}
+  - {fileID: 11400000, guid: c51ace3bc356c5b48ac629aff0fdccb5, type: 2}
+  Charge: 0
+  MaxCharge: 100
+  ChargeTimeIncrement: 0
+  ChargeDamageIncrement: 5
   BaseDamage: 10
   DamageBonusPercentage: 0
   PermittedInputStates: 3
-  _skills: []
+  _currentActiveSkills: []
 --- !u!114 &3187622634026670037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -910,7 +915,7 @@ MonoBehaviour:
     m_DecelTime: 0.1
     m_InputAxisName: Mouse ScrollWheel
     m_InputAxisValue: 0
-    m_InvertInput: 0
+    m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
     m_Wrap: 0

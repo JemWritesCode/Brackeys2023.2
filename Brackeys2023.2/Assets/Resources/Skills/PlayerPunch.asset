@@ -15,18 +15,21 @@ MonoBehaviour:
   ID: punch
   Name: Punch
   Description: Test
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 1fe5e06005a58434bb370d34462197d9, type: 3}
   SkillState:
     Target: {fileID: 0}
     DebugCurrentState: 0
   PercentageModifier: 100
   UpdateMode: 0
-  ActiveState: 4
+  ActiveState: 8
   TriggerMode: 1
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 0
   Cooldown: 0.5
   SkillDuration: 0.1
+  ChargeConsumption: 0
+  PartialChargeConsumeAmount: 25
+  ProvidesCharge: 1
   ContinuousPress: 1
   GettingHitInterruptsSkill: 0
   RecoilForce: 0
@@ -34,7 +37,7 @@ MonoBehaviour:
   RestrictMovement: 1
   RestrictRotation: 1
   DamageAreaShape: 0
-  AreaSize: {x: 3, y: 1, z: 2}
+  AreaSize: {x: 1, y: 1, z: 2}
   AreaOffset: {x: 0, y: 1, z: 1}
   AdditionalDelay: 0
   TargetLayerMask:
