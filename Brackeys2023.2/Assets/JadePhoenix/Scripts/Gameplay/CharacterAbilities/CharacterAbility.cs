@@ -88,6 +88,9 @@ namespace JadePhoenix.Gameplay
 
         #endregion
 
+        /// <summary>
+        /// Initialize variables. Functions as Awake.
+        /// </summary>
         protected virtual void PreInitialization()
         {
             _character = GetComponent<Character>();
