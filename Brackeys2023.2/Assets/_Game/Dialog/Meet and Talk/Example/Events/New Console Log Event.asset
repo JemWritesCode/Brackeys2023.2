@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192c9e70723a41249a9c74e1538e3e98, type: 3}
   m_Name: New Console Log Event
   m_EditorClassIdentifier: 
+  logType: 0
+  Content: 
