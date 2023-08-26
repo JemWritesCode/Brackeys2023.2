@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55666f44482ce074499336db2face238, type: 3}
+  m_Name: Heal (M)
+  m_EditorClassIdentifier: 
+  rarity: 1
+  description: Restores 25% Health
+  icon: {fileID: 0}
+  value: 25
+  prefab: {fileID: 965330298958195892, guid: 917288ee8d6cfaa42be0f85bf196345f, type: 3}
