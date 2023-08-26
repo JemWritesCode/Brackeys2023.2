@@ -1,10 +1,6 @@
 using JadePhoenix.Gameplay;
 using JadePhoenix.Tools;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace _Game
@@ -178,7 +174,7 @@ namespace _Game
             
             for (int i = 0; i < Skills.Count; i++)
             {
-                _buttons.Add(InputManager.Instance.GetButtonFromID($"Skill_{i}"));
+                _buttons.Add(_inputManager.GetButtonFromID($"Skill_{i}"));
                 Skill skill = Instantiate(Skills[i]);
                 _currentActiveSkills.Add(skill);
                 skill.Initialization(_character, i);

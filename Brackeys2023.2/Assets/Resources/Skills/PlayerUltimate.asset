@@ -16,10 +16,11 @@ MonoBehaviour:
   Name: Slam
   Description: 
   Icon: {fileID: 21300000, guid: 179aae36f17f3be4abb97b258b551877, type: 3}
+  SkillType: 0
   SkillState:
     Target: {fileID: 0}
     DebugCurrentState: 0
-  PercentageModifier: 200
+  ImpactPercentageModifier: 100
   UpdateMode: 0
   ActiveState: 8
   TriggerMode: 1

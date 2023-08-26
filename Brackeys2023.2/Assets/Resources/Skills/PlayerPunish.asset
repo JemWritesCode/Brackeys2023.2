@@ -16,10 +16,11 @@ MonoBehaviour:
   Name: Punish
   Description: Test
   Icon: {fileID: 21300000, guid: 5e188177bbe31ff4392d5a9513b645fe, type: 3}
+  SkillType: 0
   SkillState:
     Target: {fileID: 0}
     DebugCurrentState: 0
-  PercentageModifier: 150
+  ImpactPercentageModifier: 100
   UpdateMode: 0
   ActiveState: 8
   TriggerMode: 1

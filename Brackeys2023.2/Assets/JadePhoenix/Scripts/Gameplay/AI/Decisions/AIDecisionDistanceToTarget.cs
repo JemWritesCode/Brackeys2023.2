@@ -11,9 +11,9 @@ namespace JadePhoenix.Gameplay
     public class AIDecisionDistanceToTarget : AIDecision
     {
         /// The possible comparison modes
-        public enum ComparisonModes { StrictlyLowerThan, LowerThan, Equals, GreatherThan, StrictlyGreaterThan }
+        public enum ComparisonModes { StrictlyLowerThan, LowerThan, Equals, GreaterThan, StrictlyGreaterThan }
         /// the comparison mode
-        public ComparisonModes ComparisonMode = ComparisonModes.GreatherThan;
+        public ComparisonModes ComparisonMode = ComparisonModes.GreaterThan;
         /// the distance to compare with
         public float Distance;
 
@@ -51,7 +51,7 @@ namespace JadePhoenix.Gameplay
             {
                 return (distance == Distance);
             }
-            if (ComparisonMode == ComparisonModes.GreatherThan)
+            if (ComparisonMode == ComparisonModes.GreaterThan)
             {
                 return (distance >= Distance);
             }
@@ -61,5 +61,15 @@ namespace JadePhoenix.Gameplay
             }
             return false;
         }
+
+        /// <summary>
+        /// Draws gizmos for the detection circle
+        /// </summary>
+        protected virtual void OnDrawGizmosSelected()
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, Distance);
+        }
+
     }
 }

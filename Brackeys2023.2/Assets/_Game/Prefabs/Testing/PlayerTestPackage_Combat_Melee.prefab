@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 1056699727078928779}
   - component: {fileID: 3187622634026670037}
   - component: {fileID: 4964187462209233356}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerTest
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -832,6 +832,7 @@ MonoBehaviour:
   RotationSpeed: 10
   OverrideModel: {fileID: 5644774687886365600}
   RotationForbidden: 0
+  rotationControl: 0
 --- !u!1 &5741136631010450594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +1045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7831945750421795319}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33474293, y: 0.000000016213734, z: -0.0000000057597136, w: 0.9423095}
+  m_LocalRotation: {x: 0.33474293, y: -0.000000016213736, z: 0.0000000057597154, w: 0.9423095}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

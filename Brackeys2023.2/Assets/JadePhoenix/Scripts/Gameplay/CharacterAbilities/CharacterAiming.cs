@@ -5,10 +5,16 @@ using UnityEngine;
 namespace JadePhoenix.Gameplay
 {
     /// <summary>
-    /// Allows a character to aim based on the mouse position in a 3D environment.
+    /// Allows a character to aim based on the mouse position or other scripts in a 3D environment.
     /// </summary>
     public class CharacterAiming : CharacterAbility
     {
+        public enum RotationControl
+        {
+            Mouse,
+            Script
+        }
+
         [Tooltip("The speed at which the character rotates to face the aim direction.")]
         public float RotationSpeed = 10f;
 
@@ -17,6 +23,9 @@ namespace JadePhoenix.Gameplay
 
         [Tooltip("If true, character will not rotate.")]
         public bool RotationForbidden = false;
+
+        [Tooltip("Select the rotation control between mouse or script.")]
+        public RotationControl rotationControl = RotationControl.Script;
 
         protected Camera _mainCamera;
         protected Vector3 _mousePosition;
@@ -40,8 +49,11 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         public override void ProcessAbility()
         {
-            GetMouseAim();
-            RotateTowardsMouse();
+            if (rotationControl == RotationControl.Mouse)
+            {
+                GetMouseAim();
+                RotateTowardsMouse();
+            }
         }
 
         /// <summary>
