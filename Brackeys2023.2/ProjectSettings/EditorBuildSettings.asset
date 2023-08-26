@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/GameLevels/0-TherapistOffice.unity
     guid: d175ab55005b4924daf3818458d7c5bf
+  - enabled: 1
+    path: Assets/_Game/Scenes/GameLevels/1-FoodLevel.unity
+    guid: ddf8f91a62c91f644826c283b604dca6
+  - enabled: 1
+    path: Assets/_Game/Scenes/GameLevels/2-BalloonLevel.unity
+    guid: da4dfd9452740a74fac4341fcaf4f96c
+  - enabled: 1
+    path: Assets/_Game/Scenes/GameLevels/3-TherapistOutro.unity
+    guid: 0eb15225625e6a647908edc1172485a4
   m_configObjects: {}
