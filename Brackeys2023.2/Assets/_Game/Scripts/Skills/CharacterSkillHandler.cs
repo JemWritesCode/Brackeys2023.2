@@ -59,8 +59,9 @@ namespace _Game
             for (int i = 0; i < Skills.Count; i++)
             {
                 _buttons.Add(InputManager.Instance.GetButtonFromID($"Skill_{i}"));
-                _skills.Add(Instantiate(Skills[i]));
-                _skills[i].Initialization(_character);
+                Skill skill = Instantiate(Skills[i]);
+                _skills.Add(skill);
+                skill.Initialization(_character, i);
             }
         }
 

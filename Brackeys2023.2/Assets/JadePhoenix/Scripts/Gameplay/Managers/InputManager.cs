@@ -22,7 +22,6 @@ namespace JadePhoenix.Gameplay
         public bool SmoothMovement = true;
         public Vector2 Threshold = new Vector2(0.1f, 0.4f);
 
-        public JP_Input.Button PauseButton { get; protected set; }
         public JP_Input.Button ShootButton { get; protected set; }
         public JP_Input.Button DashButton { get; protected set; }
         public JP_Input.Button Skill_0Button { get; protected set; }
@@ -69,12 +68,10 @@ namespace JadePhoenix.Gameplay
         {
             ButtonList = new List<JP_Input.Button>
             {
-                //(PauseButton = new JP_Input.Button(PlayerID, "Pause", PauseButtonDown, PauseButtonPressed, PauseButtonUp)),
                 (Skill_0Button = new JP_Input.Button(PlayerID, "Skill_0", Skill_0ButtonDown, Skill_0ButtonPressed, Skill_0ButtonUp)),
                 (Skill_1Button = new JP_Input.Button(PlayerID, "Skill_1", Skill_1ButtonDown, Skill_1ButtonPressed, Skill_1ButtonUp)),
                 (Skill_2Button = new JP_Input.Button(PlayerID, "Skill_2", Skill_2ButtonDown, Skill_2ButtonPressed, Skill_2ButtonUp)),
                 (Skill_3Button = new JP_Input.Button(PlayerID, "Skill_3", Skill_3ButtonDown, Skill_3ButtonPressed, Skill_3ButtonUp)),
-                //(DashButton = new JP_Input.Button(PlayerID, "Dash", DashButtonDown, DashButtonPressed, DashButtonUp)),
             };
         }
 
@@ -176,10 +173,6 @@ namespace JadePhoenix.Gameplay
         #endregion
 
         #region Button Event Methods
-
-        public virtual void PauseButtonDown() { PauseButton.State.ChangeState(JP_Input.ButtonStates.ButtonDown); }
-        public virtual void PauseButtonPressed() { PauseButton.State.ChangeState(JP_Input.ButtonStates.ButtonPressed); }
-        public virtual void PauseButtonUp() { PauseButton.State.ChangeState(JP_Input.ButtonStates.ButtonUp); }
 
         public virtual void Skill_0ButtonDown() { Skill_0Button.State.ChangeState(JP_Input.ButtonStates.ButtonDown); }
         public virtual void Skill_0ButtonPressed() { Skill_0Button.State.ChangeState(JP_Input.ButtonStates.ButtonPressed); }

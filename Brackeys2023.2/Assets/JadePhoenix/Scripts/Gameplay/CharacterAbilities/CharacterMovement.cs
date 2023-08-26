@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.UI.GridLayoutGroup;
 
 namespace JadePhoenix.Gameplay
 {
@@ -56,10 +57,10 @@ namespace JadePhoenix.Gameplay
         protected float _acceleration = 0f;
         protected Camera _mainCamera;
 
-        protected const string _walkingAnimationParameterName = "Walking";
-        protected const string _idleAnimationParameterName = "Idle";
-        protected int _walkingAnimationParameter;
-        protected int _idleAnimationParameter;
+        protected const string _verticalAnimationParameterName = "vel_fbw";
+        protected const string _horizontalAnimationParameterName = "vel_lat";
+        protected int _verticalAnimationParameter;
+        protected int _horizontalAnimationParameter;
 
         #region UNITY LIFECYCLE
 
@@ -104,14 +105,6 @@ namespace JadePhoenix.Gameplay
             MovementForbidden = false;
         }
 
-        protected override void InitializeAnimatorParameters()
-        {
-            //Debug.Log($"{this.GetType()}.InitializeAnimatorParameters: Initializing Movement parameters.", gameObject);
-
-            RegisterAnimatorParameter(_walkingAnimationParameterName, AnimatorControllerParameterType.Bool, out _walkingAnimationParameter);
-            RegisterAnimatorParameter(_idleAnimationParameterName, AnimatorControllerParameterType.Bool, out _idleAnimationParameter);
-        }
-
         protected virtual void HandleMovement()
         {
             if (_condition.CurrentState != CharacterStates.CharacterConditions.Normal) { return; }
@@ -146,14 +139,6 @@ namespace JadePhoenix.Gameplay
         {
             base.ProcessAbility();
             HandleMovement();
-        }
-
-        public override void UpdateAnimator()
-        {
-            //Debug.Log($"{this.GetType()}.UpdateAnimator: Updating Animator. Walking = [{_movement.CurrentState == CharacterStates.MovementStates.Walking}]", gameObject);
-
-            AnimatorExtensions.UpdateAnimatorBool(_animator, _walkingAnimationParameter, _movement.CurrentState == CharacterStates.MovementStates.Walking, _character.AnimatorParameters);
-            AnimatorExtensions.UpdateAnimatorBool(_animator, _idleAnimationParameter, _movement.CurrentState == CharacterStates.MovementStates.Idle, _character.AnimatorParameters);
         }
 
         /// <summary>
@@ -276,5 +261,46 @@ namespace JadePhoenix.Gameplay
         }
 
         #endregion
+
+        protected Vector2 CalculateMovementParameter(Vector2 input)
+        {
+            Vector2 movementParameter = Vector2.zero;
+
+            // Forward-backward motion
+            if (input.y > 0.5f)
+            {
+                movementParameter.y = 2; // Running
+            }
+            else if (input.y < -0.5f)
+            {
+                movementParameter.y = -2; // Running backwards
+            }
+
+            // Lateral motion
+            if (input.x > 0.5f)
+            {
+                movementParameter.x = 2; // Run right
+            }
+            else if (input.x < -0.5f)
+            {
+                movementParameter.x = -2; // Run left
+            }
+
+            return movementParameter;
+        }
+
+        protected override void InitializeAnimatorParameters()
+        {
+            RegisterAnimatorParameter(_horizontalAnimationParameterName, AnimatorControllerParameterType.Float, out _horizontalAnimationParameter);
+            RegisterAnimatorParameter(_verticalAnimationParameterName, AnimatorControllerParameterType.Float, out _verticalAnimationParameter);
+        }
+
+        public override void UpdateAnimator()
+        {
+            Vector2 movementParameter = CalculateMovementParameter(new Vector2(_horizontalInput, _verticalInput));
+
+            AnimatorExtensions.UpdateAnimatorFloat(_animator, _horizontalAnimationParameter, movementParameter.x, _character.AnimatorParameters);
+            AnimatorExtensions.UpdateAnimatorFloat(_animator, _verticalAnimationParameter, movementParameter.y, _character.AnimatorParameters);
+        }
     }
 }

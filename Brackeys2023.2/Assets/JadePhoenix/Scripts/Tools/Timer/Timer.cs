@@ -7,9 +7,9 @@ namespace JadePhoenix.Tools
 {
     public class Timer
     {
-        public string Label { get; private set; }
+        public string Label { get; set; }
         /// The total duration of the timer
-        public float Duration { get; private set; }
+        public float Duration { get; set; }
         /// The elapsed time of the timer
         public float ElapsedTime { get; private set; }
         /// Whether the timer is currently running
@@ -100,14 +100,14 @@ namespace JadePhoenix.Tools
         }
 
         /// <summary>
-        /// Returns the normalized value of the timer's progress (0 to 1).
+        /// Returns the normalized value of the timer's progress (1 to 0).
         /// </summary>
         /// <returns></returns>
         public virtual float GetNormalisedTime()
         {
-            if (Duration <= 0f) return 0f;
+            if (Duration <= 0f) return 1f;
 
-            return Mathf.Clamp01(ElapsedTime / Duration);
+            return 1f - Mathf.Clamp01(ElapsedTime / Duration);
         }
     }
 }

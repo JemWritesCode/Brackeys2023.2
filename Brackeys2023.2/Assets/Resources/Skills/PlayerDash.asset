@@ -21,7 +21,7 @@ MonoBehaviour:
     DebugCurrentState: 0
   PercentageModifier: 0
   UpdateMode: 1
-  ActiveState: 3
+  ActiveState: 4
   TriggerMode: 1
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 0

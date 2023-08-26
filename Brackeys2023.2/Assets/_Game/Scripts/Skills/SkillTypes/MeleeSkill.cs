@@ -53,9 +53,9 @@ namespace _Game
         protected GameObject _damageArea;
         protected Collider _damageAreaCollider;
 
-        public override void Initialization(Character owner)
+        public override void Initialization(Character owner, int index)
         {
-            base.Initialization(owner);
+            base.Initialization(owner, index);
 
             if (_damageArea == null)
             {

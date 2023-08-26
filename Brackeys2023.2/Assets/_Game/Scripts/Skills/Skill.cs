@@ -46,7 +46,7 @@ namespace _Game
         public UpdateModes UpdateMode = UpdateModes.Update;
 
         [Header("Use")]
-        [SingleFlagSelection, Tooltip("What state this skill should put the state machine in when activated.")]
+        [Tooltip("What state this skill should put the state machine in when activated.")]
         public CharacterStates.MovementStates ActiveState = CharacterStates.MovementStates.Attacking;
 
         [Tooltip("The trigger mode of the skill (SemiAuto or Auto).")]
@@ -94,6 +94,7 @@ namespace _Game
         protected CharacterSkillHandler _skillHandler;
         protected CharacterMovement _movement;
         protected CharacterAiming _aiming;
+        protected int _skillIndex;
 
         protected const string _skillAnimationParameterName = "skill_";
         protected const string _idleAnimationParameterName = "Idle";
@@ -105,14 +106,17 @@ namespace _Game
         /// Initializes the skill, setting up necessary properties and references.
         /// </summary>
         /// <param name="owner">The game object that will use or activate the skill.</param>
-        public virtual void Initialization(Character owner)
+        public virtual void Initialization(Character owner, int index)
         {
             SetOwner(owner);
             SkillState = new StateMachine<SkillStates>(owner.gameObject, true);
             SkillState.ChangeState(SkillStates.SkillIdle);
 
-            _cooldownTimer = new Timer(Cooldown, OnCooldownStart, OnCooldownEnd);
+            _cooldownTimer = new Timer(Cooldown, OnCooldownStart, OnCooldownEnd, OnCooldownUpdate);
             _delayBeforeUseTimer = new Timer(DelayBeforeUse);
+            _skillDurationTimer = new Timer(SkillDuration);
+
+            _skillIndex = index;
         }
 
         public virtual void SetOwner(Character owner)
@@ -130,12 +134,35 @@ namespace _Game
         /// <summary>
         /// Is called when the skill's cooldown starts.
         /// </summary>
-        public virtual void OnCooldownStart() { }
+        public virtual void OnCooldownStart()
+        {
+            if (Owner.PlayerID == "Player")
+            {
+                UIManager.Instance.SkillCooldownSetFill(_skillIndex, 1);
+            }
+        }
 
         /// <summary>
         /// Is called when the skill's cooldown ends.
         /// </summary>
-        public virtual void OnCooldownEnd() { }
+        public virtual void OnCooldownEnd()
+        {
+            if (Owner.PlayerID == "Player")
+            {
+                UIManager.Instance.SkillCooldownSetFill(_skillIndex, 0);
+            }
+        }
+
+        /// <summary>
+        /// Is called when the skill's cooldown updates.
+        /// </summary>
+        public virtual void OnCooldownUpdate()
+        {
+            if (Owner.PlayerID == "Player")
+            {
+                UIManager.Instance.SkillCooldownSetFill(_skillIndex, _cooldownTimer.GetNormalisedTime());
+            }
+        }
 
         #region Skill STATE MACHINE CASE METHODS
 
@@ -187,8 +214,8 @@ namespace _Game
             {
                 if (!_delayBeforeUseTimer.IsRunning)
                 {
-                    _delayBeforeUseTimer = new Timer(DelayBeforeUse);
-                    _delayBeforeUseTimer.StartTimer();
+                    _delayBeforeUseTimer.Duration = DelayBeforeUse;
+                    _delayBeforeUseTimer.StartTimer(true, true);
                 }
                 SkillState.ChangeState(SkillStates.SkillDelayBeforeUse);
             }
@@ -236,9 +263,10 @@ namespace _Game
             {
                 if (!_cooldownTimer.IsRunning)
                 {
-                    _cooldownTimer = new Timer(Cooldown, OnCooldownStart, OnCooldownEnd);
-                    _cooldownTimer.StartTimer();
+                    _cooldownTimer.Duration = Cooldown;
+                    _cooldownTimer.StartTimer(true, true);
                 }
+
                 SkillState.ChangeState(SkillStates.SkillCooldown);
             }
             else
@@ -288,12 +316,27 @@ namespace _Game
         }
 
         /// <summary>
+        /// Handle what happens when the skill starts
+        /// </summary>
+        public virtual void SkillStart()
+        {
+            if (Owner.PlayerID == "Player")
+            {
+                UIManager.Instance.SkillCooldownSetFill(_skillIndex, 1);
+            }
+
+            _skillHandler.SetMovementState(ActiveState);
+            SkillState.ChangeState(SkillStates.SkillStart);
+        }
+
+        /// <summary>
         /// Makes a request for the skill to shoot.
         /// </summary>
         public virtual void ActivateRequest()
         {
-            _skillDurationTimer = new Timer(SkillDuration);
-            _skillDurationTimer.StartTimer();
+            _skillDurationTimer.Duration = SkillDuration;
+            _skillDurationTimer.StartTimer(true, true);
+
             SkillState.ChangeState(SkillStates.SkillUse);
         }
 
@@ -309,15 +352,6 @@ namespace _Game
         }
 
         /// <summary>
-        /// Handle what happens when the skill starts
-        /// </summary>
-        public virtual void SkillStart()
-        {
-            _skillHandler.SetMovementState(ActiveState);
-            SkillState.ChangeState(SkillStates.SkillStart);
-        }
-
-        /// <summary>
         /// Turns the skill off, primarily ending its current state of operation.
         /// </summary>
         public virtual void SkillStop()
@@ -327,7 +361,7 @@ namespace _Game
                 return;
             }
             _triggerReleased = true;
-            _skillHandler.SetMovementState(ActiveState);
+            _skillHandler.SetMovementState(CharacterStates.MovementStates.Idle);
             SkillState.ChangeState(SkillStates.SkillStop);
         }
 
