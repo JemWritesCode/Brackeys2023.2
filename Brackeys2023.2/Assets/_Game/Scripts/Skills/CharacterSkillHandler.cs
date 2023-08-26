@@ -13,11 +13,26 @@ namespace _Game
         [Header("Skills")]
         [Tooltip("The position from which projectiles will be spawned (can be safely left empty).")]
         public Transform ProjectileSpawn;
+
         [Tooltip("The list of skills for this character to use. Copies will be created at runtime for the purpose of modifications. DO NOT MODIFY THESE AT RUNTIME.")]
         public List<Skill> Skills;
 
+        [Header("Charge")]
+        [ReadOnly, Tooltip("The current charge of the player.")]
+        public float Charge = 0f;
+
+        [Tooltip("The maximum charge of the player.")]
+        public float MaxCharge = 100f;
+
+        [Tooltip("The amount of charge gained over time.")]
+        public float ChargeTimeIncrement = 0f;
+
+        [Tooltip("The amount of charge gained when the character deals damage.")]
+        public float ChargeDamageIncrement = 0f;
+
         [Header("Damage Calculation")]
         public int BaseDamage = 10;
+
         [Tooltip("The current overall bonus percentage used in damage calculations.")]
         public float DamageBonusPercentage = 0f;
 
@@ -25,16 +40,18 @@ namespace _Game
         [Tooltip("A list of character states where input is permitted.")]
         public CharacterStates.MovementStates PermittedInputStates;
 
+        public bool IsMaxCharge { get { return Charge >= MaxCharge; } }
+
         [SerializeField, ReadOnly]
-        protected List<Skill> _skills = new List<Skill>();
+        protected List<Skill> _currentActiveSkills = new List<Skill>();
         protected List<JP_Input.Button> _buttons = new List<JP_Input.Button>();
         protected bool _usingSkill;
 
         protected virtual void FixedUpdate()
         {
-            for (int i = 0; i < _skills.Count; i++)
+            for (int i = 0; i < _currentActiveSkills.Count; i++)
             {
-                Skill skill = _skills[i];
+                Skill skill = _currentActiveSkills[i];
 
                 if (skill.UpdateMode != Skill.UpdateModes.FixedUpdate) continue;
 
@@ -51,7 +68,7 @@ namespace _Game
         /// <summary>
         /// Used for extended flexibility.
         /// </summary>
-        public virtual void Setup()
+        protected virtual void Setup()
         {
             _character = GetComponent<Character>();
             _movement.ChangeState(CharacterStates.MovementStates.Idle);
@@ -60,16 +77,19 @@ namespace _Game
             {
                 _buttons.Add(InputManager.Instance.GetButtonFromID($"Skill_{i}"));
                 Skill skill = Instantiate(Skills[i]);
-                _skills.Add(skill);
+                _currentActiveSkills.Add(skill);
                 skill.Initialization(_character, i);
+                UIManager.Instance.SetSkillImage(i, skill.Icon);
             }
         }
 
         public override void LateProcessAbility()
         {
-            for (int i = 0; i < _skills.Count; i++)
+            ModifyCharge(ChargeTimeIncrement * Time.deltaTime);
+
+            for (int i = 0; i < _currentActiveSkills.Count; i++)
             {
-                Skill skill = _skills[i];
+                Skill skill = _currentActiveSkills[i];
 
                 if (skill.UpdateMode != Skill.UpdateModes.Update) continue;
 
@@ -98,9 +118,9 @@ namespace _Game
             }
 
             // Iterate through each skill in the character's skill set
-            for (int i = 0; i < _skills.Count; i++)
+            for (int i = 0; i < _currentActiveSkills.Count; i++)
             {
-                Skill skill = _skills[i]; // Get the current skill from the list
+                Skill skill = _currentActiveSkills[i]; // Get the current skill from the list
                 JP_Input.Button button = _buttons[i]; // Get the corresponding button assigned to this skill
 
                 // Check if the button was just pressed down or if the skill has an 'Auto' trigger mode 
@@ -123,6 +143,41 @@ namespace _Game
                 {
                     skill.SkillInputStop(); // Stop any ongoing input actions for this skill
                 }
+            }
+        }
+
+        protected override void OnHit(GameObject instigator)
+        {
+            base.OnHit(instigator);
+            for (int i = 0; i < _currentActiveSkills.Count; i++)
+            {
+                Skill skill = _currentActiveSkills[i];
+                skill.OnHit(instigator);
+            }
+        }
+
+        protected override void OnDeath()
+        {
+            base.OnDeath();
+            for (int i = 0; i < _currentActiveSkills.Count; i++)
+            {
+                Skill skill = _currentActiveSkills[i];
+                StopSkill(skill);
+            }
+        }
+
+        protected override void OnRespawn()
+        {
+            base.OnRespawn();
+            Setup();
+        }
+
+        protected virtual void OnDrawGizmos()
+        {
+            for (int i = 0; i < _currentActiveSkills.Count; i++)
+            {
+                Skill skill = _currentActiveSkills[i];
+                skill.DrawGizmos();
             }
         }
 
@@ -171,46 +226,18 @@ namespace _Game
             return Mathf.RoundToInt(BaseDamage + (DamageBonusPercentage / 100 + skill.PercentageModifier / 100));
         }
 
-        protected override void OnHit(GameObject instigator)
+        public virtual void ModifyCharge(float amount)
         {
-            base.OnHit(instigator);
-            for (int i = 0; i < _skills.Count; i++)
-            {
-                Skill skill = _skills[i];
-                skill.OnHit(instigator);
-            }
-        }
+            float newCharge = Mathf.Clamp(Charge + amount, 0, MaxCharge);
 
-        protected override void OnDeath()
-        {
-            base.OnDeath();
-            for (int i = 0; i < _skills.Count; i++)
-            {
-                Skill skill = _skills[i];
-                StopSkill(skill);
-            }
-        }
-
-        protected override void OnRespawn()
-        {
-            base.OnRespawn();
-            Setup();
-        }
-
-        protected virtual void OnDrawGizmos()
-        {
-            for (int i = 0; i < _skills.Count; i++)
-            {
-                Skill skill = _skills[i];
-                skill.DrawGizmos();
-            }
+            Charge = newCharge;
         }
 
         protected override void InitializeAnimatorParameters()
         {
             for (int i = 0; i < Skills.Count; i++)
             {
-                Skill skill = _skills[i];
+                Skill skill = _currentActiveSkills[i];
 
                 skill.InitializeAnimatorParameters();
             }
@@ -220,7 +247,7 @@ namespace _Game
         {
             for (int i = 0; i < Skills.Count; i++)
             {
-                Skill skill = _skills[i];
+                Skill skill = _currentActiveSkills[i];
 
                 skill.UpdateAnimator(_animator, _movement.CurrentState);
             }

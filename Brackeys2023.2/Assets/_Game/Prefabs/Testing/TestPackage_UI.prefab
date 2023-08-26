@@ -773,6 +773,11 @@ MonoBehaviour:
   DeathScreen: {fileID: 0}
   VictoryScreen: {fileID: 0}
   CreditsScreen: {fileID: 0}
+  SkillImages:
+  - {fileID: 9022739631146031132}
+  - {fileID: 2968789854064018727}
+  - {fileID: 6859106688695882704}
+  - {fileID: 5366359535408914783}
   SkillCooldownImages:
   - {fileID: 2409369599004659963}
   - {fileID: 583347649442839425}

@@ -12,12 +12,262 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
   m_Name: Aiya2
   m_EditorClassIdentifier: 
-  NodeLinkDatas: []
+  NodeLinkDatas:
+  - BaseNodeGuid: 8a48f809-22d3-4acd-8837-ce91de23bc85
+    TargetNodeGuid: 3dc9307c-0c73-450d-b0ed-586e5ad1f700
+  - BaseNodeGuid: 3dc9307c-0c73-450d-b0ed-586e5ad1f700
+    TargetNodeGuid: f438f0a6-21c4-48b1-9c17-ff581244694e
+  - BaseNodeGuid: f438f0a6-21c4-48b1-9c17-ff581244694e
+    TargetNodeGuid: 928137c0-ba94-459d-8d40-1b704ddf5b02
+  - BaseNodeGuid: 928137c0-ba94-459d-8d40-1b704ddf5b02
+    TargetNodeGuid: bee5d087-bd39-45b7-aacb-9a612440188e
+  - BaseNodeGuid: bee5d087-bd39-45b7-aacb-9a612440188e
+    TargetNodeGuid: 2018fedf-2979-449d-88ef-aa1afd5554b5
+  - BaseNodeGuid: 2018fedf-2979-449d-88ef-aa1afd5554b5
+    TargetNodeGuid: fd630233-1657-488b-bef0-cb4052d80653
+  - BaseNodeGuid: fd630233-1657-488b-bef0-cb4052d80653
+    TargetNodeGuid: 9c0e60f2-bbf8-485e-8c48-ce01bb6b00bc
+  - BaseNodeGuid: 9c0e60f2-bbf8-485e-8c48-ce01bb6b00bc
+    TargetNodeGuid: 2a48fb66-324e-422a-bc13-d07d5887f0d4
+  - BaseNodeGuid: 2a48fb66-324e-422a-bc13-d07d5887f0d4
+    TargetNodeGuid: 2d8bb299-9c1d-4bae-8f14-7f9b6140d933
+  - BaseNodeGuid: 2d8bb299-9c1d-4bae-8f14-7f9b6140d933
+    TargetNodeGuid: 8c546309-f59d-4573-943f-0daafb61eb8d
+  - BaseNodeGuid: 8c546309-f59d-4573-943f-0daafb61eb8d
+    TargetNodeGuid: f94d21db-ab67-47ba-8fa4-f54de0a55219
+  - BaseNodeGuid: f94d21db-ab67-47ba-8fa4-f54de0a55219
+    TargetNodeGuid: 84a307a5-7383-4a7e-b918-8a43dcced8a6
+  - BaseNodeGuid: 84a307a5-7383-4a7e-b918-8a43dcced8a6
+    TargetNodeGuid: 45da4681-c49a-4fcf-9c28-c36f87877eff
+  - BaseNodeGuid: 45da4681-c49a-4fcf-9c28-c36f87877eff
+    TargetNodeGuid: 1623cd15-5f5c-4783-b4a9-54c3ffbc755c
+  - BaseNodeGuid: 1623cd15-5f5c-4783-b4a9-54c3ffbc755c
+    TargetNodeGuid: 54b7b3c7-957d-47de-9e55-43e0cad67a26
   DialogueChoiceNodeDatas: []
-  DialogueNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 3dc9307c-0c73-450d-b0ed-586e5ad1f700
+    Position: {x: 551, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: We did it! And now, Mommy is setting up a big surprise
+        for us.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: f438f0a6-21c4-48b1-9c17-ff581244694e
+    Position: {x: 812, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: That's so exciting! I can't wait to see what it is.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 928137c0-ba94-459d-8d40-1b704ddf5b02
+    Position: {x: 1063, y: 303}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 'Look, here she is! They got us the giant inflatable guys
+        we wanted. '
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: bee5d087-bd39-45b7-aacb-9a612440188e
+    Position: {x: 1321, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Yay! I can't wait to see them closer.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 2018fedf-2979-449d-88ef-aa1afd5554b5
+    Position: {x: 1577, y: 303}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: So you did not always hate parties?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: fd630233-1657-488b-bef0-cb4052d80653
+    Position: {x: 1843, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: No, I remember now, I used to love them.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 9c0e60f2-bbf8-485e-8c48-ce01bb6b00bc
+    Position: {x: 2114, y: 303}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: And you were excited to play with balloons and inflatable
+        toys?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 2a48fb66-324e-422a-bc13-d07d5887f0d4
+    Position: {x: 2386, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Yeah...I guess I was. I forgot all about that. Looking
+        back... they were actually kinda cute.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 2d8bb299-9c1d-4bae-8f14-7f9b6140d933
+    Position: {x: 2647, y: 303}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Oh no, Jerrold, stop! G-get away from them!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 8c546309-f59d-4573-943f-0daafb61eb8d
+    Position: {x: 2919, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Wait, what's he doing?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: f94d21db-ab67-47ba-8fa4-f54de0a55219
+    Position: {x: 3182, y: 303}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: He's trying to make them hug us! Run!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 84a307a5-7383-4a7e-b918-8a43dcced8a6
+    Position: {x: 3442, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: No! No! This is way too close, they're too big!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 45da4681-c49a-4fcf-9c28-c36f87877eff
+    Position: {x: 3702, y: 303}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: AHH, They're coming after us!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 1623cd15-5f5c-4783-b4a9-54c3ffbc755c
+    Position: {x: 3960, y: 436}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Let's get rid of these guys too.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
   TimerChoiceNodeDatas: []
-  EndNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 54b7b3c7-957d-47de-9e55-43e0cad67a26
+    Position: {x: 4272, y: 387}
+    EndNodeType: 0
   EventNodeDatas: []
-  StartNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 8a48f809-22d3-4acd-8837-ce91de23bc85
+    Position: {x: 420, y: 378}
+    startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []

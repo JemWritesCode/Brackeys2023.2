@@ -20,6 +20,7 @@ namespace JadePhoenix.Gameplay
         public GameObject VictoryScreen;
         public GameObject CreditsScreen;
 
+        public List<Image> SkillImages;
         public List<Image> SkillCooldownImages;
 
         protected virtual void Start()
@@ -99,7 +100,16 @@ namespace JadePhoenix.Gameplay
 
         public virtual void SkillCooldownSetFill(int index, float amount)
         {
+            if (SkillCooldownImages[index] == null) return;
+
             SkillCooldownImages[index].fillAmount = amount;
+        }
+
+        public virtual void SetSkillImage(int index, Sprite image)
+        {
+            if (SkillImages[index] == null) return;
+
+            SkillImages[index].sprite = image;
         }
 
         #region BUTTON METHODS
