@@ -93,6 +93,8 @@ crashlytics-build.properties
 # Let the team figure out what components they want for themselves, everyone may have a different setup
 .vsconfig
 
+######################## FMOD Audio Integration ########################
+
 # Never ignore DLLs in the FMOD subfolder.
 !/[Aa]ssets/Plugins/FMOD/**/lib/*
 

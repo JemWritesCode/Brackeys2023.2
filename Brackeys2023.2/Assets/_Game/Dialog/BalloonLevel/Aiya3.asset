@@ -1,0 +1,278 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Aiya3
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: ba3a5e75-c631-4817-993e-9b26bc05a182
+    TargetNodeGuid: 0a79950c-7b04-4b59-adcf-b39793d3383d
+  - BaseNodeGuid: 0a79950c-7b04-4b59-adcf-b39793d3383d
+    TargetNodeGuid: 928b9ac5-b916-4122-9271-a9303308c85f
+  - BaseNodeGuid: 928b9ac5-b916-4122-9271-a9303308c85f
+    TargetNodeGuid: 7f0eca7b-1368-4a55-abcc-9c3a126ba2af
+  - BaseNodeGuid: 7f0eca7b-1368-4a55-abcc-9c3a126ba2af
+    TargetNodeGuid: 3edf4c0c-3df2-4788-b425-b015f01747a1
+  - BaseNodeGuid: 3edf4c0c-3df2-4788-b425-b015f01747a1
+    TargetNodeGuid: c18f65fb-932e-4309-b53d-83c8dd207880
+  - BaseNodeGuid: c18f65fb-932e-4309-b53d-83c8dd207880
+    TargetNodeGuid: 3520723b-12a4-4d1f-bea2-f3a0cb86c9c5
+  - BaseNodeGuid: 3520723b-12a4-4d1f-bea2-f3a0cb86c9c5
+    TargetNodeGuid: 41019ca3-9d7b-482e-b574-e625f1d75535
+  - BaseNodeGuid: 41019ca3-9d7b-482e-b574-e625f1d75535
+    TargetNodeGuid: afbc989a-611b-49f7-8328-f5770ed0a734
+  - BaseNodeGuid: afbc989a-611b-49f7-8328-f5770ed0a734
+    TargetNodeGuid: 246adfda-de0e-44ea-a18b-1ae61660bfce
+  - BaseNodeGuid: 246adfda-de0e-44ea-a18b-1ae61660bfce
+    TargetNodeGuid: df9cfb9f-80d2-42ef-a659-d6080c917e03
+  - BaseNodeGuid: df9cfb9f-80d2-42ef-a659-d6080c917e03
+    TargetNodeGuid: b57c3e5a-8789-4bfc-b27b-08e294641b59
+  - BaseNodeGuid: b57c3e5a-8789-4bfc-b27b-08e294641b59
+    TargetNodeGuid: c1ebc39a-64fe-4b3f-b064-915bbba9abfa
+  - BaseNodeGuid: c1ebc39a-64fe-4b3f-b064-915bbba9abfa
+    TargetNodeGuid: b6f4f8f8-7053-4aa2-b410-2fea488646f7
+  - BaseNodeGuid: b6f4f8f8-7053-4aa2-b410-2fea488646f7
+    TargetNodeGuid: e3f97c3d-3998-4e9f-b507-ea18a60ec1b1
+  - BaseNodeGuid: e3f97c3d-3998-4e9f-b507-ea18a60ec1b1
+    TargetNodeGuid: 520188e2-8c6c-4005-ae75-00d40db75eed
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 0a79950c-7b04-4b59-adcf-b39793d3383d
+    Position: {x: 619, y: 279}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I can't believe he ruined this for us! I was so looking
+        forward to those inflatable guys too.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 928b9ac5-b916-4122-9271-a9303308c85f
+    Position: {x: 918, y: 279}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Mommy says boys will be boys, but I think Jerrold is just
+        a big ole meanie.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 7f0eca7b-1368-4a55-abcc-9c3a126ba2af
+    Position: {x: 1193, y: 432}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Me too!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 3edf4c0c-3df2-4788-b425-b015f01747a1
+    Position: {x: 1466, y: 279}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I bet he is thinking up something to annoy us with right
+        now. I wish he would just leave us alone.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: c18f65fb-932e-4309-b53d-83c8dd207880
+    Position: {x: 1749, y: 279}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: What do you remember about this Jerrold boy?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 3520723b-12a4-4d1f-bea2-f3a0cb86c9c5
+    Position: {x: 2029, y: 432}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Not much, I barely remember him, everyone said to ignore
+        him so I did.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 41019ca3-9d7b-482e-b574-e625f1d75535
+    Position: {x: 2311, y: 279}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Do you think your fear of balloons might have been influenced
+        by Jerrold's behavior?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 246adfda-de0e-44ea-a18b-1ae61660bfce
+    Position: {x: 2878, y: 279}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: You mentioned everyone said to ignore him. How did Jerrold
+        react to that?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: b57c3e5a-8789-4bfc-b27b-08e294641b59
+    Position: {x: 3465, y: 279}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 'Wait, what''s that over there? '
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: c1ebc39a-64fe-4b3f-b064-915bbba9abfa
+    Position: {x: 3741, y: 432}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Is that...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: b6f4f8f8-7053-4aa2-b410-2fea488646f7
+    Position: {x: 4015, y: 279}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I knew it! He is over there blowing up more balloons right
+        now.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: e3f97c3d-3998-4e9f-b507-ea18a60ec1b1
+    Position: {x: 4285, y: 432}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Where did he even get those?!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: afbc989a-611b-49f7-8328-f5770ed0a734
+    Position: {x: 2586, y: 432}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Maybe. Balloons still give me the creeps, but Jerrold
+        does too. He was always trying to make us miserable.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: df9cfb9f-80d2-42ef-a659-d6080c917e03
+    Position: {x: 3169, y: 432}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Oh, awful. I remember now, he was the kind of kid that
+        acts worse and worse the more you let him.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 520188e2-8c6c-4005-ae75-00d40db75eed
+    Position: {x: 4585, y: 368}
+    EndNodeType: 0
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: ba3a5e75-c631-4817-993e-9b26bc05a182
+    Position: {x: 457, y: 384}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []

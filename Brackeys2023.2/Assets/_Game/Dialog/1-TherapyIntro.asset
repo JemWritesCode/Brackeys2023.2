@@ -1,0 +1,771 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: 1-TherapyIntro
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 9d113ae3-aa9f-4cb8-9bab-6dc4df886d32
+    TargetNodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
+  - BaseNodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
+    TargetNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+  - BaseNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
+    TargetNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+  - BaseNodeGuid: 6ba44d72-d4ae-4b22-98e3-18b90701bba1
+    TargetNodeGuid: 379917ea-59c6-4003-9ffe-d2fb4a66d4cc
+  - BaseNodeGuid: 01fce7c4-8d11-48bc-b3f6-72503dbfb930
+    TargetNodeGuid: 86337beb-a58b-4723-9487-f6afa60e960c
+  - BaseNodeGuid: 379917ea-59c6-4003-9ffe-d2fb4a66d4cc
+    TargetNodeGuid: 01fce7c4-8d11-48bc-b3f6-72503dbfb930
+  - BaseNodeGuid: 86337beb-a58b-4723-9487-f6afa60e960c
+    TargetNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
+  - BaseNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
+    TargetNodeGuid: 8db75f3e-f027-4208-a8af-247554df719b
+  - BaseNodeGuid: 8db75f3e-f027-4208-a8af-247554df719b
+    TargetNodeGuid: 1fd6679f-7776-419a-8a2a-dbce4fbdbd1d
+  - BaseNodeGuid: 92073d22-7af9-4a5a-ab54-267b910d498d
+    TargetNodeGuid: 6ba44d72-d4ae-4b22-98e3-18b90701bba1
+  - BaseNodeGuid: 602d0cf3-517c-43dd-bacd-79d34af05406
+    TargetNodeGuid: cbe0f216-0126-4b1e-a621-7737943b8ed7
+  - BaseNodeGuid: 1113a50a-ca6c-4951-bde4-e3f722628bbe
+    TargetNodeGuid: 58c10a67-2cd1-414c-9077-0d412f7e8422
+  - BaseNodeGuid: cbe0f216-0126-4b1e-a621-7737943b8ed7
+    TargetNodeGuid: 1113a50a-ca6c-4951-bde4-e3f722628bbe
+  - BaseNodeGuid: 58c10a67-2cd1-414c-9077-0d412f7e8422
+    TargetNodeGuid: a15e5b8f-e6a3-416d-a7c6-ab5938d1bb6e
+  - BaseNodeGuid: a15e5b8f-e6a3-416d-a7c6-ab5938d1bb6e
+    TargetNodeGuid: 4cb152f9-8102-4295-aebd-2db997c2de4e
+  - BaseNodeGuid: a8abe9cd-2f6f-4213-b985-10d5a8e15a05
+    TargetNodeGuid: 74111e99-ec63-427f-82c8-ce324bfac76a
+  - BaseNodeGuid: 74111e99-ec63-427f-82c8-ce324bfac76a
+    TargetNodeGuid: 0c7865ec-8e3f-45c8-95f2-24037ff032ee
+  - BaseNodeGuid: 0c7865ec-8e3f-45c8-95f2-24037ff032ee
+    TargetNodeGuid: c598bfd8-02d4-4c75-99f1-a0d2454e0d4e
+  - BaseNodeGuid: c598bfd8-02d4-4c75-99f1-a0d2454e0d4e
+    TargetNodeGuid: 0e6788f4-e169-4cba-8108-a409b881c1b2
+  - BaseNodeGuid: 1fd6679f-7776-419a-8a2a-dbce4fbdbd1d
+    TargetNodeGuid: 38b582e9-33db-46f9-afec-a0aaf56ecea6
+  - BaseNodeGuid: 38b582e9-33db-46f9-afec-a0aaf56ecea6
+    TargetNodeGuid: d5e0fc7a-0e65-4824-89d1-3414ee63ba43
+  - BaseNodeGuid: d5e0fc7a-0e65-4824-89d1-3414ee63ba43
+    TargetNodeGuid: 52e49099-c63a-4ce8-8a52-35001ec5cee3
+  - BaseNodeGuid: 52e49099-c63a-4ce8-8a52-35001ec5cee3
+    TargetNodeGuid: 937c2c54-114f-4151-bd98-c6371e8cba0d
+  - BaseNodeGuid: 937c2c54-114f-4151-bd98-c6371e8cba0d
+    TargetNodeGuid: 5bf43a88-ef16-4441-805d-be847342d9b1
+  - BaseNodeGuid: 0e6788f4-e169-4cba-8108-a409b881c1b2
+    TargetNodeGuid: 288b3d4b-ad63-442d-a022-6cf113feb987
+  - BaseNodeGuid: 288b3d4b-ad63-442d-a022-6cf113feb987
+    TargetNodeGuid: ed63c15e-42ec-451d-b908-1d96ebb5cd2b
+  - BaseNodeGuid: 2d81c1a4-8edb-4730-8972-a523d6082245
+    TargetNodeGuid: 049fed63-207d-4524-ad7d-533f461979b1
+  - BaseNodeGuid: 049fed63-207d-4524-ad7d-533f461979b1
+    TargetNodeGuid: 947440e7-14e6-4f8d-9476-8a8123bad996
+  - BaseNodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
+    TargetNodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
+  - BaseNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
+    TargetNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+  - BaseNodeGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
+    TargetNodeGuid: 92073d22-7af9-4a5a-ab54-267b910d498d
+  - BaseNodeGuid: 4cb152f9-8102-4295-aebd-2db997c2de4e
+    TargetNodeGuid: a68ed1af-c26c-47f7-afe2-9913c2d73923
+  - BaseNodeGuid: a68ed1af-c26c-47f7-afe2-9913c2d73923
+    TargetNodeGuid: 5db0a1f9-b3e4-46d0-85a6-4973275855fb
+  - BaseNodeGuid: 5db0a1f9-b3e4-46d0-85a6-4973275855fb
+    TargetNodeGuid: a8abe9cd-2f6f-4213-b985-10d5a8e15a05
+  - BaseNodeGuid: ed63c15e-42ec-451d-b908-1d96ebb5cd2b
+    TargetNodeGuid: 2d81c1a4-8edb-4730-8972-a523d6082245
+  - BaseNodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
+    TargetNodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
+  - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+    TargetNodeGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
+  - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+    TargetNodeGuid: 602d0cf3-517c-43dd-bacd-79d34af05406
+  - BaseNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
+    TargetNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
+  - BaseNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
+    TargetNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
+  - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+    TargetNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
+  - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+    TargetNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
+    Position: {x: 968.99994, y: -31.199997}
+    DialogueNodePorts:
+    - InputGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
+      OutputGuid: 4542346f-7053-456b-a064-2b92ddcac511
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Well, I'm just so tired, all the time. I'm getting sick
+          of it, y'know?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+    - InputGuid: 602d0cf3-517c-43dd-bacd-79d34af05406
+      OutputGuid: 4542346f-7053-456b-a064-2b92ddcac511
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I'm going to a birthday party next week, but... I'm
+          kinda scared of balloons.
+      - languageEnum: 1
+        LanguageGenericType: Choice 02
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: So what would you like to work on today? Is there anything
+        weighing on your mind?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
+    Position: {x: 2995.7998, y: -179.4}
+    DialogueNodePorts:
+    - InputGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
+      OutputGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I kind just snack all day, like on donuts and things.
+          Do you think that could be a problem?
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+    - InputGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
+      OutputGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Yeah... about that. I actually just eat snacks whenever
+          I feel like it. I guess that's gonna be an issue.
+      - languageEnum: 1
+        LanguageGenericType: Choice 02
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Well, that's not necessarily a bad thing, as long as you're
+        keeping a balanced diet.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 5
+  - NodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+    Position: {x: 329.4, y: -103.799995}
+    DialogueNodePorts:
+    - InputGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
+      OutputGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I want to deal with my problems, head-on. I'll figure
+          it out as I go.
+      - languageEnum: 1
+        LanguageGenericType: "Odpowied\u017A Pierwsza"
+    - InputGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
+      OutputGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: I like to learn a bit more first, then handle things
+          once I know better how.
+      - languageEnum: 1
+        LanguageGenericType: Odpowiedz Druga
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: ffff11e940c85354e985a24a220d5f97, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 'No matter how you want to continue, please remember:
+        there are no wrong answers.'
+    - languageEnum: 1
+      LanguageGenericType: "To teraz wybierz jedn\u0105 z dw\xF3ch odpowiedzi"
+    Duration: 5
+  DialogueNodeDatas:
+  - NodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
+    Position: {x: 89.399994, y: -103.799995}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: 1f7b32acaf980cf4894bb19fb1a15ce2, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: But before we begin, I'd like to know more about how you'd
+        like our sessions to go.
+    - languageEnum: 1
+      LanguageGenericType: Jayden
+    Duration: 5
+  - NodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
+    Position: {x: 700.8, y: 97.799995}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I can appreciate that. The more tools you have, the more
+        ways you can tackle life on your own terms.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 6ba44d72-d4ae-4b22-98e3-18b90701bba1
+    Position: {x: 1916.9999, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Are you taking coffee with meals, or just whenever you
+        start feeling tired?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 01fce7c4-8d11-48bc-b3f6-72503dbfb930
+    Position: {x: 2449.7998, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Oh, I see. Do you have any specific food restrictions
+        that you feel comfortable sharing?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 379917ea-59c6-4003-9ffe-d2fb4a66d4cc
+    Position: {x: 2190.5999, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Uhh... I'm kinda embarrassed to admit it, doc, but I don't
+        actually have meals.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 86337beb-a58b-4723-9487-f6afa60e960c
+    Position: {x: 2719.7998, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Er, it's not that I can't eat some foods, I just don't
+        like to sit down and eat. I actually hate it.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
+    Position: {x: 3389.4, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Hmm, there's a good chance it could be. I think we can
+        explore how you feel about your eating habits deeper.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 8db75f3e-f027-4208-a8af-247554df719b
+    Position: {x: 3668.9998, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: How about this? I'd like us to try a guided journey, into
+        your subconscious - and we can figure things out from there.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 92073d22-7af9-4a5a-ab54-267b910d498d
+    Position: {x: 1661.3999, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Sometimes. I drink a lot of coffee to stay awake during
+        the day, but it keeps me up at night too.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 602d0cf3-517c-43dd-bacd-79d34af05406
+    Position: {x: 1402.7999, y: 165.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 'It''s more common than you think! I''ve had many clients
+        who struggle with the same issue. '
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 1113a50a-ca6c-4951-bde4-e3f722628bbe
+    Position: {x: 1916.9999, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 'It all started when I was little and went to my friend
+        Aiya''s birthday party. '
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: cbe0f216-0126-4b1e-a621-7737943b8ed7
+    Position: {x: 1661.3999, y: 165.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Let's dive into this. When did this fear start? What can
+        you tell me about how it came to be?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 58c10a67-2cd1-414c-9077-0d412f7e8422
+    Position: {x: 2190.5999, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Did something happen at the birthday party that might've
+        involved balloons?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: a15e5b8f-e6a3-416d-a7c6-ab5938d1bb6e
+    Position: {x: 2449.7998, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I think her brother was popping them. Just a boy having
+        fun, but I don't remember much of him.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: a8abe9cd-2f6f-4213-b985-10d5a8e15a05
+    Position: {x: 3569.4, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: That's not all. Do you know they made balloons that look
+        like ghosts? Seriously!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 74111e99-ec63-427f-82c8-ce324bfac76a
+    Position: {x: 3827.4, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I might've heard of those. Didn't they get banned at some
+        point?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 0c7865ec-8e3f-45c8-95f2-24037ff032ee
+    Position: {x: 4093.7998, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Yeah. I still shudder thinking about them.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: c598bfd8-02d4-4c75-99f1-a0d2454e0d4e
+    Position: {x: 4861.8, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: How about this? I'd like us to try a guided journey, into
+        your subconscious - and we can figure things out from there.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 1fd6679f-7776-419a-8a2a-dbce4fbdbd1d
+    Position: {x: 4861.8, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: "Okay, let\u2019s do some meditation as we start to dive
+        into your psyche. "
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 38b582e9-33db-46f9-afec-a0aaf56ecea6
+    Position: {x: 5122.1997, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 'I want you to picture yourself on top of a tall cliff.
+        You see the waves, crashing in front of you. '
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: d5e0fc7a-0e65-4824-89d1-3414ee63ba43
+    Position: {x: 5381.9995, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Smell the salty air as you prepare to dive in. Take 3
+        deep breaths in and out. 3...2...1...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 52e49099-c63a-4ce8-8a52-35001ec5cee3
+    Position: {x: 5623.8, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: As you hit the water you feel yourself sinking further
+        down. Dive deeper, reaching towards your feelings regarding food.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 937c2c54-114f-4151-bd98-c6371e8cba0d
+    Position: {x: 5906.9995, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: When you feel the swirling current of your own emotions
+        around you, reach out... and grasp them...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 0e6788f4-e169-4cba-8108-a409b881c1b2
+    Position: {x: 5122.1997, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: "Okay, let's start with some meditation before we dive
+        into your psyche. Picture a giant pool, you\u2019re a diver and you climb
+        up the high dive. "
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 288b3d4b-ad63-442d-a022-6cf113feb987
+    Position: {x: 5381.9995, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 'You take your hands and place them on the ladder and
+        climb up one step at a time higher and higher. '
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 2d81c1a4-8edb-4730-8972-a523d6082245
+    Position: {x: 5906.4, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Dive deeper and deeper in your mind, through the waters
+        and into the past.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 049fed63-207d-4524-ad7d-533f461979b1
+    Position: {x: 6212.9995, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Dive until you find the memory of the day when these troubles
+        began...
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
+    Position: {x: -160.2, y: -103.799995}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: 5bdb55298bae76e4695de14d7a9f7f87, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: We can chat about anything on your mind.
+    - languageEnum: 1
+      LanguageGenericType: Will, a ty?
+    Duration: 5
+  - NodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
+    Position: {x: 700.8, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: 3184d7db1708f40429277de97485e464, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Absolutely. Sometimes, we just need to stand up and face
+        our fears, and we can work through anything.
+    - languageEnum: 1
+      LanguageGenericType: "Dobra odpowied\u017C, obie prowadzi\u0142y do tego samego
+        ale mo\u017Cesz poprowadzi\u0107 wiele opcji dialogowych"
+    Duration: 10
+  - NodeGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
+    Position: {x: 1402.7999, y: -179.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I'm sorry to hear that, it must be hard getting through
+        the day. Are you having trouble sleeping?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 4cb152f9-8102-4295-aebd-2db997c2de4e
+    Position: {x: 2719.7998, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Do you remember anything else about that day?
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: a68ed1af-c26c-47f7-afe2-9913c2d73923
+    Position: {x: 2995.7998, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: There were these big inflatable guys too. Like, really
+        big. I remember they were pretty scary.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 5db0a1f9-b3e4-46d0-85a6-4973275855fb
+    Position: {x: 3316.2, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: That does sound like it could have been a traumatic experience.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: ed63c15e-42ec-451d-b908-1d96ebb5cd2b
+    Position: {x: 5623.8, y: 149.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: You come to the end of the diving board and start to bounce.
+        Bounce one, two, three, times and as your feet leave the board you dive down
+        into the water.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  - NodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
+    Position: {x: -400.19998, y: -103.799995}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 8300000, guid: 2d60e2dd402bc55429dd4f8444cc3ab1, type: 3}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Hello, and good morning! Thank you for taking the time
+        to talk today.
+    - languageEnum: 1
+      LanguageGenericType: "Kim jeste\u015B?"
+    Duration: 5
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 5bf43a88-ef16-4441-805d-be847342d9b1
+    Position: {x: 6212.9995, y: -179.4}
+    EndNodeType: 0
+  - NodeGuid: 947440e7-14e6-4f8d-9476-8a8123bad996
+    Position: {x: 6515.4, y: 149.4}
+    EndNodeType: 0
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 9d113ae3-aa9f-4cb8-9bab-6dc4df886d32
+    Position: {x: -500.99997, y: -103.799995}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []

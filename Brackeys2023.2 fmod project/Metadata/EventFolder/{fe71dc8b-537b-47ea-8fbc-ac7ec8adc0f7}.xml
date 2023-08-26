@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{fe71dc8b-537b-47ea-8fbc-ac7ec8adc0f7}">
+		<property name="name">
+			<value>GJ - Macaron Tower In Game Dialot</value>
+		</property>
+		<relationship name="folder">
+			<destination>{87893c3a-05da-45a3-902c-a2c0df18a117}</destination>
+		</relationship>
+	</object>
+</objects>

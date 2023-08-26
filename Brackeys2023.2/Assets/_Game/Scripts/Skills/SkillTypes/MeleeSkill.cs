@@ -53,9 +53,9 @@ namespace _Game
         protected GameObject _damageArea;
         protected Collider _damageAreaCollider;
 
-        public override void Initialization(Character owner)
+        public override void Initialization(Character owner, int index)
         {
-            base.Initialization(owner);
+            base.Initialization(owner, index);
 
             if (_damageArea == null)
             {
@@ -66,6 +66,43 @@ namespace _Game
             {
                 _damageOnTouch.Owner = Owner.gameObject;
             }
+        }
+
+        protected override void ProvideCharge()
+        {
+            base.ProvideCharge();
+            _skillHandler.ModifyCharge(_skillHandler.ChargeDamageIncrement);
+        }
+
+        public override void SkillUse()
+        {
+            base.SkillUse();
+            _skillHandler.StartCoroutine(MeleeSkillAttackCoroutine());
+        }
+
+        public override void DrawGizmos()
+        {
+            if (Owner == null) return;
+
+            // Store the original Gizmos matrix
+            Matrix4x4 oldGizmosMatrix = Gizmos.matrix;
+
+            // Set the Gizmos matrix to the Owner's transform matrix
+            Gizmos.matrix = Matrix4x4.TRS(Owner.transform.position, Owner.transform.rotation, Vector3.one);
+
+            switch (DamageAreaShape)
+            {
+                case MeleeDamageAreaShapes.Box:
+                    Gizmos.DrawWireCube(AreaOffset, AreaSize);
+                    break;
+
+                case MeleeDamageAreaShapes.Sphere:
+                    Gizmos.DrawWireSphere(AreaOffset, AreaSize.x / 2);
+                    break;
+            }
+
+            // Restore the original Gizmos matrix
+            Gizmos.matrix = oldGizmosMatrix;
         }
 
         protected virtual void CreateDamageArea()
@@ -116,6 +153,10 @@ namespace _Game
         {
             if (_damageAreaCollider != null)
             {
+                if (ProvidesCharge)
+                {
+                    _damageOnTouch.DamageDealt += ProvideCharge;
+                }
                 _damageOnTouch.DamageCaused = _skillHandler.GetDamageTotal(this);
                 _damageAreaCollider.enabled = true;
             }
@@ -125,18 +166,16 @@ namespace _Game
         {
             if (_damageAreaCollider != null)
             {
+                if (ProvidesCharge)
+                {
+                    _damageOnTouch.DamageDealt -= ProvideCharge;
+                }
                 _damageAreaCollider.enabled = false;
             }
             else
             {
                 Debug.LogError($"{this.GetType()}.DisableDamageArea: _damageAreaCollider not found.", Owner.gameObject);
             }
-        }
-
-        public override void SkillUse()
-        {
-            base.SkillUse();
-            _skillHandler.StartCoroutine(MeleeSkillAttackCoroutine());
         }
 
         protected virtual IEnumerator MeleeSkillAttackCoroutine()
@@ -155,31 +194,6 @@ namespace _Game
             DisableDamageArea();
 
             _attackInProgress = false;
-        }
-
-        public override void DrawGizmos()
-        {
-            if (Owner == null) return;
-
-            // Store the original Gizmos matrix
-            Matrix4x4 oldGizmosMatrix = Gizmos.matrix;
-
-            // Set the Gizmos matrix to the Owner's transform matrix
-            Gizmos.matrix = Matrix4x4.TRS(Owner.transform.position, Owner.transform.rotation, Vector3.one);
-
-            switch (DamageAreaShape)
-            {
-                case MeleeDamageAreaShapes.Box:
-                    Gizmos.DrawWireCube(AreaOffset, AreaSize);
-                    break;
-
-                case MeleeDamageAreaShapes.Sphere:
-                    Gizmos.DrawWireSphere(AreaOffset, AreaSize.x / 2);
-                    break;
-            }
-
-            // Restore the original Gizmos matrix
-            Gizmos.matrix = oldGizmosMatrix;
         }
     }
 }

@@ -4,6 +4,34 @@ using UnityEngine;
 
 namespace JadePhoenix.Tools
 {
+    /*
+     * JadePhoenix.Tools Unity Event System Usage:
+     * 
+     * - STRUCTS:
+     *   1. GameEvent:
+     *      - Represents a game event with a name.
+     *      - Construct using: new GameEvent("eventName")
+     *      - Trigger an event with: GameEvent.Trigger("eventName")
+     * 
+     * - CLASSES:
+     *   1. EventManager:
+     *      - Manages event listeners. Functions even if script component is disabled.
+     *      - Add a listener using: EventManager.AddListener<EventType>(listenerInstance)
+     *      - Remove a listener using: EventManager.RemoveListener<EventType>(listenerInstance)
+     *      - Trigger an event using: EventManager.TriggerEvent(eventInstance)
+     * 
+     *   2. EventRegister (Extension Methods):
+     *      - Start listening to an event: callerInstance.EventListeningStart<EventType>()
+     *      - Stop listening to an event: callerInstance.EventListeningStop<EventType>()
+     * 
+     * - INTERFACES:
+     *   1. IEventListenerBase: Base interface for all event listeners.
+     *   2. IEventListener<T>: Implement this interface to listen to specific events. 
+     *      - Implement the OnEvent(T eventType) method to handle the event when triggered.
+     * 
+     * NOTE: Make sure to manage event listeners properly to avoid memory leaks and unintended behaviors.
+     */
+
     /// <summary>
     /// Represents a game event with an associated name.
     /// </summary>
@@ -23,7 +51,7 @@ namespace JadePhoenix.Tools
             EventName = eventName;
         }
 
-        // A static instance of GameEvent used in the Trigger method.
+        /// A static instance of GameEvent used in the Trigger method.
         static GameEvent e;
 
         /// <summary>
