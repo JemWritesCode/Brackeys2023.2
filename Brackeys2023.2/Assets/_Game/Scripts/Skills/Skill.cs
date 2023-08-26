@@ -14,6 +14,14 @@ namespace _Game
         public enum UpdateModes { Update, FixedUpdate }
         public enum ChargeConsumptionModes { None, Partial, Full }
 
+        public enum SkillTypes
+        {
+            Basic,
+            Mobility,
+            Special,
+            Ultimate,
+        }
+
         public enum SkillStates
         {
             SkillIdle,
@@ -37,6 +45,9 @@ namespace _Game
 
         [Tooltip("Visual representation of the skill.")]
         public Sprite Icon;
+
+        [Tooltip("The type of Skill, used for skill searching.")]
+        public SkillTypes SkillType = SkillTypes.Basic;
 
         [Tooltip("The skill's state machine.")]
         public StateMachine<SkillStates> SkillState;
@@ -98,6 +109,9 @@ namespace _Game
         [Tooltip("The character that owns this skill.")]
         public Character Owner { get; protected set; }
 
+        [Tooltip("The total cooldown of the skill (in seconds) including modifiers.")]
+        public float TotalCooldown { get { return Cooldown * _cooldownPercentageModifier; } }
+
         protected Timer _cooldownTimer;
         protected Timer _delayBeforeUseTimer;
         protected Timer _skillDurationTimer;
@@ -107,6 +121,7 @@ namespace _Game
         protected CharacterMovement _movement;
         protected CharacterAiming _aiming;
         protected int _skillIndex;
+        protected float _cooldownPercentageModifier = 1f;
 
         protected const string _skillAnimationParameterName = "skill_";
         protected const string _idleAnimationParameterName = "Idle";
@@ -124,7 +139,7 @@ namespace _Game
             SkillState = new StateMachine<SkillStates>(owner.gameObject, true);
             SkillState.ChangeState(SkillStates.SkillIdle);
 
-            _cooldownTimer = new Timer(Cooldown, OnCooldownStart, OnCooldownEnd, OnCooldownUpdate);
+            _cooldownTimer = new Timer(TotalCooldown, OnCooldownStart, OnCooldownEnd, OnCooldownUpdate);
             _delayBeforeUseTimer = new Timer(DelayBeforeUse);
             _skillDurationTimer = new Timer(SkillDuration);
 
@@ -210,7 +225,7 @@ namespace _Game
 
         protected virtual void CaseSkillIdle()
         {
-            if (ChargeConsumption != ChargeConsumptionModes.None)
+            if (ChargeConsumption != ChargeConsumptionModes.None && Owner.PlayerID == "Player")
             {
                 UIManager.Instance.SkillCooldownSetFill(_skillIndex, 1f - Mathf.Clamp01(_skillHandler.Charge / _skillHandler.MaxCharge));
             }
@@ -277,11 +292,11 @@ namespace _Game
                 _aiming.RotationForbidden = false;
             }
 
-            if (Cooldown > 0)
+            if (TotalCooldown > 0)
             {
                 if (!_cooldownTimer.IsRunning)
                 {
-                    _cooldownTimer.Duration = Cooldown;
+                    _cooldownTimer.Duration = TotalCooldown;
                     _cooldownTimer.StartTimer(true, true);
                 }
 
@@ -316,6 +331,25 @@ namespace _Game
         }
 
         #endregion
+
+        protected virtual void ConsumeCharge()
+        {
+            switch (ChargeConsumption)
+            {
+                case ChargeConsumptionModes.None:
+                    break;
+
+                case ChargeConsumptionModes.Partial:
+                    _skillHandler.ModifyCharge(-PartialChargeConsumeAmount);
+                    break;
+
+                case ChargeConsumptionModes.Full:
+                    _skillHandler.ModifyCharge(-_skillHandler.MaxCharge);
+                    break;
+            }
+        }
+
+        protected virtual void ProvideCharge() { }
 
         #region PUBLIC METHODS
 
@@ -361,25 +395,6 @@ namespace _Game
                 SkillStart();
             }
         }
-
-        protected virtual void ConsumeCharge()
-        {
-            switch (ChargeConsumption)
-            {
-                case ChargeConsumptionModes.None:
-                    break;
-
-                case ChargeConsumptionModes.Partial:
-                    _skillHandler.ModifyCharge(-PartialChargeConsumeAmount);
-                    break;
-
-                case ChargeConsumptionModes.Full:
-                    _skillHandler.ModifyCharge(-_skillHandler.MaxCharge);
-                    break;
-            }
-        }
-
-        protected virtual void ProvideCharge() { }
 
         public virtual void SkillInputStop()
         {
@@ -445,6 +460,23 @@ namespace _Game
             {
                 SkillState.ChangeState(SkillStates.SkillInterrupted);
             }
+        }
+
+        /// <summary>
+        /// Modifies the Cooldown of the skill.
+        /// </summary>
+        /// <param name="amount">A number to change the modifier by. 1 = 1%.</param>
+        public virtual void ModifyCooldown(float amount)
+        {
+            float newModifier = _cooldownPercentageModifier + (amount / 100);
+
+            if (newModifier < 0)
+            {
+                Debug.LogWarning("Skill Cooldown modifier trying to go below 0, will cause inconsistent modifications.", Owner.gameObject);
+                newModifier = 0;
+            }
+
+            _cooldownPercentageModifier = newModifier;
         }
 
         public virtual void OnHit(GameObject instigator)

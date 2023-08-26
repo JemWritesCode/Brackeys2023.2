@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace _Game
 {
-    [CreateAssetMenu(fileName = "New DashSkill", menuName = "Skills/Dash")]
-    public class DashSkill : Skill
+    [CreateAssetMenu(fileName = "New MobilitySkill", menuName = "Skills/Mobility")]
+    public class MobilitySkill : Skill
     {
         public enum DashModes { Fixed, MainMovement, MousePosition }
 
-        [Header("DashSkill")]
+        [Header("MobilitySkill")]
         public DashModes DashMode = DashModes.MainMovement;
         public Vector3 DashDirection = Vector3.forward;
         public float DashDistance = 6f;

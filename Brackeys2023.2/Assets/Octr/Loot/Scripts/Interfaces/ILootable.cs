@@ -1,3 +1,4 @@
+using JadePhoenix.Gameplay;
 using System;
 
 namespace octr.Loot
@@ -10,7 +11,7 @@ namespace octr.Loot
     /// 
     public interface ILootable
     {
-        void Collect<T>(T item);
+        void Collect<T>(T item, Character character);
     }
 }
 

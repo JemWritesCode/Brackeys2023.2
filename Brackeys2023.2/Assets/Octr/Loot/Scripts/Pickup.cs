@@ -1,3 +1,4 @@
+using JadePhoenix.Gameplay;
 using octr.Loot;
 using TMPro;
 using UnityEngine;
@@ -29,9 +30,13 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        Character collidedCharacter = other.GetComponent<Character>();
+
+        if (collidedCharacter != null) { return; }
+
+        if(collidedCharacter.PlayerID == "Player")
         {
-            powerUp.Collect(item);
+            powerUp.Collect(item, collidedCharacter);
         }
     }
 

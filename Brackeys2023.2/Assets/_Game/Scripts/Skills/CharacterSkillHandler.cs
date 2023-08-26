@@ -3,6 +3,7 @@ using JadePhoenix.Tools;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -47,6 +48,8 @@ namespace _Game
         protected List<JP_Input.Button> _buttons = new List<JP_Input.Button>();
         protected bool _usingSkill;
 
+        #region UNITY LIFECYCLE
+
         protected virtual void FixedUpdate()
         {
             for (int i = 0; i < _currentActiveSkills.Count; i++)
@@ -59,28 +62,21 @@ namespace _Game
             }
         }
 
+        protected virtual void OnDrawGizmos()
+        {
+            for (int i = 0; i < _currentActiveSkills.Count; i++)
+            {
+                Skill skill = _currentActiveSkills[i];
+                skill.DrawGizmos();
+            }
+        }
+
+        #endregion
+
         protected override void Initialization()
         {
             base.Initialization();
             Setup();
-        }
-
-        /// <summary>
-        /// Used for extended flexibility.
-        /// </summary>
-        protected virtual void Setup()
-        {
-            _character = GetComponent<Character>();
-            _movement.ChangeState(CharacterStates.MovementStates.Idle);
-            
-            for (int i = 0; i < Skills.Count; i++)
-            {
-                _buttons.Add(InputManager.Instance.GetButtonFromID($"Skill_{i}"));
-                Skill skill = Instantiate(Skills[i]);
-                _currentActiveSkills.Add(skill);
-                skill.Initialization(_character, i);
-                UIManager.Instance.SetSkillImage(i, skill.Icon);
-            }
         }
 
         public override void LateProcessAbility()
@@ -172,14 +168,25 @@ namespace _Game
             Setup();
         }
 
-        protected virtual void OnDrawGizmos()
+        /// <summary>
+        /// Used for extended flexibility.
+        /// </summary>
+        protected virtual void Setup()
         {
-            for (int i = 0; i < _currentActiveSkills.Count; i++)
+            _character = GetComponent<Character>();
+            _movement.ChangeState(CharacterStates.MovementStates.Idle);
+            
+            for (int i = 0; i < Skills.Count; i++)
             {
-                Skill skill = _currentActiveSkills[i];
-                skill.DrawGizmos();
+                _buttons.Add(InputManager.Instance.GetButtonFromID($"Skill_{i}"));
+                Skill skill = Instantiate(Skills[i]);
+                _currentActiveSkills.Add(skill);
+                skill.Initialization(_character, i);
+                UIManager.Instance.SetSkillImage(i, skill.Icon);
             }
         }
+
+        #region PUBLIC METHODS
 
         public virtual void StartSkill(Skill skill)
         {
@@ -232,6 +239,51 @@ namespace _Game
 
             Charge = newCharge;
         }
+
+        /// <summary>
+        /// Returns a list of Skill objects that match the type passed.
+        /// Returns references to the instanced versions of the skills, so they can be safely modified.
+        /// </summary>
+        /// <typeparam name="T">The type to search for.</typeparam>
+        /// <returns>A list of matching skills.</returns>
+        public virtual List<T> GetActiveSkillsOfType<T>() where T : Skill
+        {
+            List<T> activeSkillsOfType = new List<T>();
+
+            foreach (Skill skill in _currentActiveSkills)
+            {
+                T specificSkill = skill as T;
+                if (specificSkill != null)
+                {
+                    activeSkillsOfType.Add(specificSkill);
+                }
+            }
+
+            return activeSkillsOfType;
+        }
+
+        /// <summary>
+        /// Returns a list of Skill objects that match the SkillType enum value passed.
+        /// Returns references to the instanced versions of the skills, so they can be safely modified.
+        /// </summary>
+        /// <param name="skillType">The SkillType to search for</param>
+        /// <returns>A list of matching skills.</returns>
+        public virtual List<Skill> GetActiveSkillsOfType(Skill.SkillTypes skillType)
+        {
+            List<Skill> activeSkillsOfType = new List<Skill>();
+
+            foreach (Skill skill in _currentActiveSkills)
+            {
+                if (skill != null) continue;
+                if (skill.SkillType != skillType) continue;
+
+                activeSkillsOfType.Add(skill);
+            }
+
+            return activeSkillsOfType;
+        }
+
+        #endregion
 
         protected override void InitializeAnimatorParameters()
         {
