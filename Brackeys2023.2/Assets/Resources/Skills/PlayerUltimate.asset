@@ -10,41 +10,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c33ed2993485c8844a6c3cf340b24b36, type: 3}
-  m_Name: PlayerPunch
+  m_Name: PlayerUltimate
   m_EditorClassIdentifier: 
-  ID: punch
-  Name: Punch
-  Description: Test
+  ID: slam
+  Name: Slam
+  Description: 
   Icon: {fileID: 0}
   SkillState:
     Target: {fileID: 0}
     DebugCurrentState: 0
-  PercentageModifier: 100
+  PercentageModifier: 200
   UpdateMode: 0
   ActiveState: 8
   TriggerMode: 1
-  DelayBeforeUse: 0
+  DelayBeforeUse: 1.87
   DelayBeforeUseReleaseInterruption: 0
-  Cooldown: 0.5
+  Cooldown: 0
   SkillDuration: 0.1
-  ChargeConsumption: 0
+  ChargeConsumption: 2
   PartialChargeConsumeAmount: 25
-  ProvidesCharge: 1
+  ProvidesCharge: 0
   ContinuousPress: 1
   GettingHitInterruptsSkill: 0
   RecoilForce: 0
   Interruptible: 0
   RestrictMovement: 1
   RestrictRotation: 1
-  DamageAreaShape: 0
-  AreaSize: {x: 1, y: 1, z: 2}
-  AreaOffset: {x: 0, y: 1, z: 1}
+  DamageAreaShape: 1
+  AreaSize: {x: 5, y: 1, z: 0}
+  AreaOffset: {x: 0, y: 0, z: 0}
   AdditionalDelay: 0
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  Knockback: 0
+  Knockback: 1
   KnockbackForce: {x: 10, y: 2}
-  InvincibilityDuration: 0.1
+  InvincibilityDuration: 0.5
   CanDamageOwner: 0
   _attackInProgress: 0

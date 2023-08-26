@@ -37,6 +37,7 @@ namespace JadePhoenix.Gameplay
 
         public GameObject Owner;
         public Character OwnerCharacter;
+        public Action DamageDealt;
 
         protected Vector3 _lastPosition;
         protected Vector3 _velocity; 
@@ -147,29 +148,35 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         protected virtual void Colliding(GameObject collision)
         {
-            // We keep these if statements seperate for ease of debugging.
+            // We keep these if statements separate for ease of debugging.
             if (!this.isActiveAndEnabled)
             {
+                //Debug.Log("Object is not active and enabled", gameObject);
                 return;
             }
 
             // if the object we're colliding with is part of our ignore list, we do nothing and exit
             if (_ignoredGameObjects.Contains(collision))
             {
+                //Debug.Log("Colliding object is part of the ignore list", gameObject);
                 return;
             }
 
             // if what we're colliding with isn't part of the target layers, we do nothing and exit
             if (!JP_Layers.LayerInLayerMask(collision.layer, TargetLayerMask))
             {
+                //Debug.Log("Colliding object is not part of the target layers", gameObject);
                 return;
             }
 
             // if we're on our first frame, we don't apply damage
             if (Time.time == 0f)
             {
+                //Debug.Log("First frame, not applying damage", gameObject);
                 return;
             }
+
+            Debug.Log("Error checks passed, dealing damage", gameObject);
 
             _collisionPoint = this.transform.position;
             _colliderHealth = collision.gameObject.GetComponent<Health>();
@@ -223,6 +230,7 @@ namespace JadePhoenix.Gameplay
 
             // we apply the damage to the thing we've collided with
             _colliderHealth.Damage(DamageCaused, gameObject, InvincibilityDuration);
+            DamageDealt?.Invoke();
 
             if (DamageTakenEveryTime + DamageTakenDamageable > 0)
             {

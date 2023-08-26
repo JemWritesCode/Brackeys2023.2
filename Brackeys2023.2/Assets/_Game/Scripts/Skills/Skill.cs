@@ -1,5 +1,6 @@
 using JadePhoenix.Gameplay;
 using JadePhoenix.Tools;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -11,6 +12,7 @@ namespace _Game
     {
         public enum TriggerModes { SemiAuto, Auto }
         public enum UpdateModes { Update, FixedUpdate }
+        public enum ChargeConsumptionModes { None, Partial, Full }
 
         public enum SkillStates
         {
@@ -63,6 +65,16 @@ namespace _Game
 
         [Tooltip("Time (in seconds) that the skill takes to finish. Will usually be the length of the animation.")]
         public float SkillDuration = 0f;
+
+        [Header("Charge")]
+        [Tooltip("The mode of charge consumption for the skill.")]
+        public ChargeConsumptionModes ChargeConsumption = ChargeConsumptionModes.None;
+
+        [Tooltip("The amount of charge consumed on use. Only used if ChargeConsumption is set to Partial.")]
+        public float PartialChargeConsumeAmount = 25f;
+
+        [Tooltip("Determines if the skill provides charge to the SkillHandler.")]
+        public bool ProvidesCharge = false;
 
         [Header("Settings")]
         [Tooltip("Whether this skill's button can be held to repeatedly cast.")]
@@ -134,7 +146,7 @@ namespace _Game
         /// <summary>
         /// Is called when the skill's cooldown starts.
         /// </summary>
-        public virtual void OnCooldownStart()
+        protected virtual void OnCooldownStart()
         {
             if (Owner.PlayerID == "Player")
             {
@@ -145,7 +157,7 @@ namespace _Game
         /// <summary>
         /// Is called when the skill's cooldown ends.
         /// </summary>
-        public virtual void OnCooldownEnd()
+        protected virtual void OnCooldownEnd()
         {
             if (Owner.PlayerID == "Player")
             {
@@ -156,7 +168,7 @@ namespace _Game
         /// <summary>
         /// Is called when the skill's cooldown updates.
         /// </summary>
-        public virtual void OnCooldownUpdate()
+        protected virtual void OnCooldownUpdate()
         {
             if (Owner.PlayerID == "Player")
             {
@@ -301,14 +313,67 @@ namespace _Game
 
         #region PUBLIC METHODS
 
+        public virtual bool CanCastSkill()
+        {
+            bool canCast = true;
+
+            if (SkillState.CurrentState != SkillStates.SkillIdle)
+            {
+                canCast = false;
+            }
+
+            switch (ChargeConsumption)
+            {
+                case ChargeConsumptionModes.None: 
+                    break;
+
+                case ChargeConsumptionModes.Partial:
+                    if (_skillHandler.Charge < PartialChargeConsumeAmount)
+                    {
+                        canCast = false;
+                    }
+                    break;
+
+                case ChargeConsumptionModes.Full:
+                    if (_skillHandler.Charge < _skillHandler.MaxCharge)
+                    {
+                        canCast = false;
+                    }
+                    break;
+            }
+
+            //Debug.Log($"CanCast = {canCast}");
+            return canCast;
+        }
+
         public virtual void SkillInputStart()
         {
-            if (SkillState.CurrentState == SkillStates.SkillIdle)
+            if (CanCastSkill())
             {
                 _triggerReleased = false;
+                ConsumeCharge();
                 SkillStart();
             }
         }
+
+        protected virtual void ConsumeCharge()
+        {
+            switch (ChargeConsumption)
+            {
+                case ChargeConsumptionModes.None:
+                    break;
+
+                case ChargeConsumptionModes.Partial:
+                    _skillHandler.ModifyCharge(-PartialChargeConsumeAmount);
+                    break;
+
+                case ChargeConsumptionModes.Full:
+                    _skillHandler.ModifyCharge(-_skillHandler.MaxCharge);
+                    break;
+            }
+        }
+
+        protected virtual void ProvideCharge() { }
 
         public virtual void SkillInputStop()
         {

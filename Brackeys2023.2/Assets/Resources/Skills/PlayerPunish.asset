@@ -19,7 +19,7 @@ MonoBehaviour:
   SkillState:
     Target: {fileID: 0}
     DebugCurrentState: 0
-  PercentageModifier: 0
+  PercentageModifier: 150
   UpdateMode: 0
   ActiveState: 8
   TriggerMode: 1
@@ -27,6 +27,9 @@ MonoBehaviour:
   DelayBeforeUseReleaseInterruption: 0
   Cooldown: 3
   SkillDuration: 0.1
+  ChargeConsumption: 0
+  PartialChargeConsumeAmount: 25
+  ProvidesCharge: 1
   ContinuousPress: 1
   GettingHitInterruptsSkill: 0
   RecoilForce: 0

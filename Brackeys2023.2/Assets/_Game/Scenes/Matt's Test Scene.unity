@@ -591,6 +591,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1056699727078928779, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
+      propertyPath: Skills.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1056699727078928779, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
+      propertyPath: Skills.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c51ace3bc356c5b48ac629aff0fdccb5, type: 2}
     - target: {fileID: 2073542228940434680, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.000000016213734
@@ -598,10 +606,6 @@ PrefabInstance:
     - target: {fileID: 2073542228940434680, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0000000057597136
-      objectReference: {fileID: 0}
-    - target: {fileID: 5644774687886365600, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6622444280359759646, guid: ada6b07dad1b7ef4f88b275219c68865, type: 3}
       propertyPath: m_Name
