@@ -57,7 +57,26 @@ namespace MEET_AND_TALK
 
         public void StartDialogue(string ID)
         {
-            StartDialogue();
+            dialogueUIManager = DialogueUIManager.Instance;
+
+            // Try Get Start with ID
+            bool withID = false;
+            for(int i = 0; i < dialogueContainer.StartNodeDatas.Count; i++)
+            {
+                if(dialogueContainer.StartNodeDatas[i].startID == ID)
+                {
+                    CheckNodeType(GetNextNode(dialogueContainer.StartNodeDatas[i]));
+                    withID = true;
+                }
+            }
+            if (!withID)
+            {
+                if (dialogueContainer.StartNodeDatas.Count == 1) CheckNodeType(GetNextNode(dialogueContainer.StartNodeDatas[0]));
+                else { CheckNodeType(GetNextNode(dialogueContainer.StartNodeDatas[Random.Range(0, dialogueContainer.StartNodeDatas.Count)])); }
+            }
+
+            dialogueUIManager.dialogueCanvas.SetActive(true);
+            StartDialogueEvent.Invoke();
         }
 
         public void StartDialogue()
@@ -84,7 +103,16 @@ namespace MEET_AND_TALK
                 case DialogueChoiceNodeData nodeData:
                     RunNode(nodeData);
                     break;
+                case TimerChoiceNodeData nodeData:
+                    RunNode(nodeData);
+                    break;
+                case EventNodeData nodeData:
+                    RunNode(nodeData);
+                    break;
                 case EndNodeData nodeData:
+                    RunNode(nodeData);
+                    break;
+                case RandomNodeData nodeData:
                     RunNode(nodeData);
                     break;
                 default:
@@ -97,7 +125,10 @@ namespace MEET_AND_TALK
         {
             CheckNodeType(GetNextNode(dialogueContainer.StartNodeDatas[0]));
         }
-
+        private void RunNode(RandomNodeData _nodeData)
+        {
+            CheckNodeType(GetNodeByGuid(_nodeData.DialogueNodePorts[Random.Range(0, _nodeData.DialogueNodePorts.Count)].InputGuid));
+        }
         private void RunNode(DialogueNodeData _nodeData)
         {
             lastDialogueNodeData = currentDialogueNodeData;
@@ -135,7 +166,17 @@ namespace MEET_AND_TALK
 
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
         }
-
+        private void RunNode(EventNodeData _nodeData)
+        {
+            foreach (var item in _nodeData.EventScriptableObjects)
+            {
+                if (item.DialogueEventSO != null)
+                {
+                    item.DialogueEventSO.RunEvent();
+                }
+            }
+            CheckNodeType(GetNextNode(_nodeData));
+        }
         private void RunNode(EndNodeData _nodeData)
         {
             switch (_nodeData.EndNodeType)
@@ -157,7 +198,25 @@ namespace MEET_AND_TALK
                     break;
             }
         }
+        private void RunNode(TimerChoiceNodeData _nodeData)
+        {
+            lastDialogueNodeData = currentDialogueNodeData;
+            currentDialogueNodeData = _nodeData;
 
+            if (_nodeData.Character != null) dialogueUIManager.ResetText($"<color={_nodeData.Character.HexColor()}>{_nodeData.Character.characterName.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType}: </color>");
+            else dialogueUIManager.ResetText("");
+            dialogueUIManager.fullText = $"{_nodeData.TextType.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType}";
+
+            MakeButtons(new List<DialogueNodePort>());
+
+            _nodeTimerInvoke = _nodeData;
+
+            IEnumerator tmp() { yield return new WaitForSecondsRealtime(_nodeData.Duration); TimerNode_GenerateChoice(); }
+            StartCoroutine(tmp());
+
+            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+
+        }
 
         private void MakeButtons(List<DialogueNodePort> _nodePorts)
         {
@@ -177,10 +236,37 @@ namespace MEET_AND_TALK
 
             dialogueUIManager.SetButtons(texts, unityActions, false);
         }
+        private void MakeTimerButtons(List<DialogueNodePort> _nodePorts, float ShowDuration, float timer)
+        {
+            List<string> texts = new List<string>();
+            List<UnityAction> unityActions = new List<UnityAction>();
 
+            IEnumerator tmp() { yield return new WaitForSeconds(timer); TimerNode_NextNode(); }
+            StartCoroutine(tmp());
+
+            foreach (DialogueNodePort nodePort in _nodePorts)
+            {
+                if (nodePort != _nodePorts[0])
+                {
+                    texts.Add(nodePort.TextLanguage.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+                    UnityAction tempAction = null;
+                    tempAction += () =>
+                    {
+                        StopAllCoroutines();
+                        CheckNodeType(GetNodeByGuid(nodePort.InputGuid));
+                    };
+                    unityActions.Add(tempAction);
+                }
+            }
+
+            dialogueUIManager.SetButtons(texts, unityActions, true);
+            dialogueUIManager.TimerSlider.maxValue = timer; Timer = timer;
+        }
 
         void DialogueNode_NextNode() { CheckNodeType(GetNextNode(_nodeDialogueInvoke)); }
         void ChoiceNode_GenerateChoice() { MakeButtons(_nodeChoiceInvoke.DialogueNodePorts); }
+        void TimerNode_GenerateChoice() { MakeTimerButtons(_nodeTimerInvoke.DialogueNodePorts, _nodeTimerInvoke.Duration, _nodeTimerInvoke.time); }
+        void TimerNode_NextNode() { CheckNodeType(GetNextNode(_nodeTimerInvoke)); }
 
         public void SkipDialogue()
         {
@@ -193,6 +279,9 @@ namespace MEET_AND_TALK
                     break;
                 case DialogueChoiceNodeData nodeData:
                     ChoiceNode_GenerateChoice();
+                    break;
+                case TimerChoiceNodeData nodeData:
+                    TimerNode_GenerateChoice();
                     break;
                 default:
                     break;

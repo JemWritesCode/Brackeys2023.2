@@ -72,6 +72,7 @@ namespace MEET_AND_TALK
         public void LanguageReload()
         {
             List<DialogueChoiceNode> dialogueChoiceNodes = nodes.ToList().Where(node => node is DialogueChoiceNode).Cast<DialogueChoiceNode>().ToList();
+            List<TimerChoiceNode> timerChoiceNodes = nodes.ToList().Where(node => node is TimerChoiceNode).Cast<TimerChoiceNode>().ToList();
             List<DialogueNode> dialogueNodes = nodes.ToList().Where(node => node is DialogueNode).Cast<DialogueNode>().ToList();
 
             foreach (DialogueChoiceNode dialogueNode in dialogueChoiceNodes)
@@ -79,6 +80,10 @@ namespace MEET_AND_TALK
                 dialogueNode.ReloadLanguage();
             }
             foreach (DialogueNode dialogueNode in dialogueNodes)
+            {
+                dialogueNode.ReloadLanguage();
+            }
+            foreach (TimerChoiceNode dialogueNode in timerChoiceNodes)
             {
                 dialogueNode.ReloadLanguage();
             }
@@ -101,10 +106,25 @@ namespace MEET_AND_TALK
             return tmp;
         }
 
+        public EventNode CreateEventNode(Vector2 _pos)
+        {
+            EventNode tmp = new EventNode(_pos, editorWindow, this);
+            tmp.name = "Event";
+
+            return tmp;
+        }
         public DialogueChoiceNode CreateDialogueChoiceNode(Vector2 _pos)
         {
             DialogueChoiceNode tmp = new DialogueChoiceNode(_pos, editorWindow, this);
             tmp.name = "Choice";
+            tmp.ReloadLanguage();
+
+            return tmp;
+        }
+        public TimerChoiceNode CreateTimerChoiceNode(Vector2 _pos)
+        {
+            TimerChoiceNode tmp = new TimerChoiceNode(_pos, editorWindow, this);
+            tmp.name = "TimerChoice";
             tmp.ReloadLanguage();
 
             return tmp;
@@ -119,5 +139,29 @@ namespace MEET_AND_TALK
             return tmp;
         }
 
+        public RandomNote CreateRandomNode(Vector2 _pos)
+        {
+            RandomNote tmp = new RandomNote(_pos, editorWindow, this);
+            tmp.name = "Random";
+            tmp.ReloadLanguage();
+
+            return tmp;
+        }
+
+        public CommandNode CreateCommandNode(Vector2 _pos)
+        {
+            CommandNode tmp = new CommandNode(_pos, editorWindow, this);
+            tmp.name = "Command";
+
+            return tmp;
+        }
+
+        /*public IFNode CreateIFNode(Vector2 _pos)
+        {
+            IFNode tmp = new IFNode(_pos, editorWindow, this);
+            tmp.name = "IF";
+
+            return tmp;
+        }*/
     }
 }

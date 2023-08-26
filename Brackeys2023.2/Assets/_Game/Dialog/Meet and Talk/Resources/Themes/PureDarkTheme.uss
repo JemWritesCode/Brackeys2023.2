@@ -89,6 +89,29 @@ GridBackground {
 	width: 145px;
 }
 
+#TimerChoice {
+	max-width: 300px; 
+	width: 300px; 
+}
+#TimerChoice #output{
+	width: 200px;
+}
+#TimerChoice #output .port{
+	max-width: 215px; 
+	width: 215px;
+}
+#TimerChoice #output .port .ChoiceLabel{
+	max-width: 145px; 
+	width: 145px;
+}
+#TimerChoice #output .FirstPort .unity-label{
+	margin-right: 18px;
+}
+
+#Event {
+	max-width: 300px; 
+	width: 300px; 
+}
 
 #Dialog {
 	max-width: 200px; 
@@ -97,6 +120,52 @@ GridBackground {
 
 
 
+#Event #node-border #title {
+	background-color: #515151;
+}
+
+#Event #node-border #contents #top #output .port {
+	--port-color: #999999;
+}
+
+#Event #node-border #contents #top #input .port {
+	--port-color: #999999;
+}
+
+#Event .unity-toolbar-menu{
+	background-color: #666666 !important;
+	border-width: 0px !important;
+	padding: 5px;
+}
+
+#Event .EventBox .unity-label{
+	min-width: 75px !important;
+}
+
+#Event #unity-x-input .unity-label,
+#Event #unity-y-input .unity-label,
+#Event #unity-z-input .unity-label,
+#Event #unity-w-input .unity-label{
+	display: none;
+}
+
+.EventBox {
+	flex-direction: row;
+}
+
+.EventSO {
+	width: 260px;
+	max-width: 260px;
+	margin-left: 2px;
+	margin-right: 0px;
+	height: 20px;
+}
+
+.EventBtn{
+	background-color: #515151 !important;
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
 
 
 #Start #node-border #title {
@@ -159,6 +228,52 @@ GridBackground {
 	--port-color: #999999;
 }
 
+
+
+#TimerChoice #node-border #title {
+	background-color: #515151;
+}
+
+#TimerChoice #node-border #title .unity-button {
+	background-color: #666666;
+	border-width: 0px;
+}
+
+#TimerChoice #node-border #contents #top #output .port {
+	--port-color: #999999;
+}
+#TimerChoice #node-border #contents #top #input .port {
+	--port-color: #999999;
+}
+#TimerChoice .TextDuration {
+	padding-bottom: 0px;
+}
+
+#Random #title{
+	background-color: #515151;
+}
+#Random .port{
+	--port-color: #515151;
+}
+#Random .output .unity-base-field{
+	display: None !important;
+	
+}
+
+#Command{
+	width: 300px;
+}
+#Command #contents{
+	display: None;
+}
+
+#Command #unity-text-input{
+	border-left-width: 0px !important;
+	border-right-width: 0px;
+	border-top-width: 0px;
+	border-bottom-width: 0px;
+	white-space: Normal;
+	}
 
 
 .port .unity-button{

@@ -60,7 +60,7 @@ MonoBehaviour:
   - BaseNodeGuid: 52e49099-c63a-4ce8-8a52-35001ec5cee3
     TargetNodeGuid: 937c2c54-114f-4151-bd98-c6371e8cba0d
   - BaseNodeGuid: 937c2c54-114f-4151-bd98-c6371e8cba0d
-    TargetNodeGuid: 5bf43a88-ef16-4441-805d-be847342d9b1
+    TargetNodeGuid: 5fa261f7-0881-42ec-ab5f-79c6c54f27dc
   - BaseNodeGuid: 0e6788f4-e169-4cba-8108-a409b881c1b2
     TargetNodeGuid: 288b3d4b-ad63-442d-a022-6cf113feb987
   - BaseNodeGuid: 288b3d4b-ad63-442d-a022-6cf113feb987
@@ -97,6 +97,8 @@ MonoBehaviour:
     TargetNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
   - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
     TargetNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
+  - BaseNodeGuid: 5fa261f7-0881-42ec-ab5f-79c6c54f27dc
+    TargetNodeGuid: 83f4b63d-47df-4499-91b1-1dd40e62a03c
   DialogueChoiceNodeDatas:
   - NodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
     Position: {x: 968.99994, y: -31.199997}
@@ -756,13 +758,19 @@ MonoBehaviour:
     Duration: 5
   TimerChoiceNodeDatas: []
   EndNodeDatas:
-  - NodeGuid: 5bf43a88-ef16-4441-805d-be847342d9b1
-    Position: {x: 6212.9995, y: -179.4}
-    EndNodeType: 0
   - NodeGuid: 947440e7-14e6-4f8d-9476-8a8123bad996
     Position: {x: 6515.4, y: 149.4}
     EndNodeType: 0
-  EventNodeDatas: []
+  - NodeGuid: 83f4b63d-47df-4499-91b1-1dd40e62a03c
+    Position: {x: 6514.8, y: -179.4}
+    EndNodeType: 0
+  EventNodeDatas:
+  - NodeGuid: 5fa261f7-0881-42ec-ab5f-79c6c54f27dc
+    Position: {x: 6150.5996, y: -179.4}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 0}
+    - DialogueEventSO: {fileID: 0}
+    - DialogueEventSO: {fileID: 11400000, guid: edb78785db42f3c469b11ba2b1e5dcc1, type: 2}
   StartNodeDatas:
   - NodeGuid: 9d113ae3-aa9f-4cb8-9bab-6dc4df886d32
     Position: {x: -500.99997, y: -103.799995}

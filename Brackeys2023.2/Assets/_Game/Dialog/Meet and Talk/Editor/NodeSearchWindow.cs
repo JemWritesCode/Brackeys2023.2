@@ -30,7 +30,15 @@ namespace MEET_AND_TALK
             AddNodeSearchToGroup("Start Node",new StartNode(),"d_Animation.Play"),
             AddNodeSearchToGroup("Dialogue Node",new DialogueNode(),"d_UnityEditor.HierarchyWindow"),
             AddNodeSearchToGroup("Choice Node",new DialogueChoiceNode(),"d_TreeEditor.Distribution"),
-            AddNodeSearchToGroup("End Node",new EndNode(),"d_winbtn_win_close_a@2x")
+            AddNodeSearchToGroup("Timer Choice Node",new TimerChoiceNode(),"d_preAudioAutoPlayOff"),
+            AddNodeSearchToGroup("Event Node",new EventNode(),"d_SceneViewFx"),
+            AddNodeSearchToGroup("End Node",new EndNode(),"d_winbtn_win_close_a@2x"),
+
+            new SearchTreeGroupEntry(new GUIContent("Special",EditorGUIUtility.FindTexture("d_Favorite Icon")),1),
+
+            AddNodeSearchToGroup("Random Node",new RandomNote(),"d_preAudioLoopOff"),
+
+            AddNodeSearch("Command Node",new CommandNode(),"d_UnityEditor.ConsoleWindow"),
         };
 
             return tree;
@@ -84,8 +92,20 @@ namespace MEET_AND_TALK
                 case DialogueChoiceNode node:
                     graphView.AddElement(graphView.CreateDialogueChoiceNode(_pos));
                     return true;
+                case TimerChoiceNode node:
+                    graphView.AddElement(graphView.CreateTimerChoiceNode(_pos));
+                    return true;
+                case EventNode node:
+                    graphView.AddElement(graphView.CreateEventNode(_pos));
+                    return true;
                 case EndNode node:
                     graphView.AddElement(graphView.CreateEndNode(_pos));
+                    return true;
+                case RandomNote node:
+                    graphView.AddElement(graphView.CreateRandomNode(_pos));
+                    return true;
+                case CommandNode node:
+                    graphView.AddElement(graphView.CreateCommandNode(_pos));
                     return true;
             }
             return false;

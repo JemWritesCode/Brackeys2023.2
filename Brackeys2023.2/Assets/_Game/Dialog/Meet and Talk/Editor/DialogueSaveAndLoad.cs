@@ -61,8 +61,12 @@ namespace MEET_AND_TALK
         {
             _dialogueContainerSO.DialogueChoiceNodeDatas.Clear();
             _dialogueContainerSO.DialogueNodeDatas.Clear();
+            _dialogueContainerSO.TimerChoiceNodeDatas.Clear();
+            _dialogueContainerSO.EventNodeDatas.Clear();
             _dialogueContainerSO.EndNodeDatas.Clear();
             _dialogueContainerSO.StartNodeDatas.Clear();
+            _dialogueContainerSO.RandomNodeDatas.Clear();
+            _dialogueContainerSO.CommandNodeDatas.Clear();
 
             nodes.ForEach(node =>
             {
@@ -74,11 +78,23 @@ namespace MEET_AND_TALK
                     case DialogueNode dialogueNode:
                         _dialogueContainerSO.DialogueNodeDatas.Add(SaveNodeData(dialogueNode));
                         break;
+                    case TimerChoiceNode timerChoiceNode:
+                        _dialogueContainerSO.TimerChoiceNodeDatas.Add(SaveNodeData(timerChoiceNode));
+                        break;
                     case StartNode startNode:
                         _dialogueContainerSO.StartNodeDatas.Add(SaveNodeData(startNode));
                         break;
                     case EndNode endNode:
                         _dialogueContainerSO.EndNodeDatas.Add(SaveNodeData(endNode));
+                        break;
+                    case EventNode eventNode:
+                        _dialogueContainerSO.EventNodeDatas.Add(SaveNodeData(eventNode));
+                        break;
+                    case RandomNote randomNode:
+                        _dialogueContainerSO.RandomNodeDatas.Add(SaveNodeData(randomNode));
+                        break;
+                    case CommandNode commandNode:
+                        _dialogueContainerSO.CommandNodeDatas.Add(SaveNodeData(commandNode));
                         break;
                     default:
                         break;
@@ -116,12 +132,69 @@ namespace MEET_AND_TALK
             return dialogueNodeData;
         }
 
+        private RandomNodeData SaveNodeData(RandomNote _node)
+        {
+            RandomNodeData dialogueNodeData = new RandomNodeData
+            {
+                NodeGuid = _node.nodeGuid,
+                Position = _node.GetPosition().position,
+                DialogueNodePorts = _node.dialogueNodePorts,
+            };
+            foreach (DialogueNodePort nodePort in dialogueNodeData.DialogueNodePorts)
+            {
+                nodePort.OutputGuid = string.Empty;
+                nodePort.InputGuid = string.Empty;
+                foreach (Edge edge in edges)
+                {
+                    if (edge.output == nodePort.MyPort)
+                    {
+                        nodePort.OutputGuid = (edge.output.node as BaseNode).nodeGuid;
+                        nodePort.InputGuid = (edge.input.node as BaseNode).nodeGuid;
+                    }
+                }
+            }
+
+
+            return dialogueNodeData;
+        }
+
+        private TimerChoiceNodeData SaveNodeData(TimerChoiceNode _node)
+        {
+            TimerChoiceNodeData dialogueNodeData = new TimerChoiceNodeData
+            {
+                NodeGuid = _node.nodeGuid,
+                Position = _node.GetPosition().position,
+                TextType = _node.Texts,
+                Character = _node.Character,
+                AudioClips = _node.AudioClip,
+                time = _node.ChoiceTime,
+                DialogueNodePorts = _node.dialogueNodePorts,
+                Duration = _node.DurationShow
+            };
+            foreach (DialogueNodePort nodePort in dialogueNodeData.DialogueNodePorts)
+            {
+                nodePort.OutputGuid = string.Empty;
+                nodePort.InputGuid = string.Empty;
+                foreach (Edge edge in edges)
+                {
+                    if (edge.output == nodePort.MyPort)
+                    {
+                        nodePort.OutputGuid = (edge.output.node as BaseNode).nodeGuid;
+                        nodePort.InputGuid = (edge.input.node as BaseNode).nodeGuid;
+                    }
+                }
+            }
+
+
+            return dialogueNodeData;
+        }
         private StartNodeData SaveNodeData(StartNode _node)
         {
             StartNodeData nodeData = new StartNodeData
             {
                 NodeGuid = _node.nodeGuid,
                 Position = _node.GetPosition().position,
+                startID = _node.startID
             };
             return nodeData;
         }
@@ -135,7 +208,16 @@ namespace MEET_AND_TALK
             };
             return nodeData;
         }
-
+        private EventNodeData SaveNodeData(EventNode _node)
+        {
+            EventNodeData nodeData = new EventNodeData
+            {
+                NodeGuid = _node.nodeGuid,
+                Position = _node.GetPosition().position,
+                EventScriptableObjects = _node.EventScriptableObjectDatas
+            };
+            return nodeData;
+        }
         private DialogueNodeData SaveNodeData(DialogueNode _node)
         {
             DialogueNodeData dialogueNodeData = new DialogueNodeData
@@ -151,7 +233,19 @@ namespace MEET_AND_TALK
 
             return dialogueNodeData;
         }
+        private CommandNodeData SaveNodeData(CommandNode _node)
+        {
+            Debug.Log(_node.command);
+            CommandNodeData dialogueNodeData = new CommandNodeData
+            {
+                NodeGuid = _node.nodeGuid,
+                Position = _node.GetPosition().position,
+                
+                commmand = _node.command
+            };
 
+            return dialogueNodeData;
+        }
         #endregion
 
         #region Load
@@ -173,6 +267,7 @@ namespace MEET_AND_TALK
             {
                 StartNode tempNode = graphView.CreateStartNode(node.Position);
                 tempNode.nodeGuid = node.NodeGuid;
+                tempNode.startID = node.startID;
 
                 tempNode.LoadValueInToField();
                 graphView.AddElement(tempNode);
@@ -189,6 +284,21 @@ namespace MEET_AND_TALK
                 graphView.AddElement(tempNode);
             }
 
+            /* Event Node */
+            foreach (EventNodeData node in _dialogueContainer.EventNodeDatas)
+            {
+                EventNode tempNode = graphView.CreateEventNode(node.Position);
+                tempNode.nodeGuid = node.NodeGuid;
+
+                foreach (EventScriptableObjectData item in node.EventScriptableObjects)
+                {
+                    tempNode.AddScriptableEvent(item);
+                    //tempNode.GenerateFields(item);
+                }
+
+                tempNode.LoadValueInToField();
+                graphView.AddElement(tempNode);
+            }
 
             /* Dialogue Choice Node */
             foreach (DialogueChoiceNodeData node in _dialogueContainer.DialogueChoiceNodeDatas)
@@ -212,6 +322,60 @@ namespace MEET_AND_TALK
                 }
                 tempNode.Character = node.Character;
                 tempNode.DurationShow = node.Duration;
+
+                tempNode.LoadValueInToField();
+                graphView.AddElement(tempNode);
+            }
+
+            /* Random Note */
+            foreach (RandomNodeData node in _dialogueContainer.RandomNodeDatas)
+            {
+                RandomNote tempNode = graphView.CreateRandomNode(node.Position);
+                tempNode.nodeGuid = node.NodeGuid;
+
+                foreach (DialogueNodePort nodePort in node.DialogueNodePorts)
+                {
+                    tempNode.AddChoicePort(tempNode, nodePort);
+                }
+
+                tempNode.LoadValueInToField();
+                graphView.AddElement(tempNode);
+            }
+
+            /* Command Note */
+            foreach (CommandNodeData node in _dialogueContainer.CommandNodeDatas)
+            {
+                CommandNode tempNode = graphView.CreateCommandNode(node.Position);
+                tempNode.nodeGuid = node.NodeGuid;
+                tempNode.command = node.commmand;
+
+
+                tempNode.LoadValueInToField();
+                graphView.AddElement(tempNode);
+            }
+
+            /* Timer Choice Node */
+            foreach (TimerChoiceNodeData node in _dialogueContainer.TimerChoiceNodeDatas)
+            {
+                TimerChoiceNode tempNode = graphView.CreateTimerChoiceNode(node.Position);
+                tempNode.nodeGuid = node.NodeGuid;
+
+                foreach (LanguageGeneric<string> languageGeneric in node.TextType)
+                {
+                    tempNode.Texts.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
+                }
+                foreach (LanguageGeneric<AudioClip> languageGeneric in node.AudioClips)
+                {
+                    tempNode.AudioClip.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
+                }
+                tempNode.Character = node.Character;
+                tempNode.DurationShow = node.Duration;
+                tempNode.ChoiceTime = node.time;
+
+                foreach (DialogueNodePort nodePort in node.DialogueNodePorts)
+                {
+                    tempNode.AddChoicePort(tempNode, nodePort);
+                }
 
                 tempNode.LoadValueInToField();
                 graphView.AddElement(tempNode);

@@ -1,0 +1,421 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Advance Dialog
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 4071364c-a83c-4bae-a1a7-d1d25f7f9a0b
+    TargetNodeGuid: b4ca8450-991e-48b8-9576-7f584425f273
+  - BaseNodeGuid: f079d2a4-4fa6-43bb-b9c3-44107bbd693d
+    TargetNodeGuid: 8680110b-4a6e-422f-91d2-506642132d87
+  - BaseNodeGuid: 64fef6c4-198f-49c2-982b-06a108d85e39
+    TargetNodeGuid: 65747e49-4536-43bb-8ec0-fe4a70daef3b
+  - BaseNodeGuid: 64fef6c4-198f-49c2-982b-06a108d85e39
+    TargetNodeGuid: 5c66fcde-2dad-4f13-b48b-6606463da620
+  - BaseNodeGuid: 64fef6c4-198f-49c2-982b-06a108d85e39
+    TargetNodeGuid: 1d62c9f4-af31-46bd-a601-b76a98aae1a1
+  - BaseNodeGuid: b4ca8450-991e-48b8-9576-7f584425f273
+    TargetNodeGuid: 460d437e-e3d1-4f7f-b5c2-58e52161d1b7
+  - BaseNodeGuid: 460d437e-e3d1-4f7f-b5c2-58e52161d1b7
+    TargetNodeGuid: 78cb0013-7d9b-4e4d-8586-cd5c1bb878ac
+  - BaseNodeGuid: 44c5d062-bf78-4c9a-ab7a-59df8ce8256f
+    TargetNodeGuid: b35ac00b-b1b9-4f34-915f-ee4b546243f5
+  - BaseNodeGuid: acfd52b3-a13a-467d-a2e7-b7239ad29eb4
+    TargetNodeGuid: cbb451b5-d2f8-4f29-b95e-72ac6c0a88f4
+  - BaseNodeGuid: b35ac00b-b1b9-4f34-915f-ee4b546243f5
+    TargetNodeGuid: f079d2a4-4fa6-43bb-b9c3-44107bbd693d
+  - BaseNodeGuid: cbb451b5-d2f8-4f29-b95e-72ac6c0a88f4
+    TargetNodeGuid: b35ac00b-b1b9-4f34-915f-ee4b546243f5
+  - BaseNodeGuid: 5102739e-52e3-4088-b8a3-e2f5da2630cf
+    TargetNodeGuid: 64fef6c4-198f-49c2-982b-06a108d85e39
+  - BaseNodeGuid: 8680110b-4a6e-422f-91d2-506642132d87
+    TargetNodeGuid: 72a1b969-53f4-4aab-9ad9-068c9c267c83
+  - BaseNodeGuid: 72a1b969-53f4-4aab-9ad9-068c9c267c83
+    TargetNodeGuid: 5102739e-52e3-4088-b8a3-e2f5da2630cf
+  - BaseNodeGuid: 5c66fcde-2dad-4f13-b48b-6606463da620
+    TargetNodeGuid: 9d851e89-cb76-41e4-b33d-d8559fadbbd1
+  - BaseNodeGuid: 1d62c9f4-af31-46bd-a601-b76a98aae1a1
+    TargetNodeGuid: 9d851e89-cb76-41e4-b33d-d8559fadbbd1
+  - BaseNodeGuid: 65747e49-4536-43bb-8ec0-fe4a70daef3b
+    TargetNodeGuid: 7fc42e1f-64f4-4b95-9668-22784b152488
+  - BaseNodeGuid: 9d851e89-cb76-41e4-b33d-d8559fadbbd1
+    TargetNodeGuid: be0fc28f-c992-4b37-be0e-3757dd44fc0b
+  - BaseNodeGuid: 78cb0013-7d9b-4e4d-8586-cd5c1bb878ac
+    TargetNodeGuid: 44c5d062-bf78-4c9a-ab7a-59df8ce8256f
+  - BaseNodeGuid: 78cb0013-7d9b-4e4d-8586-cd5c1bb878ac
+    TargetNodeGuid: acfd52b3-a13a-467d-a2e7-b7239ad29eb4
+  - BaseNodeGuid: be0fc28f-c992-4b37-be0e-3757dd44fc0b
+    TargetNodeGuid: bdae65e1-73a7-4104-a131-67da22680c2f
+  - BaseNodeGuid: be0fc28f-c992-4b37-be0e-3757dd44fc0b
+    TargetNodeGuid: 9588b67b-949b-4274-b205-798a32268e38
+  - BaseNodeGuid: be0fc28f-c992-4b37-be0e-3757dd44fc0b
+    TargetNodeGuid: b1b95e76-ff69-4b13-9df1-22e9ac91b094
+  - BaseNodeGuid: be0fc28f-c992-4b37-be0e-3757dd44fc0b
+    TargetNodeGuid: dc9fe3f6-c34e-4ee1-8739-ada9030bf239
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 78cb0013-7d9b-4e4d-8586-cd5c1bb878ac
+    Position: {x: 361, y: 101}
+    DialogueNodePorts:
+    - InputGuid: 44c5d062-bf78-4c9a-ab7a-59df8ce8256f
+      OutputGuid: 78cb0013-7d9b-4e4d-8586-cd5c1bb878ac
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Yes
+      - languageEnum: 1
+        LanguageGenericType: Tak
+    - InputGuid: acfd52b3-a13a-467d-a2e7-b7239ad29eb4
+      OutputGuid: 78cb0013-7d9b-4e4d-8586-cd5c1bb878ac
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: No
+      - languageEnum: 1
+        LanguageGenericType: Nie
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Maybe let's start if you remember what a choice option
+        is
+    - languageEnum: 1
+      LanguageGenericType: "Mo\u017Ce zacznijmy czy pami\u0119tasz co to jest opcja
+        wyboru"
+    Duration: 2
+  - NodeGuid: be0fc28f-c992-4b37-be0e-3757dd44fc0b
+    Position: {x: 3239, y: 514}
+    DialogueNodePorts:
+    - InputGuid: bdae65e1-73a7-4104-a131-67da22680c2f
+      OutputGuid: be0fc28f-c992-4b37-be0e-3757dd44fc0b
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: End
+      - languageEnum: 1
+        LanguageGenericType: Koniec
+    - InputGuid: 9588b67b-949b-4274-b205-798a32268e38
+      OutputGuid: be0fc28f-c992-4b37-be0e-3757dd44fc0b
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Repeat
+      - languageEnum: 1
+        LanguageGenericType: "Powt\xF3rz"
+    - InputGuid: b1b95e76-ff69-4b13-9df1-22e9ac91b094
+      OutputGuid: be0fc28f-c992-4b37-be0e-3757dd44fc0b
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Go Back
+      - languageEnum: 1
+        LanguageGenericType: Poprzedni Dialog
+    - InputGuid: dc9fe3f6-c34e-4ee1-8739-ada9030bf239
+      OutputGuid: be0fc28f-c992-4b37-be0e-3757dd44fc0b
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Return to Start
+      - languageEnum: 1
+        LanguageGenericType: "Zacznijmy od pocz\u0105tku"
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Choose from four options
+    - languageEnum: 1
+      LanguageGenericType: "Wybierz jedn\u0105 z czterech opcji"
+    Duration: 5
+  DialogueNodeDatas:
+  - NodeGuid: b4ca8450-991e-48b8-9576-7f584425f273
+    Position: {x: -112, y: 101}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Dialogues can also be created without using sounds
+    - languageEnum: 1
+      LanguageGenericType: "Dialogi mo\u017Cna r\xF3wnie\u017C tworzy\u0107 bez u\u017Cywania
+        d\u017Awi\u0119k\xF3w"
+    Duration: 2
+  - NodeGuid: 460d437e-e3d1-4f7f-b5c2-58e52161d1b7
+    Position: {x: 118, y: 101}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: It's now time to test more advanced features.
+    - languageEnum: 1
+      LanguageGenericType: "To teraz czas przetestowa\u0107 bardziej zaawansone funkcje."
+    Duration: 2
+  - NodeGuid: 44c5d062-bf78-4c9a-ab7a-59df8ce8256f
+    Position: {x: 688, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 6c7c2303cba66254eb2469508683ee61, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Of course I remember
+    - languageEnum: 1
+      LanguageGenericType: "Oczywi\u015Bcie, \u017Ce pami\u0119tam"
+    Duration: 1
+  - NodeGuid: acfd52b3-a13a-467d-a2e7-b7239ad29eb4
+    Position: {x: 688, y: 101}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 6c7c2303cba66254eb2469508683ee61, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: No, I don't remember
+    - languageEnum: 1
+      LanguageGenericType: "Nie, nie pami\u0119tam"
+    Duration: 1
+  - NodeGuid: b35ac00b-b1b9-4f34-915f-ee4b546243f5
+    Position: {x: 1146, y: 101}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Well now something more interesting
+    - languageEnum: 1
+      LanguageGenericType: "Dobrze to teraz co\u015B bardziej ciekawego"
+    Duration: 2
+  - NodeGuid: cbb451b5-d2f8-4f29-b95e-72ac6c0a88f4
+    Position: {x: 921, y: 101}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I know you've already tested it and know how it works
+    - languageEnum: 1
+      LanguageGenericType: "Wiem, \u017Ce ju\u017C to sprawdza\u0142e\u015B i wiesz
+        jak to dzia\u0142a"
+    Duration: 2
+  - NodeGuid: 5102739e-52e3-4088-b8a3-e2f5da2630cf
+    Position: {x: 2162, y: 101}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 6c7c2303cba66254eb2469508683ee61, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: True, I displayed the information in the console
+    - languageEnum: 1
+      LanguageGenericType: "Prawda, wy\u015Bwietlila mi si\u0119 informacja w konsoli"
+    Duration: 2
+  - NodeGuid: 8680110b-4a6e-422f-91d2-506642132d87
+    Position: {x: 1696, y: 101}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Now, a message should appear in the console, it was created
+        using "Event Node"
+    - languageEnum: 1
+      LanguageGenericType: "Teraz, w konsoli powinna pojawi\u0107 si\u0119 wiadomo\u015B\u0107,
+        zosta\u0142a ona stworzona za pomoc\u0105 \"Event Node\""
+    Duration: 4
+  - NodeGuid: 72a1b969-53f4-4aab-9ad9-068c9c267c83
+    Position: {x: 1925, y: 101}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: It allows you to perform functions caked in Events (of
+        course, you can create your own to more closely match the intended effect)
+    - languageEnum: 1
+      LanguageGenericType: "Pozwala ona na wykonywanie funkcji zapiasnych w Eventach
+        (oczywi\u015Bcie mo\u017Cna tworzy\u0107 w\u0142asne by bardziej pasowany
+        do zamierzanego efektu)"
+    Duration: 5
+  - NodeGuid: 5c66fcde-2dad-4f13-b48b-6606463da620
+    Position: {x: 2719, y: 386}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 6c7c2303cba66254eb2469508683ee61, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I choose the First Option
+    - languageEnum: 1
+      LanguageGenericType: "Wybieram Pierwsz\u0105 Opcje"
+    Duration: 10
+  - NodeGuid: 1d62c9f4-af31-46bd-a601-b76a98aae1a1
+    Position: {x: 2719, y: 639}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 6c7c2303cba66254eb2469508683ee61, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: I choose the Second Option
+    - languageEnum: 1
+      LanguageGenericType: "Wybieram Drug\u0105 Opcje"
+    Duration: 10
+  - NodeGuid: 65747e49-4536-43bb-8ec0-fe4a70daef3b
+    Position: {x: 2719, y: 101}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: You have not selected anything, but using "End - Go Back"
+        will return to the temporary selection (Dialog before that)
+    - languageEnum: 1
+      LanguageGenericType: "Nic nie wybra\u0142e\u015B, ale za pomoc\u0105 \"End
+        - Go Back\" powr\xF3cimy do czasowego wyboru (Dialog przed tym)"
+    Duration: 3
+  - NodeGuid: 9d851e89-cb76-41e4-b33d-d8559fadbbd1
+    Position: {x: 2992, y: 514}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: This is now the last for this moment, we will test different
+        types of "End Node"
+    - languageEnum: 1
+      LanguageGenericType: "To teraz ostatnia na ten moment rzecz, przetestujemy
+        r\xF3\u017Cne rodzaje \"End Node\""
+    Duration: 10
+  TimerChoiceNodeDatas:
+  - NodeGuid: 64fef6c4-198f-49c2-982b-06a108d85e39
+    Position: {x: 2396, y: 101}
+    DialogueNodePorts:
+    - InputGuid: 65747e49-4536-43bb-8ec0-fe4a70daef3b
+      OutputGuid: 64fef6c4-198f-49c2-982b-06a108d85e39
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Choice 01
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+    - InputGuid: 5c66fcde-2dad-4f13-b48b-6606463da620
+      OutputGuid: 64fef6c4-198f-49c2-982b-06a108d85e39
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Option One
+      - languageEnum: 1
+        LanguageGenericType: Opcja Pierwsza
+    - InputGuid: 1d62c9f4-af31-46bd-a601-b76a98aae1a1
+      OutputGuid: 64fef6c4-198f-49c2-982b-06a108d85e39
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Option Two
+      - languageEnum: 1
+        LanguageGenericType: Opcja Druga
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: It's now time for timed selection, you must select any
+        of the options at a certain time, if you do not select will execute the defined
+        invisible option
+    - languageEnum: 1
+      LanguageGenericType: "To teraz czas na czasowy wyb\xF3r, musisz wybra\u0107
+        kt\xF3r\u0105\u015B z opcji w okre\u015Blonym czasie, je\u017Celi nie wybierzesz
+        wykona si\u0119 zdefiniowana niewidoczna opcja"
+    Duration: 4
+    time: 10
+  EndNodeDatas:
+  - NodeGuid: 7fc42e1f-64f4-4b95-9668-22784b152488
+    Position: {x: 2941, y: 101}
+    EndNodeType: 2
+  - NodeGuid: bdae65e1-73a7-4104-a131-67da22680c2f
+    Position: {x: 3574, y: 514}
+    EndNodeType: 0
+  - NodeGuid: 9588b67b-949b-4274-b205-798a32268e38
+    Position: {x: 3574, y: 628}
+    EndNodeType: 1
+  - NodeGuid: b1b95e76-ff69-4b13-9df1-22e9ac91b094
+    Position: {x: 3574, y: 748}
+    EndNodeType: 2
+  - NodeGuid: dc9fe3f6-c34e-4ee1-8739-ada9030bf239
+    Position: {x: 3574, y: 880}
+    EndNodeType: 3
+  EventNodeDatas:
+  - NodeGuid: f079d2a4-4fa6-43bb-b9c3-44107bbd693d
+    Position: {x: 1371, y: 101}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 0993d14b67e95464fa42aa9fdea1e15e, type: 2}
+    - DialogueEventSO: {fileID: 11400000, guid: 18cd4edbf6ff0994988cad160ea6fe5b, type: 2}
+    - DialogueEventSO: {fileID: 11400000, guid: c3e0e77f945df20409c2c6e66172196c, type: 2}
+    - DialogueEventSO: {fileID: 11400000, guid: d56615b6348a68742a4455e0c453218b, type: 2}
+  StartNodeDatas:
+  - NodeGuid: 4071364c-a83c-4bae-a1a7-d1d25f7f9a0b
+    Position: {x: -215, y: 101}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas:
+  - NodeGuid: 3dd84827-9852-4c1c-8853-3045b2552c93
+    Position: {x: 236, y: -2}
+    commmand: "This Dialogue Shows Basic Capabilities \nEvent Node and Timer Choice
+      Node"

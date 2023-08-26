@@ -11,6 +11,10 @@ namespace MEET_AND_TALK
     {
         public static DialogueUIManager Instance;
 
+        [Header("Type Writing")]
+        public bool EnableTypeWriting = false;
+        public float typingSpeed = 50.0f;
+
         [Header("Dialogue UI")]
         public GameObject dialogueCanvas;
         public TextMeshProUGUI textBox;
@@ -34,13 +38,27 @@ namespace MEET_AND_TALK
         private void Awake()
         {
             Instance = this;
+            if(EnableTypeWriting) lastTypingTime = Time.time;
         }
 
         private void Update()
         {
+            if (characterIndex < fullText.Length && EnableTypeWriting)
+            {
+                if (Time.time - lastTypingTime > 1.0f / typingSpeed)
+                {
+                    currentText += fullText[characterIndex];
+                    textBox.text = currentText;
 
+                    characterIndex++;
+
+                    lastTypingTime = Time.time;
+                }
+            }
+            else
+            {
                 textBox.text = prefixText+fullText;
-            
+            }
         }
 
         public void ResetText(string prefix)

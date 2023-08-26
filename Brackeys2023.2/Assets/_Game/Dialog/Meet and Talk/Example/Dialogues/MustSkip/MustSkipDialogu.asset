@@ -17,16 +17,28 @@ MonoBehaviour:
     TargetNodeGuid: 00080a2b-63e3-4558-ad9e-8db2de300291
   - BaseNodeGuid: 00080a2b-63e3-4558-ad9e-8db2de300291
     TargetNodeGuid: 76d6184f-f79f-4a98-9c72-47591da9bd69
-  - BaseNodeGuid: 76d6184f-f79f-4a98-9c72-47591da9bd69
-    TargetNodeGuid: 2f894b35-6077-4257-bb7d-180ef1ed6182
+  - BaseNodeGuid: b879a269-bbd4-456a-9d1f-b4f37e5523f6
+    TargetNodeGuid: b0eff016-f357-4d18-a0b1-990f74739b61
+  - BaseNodeGuid: 2e6c61ae-c456-459e-8315-e107240b911b
+    TargetNodeGuid: b0eff016-f357-4d18-a0b1-990f74739b61
   - BaseNodeGuid: 2f894b35-6077-4257-bb7d-180ef1ed6182
     TargetNodeGuid: b879a269-bbd4-456a-9d1f-b4f37e5523f6
   - BaseNodeGuid: 2f894b35-6077-4257-bb7d-180ef1ed6182
     TargetNodeGuid: 2e6c61ae-c456-459e-8315-e107240b911b
-  - BaseNodeGuid: 2e6c61ae-c456-459e-8315-e107240b911b
-    TargetNodeGuid: b0eff016-f357-4d18-a0b1-990f74739b61
+  - BaseNodeGuid: e3241282-f577-45ef-890a-947b4fc2a682
+    TargetNodeGuid: 00080a2b-63e3-4558-ad9e-8db2de300291
+  - BaseNodeGuid: 00080a2b-63e3-4558-ad9e-8db2de300291
+    TargetNodeGuid: 76d6184f-f79f-4a98-9c72-47591da9bd69
   - BaseNodeGuid: b879a269-bbd4-456a-9d1f-b4f37e5523f6
     TargetNodeGuid: b0eff016-f357-4d18-a0b1-990f74739b61
+  - BaseNodeGuid: 2e6c61ae-c456-459e-8315-e107240b911b
+    TargetNodeGuid: b0eff016-f357-4d18-a0b1-990f74739b61
+  - BaseNodeGuid: 2f894b35-6077-4257-bb7d-180ef1ed6182
+    TargetNodeGuid: b879a269-bbd4-456a-9d1f-b4f37e5523f6
+  - BaseNodeGuid: 2f894b35-6077-4257-bb7d-180ef1ed6182
+    TargetNodeGuid: 2e6c61ae-c456-459e-8315-e107240b911b
+  - BaseNodeGuid: 76d6184f-f79f-4a98-9c72-47591da9bd69
+    TargetNodeGuid: 2f894b35-6077-4257-bb7d-180ef1ed6182
   DialogueChoiceNodeDatas:
   - NodeGuid: 2f894b35-6077-4257-bb7d-180ef1ed6182
     Position: {x: 1066, y: 599}
@@ -132,6 +144,5 @@ MonoBehaviour:
   StartNodeDatas:
   - NodeGuid: e3241282-f577-45ef-890a-947b4fc2a682
     Position: {x: 524, y: 599}
-    startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []

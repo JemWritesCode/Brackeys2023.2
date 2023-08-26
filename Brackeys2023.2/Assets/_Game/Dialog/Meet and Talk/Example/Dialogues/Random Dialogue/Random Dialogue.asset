@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Random Dialogue
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 42b9be1b-b421-4403-9a9b-6bda13e3d8cd
+    TargetNodeGuid: 9a35a278-8236-4347-8d4a-f48326fe100f
+  - BaseNodeGuid: 6fecca69-289f-4698-89fd-1f0dba46ea02
+    TargetNodeGuid: 368aeab0-4a9d-4b12-9b19-6377731daa84
+  - BaseNodeGuid: 6fecca69-289f-4698-89fd-1f0dba46ea02
+    TargetNodeGuid: af68b57e-fb86-48d0-a3be-d057b8a9378b
+  - BaseNodeGuid: 6fecca69-289f-4698-89fd-1f0dba46ea02
+    TargetNodeGuid: e62adf7d-3bb5-4822-967b-4321fcc33b34
+  - BaseNodeGuid: 9a35a278-8236-4347-8d4a-f48326fe100f
+    TargetNodeGuid: 6fecca69-289f-4698-89fd-1f0dba46ea02
+  - BaseNodeGuid: af68b57e-fb86-48d0-a3be-d057b8a9378b
+    TargetNodeGuid: ad7a5ad3-b19b-4575-896b-f5448f8bdda5
+  - BaseNodeGuid: e62adf7d-3bb5-4822-967b-4321fcc33b34
+    TargetNodeGuid: ad7a5ad3-b19b-4575-896b-f5448f8bdda5
+  - BaseNodeGuid: 368aeab0-4a9d-4b12-9b19-6377731daa84
+    TargetNodeGuid: ad7a5ad3-b19b-4575-896b-f5448f8bdda5
+  - BaseNodeGuid: ad7a5ad3-b19b-4575-896b-f5448f8bdda5
+    TargetNodeGuid: c5301e7d-91c5-4ab1-b94f-27175e7b3472
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 9a35a278-8236-4347-8d4a-f48326fe100f
+    Position: {x: 712, y: 626}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Now it will draw one of three possible dialogues
+    - languageEnum: 1
+      LanguageGenericType: "Teraz wylosuje jeden z trzech mo\u017Cliwych dialog\xF3w"
+    Duration: 0
+  - NodeGuid: af68b57e-fb86-48d0-a3be-d057b8a9378b
+    Position: {x: 1201, y: 650}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 0}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Dialogue 3
+    - languageEnum: 1
+      LanguageGenericType: Dialog 2
+    Duration: 0
+  - NodeGuid: e62adf7d-3bb5-4822-967b-4321fcc33b34
+    Position: {x: 1201, y: 406}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 0}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Dialogue 3
+    - languageEnum: 1
+      LanguageGenericType: Dialog 1
+    Duration: 0
+  - NodeGuid: 368aeab0-4a9d-4b12-9b19-6377731daa84
+    Position: {x: 1201, y: 891}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 0}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Dialogue 3
+    - languageEnum: 1
+      LanguageGenericType: Dialog 3
+    Duration: 0
+  - NodeGuid: ad7a5ad3-b19b-4575-896b-f5448f8bdda5
+    Position: {x: 1499, y: 650}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 52bf713ca2c3ac34995eb97495258ba0, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Simple? Simple
+    - languageEnum: 1
+      LanguageGenericType: Proste? Proste
+    Duration: 3
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: c5301e7d-91c5-4ab1-b94f-27175e7b3472
+    Position: {x: 1727, y: 650}
+    EndNodeType: 0
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 42b9be1b-b421-4403-9a9b-6bda13e3d8cd
+    Position: {x: 620, y: 626}
+    startID: 
+  RandomNodeDatas:
+  - NodeGuid: 6fecca69-289f-4698-89fd-1f0dba46ea02
+    Position: {x: 922, y: 626}
+    DialogueNodePorts:
+    - InputGuid: 368aeab0-4a9d-4b12-9b19-6377731daa84
+      OutputGuid: 6fecca69-289f-4698-89fd-1f0dba46ea02
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Choice 01
+      - languageEnum: 1
+        LanguageGenericType: Choice 01
+    - InputGuid: af68b57e-fb86-48d0-a3be-d057b8a9378b
+      OutputGuid: 6fecca69-289f-4698-89fd-1f0dba46ea02
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Choice 02
+      - languageEnum: 1
+        LanguageGenericType: Choice 02
+    - InputGuid: e62adf7d-3bb5-4822-967b-4321fcc33b34
+      OutputGuid: 6fecca69-289f-4698-89fd-1f0dba46ea02
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Choice 03
+      - languageEnum: 1
+        LanguageGenericType: Choice 03
+  CommandNodeDatas:
+  - NodeGuid: f0d2e569-0f2b-436c-b498-19e3501b64f1
+    Position: {x: 712, y: 459}
+    commmand: "This Dialogue Shows the Basic Capabilities \r\nRandom Node"

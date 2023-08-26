@@ -11,7 +11,8 @@ namespace MEET_AND_TALK
 {
     public class StartNode : BaseNode
     {
-
+        public string startID;
+        private TextField idField;
 
         public StartNode()
         {
@@ -27,11 +28,22 @@ namespace MEET_AND_TALK
             SetPosition(new Rect(_position, defualtNodeSize));
             nodeGuid = Guid.NewGuid().ToString();
 
+            idField = new TextField("ID:");
+            idField.RegisterValueChangedCallback(value =>
+            {
+                startID = value.newValue;
+            });
+            idField.SetValueWithoutNotify(startID);
+            mainContainer.Add(idField);
 
             AddOutputPort("Output", Port.Capacity.Single);
             RefreshExpandedState();
             RefreshPorts();
         }
 
+        public override void LoadValueInToField()
+        {
+            idField.SetValueWithoutNotify(startID);
+        }
     }
 }
