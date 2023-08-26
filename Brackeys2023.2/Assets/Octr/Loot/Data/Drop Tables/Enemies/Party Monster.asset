@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e14e9eb00646ae442a500a1cba1abfdd, type: 3}
-  m_Name: Coffee
+  m_Name: Party Monster
   m_EditorClassIdentifier: 
   elements:
   - elementName: Heal (S) (0)
@@ -18,22 +18,22 @@ MonoBehaviour:
     dropRate: 50
   - elementName: Agility (1)
     drop: {fileID: 11400000, guid: 5d8bfff39cc72f84bb83d1d6ae56f7de, type: 2}
-    dropRate: 40
+    dropRate: 25
   - elementName: Heal (M) (2)
     drop: {fileID: 11400000, guid: 69466724d9515014a9fd8decdfa40272, type: 2}
-    dropRate: 30
+    dropRate: 35
   - elementName: Power (S) (3)
     drop: {fileID: 11400000, guid: 0d7de37347df01d469f8a50648a976f7, type: 2}
     dropRate: 35
   - elementName: Heal (L) (4)
     drop: {fileID: 11400000, guid: c2abebb473688c44fbde90d41ef4fe58, type: 2}
-    dropRate: 20
+    dropRate: 25
   - elementName: Ult Restore (5)
     drop: {fileID: 11400000, guid: c20d603509b99b34e9857ce95523a818, type: 2}
     dropRate: 25
   - elementName: Power (L) (6)
     drop: {fileID: 11400000, guid: 4f257f96d241a104c87d70f4369c2c93, type: 2}
-    dropRate: 25
+    dropRate: 20
   - elementName: ATK Up (7)
     drop: {fileID: 11400000, guid: cc8778121d68b634f87bf43515cf8c2e, type: 2}
     dropRate: 10
