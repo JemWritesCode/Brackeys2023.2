@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
+using FMODUnity;
 
 namespace MEET_AND_TALK
 {
@@ -14,7 +15,7 @@ namespace MEET_AND_TALK
         private List<LanguageGeneric<AudioClip>> audioClip = new List<LanguageGeneric<AudioClip>>();
         private DialogueCharacterSO character = new DialogueCharacterSO();
         private float durationShow = 10;
-
+        private StudioEventEmitter fmodEventEmitter;
 
         public List<DialogueNodePort> dialogueNodePorts = new List<DialogueNodePort>();
 
@@ -23,11 +24,14 @@ namespace MEET_AND_TALK
         public DialogueCharacterSO Character { get => character; set => character = value; }
         public float DurationShow { get => durationShow; set => durationShow = value; }
 
+        public StudioEventEmitter FmodEventEmitter { get => fmodEventEmitter; set => fmodEventEmitter = value; }
+
         private TextField texts_Field;
         private ObjectField audioClips_Field;
         private TextField name_Field;
         private ObjectField character_Field;
         private FloatField duration_Field;
+        private ObjectField fmodEventEmitter_Field;
 
         public DialogueNode()
         {
@@ -72,6 +76,22 @@ namespace MEET_AND_TALK
             });
             audioClips_Field.SetValueWithoutNotify(audioClip.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
             mainContainer.Add(audioClips_Field);
+
+
+            /* FMOD EVENT EMITTER */ // Jemtodo
+            // I think there's localization happening as part of it hmm
+            fmodEventEmitter_Field = new ObjectField()
+            {
+                objectType = typeof(StudioEventEmitter),
+                allowSceneObjects = false,
+                value = fmodEventEmitter, 
+            };
+            fmodEventEmitter_Field.RegisterValueChangedCallback(value =>
+            {
+                fmodEventEmitter = value.newValue as StudioEventEmitter;
+            });
+            fmodEventEmitter_Field.SetValueWithoutNotify(fmodEventEmitter);
+            mainContainer.Add(fmodEventEmitter_Field);
 
             /* Character CLIPS */
             Label label_character = new Label("Character SO");
@@ -122,6 +142,8 @@ namespace MEET_AND_TALK
 
             duration_Field.AddToClassList("TextDuration");
             mainContainer.Add(duration_Field);
+
+
         }
 
         public void ReloadLanguage()
