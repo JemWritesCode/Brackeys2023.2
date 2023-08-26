@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f6a7830ad43c345b4ab942c8749a22, type: 3}
   m_Name: Armor (L)
   m_EditorClassIdentifier: 
-  rarity: 1
+  rarity: 2
   description: 10% defence increase for 30 seconds
   icon: {fileID: 0}
   value: 10
-  prefab: {fileID: 0}
+  prefab: {fileID: 965330298958195892, guid: ad71857ad051cf64d8fe5c5e77855215, type: 3}
   buffDuration: 30

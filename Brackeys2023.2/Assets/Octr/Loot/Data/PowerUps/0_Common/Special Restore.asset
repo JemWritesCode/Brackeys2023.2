@@ -16,4 +16,4 @@ MonoBehaviour:
   description: Restore Current Special Skill Cooldown by 50%
   icon: {fileID: 0}
   value: 50
-  prefab: {fileID: 0}
+  prefab: {fileID: 965330298958195892, guid: e5ad2b44ecfb4c246ae3d63d214ac327, type: 3}

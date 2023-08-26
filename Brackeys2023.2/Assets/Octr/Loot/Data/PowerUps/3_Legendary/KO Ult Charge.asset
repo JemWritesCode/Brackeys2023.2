@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f6a7830ad43c345b4ab942c8749a22, type: 3}
   m_Name: KO Ult Charge
   m_EditorClassIdentifier: 
-  rarity: 0
+  rarity: 3
   description: Killing enemies generates 15% ultimate charge for 60 seconds
   icon: {fileID: 0}
   value: 15
-  prefab: {fileID: 0}
+  prefab: {fileID: 965330298958195892, guid: 0a345a9f5a38149478dec63bfc54adf0, type: 3}
   buffDuration: 60

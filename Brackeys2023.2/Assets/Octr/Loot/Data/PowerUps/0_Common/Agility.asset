@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Agility
   m_EditorClassIdentifier: 
   rarity: 0
-  description: 
+  description: Reduce Mobility Skill cooldown by 15% for 15 seconds
   icon: {fileID: 0}
   value: 15
-  prefab: {fileID: 0}
+  prefab: {fileID: 965330298958195892, guid: 3bb54a34f79e31b4984708f9ff13c41a, type: 3}
   buffDuration: 15

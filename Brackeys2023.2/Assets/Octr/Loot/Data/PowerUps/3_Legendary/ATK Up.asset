@@ -16,4 +16,4 @@ MonoBehaviour:
   description: 3% Permanent Attack Increase
   icon: {fileID: 0}
   value: 3
-  prefab: {fileID: 0}
+  prefab: {fileID: 965330298958195892, guid: d751ef75ad213ae4baf01b5c2dc24f9a, type: 3}

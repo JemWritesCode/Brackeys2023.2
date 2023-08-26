@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rarity: 1
   description: Restores 25% Health
-  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 0}
   value: 25
-  prefab: {fileID: 4960616439437761730, guid: 93003cf55a290044f80b4eabd2413bb9, type: 3}
+  prefab: {fileID: 965330298958195892, guid: 917288ee8d6cfaa42be0f85bf196345f, type: 3}

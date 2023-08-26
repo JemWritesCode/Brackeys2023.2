@@ -16,5 +16,5 @@ MonoBehaviour:
   description: 5% defence increase for 30 seconds
   icon: {fileID: 0}
   value: 5
-  prefab: {fileID: 0}
+  prefab: {fileID: 965330298958195892, guid: b29c58ddf10cce04f89e53ebe3a6ff3e, type: 3}
   buffDuration: 30

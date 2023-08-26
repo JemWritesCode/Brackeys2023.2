@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 2829552536133575068}
   - component: {fileID: 7708018253807954496}
   - component: {fileID: 6914385326707307146}
-  - component: {fileID: 5288447424268998375}
   m_Layer: 0
-  m_Name: Health Pickup
+  m_Name: _Default Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,18 +69,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   itemTMP: {fileID: 9053993868304165082}
---- !u!114 &5288447424268998375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4960616439437761730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c0fcbf19fe9fbc449f388811cbf7d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7863647008027580691
 GameObject:
   m_ObjectHideFlags: 0

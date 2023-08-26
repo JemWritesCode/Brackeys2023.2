@@ -17,5 +17,5 @@ MonoBehaviour:
     for 20 seconds
   icon: {fileID: 0}
   value: 15
-  prefab: {fileID: 0}
+  prefab: {fileID: 965330298958195892, guid: dfc7c87ac97802847976d7d265c3cb3e, type: 3}
   buffDuration: 20

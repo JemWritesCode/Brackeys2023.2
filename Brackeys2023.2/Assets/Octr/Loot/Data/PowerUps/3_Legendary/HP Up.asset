@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55666f44482ce074499336db2face238, type: 3}
   m_Name: HP Up
   m_EditorClassIdentifier: 
-  rarity: 0
+  rarity: 3
   description: 5% HP increase permanently
   icon: {fileID: 0}
   value: 5
-  prefab: {fileID: 0}
+  prefab: {fileID: 965330298958195892, guid: 1866271e648cf8a40884951e223f8faa, type: 3}

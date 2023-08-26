@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55666f44482ce074499336db2face238, type: 3}
   m_Name: Heal (L)
   m_EditorClassIdentifier: 
-  rarity: 1
+  rarity: 2
   description: Restores 50% Health
-  icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 0}
   value: 50
-  prefab: {fileID: 4960616439437761730, guid: 93003cf55a290044f80b4eabd2413bb9, type: 3}
+  prefab: {fileID: 965330298958195892, guid: 90ad384954cd8bf4faa1db97b41b52e6, type: 3}
