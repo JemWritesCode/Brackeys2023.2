@@ -186,7 +186,7 @@ namespace JadePhoenix.Gameplay
             {
                 if (_colliderHealth.CurrentHealth > 0)
                 {
-                    OnCollideWithDamageable();
+                    OnCollideWithDamageable(collision);
                 }
             }
             // if what we're colliding with can't be damaged
@@ -199,7 +199,7 @@ namespace JadePhoenix.Gameplay
         /// <summary>
         /// Describes what happens when colliding with a damageable object
         /// </summary>
-        protected virtual void OnCollideWithDamageable()
+        protected virtual void OnCollideWithDamageable(GameObject collision)
         {
             // if what we're colliding with is a TopDownController, we apply a knockback force
             _colliderTopDownController = _colliderHealth.gameObject.GetComponent<TopDownController>();
@@ -225,6 +225,16 @@ namespace JadePhoenix.Gameplay
                 if (DamageCausedKnockbackType == KnockbackStyles.AddForce)
                 {
                     _colliderTopDownController.Impact(_knockbackForce.normalized, _knockbackForce.magnitude);
+                }
+            }
+
+            if (!_colliderHealth.Invulnerable)
+            {
+                if (SpawnManager.Instance != null)
+                {
+                    Vector3 collisionDirection = collision.transform.position - transform.position;
+                    Vector3 spawnPosition = transform.position + collisionDirection.normalized * 1;
+                    SpawnManager.Instance.SpawnAtPosition(spawnPosition);
                 }
             }
 
