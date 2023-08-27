@@ -24,7 +24,6 @@ namespace octr.Loot.PowerUps
 
                 //Player.health.restoreHealth(drop.value); (Example)
                 Debug.Log($"{drop.value}% Health Restored");
-                Destroy(gameObject);
             }
         }
     }

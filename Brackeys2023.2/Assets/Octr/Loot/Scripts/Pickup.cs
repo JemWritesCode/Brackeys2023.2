@@ -1,4 +1,5 @@
 using JadePhoenix.Gameplay;
+using octr.Audio;
 using octr.Loot;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class Pickup : MonoBehaviour
     public TextMeshPro itemTMP;
 
     public ILootable powerUp;
+    public RandomizePitch randomizePitch;
+
+    public Collider _collider;
 
     private void Start()
     {
@@ -36,19 +40,20 @@ public class Pickup : MonoBehaviour
 
         if(collidedCharacter.PlayerID == "Player")
         {
+            randomizePitch.PlayRandom();
             powerUp.Collect(item, collidedCharacter);
+            _collider.enabled = false;
+            Destroy(gameObject, 0.5f);
         }
     }
 
     private void OnValidate()
     {
-        Collider collider;
-
-        if (gameObject.TryGetComponent(out collider))
+        if (gameObject.TryGetComponent(out _collider))
         {
-            if (!collider.isTrigger)
+            if (!_collider.isTrigger)
             {
-                Debug.LogError($"Please set {collider.name} isTrigger to True");
+                Debug.LogError($"Please set {_collider.name} isTrigger to True");
             }
         }
         else
