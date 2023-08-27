@@ -80,15 +80,15 @@ namespace _Game
             _skillHandler.StartCoroutine(MeleeSkillAttackCoroutine());
         }
 
-        public override void DrawGizmos()
+        public override void DrawGizmos(GameObject owner)
         {
-            if (Owner == null) return;
+            if (owner == null) return;
 
             // Store the original Gizmos matrix
             Matrix4x4 oldGizmosMatrix = Gizmos.matrix;
 
             // Set the Gizmos matrix to the Owner's transform matrix
-            Gizmos.matrix = Matrix4x4.TRS(Owner.transform.position, Owner.transform.rotation, Vector3.one);
+            Gizmos.matrix = Matrix4x4.TRS(owner.transform.position, owner.transform.rotation, Vector3.one);
 
             switch (DamageAreaShape)
             {
