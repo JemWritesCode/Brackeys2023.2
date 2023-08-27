@@ -248,6 +248,7 @@ MonoBehaviour:
     Position: {x: 3472.4, y: 200.8}
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 11400000, guid: 9ec0e2864ee6a3940860548385a8d850, type: 2}
+    - DialogueEventSO: {fileID: 11400000, guid: 619ff8c03f919e24a9851af0f769fd5b, type: 2}
   StartNodeDatas:
   - NodeGuid: bf386413-20b7-4bd4-acec-353c99998944
     Position: {x: -25.2, y: 200.8}
