@@ -60,9 +60,6 @@
 		<property name="maxVoices">
 			<value>1</value>
 		</property>
-		<property name="voiceStealing">
-			<value>3</value>
-		</property>
 	</object>
 	<object class="MarkerTrack" id="{0bdbef0f-22ab-4ff1-bd64-46f3a153a194}" />
 	<object class="GroupTrack" id="{b4b2801c-8638-4c63-b4e2-e803888c7773}">
