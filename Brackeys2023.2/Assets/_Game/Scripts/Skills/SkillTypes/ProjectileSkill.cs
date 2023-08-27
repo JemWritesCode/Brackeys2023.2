@@ -70,62 +70,77 @@ namespace _Game
 
         public virtual GameObject SpawnProjectile(Vector3 spawnPosition, int projectileIndex, int totalProjectiles, bool triggerObjectActivation = true)
         {
-            GameObject nextGameObject = ObjectPooler.GetPooledGameObject();
-
-            if (nextGameObject == null) { return null; }
-            if (nextGameObject.GetComponent<PoolableObject>() == null)
+            if (ObjectPooler == null)
             {
-                throw new Exception($"{Owner.gameObject.name} is trying to spawn objects that don't have a PoolableObject component.");
+                Debug.LogError("ObjectPooler is null.");
+                return null;
             }
 
-            // Position the object.
+            GameObject nextGameObject = ObjectPooler.GetPooledGameObject();
+
+            if (nextGameObject == null)
+            {
+                Debug.LogError("nextGameObject is null.");
+                return null;
+            }
+
+            if (nextGameObject.GetComponent<PoolableObject>() == null)
+            {
+                Debug.LogError("PoolableObject component is missing in the object retrieved from the pool.");
+                return null;
+            }
+
+            if (Owner == null)
+            {
+                Debug.LogError("Owner is null.");
+                return null;
+            }
+
             nextGameObject.transform.position = spawnPosition;
+
             if (_projectileSpawnTransform != null)
             {
                 nextGameObject.transform.position = _projectileSpawnTransform.position;
             }
 
-            // Set the direction.
             _Game.Projectile projectile = nextGameObject.GetComponent<_Game.Projectile>();
-            if (projectile != null)
+
+            if (projectile == null)
             {
-                //projectile.SetWeapon(this);
-                if (Owner != null)
-                {
-                    projectile.SetOwner(Owner.gameObject);
-                }
+                Debug.LogError("Projectile component is missing in the object retrieved from the pool.");
+                return null;
             }
+
+            projectile.SetOwner(Owner.gameObject);
 
             // Activate the object
             nextGameObject.gameObject.SetActive(true);
 
-            if (projectile != null)
+            // Set the direction.
+            if (RandomSpread)
             {
-                if (RandomSpread)
+                _randomSpreadDirection.x = UnityEngine.Random.Range(-Spread.x, Spread.x);
+                _randomSpreadDirection.y = UnityEngine.Random.Range(-Spread.y, Spread.y);
+                _randomSpreadDirection.z = UnityEngine.Random.Range(-Spread.z, Spread.z);
+            }
+            else
+            {
+                if (totalProjectiles > 1)
                 {
-                    _randomSpreadDirection.x = UnityEngine.Random.Range(-Spread.x, Spread.x);
-                    _randomSpreadDirection.y = UnityEngine.Random.Range(-Spread.y, Spread.y);
-                    _randomSpreadDirection.z = UnityEngine.Random.Range(-Spread.z, Spread.z);
+                    _randomSpreadDirection.x = JP_Math.Remap(projectileIndex, 0, totalProjectiles - 1, -Spread.x, Spread.x);
+                    _randomSpreadDirection.y = JP_Math.Remap(projectileIndex, 0, totalProjectiles - 1, -Spread.y, Spread.y);
+                    _randomSpreadDirection.z = JP_Math.Remap(projectileIndex, 0, totalProjectiles - 1, -Spread.z, Spread.z);
                 }
                 else
                 {
-                    if (totalProjectiles > 1)
-                    {
-                        _randomSpreadDirection.x = JP_Math.Remap(projectileIndex, 0, totalProjectiles - 1, -Spread.x, Spread.x);
-                        _randomSpreadDirection.y = JP_Math.Remap(projectileIndex, 0, totalProjectiles - 1, -Spread.y, Spread.y);
-                        _randomSpreadDirection.z = JP_Math.Remap(projectileIndex, 0, totalProjectiles - 1, -Spread.z, Spread.z);
-                    }
-                    else
-                    {
-                        _randomSpreadDirection = Vector3.zero;
-                    }
+                    _randomSpreadDirection = Vector3.zero;
                 }
-
-                Quaternion spread = Quaternion.Euler(_randomSpreadDirection);
-                projectile.SetDirection(spread * Owner.transform.forward, Owner.transform.rotation);
             }
 
-            if (triggerObjectActivation && nextGameObject.GetComponent<PoolableObject>() != null)
+            Quaternion spread = Quaternion.Euler(_randomSpreadDirection);
+            projectile.SetDirection(spread * Owner.transform.forward, Owner.transform.rotation);
+
+            if (triggerObjectActivation)
             {
                 nextGameObject.GetComponent<PoolableObject>().TriggerOnSpawnComplete();
             }

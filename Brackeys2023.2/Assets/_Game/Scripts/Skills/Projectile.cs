@@ -199,15 +199,32 @@ namespace _Game
         public virtual void SetOwner(GameObject newOwner)
         {
             _owner = newOwner;
-            DamageOnTouch damageOnTouch = this.gameObject.GetComponent<DamageOnTouch>();
-            if (damageOnTouch != null)
+
+            if (_owner == null)
             {
-                damageOnTouch.Owner = newOwner;
-                damageOnTouch.Owner = newOwner;
-                if (!DamageOwner)
-                {
-                    damageOnTouch.IgnoreGameObject(newOwner);
-                }
+                Debug.LogError("newOwner is null.");
+                return;
+            }
+
+            if (this.gameObject == null)
+            {
+                Debug.LogError("gameObject is null.");
+                return;
+            }
+
+            DamageOnTouch damageOnTouch = this.gameObject.GetComponent<DamageOnTouch>();
+
+            if (damageOnTouch == null)
+            {
+                Debug.LogError("DamageOnTouch component is missing.");
+                return;
+            }
+
+            damageOnTouch.Owner = newOwner;
+
+            if (!DamageOwner)
+            {
+                damageOnTouch.IgnoreGameObject(newOwner);
             }
         }
 

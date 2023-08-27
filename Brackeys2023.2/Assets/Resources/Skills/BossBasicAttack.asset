@@ -39,7 +39,7 @@ MonoBehaviour:
   RestrictRotation: 0
   Owner: {fileID: 0}
   ProjectileSpawnOffset: {x: 0, y: 0, z: 0}
-  ProjectilesPerShot: 1
+  ProjectilesPerShot: 4
   Spread: {x: 0, y: 0, z: 0}
   RandomSpread: 1
   SpawnPosition: {x: 0, y: 0, z: 0}

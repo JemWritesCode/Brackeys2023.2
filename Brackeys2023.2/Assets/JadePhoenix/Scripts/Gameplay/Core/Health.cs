@@ -124,6 +124,7 @@ namespace JadePhoenix.Gameplay
 
             float previousHealth = CurrentHealth;
             CurrentHealth -= damage;
+            Debug.Log($"{gameObject.name} has taken {damage} damage from {instigator.name}.", gameObject);
 
             OnHit?.Invoke(instigator);
 

@@ -48,7 +48,7 @@ namespace JadePhoenix.Gameplay
         protected TopDownController _colliderTopDownController;
         protected Rigidbody _colliderRigidBody;
         protected Health _health;
-        protected List<GameObject> _ignoredGameObjects;
+        protected List<GameObject> _ignoredGameObjects = new List<GameObject>();
         protected Vector3 _collisionPoint;
         protected Vector3 _knockbackForceApplied;
         protected SphereCollider _circleCollider;
@@ -176,7 +176,7 @@ namespace JadePhoenix.Gameplay
                 return;
             }
 
-            //Debug.Log("Error checks passed, dealing damage", gameObject);
+            //Debug.Log($"Error checks passed on {collision.name}, dealing damage", gameObject);
 
             _collisionPoint = this.transform.position;
             _colliderHealth = collision.gameObject.GetComponent<Health>();
