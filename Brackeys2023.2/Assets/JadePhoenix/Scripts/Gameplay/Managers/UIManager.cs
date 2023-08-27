@@ -91,6 +91,7 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         public virtual void UpdateHealthBar(float healthPercentage)
         {
+            Debug.Log($"Healthbar is null? {HealthBar == null}");
             if (HealthBar == null) { return; }
 
             healthPercentage = Mathf.Clamp01(healthPercentage);  // Ensure it's between 0 and 1

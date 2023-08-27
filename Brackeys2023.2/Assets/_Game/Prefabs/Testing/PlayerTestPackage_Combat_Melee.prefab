@@ -697,10 +697,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
-  CurrentHealth: 0
   Invulnerable: 0
   MaxHealth: 100
   InitialHealth: 100
+  CurrentHealth: 0
   ImmuneToKnockback: 0
   DestroyOnDeath: 1
   DelayBeforeDestruction: 0
@@ -938,7 +938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7831945750421795319}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.33474293, y: -0.000000016213736, z: 0.0000000057597154, w: 0.9423095}
+  m_LocalRotation: {x: 0.33474293, y: 0.000000016213734, z: -0.0000000057597136, w: 0.9423095}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1017,7 +1017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8344573944304983024}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3076169, y: 1e-45, z: -0, w: 0.9515103}
+  m_LocalRotation: {x: 0.3076169, y: -3e-45, z: 1e-45, w: 0.9515103}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
