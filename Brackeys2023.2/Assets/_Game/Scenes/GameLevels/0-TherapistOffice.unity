@@ -19541,12 +19541,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1580328775874911149, guid: 3e8af7a9d073483458a6e548218ac516, type: 3}
+      propertyPath: m_Name
+      value: Model
+      objectReference: {fileID: 0}
     - target: {fileID: 4738585998182687752, guid: 3e8af7a9d073483458a6e548218ac516, type: 3}
       propertyPath: m_Name
       value: PlayerMovementOpeningTherapistRoom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8014127147872791546, guid: 3e8af7a9d073483458a6e548218ac516, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e8af7a9d073483458a6e548218ac516, type: 3}

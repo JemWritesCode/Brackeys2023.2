@@ -128,7 +128,6 @@ namespace _Game
         protected int _skillAnimationParameter;
         protected int _idleAnimationParameter;
 
-
         /// <summary>
         /// Initializes the skill, setting up necessary properties and references.
         /// </summary>
@@ -491,7 +490,7 @@ namespace _Game
 
         public virtual void InitializeAnimatorParameters()
         {
-            _skillHandler.RegisterAnimatorParameter(_skillAnimationParameterName, AnimatorControllerParameterType.Bool, out _skillAnimationParameter);
+            _skillHandler.RegisterAnimatorParameter(_skillAnimationParameterName + ID, AnimatorControllerParameterType.Bool, out _skillAnimationParameter);
             _skillHandler.RegisterAnimatorParameter(_idleAnimationParameterName, AnimatorControllerParameterType.Bool, out _idleAnimationParameter);
         }
 

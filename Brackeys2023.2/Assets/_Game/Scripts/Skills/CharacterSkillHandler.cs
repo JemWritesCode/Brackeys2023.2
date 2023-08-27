@@ -182,6 +182,8 @@ namespace _Game
                 skill.Initialization(_character, i);
                 UIManager.Instance.SetSkillImage(i, skill.Icon);
             }
+
+            InitializeAnimatorParameters();
         }
 
         #region PUBLIC METHODS
@@ -288,14 +290,27 @@ namespace _Game
 
         #endregion
 
+        protected const string _skillAnimationParameterName = "skill_";
+        protected const string _idleAnimationParameterName = "Idle";
+        protected List<int> _skillAnimationParameter = new List<int>();
+        protected int _idleAnimationParameter;
+
         protected override void InitializeAnimatorParameters()
         {
+            _skillAnimationParameter = new List<int>();
+
             for (int i = 0; i < _currentActiveSkills.Count; i++)
             {
                 Skill skill = _currentActiveSkills[i];
 
-                skill.InitializeAnimatorParameters();
+                //skill.InitializeAnimatorParameters();
+                RegisterAnimatorParameter(_skillAnimationParameterName + skill.ID, AnimatorControllerParameterType.Bool, out int skillAnimationParameter);
+
+                _skillAnimationParameter.Add(skillAnimationParameter);
+
+                Debug.Log($"{_skillAnimationParameterName + skill.ID} parameter = {_skillAnimationParameter}");
             }
+            RegisterAnimatorParameter(_idleAnimationParameterName, AnimatorControllerParameterType.Bool, out _idleAnimationParameter);
         }
 
         public override void UpdateAnimator()
@@ -304,8 +319,11 @@ namespace _Game
             {
                 Skill skill = _currentActiveSkills[i];
 
-                skill.UpdateAnimator(_animator, _movement.CurrentState);
+                //skill.UpdateAnimator(_animator, _movement.CurrentState);
+                Debug.Log("ID = "+ _skillAnimationParameterName + skill.ID + " || _movement.CurrentState == skill.ActiveState = " + (_movement.CurrentState == skill.ActiveState));
+                AnimatorExtensions.UpdateAnimatorBool(_animator, _skillAnimationParameter[i], _movement.CurrentState == skill.ActiveState, _character.AnimatorParameters);
             }
+            AnimatorExtensions.UpdateAnimatorBool(_animator, _idleAnimationParameter, _movement.CurrentState == CharacterStates.MovementStates.Idle, _character.AnimatorParameters);
         }
     }
 }
