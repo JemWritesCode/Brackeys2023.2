@@ -31,26 +31,23 @@ namespace _Game
 
         public override void SkillUse()
         {
-            base.SkillUse();
-
-            DetermineBoundedSpawnPosition();
-
             for (int i = 0; i < ProjectilesPerShot; i++)
             {
-                SpawnProjectile(SpawnPosition, i, ProjectilesPerShot, true);
+                SpawnProjectile(GetBoundedSpawnPosition(), i, ProjectilesPerShot, true);
             }
         }
 
-        public virtual void DetermineBoundedSpawnPosition()
+        public virtual Vector3 GetBoundedSpawnPosition()
         {
-            Vector3 center = BoxBoundaryCenter == BoxCenter.OwnerTransform ? Owner.transform.position : Vector3.zero;
+            Vector3 center = (BoxBoundaryCenter == BoxCenter.OwnerTransform) ? Owner.transform.position : Vector3.zero;
             Vector3 randomPosition = center + BoxOffset + new Vector3(
                 UnityEngine.Random.Range(-BoxBoundary.x / 2, BoxBoundary.x / 2),
                 SpawnHeight,
                 UnityEngine.Random.Range(-BoxBoundary.z / 2, BoxBoundary.z / 2)
             );
+            Vector3 heightVector = new Vector3(0, SpawnHeight, 0);
 
-            while (Vector3.Distance(randomPosition, center + BoxOffset) < NoSpawnRadius)
+            while (Vector3.Distance(randomPosition, Owner.transform.position + heightVector) < NoSpawnRadius)
             {
                 randomPosition = center + BoxOffset + new Vector3(
                     UnityEngine.Random.Range(-BoxBoundary.x / 2, BoxBoundary.x / 2),
@@ -58,22 +55,22 @@ namespace _Game
                     UnityEngine.Random.Range(-BoxBoundary.z / 2, BoxBoundary.z / 2)
                 );
             }
-
-            SpawnPosition = randomPosition;
+            Debug.Log(randomPosition);
+            return randomPosition;
         }
 
-        public override GameObject SpawnProjectile(Vector3 spawnPosition, int projectileIndex, int totalProjectiles, bool triggerObjectActivation = true)
-        {
-            GameObject spawnedProjectile = base.SpawnProjectile(spawnPosition, projectileIndex, totalProjectiles, triggerObjectActivation);
+        //public override GameObject SpawnProjectile(Vector3 spawnPosition, int projectileIndex, int totalProjectiles, bool triggerObjectActivation = true)
+        //{
+        //    GameObject spawnedProjectile = base.SpawnProjectile(spawnPosition, projectileIndex, totalProjectiles, triggerObjectActivation);
 
-            if (spawnedProjectile != null)
-            {
-                float randomYRotation = UnityEngine.Random.Range(0, 360);
-                spawnedProjectile.transform.rotation *= Quaternion.Euler(0, randomYRotation, 0);
-            }
+        //    if (spawnedProjectile != null)
+        //    {
+        //        float randomYRotation = UnityEngine.Random.Range(0, 360);
+        //        spawnedProjectile.transform.rotation *= Quaternion.Euler(0, randomYRotation, 0);
+        //    }
 
-            return spawnedProjectile;
-        }
+        //    return spawnedProjectile;
+        //}
 
         public override void DrawGizmos(GameObject owner)
         {
@@ -86,7 +83,7 @@ namespace _Game
 
             // Draw the no spawn circle
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(boxCenter, NoSpawnRadius);
+            Gizmos.DrawWireSphere(owner.transform.position, NoSpawnRadius);
 
             // Draw the spawn height
             Gizmos.color = Color.blue;
