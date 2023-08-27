@@ -24,7 +24,6 @@ namespace octr.Loot.PowerUps
 
                 //Player.health.MaxIncrease(drop.value); (Example)
                 Debug.Log($"+{drop.value}% Permanent Health Increase");
-                Destroy(gameObject);
             }
         }
     }

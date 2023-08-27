@@ -28,7 +28,6 @@ namespace octr.Loot.PowerUps
                 }
 
                 Debug.Log($"{drop.value}% Ultimate Restored");
-                Destroy(gameObject);
             }
         }
     }

@@ -28,7 +28,6 @@ namespace octr.Loot.PowerUps
 
                 //Player.attack.increaseMaxAttack(drop.value); (Example)
                 Debug.Log($"+{drop.value}% Permanent Attack Increase");
-                Destroy(gameObject);
             }
         }
     }

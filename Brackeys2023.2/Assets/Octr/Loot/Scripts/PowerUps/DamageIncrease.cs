@@ -29,7 +29,6 @@ namespace octr.Loot.PowerUps
                 Invoke(nameof(DisablePowerup), _timedBuff.buffDuration);
 
                 Debug.Log($"+{timedBuff.value}% Attack ({timedBuff.buffDuration}s)");
-                Destroy(gameObject);
             }
         }
 
