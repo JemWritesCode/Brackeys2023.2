@@ -43,8 +43,8 @@ MonoBehaviour:
   Spread: {x: 0, y: 0, z: 0}
   RandomSpread: 1
   SpawnPosition: {x: 0, y: 0, z: 0}
-  BoxBoundaryCenter: 0
-  BoxOffset: {x: 0, y: 0, z: 0}
-  BoxBoundary: {x: 43.2, y: 16, z: 28.53}
+  BoxBoundaryCenter: 1
+  BoxOffset: {x: 0, y: 0, z: 10}
+  BoxBoundary: {x: 47.2, y: 16, z: 27.2}
   NoSpawnRadius: 6.5
   SpawnHeight: 15
