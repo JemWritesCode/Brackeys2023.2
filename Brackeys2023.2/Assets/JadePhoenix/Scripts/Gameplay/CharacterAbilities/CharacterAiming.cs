@@ -88,5 +88,31 @@ namespace JadePhoenix.Gameplay
             // Reset rotations on X and Z axes
             _model.transform.eulerAngles = new Vector3(0, _model.transform.eulerAngles.y, 0);
         }
+
+        public void RotateTowardsDirection(Vector3 targetDirection)
+        {
+            if (RotationForbidden)
+            {
+                return;
+            }
+
+            // We get a flat direction (ignoring Y differences)
+            Vector3 flatDirection = new Vector3(targetDirection.x, 0, targetDirection.z);
+            Vector3 currentAim = flatDirection.normalized;
+
+            Quaternion targetRotation = Quaternion.LookRotation(currentAim);
+            if (OverrideModel != null)
+            {
+                OverrideModel.transform.rotation = targetRotation;
+                // Reset rotations on X and Z axes
+                OverrideModel.transform.eulerAngles = new Vector3(0, OverrideModel.transform.eulerAngles.y, 0);
+            }
+            else
+            {
+                transform.rotation = targetRotation;
+                // Reset rotations on X and Z axes
+                transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+            }
+        }
     }
 }

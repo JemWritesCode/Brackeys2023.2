@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5049138135453826512}
   - component: {fileID: 6276675278284602440}
   - component: {fileID: 6613290386865103556}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,6 +131,8 @@ GameObject:
   - component: {fileID: 4040652365374692095}
   - component: {fileID: 3966787750687093690}
   - component: {fileID: 1845639310440210690}
+  - component: {fileID: 5285207226132975078}
+  - component: {fileID: 5552485782319772695}
   m_Layer: 9
   m_Name: DonutEnemy
   m_TagString: Untagged
@@ -200,7 +202,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!143 &5950247579454226037
 CharacterController:
@@ -321,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityPermitted: 1
   RotationSpeed: 10
-  OverrideModel: {fileID: 0}
+  OverrideModel: {fileID: 967043404318984997}
   RotationForbidden: 0
   rotationControl: 1
 --- !u!114 &9189670142642557672
@@ -339,7 +341,7 @@ MonoBehaviour:
   AbilityPermitted: 1
   ProjectileSpawn: {fileID: 0}
   Skills:
-  - {fileID: 11400000, guid: eb6b1f069dd7a9d418e59b82c69640ae, type: 2}
+  - {fileID: 11400000, guid: 5d3a571419856084eae7fa4585819858, type: 2}
   Charge: 0
   MaxCharge: 100
   ChargeTimeIncrement: 0
@@ -373,6 +375,7 @@ MonoBehaviour:
   - StateName: Chase
     Actions:
       array:
+      - {fileID: 5552485782319772695}
       - {fileID: 3966787750687093690}
     Transitions:
       array:
@@ -385,6 +388,7 @@ MonoBehaviour:
   - StateName: Attack
     Actions:
       array:
+      - {fileID: 5552485782319772695}
       - {fileID: 6758044412399724398}
     Transitions:
       array:
@@ -463,7 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Label: 
   ComparisonMode: 1
-  Distance: 1.28
+  Distance: 5.14
 --- !u!114 &4040652365374692095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,3 +519,33 @@ MonoBehaviour:
   DisableControllerOnDeath: 1
   DisableModelOnDeath: 1
   DisableCollisionsOnDeath: 1
+--- !u!114 &5285207226132975078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967043404318984997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ec1c300d1eb0549b4768be301271dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MutualizeWaitingPools: 0
+  NestWaitingPool: 1
+  ObjectToPool: {fileID: 7134027953515366522, guid: a9b3d452ae3f69040bd517dbbec0d027, type: 3}
+  PoolCount: 20
+  PoolCanExpand: 1
+--- !u!114 &5552485782319772695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967043404318984997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7027e1aaea4ce499f341fa6fb5c422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: 

@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New ProjectileSkill", menuName = "Skills/Projectile")]
 public class ProjectileSkill : Skill
 {
     [Header("Spawn")]
@@ -83,7 +84,7 @@ public class ProjectileSkill : Skill
         }
 
         // Set the direction.
-        Projectile projectile = nextGameObject.GetComponent<Projectile>();
+        _Game.Projectile projectile = nextGameObject.GetComponent<_Game.Projectile>();
         if (projectile != null)
         {
             //projectile.SetWeapon(this);
@@ -119,7 +120,7 @@ public class ProjectileSkill : Skill
             }
 
             Quaternion spread = Quaternion.Euler(_randomSpreadDirection);
-            projectile.SetDirection(spread * Owner.transform.right, Owner.transform.rotation);
+            projectile.SetDirection(spread * Owner.transform.forward, Owner.transform.rotation);
         }
 
         if (triggerObjectActivation && nextGameObject.GetComponent<PoolableObject>() != null)
