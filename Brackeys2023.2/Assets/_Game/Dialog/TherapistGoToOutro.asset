@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: TherapistGoToOutro
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 9bef557b-6b60-4292-aa02-76b510523486
+    TargetNodeGuid: e521cdfe-1b59-4a14-8385-0022b6c8eff4
+  - BaseNodeGuid: e44c8b73-d908-417b-b8f0-f2201469df6b
+    TargetNodeGuid: fafa6651-d098-4747-b031-dbd5b52e3318
+  - BaseNodeGuid: e521cdfe-1b59-4a14-8385-0022b6c8eff4
+    TargetNodeGuid: e44c8b73-d908-417b-b8f0-f2201469df6b
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: e521cdfe-1b59-4a14-8385-0022b6c8eff4
+    Position: {x: 460.4, y: 234.8}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cccd7d001c6d75749849bf29a6acec2b, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: (You hear the therapist's voice calling your focus back
+        to the room...)
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: fafa6651-d098-4747-b031-dbd5b52e3318
+    Position: {x: 1066.4, y: 234.8}
+    EndNodeType: 0
+  EventNodeDatas:
+  - NodeGuid: e44c8b73-d908-417b-b8f0-f2201469df6b
+    Position: {x: 675.6, y: 234.8}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 35a1344cf4de2f1419733b8c2c3ed083, type: 2}
+  StartNodeDatas:
+  - NodeGuid: 9bef557b-6b60-4292-aa02-76b510523486
+    Position: {x: 339.2, y: 234.8}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []

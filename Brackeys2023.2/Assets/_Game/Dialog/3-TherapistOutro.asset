@@ -13,38 +13,12 @@ MonoBehaviour:
   m_Name: 3-TherapistOutro
   m_EditorClassIdentifier: 
   NodeLinkDatas:
-  - BaseNodeGuid: 6d3f32e6-c3ef-4f8e-aade-da89c1fc34e6
-    TargetNodeGuid: 375f129c-7116-4cc0-b30e-c1eebb17fd3b
-  - BaseNodeGuid: 375f129c-7116-4cc0-b30e-c1eebb17fd3b
-    TargetNodeGuid: b861dac4-c645-430e-b990-90cd842f2c7f
-  - BaseNodeGuid: b861dac4-c645-430e-b990-90cd842f2c7f
-    TargetNodeGuid: 9bf533e0-3e63-423e-a6f2-89464a92690c
-  - BaseNodeGuid: 9bf533e0-3e63-423e-a6f2-89464a92690c
-    TargetNodeGuid: 28dfb58f-496e-4793-bfe6-575c26810df2
-  - BaseNodeGuid: 28dfb58f-496e-4793-bfe6-575c26810df2
-    TargetNodeGuid: f9fac1a1-cf34-49ef-b7b1-589b56167793
-  - BaseNodeGuid: f9fac1a1-cf34-49ef-b7b1-589b56167793
-    TargetNodeGuid: eff2a21d-4c3c-498b-91b2-e3547330693e
-  - BaseNodeGuid: eff2a21d-4c3c-498b-91b2-e3547330693e
-    TargetNodeGuid: 83877f99-d434-4035-848b-fe0c13291b1f
-  - BaseNodeGuid: 83877f99-d434-4035-848b-fe0c13291b1f
-    TargetNodeGuid: 147a63df-90a3-467b-9240-c8904262609b
-  - BaseNodeGuid: 147a63df-90a3-467b-9240-c8904262609b
-    TargetNodeGuid: bd40634a-5625-414d-a79a-19e23476846e
-  - BaseNodeGuid: bd40634a-5625-414d-a79a-19e23476846e
-    TargetNodeGuid: b943bc5e-bc83-4fa3-8e6c-2d1644944bbd
-  - BaseNodeGuid: b943bc5e-bc83-4fa3-8e6c-2d1644944bbd
-    TargetNodeGuid: 6805bd34-fa06-4f95-8cc0-dfd465e90a95
-  - BaseNodeGuid: 6805bd34-fa06-4f95-8cc0-dfd465e90a95
-    TargetNodeGuid: 841b9c11-0fff-405a-b283-e7ff471d5a29
-  - BaseNodeGuid: 841b9c11-0fff-405a-b283-e7ff471d5a29
-    TargetNodeGuid: f43b86bb-a343-4afb-83ad-01149e4ccea4
   - BaseNodeGuid: 7b1f024f-a99c-46ed-a402-66f13cc11672
     TargetNodeGuid: 5345a3c2-4365-49d6-bf9b-6d25493f33a6
-  - BaseNodeGuid: 5345a3c2-4365-49d6-bf9b-6d25493f33a6
-    TargetNodeGuid: 9a1f658c-e7f3-4c50-b1a1-6a61d1a72378
   - BaseNodeGuid: 9a1f658c-e7f3-4c50-b1a1-6a61d1a72378
     TargetNodeGuid: 0850dd90-808e-4683-8fc8-6b24524868bb
+  - BaseNodeGuid: 5345a3c2-4365-49d6-bf9b-6d25493f33a6
+    TargetNodeGuid: 9a1f658c-e7f3-4c50-b1a1-6a61d1a72378
   - BaseNodeGuid: 0850dd90-808e-4683-8fc8-6b24524868bb
     TargetNodeGuid: c47c0750-41e0-4434-93e0-0e7f21e6ac02
   - BaseNodeGuid: c47c0750-41e0-4434-93e0-0e7f21e6ac02
@@ -62,11 +36,13 @@ MonoBehaviour:
   - BaseNodeGuid: 908590f1-9426-4ccb-97b4-00b2c15c5e35
     TargetNodeGuid: e203a4af-456a-4b96-be7c-4bd06159842c
   - BaseNodeGuid: e203a4af-456a-4b96-be7c-4bd06159842c
+    TargetNodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
+  - BaseNodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
     TargetNodeGuid: 6ff43d19-9a84-4c0b-a459-f8bb5634f6fb
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 9a1f658c-e7f3-4c50-b1a1-6a61d1a72378
-    Position: {x: 646.39996, y: 160}
+    Position: {x: 646.4, y: 160}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -81,7 +57,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 5345a3c2-4365-49d6-bf9b-6d25493f33a6
-    Position: {x: 385.59998, y: 160}
+    Position: {x: 385.6, y: 160}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -145,7 +121,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 0e4aa326-2774-4b39-826d-e74d00e49be9
-    Position: {x: 1729.2001, y: 160}
+    Position: {x: 1729.2, y: 160}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -240,10 +216,25 @@ MonoBehaviour:
     - languageEnum: 1
       LanguageGenericType: 
     Duration: 10
+  - NodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
+    Position: {x: 3332, y: 160}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: b98e5715eb2b7a54789aa1612d849646, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Thank you for playing our game! That's it for now.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 10
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 6ff43d19-9a84-4c0b-a459-f8bb5634f6fb
-    Position: {x: 3320.4001, y: 160}
+    Position: {x: 3672, y: 160}
     EndNodeType: 0
   EventNodeDatas: []
   StartNodeDatas:

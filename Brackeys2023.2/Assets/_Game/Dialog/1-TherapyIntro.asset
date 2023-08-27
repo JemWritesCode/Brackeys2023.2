@@ -91,8 +91,6 @@ MonoBehaviour:
     TargetNodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
   - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
     TargetNodeGuid: 00b2d8d2-9560-4d11-a987-cf8ae67d3958
-  - BaseNodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
-    TargetNodeGuid: 602d0cf3-517c-43dd-bacd-79d34af05406
   - BaseNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
     TargetNodeGuid: 8b91363a-d5f0-4f8f-8c04-742c0ad4826a
   - BaseNodeGuid: ef6d5976-3e9f-4f75-83c5-db79e00575d7
@@ -113,14 +111,6 @@ MonoBehaviour:
           of it, y'know?
       - languageEnum: 1
         LanguageGenericType: Choice 01
-    - InputGuid: 602d0cf3-517c-43dd-bacd-79d34af05406
-      OutputGuid: 4542346f-7053-456b-a064-2b92ddcac511
-      TextLanguage:
-      - languageEnum: 0
-        LanguageGenericType: I'm going to a birthday party next week, but... I'm
-          kinda scared of balloons.
-      - languageEnum: 1
-        LanguageGenericType: Choice 02
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 0}
@@ -789,3 +779,6 @@ MonoBehaviour:
   - NodeGuid: b1861660-e795-4fbc-9b29-d896c173d523
     Position: {x: 6490.4, y: 149.2}
     commmand: Go to the Balloon Level
+  - NodeGuid: 9296c953-f8e5-425e-a01e-a273a991a5f8
+    Position: {x: 1102.8, y: 219.2}
+    commmand: Disconnected the Balloon Level For Now
