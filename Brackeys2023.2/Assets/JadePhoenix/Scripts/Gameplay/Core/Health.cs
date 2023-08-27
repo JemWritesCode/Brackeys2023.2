@@ -172,13 +172,13 @@ namespace JadePhoenix.Gameplay
                 {
                     (_entity as Character).ConditionState.ChangeState(CharacterStates.CharacterConditions.Dead);
 
-                    if (DelayBeforeDestruction > 0f)
+                    if (DelayBeforeDestruction > 0f && GameManager.Instance != null)
                     {
-                        //GameManager.Instance.TriggerGameOver(DelayBeforeDestruction);
+                        GameManager.Instance.ReloadCurrentScene(DelayBeforeDestruction);
                     }
-                    else
+                    else if (GameManager.Instance != null)
                     {
-                        //GameManager.Instance.TriggerGameOver();
+                        GameManager.Instance.ReloadCurrentScene();
                     }
                 }
             }

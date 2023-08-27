@@ -71,6 +71,20 @@ namespace JadePhoenix.Gameplay
             SceneManager.LoadScene(sceneName);
         }
 
+        public void ReloadCurrentScene()
+        {
+            // Get the index of the current active scene
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+            // Load the scene with the current index
+            SceneManager.LoadScene(currentSceneIndex);
+        }
+
+        public void ReloadCurrentScene(float timer)
+        {
+            Invoke(nameof(ReloadCurrentScene), timer);
+        }
+
         /// <summary>
         /// Quit the application.
         /// </summary>
