@@ -8,14 +8,14 @@ namespace JadePhoenix.Gameplay
         // The model to disable (if set to).
         public GameObject Model;
 
-        // The current health of the character.
-        public int CurrentHealth;
         // If true, this object will not take damage.
         public bool Invulnerable = false;
 
         [Header("Health")]
-        public int MaxHealth;
-        public int InitialHealth;
+        public float MaxHealth;
+        public float InitialHealth;
+        // The current health of the character.
+        public float CurrentHealth;
         public float HealthPercentage { get { return CurrentHealth / MaxHealth; } }
 
         [Header("Damage")]
@@ -141,11 +141,16 @@ namespace JadePhoenix.Gameplay
 
             if (_entity != null && _entity is Character)
             {
-                // we trigger a damage taken event
-                CharacterEvents.DamageTakenEvent.Trigger(_entity as Character, instigator, CurrentHealth, damage, previousHealth);
+                Character character = _entity as Character;
 
-                if ((_entity as Character).CharacterType == Character.CharacterTypes.Player)
+                Debug.Log($"CharacterID; {character.PlayerID}, Entity Name; {_entity.name}, This Health %; {HealthPercentage}, Character Health %; {character.Health.HealthPercentage}, Health % Calc; {CurrentHealth} / {MaxHealth} = {CurrentHealth / MaxHealth}", gameObject);
+
+                // we trigger a damage taken event
+                CharacterEvents.DamageTakenEvent.Trigger(character, instigator, CurrentHealth, damage, previousHealth);
+
+                if (character.PlayerID == "Player")
                 {
+                    Debug.Log($"Setting healthbar to {HealthPercentage * 100}%");
                     UIManager.Instance.UpdateHealthBar(HealthPercentage);
                 }
             }

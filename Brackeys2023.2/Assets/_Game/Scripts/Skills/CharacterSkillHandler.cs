@@ -308,7 +308,7 @@ namespace _Game
 
                 _skillAnimationParameter.Add(skillAnimationParameter);
 
-                Debug.Log($"{_skillAnimationParameterName + skill.ID} parameter = {_skillAnimationParameter}");
+                //Debug.Log($"{_skillAnimationParameterName + skill.ID} parameter = {_skillAnimationParameter}");
             }
             RegisterAnimatorParameter(_idleAnimationParameterName, AnimatorControllerParameterType.Bool, out _idleAnimationParameter);
         }
@@ -320,7 +320,7 @@ namespace _Game
                 Skill skill = _currentActiveSkills[i];
 
                 //skill.UpdateAnimator(_animator, _movement.CurrentState);
-                Debug.Log("ID = "+ _skillAnimationParameterName + skill.ID + " || _movement.CurrentState == skill.ActiveState = " + (_movement.CurrentState == skill.ActiveState));
+                //Debug.Log("ID = "+ _skillAnimationParameterName + skill.ID + " || _movement.CurrentState == skill.ActiveState = " + (_movement.CurrentState == skill.ActiveState));
                 AnimatorExtensions.UpdateAnimatorBool(_animator, _skillAnimationParameter[i], _movement.CurrentState == skill.ActiveState, _character.AnimatorParameters);
             }
             AnimatorExtensions.UpdateAnimatorBool(_animator, _idleAnimationParameter, _movement.CurrentState == CharacterStates.MovementStates.Idle, _character.AnimatorParameters);
