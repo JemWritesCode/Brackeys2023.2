@@ -612,8 +612,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
   Invulnerable: 0
-  MaxHealth: 50
-  InitialHealth: 50
+  MaxHealth: 30
+  InitialHealth: 30
   CurrentHealth: 0
   ImmuneToKnockback: 0
   DestroyOnDeath: 1

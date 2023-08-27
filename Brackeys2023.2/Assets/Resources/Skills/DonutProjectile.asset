@@ -26,7 +26,7 @@ MonoBehaviour:
   TriggerMode: 1
   DelayBeforeUse: 0
   DelayBeforeUseReleaseInterruption: 0
-  Cooldown: 0.5
+  Cooldown: 0.8
   SkillDuration: 0
   ChargeConsumption: 0
   PartialChargeConsumeAmount: 25

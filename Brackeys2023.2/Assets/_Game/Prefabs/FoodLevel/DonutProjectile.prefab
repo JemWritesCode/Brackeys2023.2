@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LifeTime: 5
   FaceDirection: 1
-  Speed: 200
+  Speed: 100
   Acceleration: 0
   Direction: {x: 0, y: 0, z: -1}
   DirectionChangedBySpawner: 1
@@ -231,10 +231,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
-  CurrentHealth: 0
   Invulnerable: 0
   MaxHealth: 1
   InitialHealth: 1
+  CurrentHealth: 0
   ImmuneToKnockback: 0
   DestroyOnDeath: 1
   DelayBeforeDestruction: 0

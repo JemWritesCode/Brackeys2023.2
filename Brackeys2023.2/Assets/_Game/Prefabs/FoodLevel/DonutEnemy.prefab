@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AbilityPermitted: 1
-  RotationSpeed: 10
+  RotationSpeed: 8
   OverrideModel: {fileID: 967043404318984997}
   RotationForbidden: 0
   rotationControl: 1
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
-  Radius: 6.92
+  Radius: 9
   DetectionOriginOffset: {x: 0, y: 0, z: 0}
   TargetLayerMask:
     serializedVersion: 2
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Label: 
   ComparisonMode: 1
-  Distance: 5.14
+  Distance: 7
 --- !u!114 &4040652365374692095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,10 +508,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
-  CurrentHealth: 0
   Invulnerable: 0
-  MaxHealth: 50
-  InitialHealth: 50
+  MaxHealth: 20
+  InitialHealth: 20
+  CurrentHealth: 0
   ImmuneToKnockback: 0
   DestroyOnDeath: 1
   DelayBeforeDestruction: 0
