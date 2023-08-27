@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 4778659809177407440}
   m_Layer: 0
   m_Name: CoffeeNPC
-  m_TagString: Untagged
+  m_TagString: CoffeeNPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
