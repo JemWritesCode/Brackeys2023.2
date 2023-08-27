@@ -15,6 +15,10 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: 9d113ae3-aa9f-4cb8-9bab-6dc4df886d32
     TargetNodeGuid: 22f599fe-bf89-4c1d-a11e-24846e378fe0
+  - BaseNodeGuid: 5fa261f7-0881-42ec-ab5f-79c6c54f27dc
+    TargetNodeGuid: 83f4b63d-47df-4499-91b1-1dd40e62a03c
+  - BaseNodeGuid: eef0eb58-e4cf-43d5-a755-902f7cee09c5
+    TargetNodeGuid: 00881273-6faa-4042-b597-ca159274325b
   - BaseNodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
     TargetNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
   - BaseNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
@@ -59,6 +63,8 @@ MonoBehaviour:
     TargetNodeGuid: 52e49099-c63a-4ce8-8a52-35001ec5cee3
   - BaseNodeGuid: 52e49099-c63a-4ce8-8a52-35001ec5cee3
     TargetNodeGuid: 937c2c54-114f-4151-bd98-c6371e8cba0d
+  - BaseNodeGuid: 937c2c54-114f-4151-bd98-c6371e8cba0d
+    TargetNodeGuid: 5fa261f7-0881-42ec-ab5f-79c6c54f27dc
   - BaseNodeGuid: 0e6788f4-e169-4cba-8108-a409b881c1b2
     TargetNodeGuid: 288b3d4b-ad63-442d-a022-6cf113feb987
   - BaseNodeGuid: 288b3d4b-ad63-442d-a022-6cf113feb987
@@ -66,7 +72,7 @@ MonoBehaviour:
   - BaseNodeGuid: 2d81c1a4-8edb-4730-8972-a523d6082245
     TargetNodeGuid: 049fed63-207d-4524-ad7d-533f461979b1
   - BaseNodeGuid: 049fed63-207d-4524-ad7d-533f461979b1
-    TargetNodeGuid: 947440e7-14e6-4f8d-9476-8a8123bad996
+    TargetNodeGuid: eef0eb58-e4cf-43d5-a755-902f7cee09c5
   - BaseNodeGuid: ab381fe3-b8b3-49d4-9b85-1bc882ab3f22
     TargetNodeGuid: 21d5cf27-0301-4b08-9d7c-b4c510d14ee7
   - BaseNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
@@ -95,10 +101,6 @@ MonoBehaviour:
     TargetNodeGuid: 3dbf6b6e-6d77-462d-8c4c-8d7376ea8008
   - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
     TargetNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
-  - BaseNodeGuid: 937c2c54-114f-4151-bd98-c6371e8cba0d
-    TargetNodeGuid: 5fa261f7-0881-42ec-ab5f-79c6c54f27dc
-  - BaseNodeGuid: 5fa261f7-0881-42ec-ab5f-79c6c54f27dc
-    TargetNodeGuid: 83f4b63d-47df-4499-91b1-1dd40e62a03c
   DialogueChoiceNodeDatas:
   - NodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
     Position: {x: 969.2, y: -31.2}
@@ -758,11 +760,11 @@ MonoBehaviour:
     Duration: 5
   TimerChoiceNodeDatas: []
   EndNodeDatas:
-  - NodeGuid: 947440e7-14e6-4f8d-9476-8a8123bad996
-    Position: {x: 6515.6, y: 149.2}
-    EndNodeType: 0
   - NodeGuid: 83f4b63d-47df-4499-91b1-1dd40e62a03c
     Position: {x: 6537.2, y: -117.600006}
+    EndNodeType: 0
+  - NodeGuid: 00881273-6faa-4042-b597-ca159274325b
+    Position: {x: 6857.6, y: 188.40001}
     EndNodeType: 0
   EventNodeDatas:
   - NodeGuid: 5fa261f7-0881-42ec-ab5f-79c6c54f27dc
@@ -771,6 +773,10 @@ MonoBehaviour:
     - DialogueEventSO: {fileID: 0}
     - DialogueEventSO: {fileID: 0}
     - DialogueEventSO: {fileID: 11400000, guid: 0a82ce8482446574b81e1b01972ea2bf, type: 2}
+  - NodeGuid: eef0eb58-e4cf-43d5-a755-902f7cee09c5
+    Position: {x: 6490.4, y: 211.2}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: f0c7b343afc25ee4fa529b143adbccaf, type: 2}
   StartNodeDatas:
   - NodeGuid: 9d113ae3-aa9f-4cb8-9bab-6dc4df886d32
     Position: {x: -500.8, y: -104}
@@ -780,3 +786,6 @@ MonoBehaviour:
   - NodeGuid: 8cda1f36-5d57-4a7c-bc80-ea95fa5d83cc
     Position: {x: 6190.4, y: -179.59999}
     commmand: Go to the Food Level
+  - NodeGuid: b1861660-e795-4fbc-9b29-d896c173d523
+    Position: {x: 6490.4, y: 149.2}
+    commmand: Go to the Balloon Level
