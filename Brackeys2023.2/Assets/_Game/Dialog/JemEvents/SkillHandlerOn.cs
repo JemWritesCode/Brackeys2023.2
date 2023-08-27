@@ -1,4 +1,5 @@
 using _Game;
+using JadePhoenix.Gameplay;
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace MEET_AND_TALK
             if (playerObject != null)
             {
                 playerObject.GetComponent<CharacterSkillHandler>().enabled = true;
+                playerObject.GetComponent<CharacterMovement>().enabled = true;
             }
 
             base.RunEvent();
