@@ -358,6 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5747543342290733533}
   - component: {fileID: 1749724197424504912}
+  - component: {fileID: 8335416179861291288}
   m_Layer: 0
   m_Name: BullyEnemyBoss
   m_TagString: Untagged
@@ -405,6 +406,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8335416179861291288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101678558519837155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfeb5324d964c3746bad61c0df6159eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: {fileID: 11400000, guid: 1f384e3c694e6084b962209a783ca303, type: 2}
+  spawnRadius: 1
+  maxSpawnAttempts: 100
+  overlapRadius: 0
 --- !u!1 &2427193341308044191
 GameObject:
   m_ObjectHideFlags: 0

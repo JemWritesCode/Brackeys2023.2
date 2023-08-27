@@ -550,6 +550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3368081574862259891}
   - component: {fileID: 8568726875874760214}
+  - component: {fileID: 8547464233118717927}
   m_Layer: 0
   m_Name: InflatableEnemyYellow
   m_TagString: Untagged
@@ -601,6 +602,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8547464233118717927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2261836137536467283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfeb5324d964c3746bad61c0df6159eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: {fileID: 11400000, guid: 0655412ffd3931b43b1cac70e5268fb2, type: 2}
+  spawnRadius: 1
+  maxSpawnAttempts: 100
+  overlapRadius: 0
 --- !u!1 &2354746415742593183
 GameObject:
   m_ObjectHideFlags: 0

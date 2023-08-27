@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5005537759434404543}
   - component: {fileID: 4361494780429516013}
+  - component: {fileID: 5683365210724328629}
   m_Layer: 0
   m_Name: BalloonGhostEnemy
   m_TagString: Untagged
@@ -60,6 +61,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5683365210724328629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374597439659835793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfeb5324d964c3746bad61c0df6159eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: {fileID: 11400000, guid: ac0d4a5c071d373469d110c2aae8a85c, type: 2}
+  spawnRadius: 1
+  maxSpawnAttempts: 100
+  overlapRadius: 0
 --- !u!1001 &3802328461043189250
 PrefabInstance:
   m_ObjectHideFlags: 0
