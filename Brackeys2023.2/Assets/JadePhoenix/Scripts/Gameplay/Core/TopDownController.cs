@@ -239,6 +239,8 @@ namespace JadePhoenix.Gameplay
 
         protected virtual void HandleMovement()
         {
+            if (!FreeMovement) return;
+
             _collisionFlags = _characterController.Move(_motion); // controller move
 
             _lastHitPoint = _hitPoint;
