@@ -96,6 +96,8 @@ MonoBehaviour:
   - BaseNodeGuid: 93fdbd6a-b61e-4c6f-8d18-572c005524f8
     TargetNodeGuid: 3638b855-6ff6-45aa-9e69-e8c9dd091a4c
   - BaseNodeGuid: 937c2c54-114f-4151-bd98-c6371e8cba0d
+    TargetNodeGuid: 5fa261f7-0881-42ec-ab5f-79c6c54f27dc
+  - BaseNodeGuid: 5fa261f7-0881-42ec-ab5f-79c6c54f27dc
     TargetNodeGuid: 83f4b63d-47df-4499-91b1-1dd40e62a03c
   DialogueChoiceNodeDatas:
   - NodeGuid: 4542346f-7053-456b-a064-2b92ddcac511
@@ -760,15 +762,15 @@ MonoBehaviour:
     Position: {x: 6515.6, y: 149.2}
     EndNodeType: 0
   - NodeGuid: 83f4b63d-47df-4499-91b1-1dd40e62a03c
-    Position: {x: 6514.8, y: -179.59999}
+    Position: {x: 6537.2, y: -117.600006}
     EndNodeType: 0
   EventNodeDatas:
   - NodeGuid: 5fa261f7-0881-42ec-ab5f-79c6c54f27dc
-    Position: {x: 6161.2, y: -365.2}
+    Position: {x: 6190.4, y: -117.600006}
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 0}
     - DialogueEventSO: {fileID: 0}
-    - DialogueEventSO: {fileID: 11400000, guid: edb78785db42f3c469b11ba2b1e5dcc1, type: 2}
+    - DialogueEventSO: {fileID: 11400000, guid: 0a82ce8482446574b81e1b01972ea2bf, type: 2}
   StartNodeDatas:
   - NodeGuid: 9d113ae3-aa9f-4cb8-9bab-6dc4df886d32
     Position: {x: -500.8, y: -104}
@@ -776,5 +778,5 @@ MonoBehaviour:
   RandomNodeDatas: []
   CommandNodeDatas:
   - NodeGuid: 8cda1f36-5d57-4a7c-bc80-ea95fa5d83cc
-    Position: {x: 6161.2, y: -427.2}
+    Position: {x: 6190.4, y: -179.59999}
     commmand: Go to the Food Level
