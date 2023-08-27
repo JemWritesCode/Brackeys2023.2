@@ -32,7 +32,7 @@ public class Pickup : MonoBehaviour
     {
         Character collidedCharacter = other.GetComponent<Character>();
 
-        if (collidedCharacter != null) { return; }
+        if (collidedCharacter == null) { return; }
 
         if(collidedCharacter.PlayerID == "Player")
         {
