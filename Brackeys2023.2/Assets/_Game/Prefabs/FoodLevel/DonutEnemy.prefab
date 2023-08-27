@@ -308,7 +308,7 @@ MonoBehaviour:
   IdleThreshold: 0.05
   Acceleration: 0
   Deceleration: 0
-  InterpolateMovementSpeed: 1
+  InterpolateMovementSpeed: 0
   MovementSpeedMultiplier: 0
 --- !u!114 &3830431382472669822
 MonoBehaviour:
