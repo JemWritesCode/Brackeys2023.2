@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10ff8c11693bd94b9bc4d6edc8acdef, type: 3}
   m_Name: PlayerPunish
   m_EditorClassIdentifier: 
-  ID: punish
+  ID: punish_windup
   Name: Punish
   Description: Test
   Icon: {fileID: 21300000, guid: 5e188177bbe31ff4392d5a9513b645fe, type: 3}

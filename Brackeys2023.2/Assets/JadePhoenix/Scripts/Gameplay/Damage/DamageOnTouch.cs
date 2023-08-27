@@ -176,7 +176,7 @@ namespace JadePhoenix.Gameplay
                 return;
             }
 
-            Debug.Log("Error checks passed, dealing damage", gameObject);
+            //Debug.Log("Error checks passed, dealing damage", gameObject);
 
             _collisionPoint = this.transform.position;
             _colliderHealth = collision.gameObject.GetComponent<Health>();
