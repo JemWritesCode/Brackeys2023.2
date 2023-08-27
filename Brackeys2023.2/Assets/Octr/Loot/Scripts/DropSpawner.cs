@@ -1,4 +1,4 @@
-using System.Xml.Linq;
+using JadePhoenix.Gameplay;
 using UnityEngine;
 
 namespace octr.Loot
@@ -10,6 +10,43 @@ namespace octr.Loot
         [SerializeField] private int maxSpawnAttempts = 10;
         [SerializeField] private float overlapRadius = 1f;
 
+        private Health _health;
+
+        /// <summary>
+        /// On enable, we bind our respawn delegate
+        /// </summary>
+        protected virtual void OnEnable()
+        {
+            if (_health == null)
+            {
+                _health = GetComponent<Health>();
+            }
+
+            if (_health != null)
+            {
+                _health.OnDeath += OnDeath;
+            }
+        }
+
+        /// <summary>
+        /// Override this to describe what should happen to this ability when the character respawns
+        /// </summary>
+        protected virtual void OnDeath() 
+        {
+            GenerateDrops();
+        }
+
+        /// <summary>
+        /// On disable, we unbind our respawn delegate
+        /// </summary>
+        protected virtual void OnDisable()
+        {
+            if (_health != null)
+            {
+                _health.OnDeath -= OnDeath;
+            }
+        }
+
         public void GenerateDrops()
         {
             foreach (DropTableElement element in table.elements)
@@ -20,8 +57,13 @@ namespace octr.Loot
 
                 // Spawn The Item (In World) using the SpawnZone
                 SpawnObject(element.drop.prefab, element);
+                Debug.Log($"Spawning Item{element.drop.prefab.name}, {element.elementName}");
 
-                if (table.isSingular) return;
+                if (table.isSingular)
+                {
+                    Debug.Log("Exiting Loop");
+                    return;
+                }
             }
         }
 
@@ -42,7 +84,7 @@ namespace octr.Loot
                 if (colliders.Length == 0)
                 {
                     GameObject newDrop = Instantiate(spawnObject, randomPoint, Quaternion.identity);
-                    newDrop.transform.parent = gameObject.transform;
+                    //newDrop.transform.parent = gameObject.transform; //Dont do this because parent is disabled on death
                     newDrop.name = element.drop.name;
 
                     Pickup pickup;
