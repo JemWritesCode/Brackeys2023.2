@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5656af0f083ebc544a58ffc34bdd4c9e, type: 3}
+  m_Name: BossBasicAttack
+  m_EditorClassIdentifier: 
+  ID: bossbasic
+  Name: 
+  Description: 
+  Icon: {fileID: 0}
+  SkillType: 0
+  SkillState:
+    Target: {fileID: 0}
+    DebugCurrentState: 0
+  ImpactPercentageModifier: 100
+  UpdateMode: 0
+  ActiveState: 8
+  TriggerMode: 1
+  DelayBeforeUse: 0
+  DelayBeforeUseReleaseInterruption: 0
+  Cooldown: 2
+  SkillDuration: 0
+  ChargeConsumption: 0
+  PartialChargeConsumeAmount: 25
+  ProvidesCharge: 0
+  ContinuousPress: 1
+  GettingHitInterruptsSkill: 0
+  RecoilForce: 0
+  Interruptible: 0
+  RestrictMovement: 0
+  RestrictRotation: 0
+  Owner: {fileID: 0}
+  ProjectileSpawnOffset: {x: 0, y: 0, z: 0}
+  ProjectilesPerShot: 1
+  Spread: {x: 0, y: 0, z: 0}
+  RandomSpread: 1
+  SpawnPosition: {x: 0, y: 0, z: 0}
+  BoxBoundaryCenter: 0
+  BoxOffset: {x: 0, y: 0, z: 0}
+  BoxBoundary: {x: 43.2, y: 16, z: 28.53}
+  NoSpawnRadius: 6.5
+  SpawnHeight: 15
