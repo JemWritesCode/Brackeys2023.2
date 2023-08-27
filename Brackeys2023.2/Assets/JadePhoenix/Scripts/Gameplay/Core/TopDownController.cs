@@ -332,7 +332,7 @@ namespace JadePhoenix.Gameplay
         {
             if (_impact.magnitude > 0.2f)
             {
-                _rigidBody.AddForce(_impact);
+                _characterController.Move(_impact * Time.deltaTime);
             }
             _impact = Vector3.Lerp(_impact, Vector3.zero, 5f * Time.deltaTime);
         }

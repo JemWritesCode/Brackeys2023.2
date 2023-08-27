@@ -60,10 +60,10 @@ namespace _Game
 
         protected virtual void OnDrawGizmos()
         {
-            for (int i = 0; i < _currentActiveSkills.Count; i++)
+            for (int i = 0; i < Skills.Count; i++)
             {
-                Skill skill = _currentActiveSkills[i];
-                skill.DrawGizmos();
+                Skill skill = Skills[i];
+                skill.DrawGizmos(gameObject);
             }
         }
 

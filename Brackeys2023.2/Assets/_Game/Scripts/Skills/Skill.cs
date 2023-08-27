@@ -486,7 +486,7 @@ namespace _Game
             }
         }
 
-        public virtual void DrawGizmos() { }
+        public virtual void DrawGizmos(GameObject owner) { }
 
         public virtual void InitializeAnimatorParameters()
         {

@@ -45,8 +45,8 @@ MonoBehaviour:
   TargetLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  Knockback: 1
-  KnockbackForce: {x: 10, y: 2}
+  Knockback: 0
+  KnockbackForce: {x: 15, y: 0}
   InvincibilityDuration: 0.1
   CanDamageOwner: 0
   _attackInProgress: 0
