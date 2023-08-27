@@ -15,6 +15,8 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: 6d3f32e6-c3ef-4f8e-aade-da89c1fc34e6
     TargetNodeGuid: 375f129c-7116-4cc0-b30e-c1eebb17fd3b
+  - BaseNodeGuid: f8b160f8-4379-4669-b625-3d7f3184fa31
+    TargetNodeGuid: f43b86bb-a343-4afb-83ad-01149e4ccea4
   - BaseNodeGuid: 375f129c-7116-4cc0-b30e-c1eebb17fd3b
     TargetNodeGuid: b861dac4-c645-430e-b990-90cd842f2c7f
   - BaseNodeGuid: b861dac4-c645-430e-b990-90cd842f2c7f
@@ -38,11 +40,11 @@ MonoBehaviour:
   - BaseNodeGuid: 6805bd34-fa06-4f95-8cc0-dfd465e90a95
     TargetNodeGuid: 841b9c11-0fff-405a-b283-e7ff471d5a29
   - BaseNodeGuid: 841b9c11-0fff-405a-b283-e7ff471d5a29
-    TargetNodeGuid: f43b86bb-a343-4afb-83ad-01149e4ccea4
+    TargetNodeGuid: f8b160f8-4379-4669-b625-3d7f3184fa31
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 375f129c-7116-4cc0-b30e-c1eebb17fd3b
-    Position: {x: -620, y: -147.59999}
+    Position: {x: -620, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -57,7 +59,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: b861dac4-c645-430e-b990-90cd842f2c7f
-    Position: {x: -367.6, y: -147.59999}
+    Position: {x: -367.6, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -72,7 +74,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 9bf533e0-3e63-423e-a6f2-89464a92690c
-    Position: {x: -99.2, y: -147.59999}
+    Position: {x: -99.2, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -88,7 +90,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 28dfb58f-496e-4793-bfe6-575c26810df2
-    Position: {x: 166, y: -147.59999}
+    Position: {x: 166, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -104,7 +106,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: f9fac1a1-cf34-49ef-b7b1-589b56167793
-    Position: {x: 428, y: -147.59999}
+    Position: {x: 428, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -120,7 +122,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: eff2a21d-4c3c-498b-91b2-e3547330693e
-    Position: {x: 702.39996, y: -147.59999}
+    Position: {x: 702.4, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -136,7 +138,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 83877f99-d434-4035-848b-fe0c13291b1f
-    Position: {x: 968.39996, y: -147.59999}
+    Position: {x: 968.4, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -152,7 +154,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 147a63df-90a3-467b-9240-c8904262609b
-    Position: {x: 1227.2001, y: -147.59999}
+    Position: {x: 1227.2, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -168,7 +170,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: bd40634a-5625-414d-a79a-19e23476846e
-    Position: {x: 1490.4, y: -147.59999}
+    Position: {x: 1490.4, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -184,7 +186,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: b943bc5e-bc83-4fa3-8e6c-2d1644944bbd
-    Position: {x: 1726.4, y: -147.59999}
+    Position: {x: 1726.4, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -200,7 +202,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 6805bd34-fa06-4f95-8cc0-dfd465e90a95
-    Position: {x: 1975.2001, y: -147.59999}
+    Position: {x: 1975.2, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -215,7 +217,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 841b9c11-0fff-405a-b283-e7ff471d5a29
-    Position: {x: 2234.8, y: -147.59999}
+    Position: {x: 2234.8, y: -147.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -233,9 +235,13 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: f43b86bb-a343-4afb-83ad-01149e4ccea4
-    Position: {x: 2511.2, y: -147.59999}
+    Position: {x: 2875.6, y: -147.6}
     EndNodeType: 0
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: f8b160f8-4379-4669-b625-3d7f3184fa31
+    Position: {x: 2523.6, y: -147.6}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: f15dbb226e0a93440b245aec724fbf0d, type: 2}
   StartNodeDatas:
   - NodeGuid: 6d3f32e6-c3ef-4f8e-aade-da89c1fc34e6
     Position: {x: -802.4, y: -78.4}
