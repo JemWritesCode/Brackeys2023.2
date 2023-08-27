@@ -410,10 +410,10 @@ MonoBehaviour:
   InputAuthorized: 1
   WalkSpeed: 6
   ShouldSetMovement: 1
-  IdleThreshold: 0.5
+  IdleThreshold: 0.05
   Acceleration: 0
   Deceleration: 0
-  InterpolateMovementSpeed: 0
+  InterpolateMovementSpeed: 1
   MovementSpeedMultiplier: 0
 --- !u!114 &8006490189015514204
 MonoBehaviour:

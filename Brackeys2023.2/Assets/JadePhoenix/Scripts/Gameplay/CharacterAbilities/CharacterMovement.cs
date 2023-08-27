@@ -190,7 +190,7 @@ namespace JadePhoenix.Gameplay
                 }
             }
 
-            if (_mainCamera != null && _character.PlayerID == "Player")
+            if (_mainCamera != null)
             {
                 // Adjust the movement vector according to the camera's orientation
                 Vector3 cameraForward = Vector3.Scale(_mainCamera.transform.forward, new Vector3(1, 0, 1)).normalized;
@@ -200,7 +200,7 @@ namespace JadePhoenix.Gameplay
             }
             else
             {
-                // Assign the x and z components of the lerped input to the movement vector
+                // Assign the x components of the lerped input to the movement vector
                 _movementVector.x = _lerpedInput.x;
                 _movementVector.y = 0;
                 _movementVector.z = _lerpedInput.y;
@@ -229,7 +229,7 @@ namespace JadePhoenix.Gameplay
             if ((_currentInput.magnitude <= IdleThreshold) && (_controller.CurrentMovement.magnitude < IdleThreshold))
             {
                 // If so, set the movement vector to zero to indicate no movement
-                //_movementVector = Vector3.zero;
+                _movementVector = Vector3.zero;
             }
 
             // Pass the final movement vector to the controller

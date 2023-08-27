@@ -308,7 +308,7 @@ MonoBehaviour:
   IdleThreshold: 0.05
   Acceleration: 0
   Deceleration: 0
-  InterpolateMovementSpeed: 0
+  InterpolateMovementSpeed: 1
   MovementSpeedMultiplier: 0
 --- !u!114 &3830431382472669822
 MonoBehaviour:
@@ -508,10 +508,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
+  CurrentHealth: 0
   Invulnerable: 0
   MaxHealth: 50
   InitialHealth: 50
-  CurrentHealth: 0
   ImmuneToKnockback: 0
   DestroyOnDeath: 1
   DelayBeforeDestruction: 0
