@@ -21,14 +21,11 @@ namespace MEET_AND_TALK
             Debug.Log("Attempting to SkillHandlerOff");
 
             playerObject = GameObject.FindGameObjectWithTag("Player");
-            inputManager = GameObject.FindGameObjectWithTag("InputManager");
             if (playerObject != null)
             {
                 playerObject.GetComponent<CharacterSkillHandler>().enabled = false;
-                inputManager.SetActive(false);
             }
-
             base.RunEvent();
-        }
+        } 
     }
 }
