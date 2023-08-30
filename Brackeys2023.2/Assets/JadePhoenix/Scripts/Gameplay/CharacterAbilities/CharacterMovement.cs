@@ -299,8 +299,21 @@ namespace JadePhoenix.Gameplay
         {
             Vector2 movementParameter = CalculateMovementParameter(new Vector2(_horizontalInput, _verticalInput));
 
-            AnimatorExtensions.UpdateAnimatorFloat(_animator, _horizontalAnimationParameter, movementParameter.x, _character.AnimatorParameters);
-            AnimatorExtensions.UpdateAnimatorFloat(_animator, _verticalAnimationParameter, movementParameter.y, _character.AnimatorParameters);
+            Debug.Log("Vector = " + movementParameter );
+            Debug.Log("Quaternion = " + transform.rotation );
+
+            // Notice here:
+            // - Local Character X is vertical direction
+            // - Local Character Z is horizontal direction
+            Vector3 rotatedMovementParameter = new Vector3(movementParameter.y, 0, movementParameter.x);
+
+            // We rotate it according to the rotation of the character
+            rotatedMovementParameter = transform.rotation * rotatedMovementParameter;
+
+            Debug.Log("Rotated Vector = " + rotatedMovementParameter );
+
+            AnimatorExtensions.UpdateAnimatorFloat(_animator, _horizontalAnimationParameter, rotatedMovementParameter.z, _character.AnimatorParameters);
+            AnimatorExtensions.UpdateAnimatorFloat(_animator, _verticalAnimationParameter, rotatedMovementParameter.x, _character.AnimatorParameters);
         }
     }
 }
