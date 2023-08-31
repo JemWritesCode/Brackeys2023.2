@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEditor;
 
 namespace JadePhoenix.Gameplay
 {
@@ -120,15 +121,19 @@ namespace JadePhoenix.Gameplay
         /// </summary>
         public void LoadMainMenu()
         {
-            GameManager.Instance.LoadScene("MainMenu");
+            GameManager.Instance.LoadScene("0-TherapistOffice");
         }
 
         /// <summary>
-        /// Exits the game via GameManager.
+        /// Quit the game.
         /// </summary>
-        public void CloseGame()
+        public void QuitApplication()
         {
-            GameManager.Instance.CloseGame();
+            Application.Quit();
+
+            #if UNITY_EDITOR
+                EditorApplication.isPlaying = false;
+            #endif
         }
 
         /// <summary>

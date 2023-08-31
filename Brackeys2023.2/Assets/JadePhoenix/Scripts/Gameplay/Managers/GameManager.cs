@@ -86,14 +86,6 @@ namespace JadePhoenix.Gameplay
         }
 
         /// <summary>
-        /// Quit the application.
-        /// </summary>
-        public virtual void CloseGame()
-        {
-            Application.Quit();
-        }
-
-        /// <summary>
         /// Trigger game over behavior, displaying either victory or defeat UI.
         /// </summary>
         /// <param name="victory">If true, trigger victory. Otherwise and by default, trigger defeat.</param>
