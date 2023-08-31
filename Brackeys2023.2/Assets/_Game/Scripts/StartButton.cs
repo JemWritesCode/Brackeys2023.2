@@ -5,14 +5,22 @@ using UnityEngine;
 
 public class StartButton : MonoBehaviour
 {
-    GameObject player;
+    public GameObject inputManager;
+    public GameObject player;
 
-    [SerializeField] public void clickedStart()
+    private void Start()
     {
-        player = GameObject.FindWithTag("Player");
-        player.GetComponentInChildren<InputManager>().enabled = true;
-        
+        inputManager = GameObject.Find("InputManager");
+        player = GameObject.FindGameObjectWithTag("Player");
+        inputManager.SetActive(false);
+        player.GetComponent<CharacterAiming>().enabled = false;
+    }
+
+    public void clickedStart()
+    {
+        inputManager.SetActive(true);
         //hide the start canvas
         gameObject.transform.parent.gameObject.SetActive(false);
+        player.GetComponent<CharacterAiming>().enabled = true;
     }
 }
