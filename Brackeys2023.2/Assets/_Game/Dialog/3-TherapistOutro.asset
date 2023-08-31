@@ -38,7 +38,9 @@ MonoBehaviour:
   - BaseNodeGuid: e203a4af-456a-4b96-be7c-4bd06159842c
     TargetNodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
   - BaseNodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
-    TargetNodeGuid: 6ff43d19-9a84-4c0b-a459-f8bb5634f6fb
+    TargetNodeGuid: 0715409e-5bda-4fd2-9165-b6f1b2fdc7cd
+  - BaseNodeGuid: 0715409e-5bda-4fd2-9165-b6f1b2fdc7cd
+    TargetNodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 9a1f658c-e7f3-4c50-b1a1-6a61d1a72378
@@ -217,7 +219,7 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   - NodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
-    Position: {x: 3332, y: 160}
+    Position: {x: 3313.6, y: 160}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -232,11 +234,11 @@ MonoBehaviour:
       LanguageGenericType: 
     Duration: 10
   TimerChoiceNodeDatas: []
-  EndNodeDatas:
-  - NodeGuid: 6ff43d19-9a84-4c0b-a459-f8bb5634f6fb
-    Position: {x: 3672, y: 160}
-    EndNodeType: 0
-  EventNodeDatas: []
+  EndNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 0715409e-5bda-4fd2-9165-b6f1b2fdc7cd
+    Position: {x: 3275.6, y: -21.6}
+    EventScriptableObjects: []
   StartNodeDatas:
   - NodeGuid: 7b1f024f-a99c-46ed-a402-66f13cc11672
     Position: {x: 236, y: 256.8}

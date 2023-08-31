@@ -2543,6 +2543,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerTherapistRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 4303633367043141946, guid: 4148dfe3dbe20864cbb9a72fc9893619, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4935228892600724716, guid: 4148dfe3dbe20864cbb9a72fc9893619, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.014348
@@ -2581,6 +2585,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4935228892600724716, guid: 4148dfe3dbe20864cbb9a72fc9893619, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7858479516413457381, guid: 4148dfe3dbe20864cbb9a72fc9893619, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
