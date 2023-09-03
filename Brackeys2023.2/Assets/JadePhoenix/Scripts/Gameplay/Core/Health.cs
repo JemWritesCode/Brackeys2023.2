@@ -95,7 +95,7 @@ namespace JadePhoenix.Gameplay
         /// <summary>
         /// Destroys the object, or tries to, depending on the character's settings
         /// </summary>
-        protected virtual void DestroyObject()
+        protected virtual void DisableObject()
         {
             if (!DestroyOnDeath)
             {
@@ -224,12 +224,12 @@ namespace JadePhoenix.Gameplay
 
             if (DelayBeforeDestruction > 0f)
             {
-                Invoke(nameof(DestroyObject), DelayBeforeDestruction);
+                Invoke(nameof(DisableObject), DelayBeforeDestruction);
             }
             else
             {
                 // finally we destroy the object
-                DestroyObject();
+                DisableObject();
             }
         }
 
