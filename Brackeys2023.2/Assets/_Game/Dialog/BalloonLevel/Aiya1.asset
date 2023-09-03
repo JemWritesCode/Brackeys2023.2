@@ -31,8 +31,38 @@ MonoBehaviour:
     TargetNodeGuid: bf09558c-cde7-4ce9-ba7d-1f6e27b6147d
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
+  - NodeGuid: 1e8229db-42f1-4059-b322-d2f2b120a36a
+    Position: {x: 951.2, y: 260.8}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: You're finally here! I am so glad you came!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 0
+  - NodeGuid: b5592192-ca99-4408-832e-091cd08e9616
+    Position: {x: 2187.2, y: 436.8}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Let's do it!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 0
   - NodeGuid: 3b0fa858-0f61-4871-8623-08536b59b5d5
-    Position: {x: 719, y: 261}
+    Position: {x: 719.2, y: 260.8}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -46,24 +76,9 @@ MonoBehaviour:
         and they will become clear.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
-  - NodeGuid: 1e8229db-42f1-4059-b322-d2f2b120a36a
-    Position: {x: 951, y: 261}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 492f573f1ad219e46828a8da9a5202f2, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: You're finally here! I am so glad you came!
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 521232f9-c5f0-4edc-bcb5-a677994efb27
-    Position: {x: 1198, y: 437}
+    Position: {x: 1198, y: 436.8}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -76,9 +91,9 @@ MonoBehaviour:
       LanguageGenericType: Me too I love parties!
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: c68dc529-2a77-41e9-bcc4-2e748a6758be
-    Position: {x: 1446, y: 261}
+    Position: {x: 1446, y: 260.8}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -91,9 +106,9 @@ MonoBehaviour:
       LanguageGenericType: Its been great, except Jerrold keeps teasing me with balloons.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 82e8efc3-1027-4519-9638-86999b749bb1
-    Position: {x: 1691, y: 437}
+    Position: {x: 1691.2, y: 436.8}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -106,9 +121,9 @@ MonoBehaviour:
       LanguageGenericType: He is always up to no good.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 936a8c0e-e1ab-4962-9947-d8e952dc5cde
-    Position: {x: 1937, y: 261}
+    Position: {x: 1937.2, y: 260.8}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -121,31 +136,16 @@ MonoBehaviour:
       LanguageGenericType: Let's pop all the balloons before he can hit us with them.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
-  - NodeGuid: b5592192-ca99-4408-832e-091cd08e9616
-    Position: {x: 2187, y: 437}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: Let's do it!
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: bf09558c-cde7-4ce9-ba7d-1f6e27b6147d
-    Position: {x: 2454, y: 361}
+    Position: {x: 2454, y: 360.8}
     EndNodeType: 0
   EventNodeDatas: []
   StartNodeDatas:
   - NodeGuid: 1d4b1990-1ff9-4980-a745-ac40709fa77c
-    Position: {x: 593, y: 361}
+    Position: {x: 593.2, y: 360.8}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []

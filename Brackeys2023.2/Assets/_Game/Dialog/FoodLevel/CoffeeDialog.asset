@@ -15,10 +15,10 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: 6d3f32e6-c3ef-4f8e-aade-da89c1fc34e6
     TargetNodeGuid: 58dcbbf8-7bcc-4860-89b9-eab0804deb1f
-  - BaseNodeGuid: f8b160f8-4379-4669-b625-3d7f3184fa31
-    TargetNodeGuid: f43b86bb-a343-4afb-83ad-01149e4ccea4
   - BaseNodeGuid: 58dcbbf8-7bcc-4860-89b9-eab0804deb1f
     TargetNodeGuid: 375f129c-7116-4cc0-b30e-c1eebb17fd3b
+  - BaseNodeGuid: f8b160f8-4379-4669-b625-3d7f3184fa31
+    TargetNodeGuid: f43b86bb-a343-4afb-83ad-01149e4ccea4
   - BaseNodeGuid: 375f129c-7116-4cc0-b30e-c1eebb17fd3b
     TargetNodeGuid: b861dac4-c645-430e-b990-90cd842f2c7f
   - BaseNodeGuid: b861dac4-c645-430e-b990-90cd842f2c7f
@@ -42,6 +42,8 @@ MonoBehaviour:
   - BaseNodeGuid: 6805bd34-fa06-4f95-8cc0-dfd465e90a95
     TargetNodeGuid: 841b9c11-0fff-405a-b283-e7ff471d5a29
   - BaseNodeGuid: 841b9c11-0fff-405a-b283-e7ff471d5a29
+    TargetNodeGuid: dc14c412-20ff-422c-98d9-009df8ab657e
+  - BaseNodeGuid: dc14c412-20ff-422c-98d9-009df8ab657e
     TargetNodeGuid: f8b160f8-4379-4669-b625-3d7f3184fa31
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
@@ -59,7 +61,7 @@ MonoBehaviour:
       LanguageGenericType: Hey, hey you, over there! Yeah, you, with the mouth!
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: b861dac4-c645-430e-b990-90cd842f2c7f
     Position: {x: -367.6, y: -147.6}
     DialogueNodePorts: []
@@ -74,7 +76,7 @@ MonoBehaviour:
       LanguageGenericType: ... Are you a talking coffee cup?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 9bf533e0-3e63-423e-a6f2-89464a92690c
     Position: {x: -99.2, y: -147.6}
     DialogueNodePorts: []
@@ -90,7 +92,7 @@ MonoBehaviour:
         don't have enough time!
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 28dfb58f-496e-4793-bfe6-575c26810df2
     Position: {x: 166, y: -147.6}
     DialogueNodePorts: []
@@ -106,23 +108,7 @@ MonoBehaviour:
         enough time for?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
-  - NodeGuid: f9fac1a1-cf34-49ef-b7b1-589b56167793
-    Position: {x: 428, y: -147.6}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: ace7c2be048253444957a39e7f3221e8, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: Slow down? SLOW DOWN? We can't "slow down", we have to
-        go, go, GO! We need to get rolling!
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: eff2a21d-4c3c-498b-91b2-e3547330693e
     Position: {x: 702.4, y: -147.6}
     DialogueNodePorts: []
@@ -138,7 +124,7 @@ MonoBehaviour:
         feel about your current consumption?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 83877f99-d434-4035-848b-fe0c13291b1f
     Position: {x: 968.4, y: -147.6}
     DialogueNodePorts: []
@@ -154,7 +140,7 @@ MonoBehaviour:
         it because I was always so tired.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 147a63df-90a3-467b-9240-c8904262609b
     Position: {x: 1227.2, y: -147.6}
     DialogueNodePorts: []
@@ -170,7 +156,7 @@ MonoBehaviour:
         point?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: bd40634a-5625-414d-a79a-19e23476846e
     Position: {x: 1490.4, y: -147.6}
     DialogueNodePorts: []
@@ -186,7 +172,38 @@ MonoBehaviour:
         in my way.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
+  - NodeGuid: dc14c412-20ff-422c-98d9-009df8ab657e
+    Position: {x: 2521.6, y: -147.6}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Time to fight my caffeine addiction!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 0
+  - NodeGuid: f9fac1a1-cf34-49ef-b7b1-589b56167793
+    Position: {x: 428, y: -147.6}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: ace7c2be048253444957a39e7f3221e8, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Slow down? SLOW DOWN? We can't "slow down", we have to
+        go, go, GO! We need to get rolling!
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 0
   - NodeGuid: b943bc5e-bc83-4fa3-8e6c-2d1644944bbd
     Position: {x: 1726.4, y: -147.6}
     DialogueNodePorts: []
@@ -202,7 +219,7 @@ MonoBehaviour:
         You gotta drink me!
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 6805bd34-fa06-4f95-8cc0-dfd465e90a95
     Position: {x: 1975.2, y: -147.6}
     DialogueNodePorts: []
@@ -217,7 +234,7 @@ MonoBehaviour:
       LanguageGenericType: No, not today. I think I want to kick the habit.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 841b9c11-0fff-405a-b283-e7ff471d5a29
     Position: {x: 2234.8, y: -147.6}
     DialogueNodePorts: []
@@ -233,11 +250,11 @@ MonoBehaviour:
         gotta teach you a lesson!
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: f43b86bb-a343-4afb-83ad-01149e4ccea4
-    Position: {x: 2875.6, y: -147.6}
+    Position: {x: 3162.4, y: -147.6}
     EndNodeType: 0
   EventNodeDatas:
   - NodeGuid: 58dcbbf8-7bcc-4860-89b9-eab0804deb1f
@@ -245,7 +262,7 @@ MonoBehaviour:
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 11400000, guid: 22435eca9b420fe43ba7e823023a6d21, type: 2}
   - NodeGuid: f8b160f8-4379-4669-b625-3d7f3184fa31
-    Position: {x: 2523.6, y: -147.6}
+    Position: {x: 2810.4, y: -147.6}
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 11400000, guid: f15dbb226e0a93440b245aec724fbf0d, type: 2}
     - DialogueEventSO: {fileID: 11400000, guid: 9ec0e2864ee6a3940860548385a8d850, type: 2}

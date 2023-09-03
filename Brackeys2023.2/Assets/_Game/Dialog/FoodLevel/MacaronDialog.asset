@@ -59,23 +59,7 @@ MonoBehaviour:
       LanguageGenericType: I must admit, we are rather disappointed.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
-  - NodeGuid: 78215d95-eb93-4c29-b86b-0eeba9a85ea2
-    Position: {x: 682, y: 200.8}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: Well, I'm definitely not. Things are going to change,
-        they're going to get better.
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 23777ea3-af9e-4087-9b01-4fbdee0b6f80
     Position: {x: 925.2, y: 200.8}
     DialogueNodePorts: []
@@ -91,7 +75,7 @@ MonoBehaviour:
         you the energy to keep going?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: eb9b2051-4116-4af0-ba79-242b86952827
     Position: {x: 1164, y: 200.8}
     DialogueNodePorts: []
@@ -107,7 +91,7 @@ MonoBehaviour:
         I really was.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 421ed741-1e32-4e1d-85fe-485de97d9b46
     Position: {x: 1410, y: 200.8}
     DialogueNodePorts: []
@@ -123,7 +107,7 @@ MonoBehaviour:
         and other snacks would be perfection, no?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: a546726e-329d-40c4-985b-1906a3d78c7e
     Position: {x: 1665.2, y: 200.8}
     DialogueNodePorts: []
@@ -139,7 +123,7 @@ MonoBehaviour:
         take better care of myself.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 1e16ab3c-a542-4ab8-815a-d674a1b56344
     Position: {x: 1918, y: 200.8}
     DialogueNodePorts: []
@@ -155,7 +139,7 @@ MonoBehaviour:
         good rewarding feelings you could want.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: bdd39ea4-a9ce-4bdb-a099-724cb3299e03
     Position: {x: 2169.2, y: 200.8}
     DialogueNodePorts: []
@@ -171,7 +155,7 @@ MonoBehaviour:
         anymore.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 62cf7bda-152a-4367-9c0b-de6ae7802691
     Position: {x: 2424, y: 200.8}
     DialogueNodePorts: []
@@ -187,7 +171,7 @@ MonoBehaviour:
         What makes you think you can change on a whim?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 3da49630-fece-4981-8764-80fbdfab8df3
     Position: {x: 2674, y: 200.8}
     DialogueNodePorts: []
@@ -203,7 +187,7 @@ MonoBehaviour:
         long as I keep trying... then someday, I'll find my balance.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 11008167-aac1-4358-aaf8-b5294f6b1478
     Position: {x: 2948, y: 200.8}
     DialogueNodePorts: []
@@ -218,7 +202,7 @@ MonoBehaviour:
       LanguageGenericType: Balance? BALANCE?! You don't need "balance."
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: edf78654-64f0-4b18-bb7a-f8e7db6b7208
     Position: {x: 3237.2, y: 200.8}
     DialogueNodePorts: []
@@ -233,7 +217,23 @@ MonoBehaviour:
       LanguageGenericType: What you really need... is more of US.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
+  - NodeGuid: 78215d95-eb93-4c29-b86b-0eeba9a85ea2
+    Position: {x: 684.4, y: 200.8}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 4d100693b0d7a3740b47ef601c026a06, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Well, I'm definitely not. Things are going to change,
+        they're going to get better.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: b7b93fa3-0744-46cf-98b6-6248d2a82472

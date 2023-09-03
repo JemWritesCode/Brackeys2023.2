@@ -36,7 +36,7 @@ MonoBehaviour:
         to the room...)
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: fafa6651-d098-4747-b031-dbd5b52e3318

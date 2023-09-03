@@ -15,6 +15,8 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: 7b1f024f-a99c-46ed-a402-66f13cc11672
     TargetNodeGuid: 5345a3c2-4365-49d6-bf9b-6d25493f33a6
+  - BaseNodeGuid: 0715409e-5bda-4fd2-9165-b6f1b2fdc7cd
+    TargetNodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
   - BaseNodeGuid: 9a1f658c-e7f3-4c50-b1a1-6a61d1a72378
     TargetNodeGuid: 0850dd90-808e-4683-8fc8-6b24524868bb
   - BaseNodeGuid: 5345a3c2-4365-49d6-bf9b-6d25493f33a6
@@ -39,8 +41,6 @@ MonoBehaviour:
     TargetNodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
   - BaseNodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
     TargetNodeGuid: 0715409e-5bda-4fd2-9165-b6f1b2fdc7cd
-  - BaseNodeGuid: 0715409e-5bda-4fd2-9165-b6f1b2fdc7cd
-    TargetNodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 9a1f658c-e7f3-4c50-b1a1-6a61d1a72378
@@ -57,7 +57,7 @@ MonoBehaviour:
       LanguageGenericType: How are you feeling?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 5345a3c2-4365-49d6-bf9b-6d25493f33a6
     Position: {x: 385.6, y: 160}
     DialogueNodePorts: []
@@ -73,7 +73,7 @@ MonoBehaviour:
         for sharing these thoughts with me.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 0850dd90-808e-4683-8fc8-6b24524868bb
     Position: {x: 928.8, y: 160}
     DialogueNodePorts: []
@@ -89,7 +89,7 @@ MonoBehaviour:
         some time to process everything.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: c47c0750-41e0-4434-93e0-0e7f21e6ac02
     Position: {x: 1186.4, y: 160}
     DialogueNodePorts: []
@@ -105,7 +105,7 @@ MonoBehaviour:
         these parts of yourself.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: fc440a60-98f5-4ac0-b201-ed57fbc41976
     Position: {x: 1450.8, y: 160}
     DialogueNodePorts: []
@@ -121,7 +121,7 @@ MonoBehaviour:
         about or remember, but I kinda have to if I want to move forward, right?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 0e4aa326-2774-4b39-826d-e74d00e49be9
     Position: {x: 1729.2, y: 160}
     DialogueNodePorts: []
@@ -137,7 +137,7 @@ MonoBehaviour:
         thoughts, and examine them again with a new perspective.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: f6803964-9048-4829-9a9a-abc04133dc4e
     Position: {x: 2008, y: 160}
     DialogueNodePorts: []
@@ -153,7 +153,7 @@ MonoBehaviour:
         here to help me through it, right?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 87fa985c-7dc9-4f3c-b33a-702384603b3c
     Position: {x: 2256, y: 160}
     DialogueNodePorts: []
@@ -169,7 +169,7 @@ MonoBehaviour:
         me.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 0a00dcdc-f4a7-4ae8-a919-d23f989cf8f3
     Position: {x: 2506, y: 160}
     DialogueNodePorts: []
@@ -185,7 +185,7 @@ MonoBehaviour:
         to our next session already.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 908590f1-9426-4ccb-97b4-00b2c15c5e35
     Position: {x: 2757.6, y: 160}
     DialogueNodePorts: []
@@ -201,7 +201,7 @@ MonoBehaviour:
         this out together.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: e203a4af-456a-4b96-be7c-4bd06159842c
     Position: {x: 3031.6, y: 160}
     DialogueNodePorts: []
@@ -217,7 +217,7 @@ MonoBehaviour:
         thank you again for your time!
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 2a423a94-d88c-4aeb-a75b-87cb6e67be5e
     Position: {x: 3313.6, y: 160}
     DialogueNodePorts: []
@@ -232,7 +232,7 @@ MonoBehaviour:
       LanguageGenericType: Thank you for playing our game! That's it for now.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas: []
   EventNodeDatas:

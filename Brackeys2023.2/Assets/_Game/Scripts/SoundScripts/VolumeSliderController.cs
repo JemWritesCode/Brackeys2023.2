@@ -27,7 +27,7 @@ public class VolumeSliderController : MonoBehaviour
         }
 
         bus.getVolume(out float volume);
-        slider.value = volume * slider.maxValue;
+        slider.value = volume * slider.maxValue * .4f;
 
         UpdateSliderOutput();
     }

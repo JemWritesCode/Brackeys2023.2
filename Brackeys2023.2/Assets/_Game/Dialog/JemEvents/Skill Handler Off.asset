@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Skill Handler Off
   m_EditorClassIdentifier: 
   playerObject: {fileID: 0}
+  inputManager: {fileID: 0}

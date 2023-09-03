@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: DonutDialog
   m_EditorClassIdentifier: 
   NodeLinkDatas:
+  - BaseNodeGuid: 71a8ab2e-0347-47d4-ae6c-1737974e0e6e
+    TargetNodeGuid: 2cde3cf3-bb8d-4361-802d-2f9e4dd4dca8
+  - BaseNodeGuid: 2cde3cf3-bb8d-4361-802d-2f9e4dd4dca8
+    TargetNodeGuid: 9cadf28a-a1b8-423c-be10-c6d44946551b
   - BaseNodeGuid: f1f41abe-c0be-4642-9f7f-2647d71dd6f0
     TargetNodeGuid: ebb3afb8-7e8c-4fff-a11e-58c9983b73eb
   - BaseNodeGuid: 9cadf28a-a1b8-423c-be10-c6d44946551b
@@ -39,28 +43,8 @@ MonoBehaviour:
     TargetNodeGuid: 6936cc99-a151-4bde-adc7-e5856247ddfd
   - BaseNodeGuid: 6936cc99-a151-4bde-adc7-e5856247ddfd
     TargetNodeGuid: f1f41abe-c0be-4642-9f7f-2647d71dd6f0
-  - BaseNodeGuid: 71a8ab2e-0347-47d4-ae6c-1737974e0e6e
-    TargetNodeGuid: 2cde3cf3-bb8d-4361-802d-2f9e4dd4dca8
-  - BaseNodeGuid: 2cde3cf3-bb8d-4361-802d-2f9e4dd4dca8
-    TargetNodeGuid: 9cadf28a-a1b8-423c-be10-c6d44946551b
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
-  - NodeGuid: 9cadf28a-a1b8-423c-be10-c6d44946551b
-    Position: {x: 416, y: 172}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 6e569df94d37c6f499f5de4321d219b3, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: Why, hello there. I've got a hole in my heart, and you're
-        the only one who can fill it.
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 10
   - NodeGuid: f4b008f5-699f-432f-bcba-c41cc7e066e2
     Position: {x: 658, y: 172}
     DialogueNodePorts: []
@@ -75,7 +59,7 @@ MonoBehaviour:
       LanguageGenericType: ... Me?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: bd3c43db-9d8a-40c0-b64f-c3dfb2b9e4d8
     Position: {x: 901.2, y: 172.8}
     DialogueNodePorts: []
@@ -91,7 +75,7 @@ MonoBehaviour:
         ready for you to make me whole.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 54d05133-42e9-49cc-a388-1474f37f6851
     Position: {x: 1160, y: 172.8}
     DialogueNodePorts: []
@@ -106,7 +90,7 @@ MonoBehaviour:
       LanguageGenericType: '> I, uh, don''t know what to say.'
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: f8e5ed69-b302-438c-b981-eb7daff0e783
     Position: {x: 1421.2, y: 172}
     DialogueNodePorts: []
@@ -122,7 +106,7 @@ MonoBehaviour:
         sweets, is that correct?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: eb635592-87d6-428e-bc57-cb2207fb9721
     Position: {x: 1664, y: 172.8}
     DialogueNodePorts: []
@@ -138,7 +122,7 @@ MonoBehaviour:
         them around, it saved a lot of time.'
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 3b49eec2-5d0a-4d0c-8718-43c8e3b65603
     Position: {x: 1927.2, y: 172.8}
     DialogueNodePorts: []
@@ -154,7 +138,7 @@ MonoBehaviour:
         reach, just like I've always been.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 64c7ac92-95a9-4125-8319-fbcc0fb68256
     Position: {x: 2190, y: 172}
     DialogueNodePorts: []
@@ -170,7 +154,7 @@ MonoBehaviour:
         find them satisfying?
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 453b2765-7ca2-42d6-a07b-008102b8fbc2
     Position: {x: 2446, y: 172}
     DialogueNodePorts: []
@@ -186,23 +170,7 @@ MonoBehaviour:
         Maybe a real meal would keep me fuller longer.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
-  - NodeGuid: cd4a0174-3c6f-4af5-9726-6a267da24ea5
-    Position: {x: 2693.2, y: 172.8}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    - languageEnum: 1
-      LanguageGenericType: {fileID: 0}
-    Character: {fileID: 11400000, guid: 6e569df94d37c6f499f5de4321d219b3, type: 2}
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: Why should you bother with all of those more complicated
-        foods? Have a taste of me instead.
-    - languageEnum: 1
-      LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 68d677ae-bb06-45f8-a919-0cd62e03da25
     Position: {x: 2945.2, y: 172.8}
     DialogueNodePorts: []
@@ -218,7 +186,7 @@ MonoBehaviour:
         for a change.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
   - NodeGuid: 6936cc99-a151-4bde-adc7-e5856247ddfd
     Position: {x: 3205.2, y: 172.8}
     DialogueNodePorts: []
@@ -234,7 +202,39 @@ MonoBehaviour:
         not good enough for you, maybe it's time we deliver.
     - languageEnum: 1
       LanguageGenericType: 
-    Duration: 10
+    Duration: 0
+  - NodeGuid: 9cadf28a-a1b8-423c-be10-c6d44946551b
+    Position: {x: 416, y: 172}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 6e569df94d37c6f499f5de4321d219b3, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Why, hello there. I've got a hole in my heart, and you're
+        the only one who can fill it.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 0
+  - NodeGuid: cd4a0174-3c6f-4af5-9726-6a267da24ea5
+    Position: {x: 2693.2, y: 172.8}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 6e569df94d37c6f499f5de4321d219b3, type: 2}
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: Why should you bother with all of those more complicated
+        foods? Have a taste of me instead.
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: ebb3afb8-7e8c-4fff-a11e-58c9983b73eb
