@@ -7,6 +7,7 @@ namespace JadePhoenix.Gameplay
     {
         // The model to disable (if set to).
         public GameObject Model;
+        [SerializeField] private EnemyAudio enemyAudio;
 
         // If true, this object will not take damage.
         public bool Invulnerable = false;
@@ -90,6 +91,7 @@ namespace JadePhoenix.Gameplay
             _initialized = true;
             CurrentHealth = InitialHealth;
             DamageEnabled();
+            enemyAudio = GetComponent<EnemyAudio>();
         }
 
         /// <summary>
@@ -103,6 +105,7 @@ namespace JadePhoenix.Gameplay
             }
 
             gameObject.SetActive(false);
+            enemyAudio.PlayEnemyDefeatedSound();
         }
 
         #region PUBLIC METHODS

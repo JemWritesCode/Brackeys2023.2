@@ -213,69 +213,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 89c2450bbaa1c476bbe11493cb92548f, type: 3}
---- !u!1 &3186813328193331127
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5842548583209294972}
-  - component: {fileID: 7218564157352658686}
-  m_Layer: 0
-  m_Name: EnemyAudio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5842548583209294972
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3186813328193331127}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.846943, y: 3.1330338, z: -7.821581}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5543799573816823271}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7218564157352658686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3186813328193331127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1095146592
-      Data2: 1089704718
-      Data3: 1205686972
-      Data4: -747317474
-    Path: event:/Sounds/GJ - Coffee Enemy Barks/Coffee Defeated
-  Event: 
-  PlayEvent: 12
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!1 &4072534383238379809
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +239,7 @@ GameObject:
   - component: {fileID: 1813968031260766151}
   - component: {fileID: 487944534318004804}
   - component: {fileID: 219810124832881833}
+  - component: {fileID: 130917485790251680}
   m_Layer: 9
   m_Name: CoffeeEnemy
   m_TagString: Untagged
@@ -323,7 +261,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5733484837364106113}
-  - {fileID: 5842548583209294972}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7026073542109764232
@@ -703,3 +640,22 @@ MonoBehaviour:
   spawnRadius: 1
   maxSpawnAttempts: 100
   overlapRadius: 0
+--- !u!114 &130917485790251680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4072534383238379809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7134484eb52af8c46af73fc880116f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDefeated:
+    Guid:
+      Data1: -1095146592
+      Data2: 1089704718
+      Data3: 1205686972
+      Data4: -747317474
+    Path: event:/Sounds/GJ - Coffee Enemy Barks/Coffee Defeated
