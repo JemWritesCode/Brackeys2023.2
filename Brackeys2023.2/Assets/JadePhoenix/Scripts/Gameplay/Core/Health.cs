@@ -105,7 +105,8 @@ namespace JadePhoenix.Gameplay
             }
 
             gameObject.SetActive(false);
-            enemyAudio.PlayEnemyDefeatedSound();
+            if(enemyAudio != null) { enemyAudio.PlayEnemyDefeatedSound(); }
+            
         }
 
         #region PUBLIC METHODS
