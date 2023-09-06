@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 2323864172197712867}
   - component: {fileID: 3113965570058282967}
   - component: {fileID: 6831889185597569589}
+  - component: {fileID: 2130496590332934649}
   m_Layer: 9
   m_Name: MacaronTowerEnemy
   m_TagString: Untagged
@@ -287,6 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
+  enemyAudio: {fileID: 0}
   Invulnerable: 0
   MaxHealth: 200
   InitialHealth: 200
@@ -378,3 +380,43 @@ MonoBehaviour:
   ObjectToPool: {fileID: 2609164007966925056, guid: 198f83f55a6e86848874d292314fb8e6, type: 3}
   PoolCount: 40
   PoolCanExpand: 1
+--- !u!114 &2130496590332934649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4081953341773496361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7134484eb52af8c46af73fc880116f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDefeated:
+    Guid:
+      Data1: 1029524142
+      Data2: 1209301007
+      Data3: -1343206210
+      Data4: 1349305073
+    Path: event:/Sounds/GJ - Macaron Tower - Enemy Barks/Macaron Tower Defeated
+  enemyAttacking:
+    Guid:
+      Data1: -1852550148
+      Data2: 1192413669
+      Data3: 1379297179
+      Data4: 1416375423
+    Path: event:/Sounds/GJ - Macaron Tower - Enemy Barks/Macaron Tower Attacking
+  enemyTaunt:
+    Guid:
+      Data1: 1624836216
+      Data2: 1180611855
+      Data3: 1287720075
+      Data4: 108841568
+    Path: event:/Sounds/GJ - Macaron Tower - Enemy Barks/Macaron Tower Taunt
+  enemyTakeHit:
+    Guid:
+      Data1: 1156831094
+      Data2: 1251156894
+      Data3: -1325860204
+      Data4: -700494821
+    Path: event:/Sounds/GJ - Macaron Tower - Enemy Barks/Macaron Tower Hit Taken
