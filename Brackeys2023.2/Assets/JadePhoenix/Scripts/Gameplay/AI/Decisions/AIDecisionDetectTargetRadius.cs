@@ -76,6 +76,10 @@ namespace JadePhoenix.Gameplay
                 if (hit.collider == null)
                 {
                     _brain.Target = _hit[0].transform;
+                    if(TryGetComponent<EnemyAudio>(out EnemyAudio enemyAudio))
+                    {
+                        enemyAudio.PlayEnemyTauntSound();
+                    }
                     return true;
                 }
                 else
