@@ -612,6 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
+  enemyAudio: {fileID: 0}
   Invulnerable: 0
   MaxHealth: 30
   InitialHealth: 30
@@ -659,3 +660,24 @@ MonoBehaviour:
       Data3: 1205686972
       Data4: -747317474
     Path: event:/Sounds/GJ - Coffee Enemy Barks/Coffee Defeated
+  enemyAttacking:
+    Guid:
+      Data1: -1433683401
+      Data2: 1101123081
+      Data3: -509291587
+      Data4: 947306759
+    Path: event:/Sounds/GJ - Coffee Enemy Barks/Coffee Attacking
+  enemyTaunt:
+    Guid:
+      Data1: 1976193844
+      Data2: 1331714697
+      Data3: -2021039686
+      Data4: 1754618417
+    Path: event:/Sounds/GJ - Coffee Enemy Barks/Coffee Taunt
+  enemyTakeHit:
+    Guid:
+      Data1: 833284044
+      Data2: 1206908091
+      Data3: 206462362
+      Data4: -1109217973
+    Path: event:/Sounds/GJ - Coffee Enemy Barks/Coffee Hit Taken

@@ -5,7 +5,7 @@
 			<value>Coffee Taunt</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{6d5b8280-f670-4754-8756-fc0031f997df}</destination>
@@ -121,7 +121,6 @@
 	<object class="MixerBusEffectChain" id="{f5227a0a-0ed2-4dbf-94a6-dab3e67196d5}">
 		<relationship name="effects">
 			<destination>{8b0c5096-06e2-406e-93f9-2ad64425c83b}</destination>
-			<destination>{63109d95-cd14-4e2e-abc9-bac28ff8afbf}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{be7c2f9a-cfb2-4b92-b701-2e541a51c7c7}" />
@@ -158,6 +157,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{b9185a97-47a3-4562-a7de-8b6faa6fbde8}" />
 	<object class="MixerBusFader" id="{8b0c5096-06e2-406e-93f9-2ad64425c83b}" />
-	<object class="SpatialiserEffect" id="{63109d95-cd14-4e2e-abc9-bac28ff8afbf}" />
 	<object class="MixerBusFader" id="{f016667c-61bc-44cc-8876-26db8941bc45}" />
 </objects>

@@ -5,7 +5,7 @@
 			<value>Coffee Hit Taken</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{6d5b8280-f670-4754-8756-fc0031f997df}</destination>
@@ -124,7 +124,6 @@
 	<object class="MixerBusEffectChain" id="{59db1b03-ed9f-4aa5-99a3-8d50b8116470}">
 		<relationship name="effects">
 			<destination>{f077153f-6e3f-4618-81bf-5c42834859e9}</destination>
-			<destination>{4c4e636a-06dd-4fde-a3c2-421a4f26a200}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{cbb77070-f823-4c5e-ba5f-631efce0407c}" />
@@ -182,6 +181,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{d6e4cec4-ca97-4961-9d49-62e8295d0393}" />
 	<object class="MixerBusFader" id="{f077153f-6e3f-4618-81bf-5c42834859e9}" />
-	<object class="SpatialiserEffect" id="{4c4e636a-06dd-4fde-a3c2-421a4f26a200}" />
 	<object class="MixerBusFader" id="{f1a600f4-1e46-41fd-a4c0-167a8fd07a4b}" />
 </objects>

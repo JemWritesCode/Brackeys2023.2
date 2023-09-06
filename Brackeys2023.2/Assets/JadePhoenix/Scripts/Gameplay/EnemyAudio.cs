@@ -8,17 +8,47 @@ namespace JadePhoenix.Gameplay
     public class EnemyAudio : MonoBehaviour
     {
         [SerializeField] private EventReference enemyDefeated;
+        [SerializeField] private EventReference enemyAttacking;
+        [SerializeField] private EventReference enemyTaunt;
+        [SerializeField] private EventReference enemyTakeHit;
+
+
 
         public void PlayEnemyDefeatedSound()
         {
             if (enemyDefeated.Path.Length > 0)
             {
-                // jem: this is still playing somewhere in space. looking at the function it takes a vector 3 in some of the overloads
-                // but without that shouldn't it be 2D...? s:
-               
                 RuntimeManager.PlayOneShot(enemyDefeated);
             }
         }
+
+        public void PlayEnemyAttackingSound()
+        {
+            if (enemyDefeated.Path.Length > 0)
+            {
+                RuntimeManager.PlayOneShot(enemyAttacking);
+            }
+        }
+
+        public void PlayEnemyTauntSound()
+        {
+            if (enemyDefeated.Path.Length > 0)
+            {
+                RuntimeManager.PlayOneShot(enemyTaunt);
+            }
+        }
+
+        public void PlayEnemyTakeHitSound()
+        {
+            if (enemyDefeated.Path.Length > 0)
+            {
+                RuntimeManager.PlayOneShot(enemyTakeHit);
+            }
+        }
+
+
+
+
     }
 }
 
