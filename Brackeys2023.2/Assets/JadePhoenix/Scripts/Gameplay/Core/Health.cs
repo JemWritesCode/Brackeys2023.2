@@ -129,6 +129,7 @@ namespace JadePhoenix.Gameplay
             float previousHealth = CurrentHealth;
             CurrentHealth -= damage;
             Debug.Log($"{gameObject.name} has taken {damage} damage from {instigator.name}.", gameObject);
+            if (enemyAudio != null) { enemyAudio.PlayEnemyTakeHitSound(); }
 
             OnHit?.Invoke(instigator);
 

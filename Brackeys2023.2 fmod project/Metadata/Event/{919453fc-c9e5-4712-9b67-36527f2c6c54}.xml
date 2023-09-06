@@ -5,7 +5,7 @@
 			<value>Macaron Tower Attacking</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{8344510a-f1f9-446e-bc82-dc9e7da07141}</destination>
@@ -120,7 +120,6 @@
 	<object class="MixerBusEffectChain" id="{8fa502d4-c1f4-480f-880d-ec3e81f2be0b}">
 		<relationship name="effects">
 			<destination>{c727b205-94ca-495e-b1a1-d530f186181e}</destination>
-			<destination>{8680e9cf-a749-41fe-8da9-232b2088898a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{72b175be-0e4e-4fc4-9fe3-1abecaa94471}" />
@@ -152,6 +151,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{62a26d87-3d8b-4e37-ab02-c65000d2c100}" />
 	<object class="MixerBusFader" id="{c727b205-94ca-495e-b1a1-d530f186181e}" />
-	<object class="SpatialiserEffect" id="{8680e9cf-a749-41fe-8da9-232b2088898a}" />
 	<object class="MixerBusFader" id="{70ff26f6-b902-4039-8542-3e8b9af8ac78}" />
 </objects>
