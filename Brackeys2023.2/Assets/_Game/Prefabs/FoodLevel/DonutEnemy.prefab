@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 5285207226132975078}
   - component: {fileID: 5552485782319772695}
   - component: {fileID: 5009393069211687739}
+  - component: {fileID: 4208900195970222185}
   m_Layer: 9
   m_Name: DonutEnemy
   m_TagString: Untagged
@@ -485,6 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
+  enemyAudio: {fileID: 0}
   Invulnerable: 0
   MaxHealth: 20
   InitialHealth: 20
@@ -543,3 +545,43 @@ MonoBehaviour:
   spawnRadius: 1
   maxSpawnAttempts: 100
   overlapRadius: 0
+--- !u!114 &4208900195970222185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967043404318984997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7134484eb52af8c46af73fc880116f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDefeated:
+    Guid:
+      Data1: 1434739875
+      Data2: 1294408695
+      Data3: 2091089079
+      Data4: -780535155
+    Path: event:/Sounds/GJ - Donut Enemy Barks/Donut Defeated
+  enemyAttacking:
+    Guid:
+      Data1: 2102045652
+      Data2: 1167191602
+      Data3: 504035459
+      Data4: -332394953
+    Path: event:/Sounds/GJ - Donut Enemy Barks/Donut Attacking
+  enemyTaunt:
+    Guid:
+      Data1: 599128776
+      Data2: 1206975822
+      Data3: -228623958
+      Data4: 1907177440
+    Path: event:/Sounds/GJ - Donut Enemy Barks/Donut Taunt
+  enemyTakeHit:
+    Guid:
+      Data1: -196874652
+      Data2: 1257248478
+      Data3: -449247845
+      Data4: -205196272
+    Path: event:/Sounds/GJ - Donut Enemy Barks/Donut Hit Taken

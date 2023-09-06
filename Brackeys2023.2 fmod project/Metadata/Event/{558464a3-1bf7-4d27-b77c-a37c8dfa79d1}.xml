@@ -5,7 +5,7 @@
 			<value>Donut Defeated</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{6cb41e4a-e163-469a-bc72-8a4d90f89582}</destination>
@@ -125,7 +125,6 @@
 	<object class="MixerBusEffectChain" id="{479b8921-41b7-40b7-9f71-8710befaf6c2}">
 		<relationship name="effects">
 			<destination>{6474ede2-40b5-4be5-a77e-6ba17970447c}</destination>
-			<destination>{51a2fdf8-017b-4b0a-b545-45676e827479}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{782112a8-b725-46c3-86fb-17ac9d4c9c67}" />
@@ -176,7 +175,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{2d3cd8ee-94ae-44fd-ac0c-8385039aa617}" />
 	<object class="MixerBusFader" id="{6474ede2-40b5-4be5-a77e-6ba17970447c}" />
-	<object class="SpatialiserEffect" id="{51a2fdf8-017b-4b0a-b545-45676e827479}" />
 	<object class="SingleSound" id="{d5c77292-7cf2-47e4-8ad4-bed87452b9b7}">
 		<relationship name="audioFile">
 			<destination>{afc0731d-b22f-474d-9100-a4f85a55fa2d}</destination>

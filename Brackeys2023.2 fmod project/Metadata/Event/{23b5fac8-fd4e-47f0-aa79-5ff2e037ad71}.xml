@@ -5,7 +5,7 @@
 			<value>Donut Taunt</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{6cb41e4a-e163-469a-bc72-8a4d90f89582}</destination>
@@ -124,7 +124,6 @@
 	<object class="MixerBusEffectChain" id="{2b0e1f73-4923-4f16-bf00-d9c54eab8678}">
 		<relationship name="effects">
 			<destination>{1dbeee1f-5524-499f-a392-7f094b932a00}</destination>
-			<destination>{6179c28f-f63c-4cc4-a87b-d237b444134f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{80febb50-9076-4ad0-9846-f4890aac0f73}" />
@@ -162,7 +161,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{e593335d-1580-4861-9612-1ea370802aa9}" />
 	<object class="MixerBusFader" id="{1dbeee1f-5524-499f-a392-7f094b932a00}" />
-	<object class="SpatialiserEffect" id="{6179c28f-f63c-4cc4-a87b-d237b444134f}" />
 	<object class="SingleSound" id="{5499c5c8-def2-4de5-8201-2d9284a91cf6}">
 		<relationship name="audioFile">
 			<destination>{18c2d68c-8cb6-45a1-80da-317f373337a6}</destination>
