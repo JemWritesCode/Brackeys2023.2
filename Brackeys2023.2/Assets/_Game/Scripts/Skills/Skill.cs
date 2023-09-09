@@ -409,6 +409,13 @@ namespace _Game
                 UIManager.Instance.SkillCooldownSetFill(_skillIndex, 1);
             }
 
+            if (Owner.TryGetComponent(out EnemyAudio enemyAudio))
+            {
+                enemyAudio.PlayEnemyAttackingSound();
+                Debug.Log("Trying to play enemy attacking sound");
+            }
+
+
             _skillHandler.SetMovementState(ActiveState);
             SkillState.ChangeState(SkillStates.SkillStart);
         }
