@@ -1,4 +1,5 @@
 using System.Collections;
+
 using UnityEngine;
 
 namespace JadePhoenix.Gameplay
@@ -7,7 +8,6 @@ namespace JadePhoenix.Gameplay
     {
         // The model to disable (if set to).
         public GameObject Model;
-        [SerializeField] private EnemyAudio enemyAudio;
 
         // If true, this object will not take damage.
         public bool Invulnerable = false;
@@ -91,7 +91,6 @@ namespace JadePhoenix.Gameplay
             _initialized = true;
             CurrentHealth = InitialHealth;
             DamageEnabled();
-            enemyAudio = GetComponent<EnemyAudio>();
         }
 
         /// <summary>
@@ -105,7 +104,6 @@ namespace JadePhoenix.Gameplay
             }
 
             gameObject.SetActive(false);
-            if(enemyAudio != null) { enemyAudio.PlayEnemyDefeatedSound(); }
             
         }
 
@@ -129,7 +127,6 @@ namespace JadePhoenix.Gameplay
             float previousHealth = CurrentHealth;
             CurrentHealth -= damage;
             Debug.Log($"{gameObject.name} has taken {damage} damage from {instigator.name}.", gameObject);
-            if (enemyAudio != null) { enemyAudio.PlayEnemyTakeHitSound(); }
 
             OnHit?.Invoke(instigator);
 

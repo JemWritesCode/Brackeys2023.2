@@ -119,6 +119,7 @@ namespace _Game
         protected CharacterSkillHandler _skillHandler;
         protected CharacterMovement _movement;
         protected CharacterAiming _aiming;
+        protected EnemyAudio _enemyAudio;
         protected int _skillIndex;
         protected float _cooldownPercentageModifier = 1f;
 
@@ -153,6 +154,7 @@ namespace _Game
                 _skillHandler = Owner.GetAbility<CharacterSkillHandler>();
                 _movement = Owner.GetAbility<CharacterMovement>();
                 _aiming = Owner.GetAbility<CharacterAiming>();
+                _enemyAudio = Owner.GetComponent<EnemyAudio>();
             }
         }
 
@@ -407,6 +409,11 @@ namespace _Game
             if (Owner.PlayerID == "Player")
             {
                 UIManager.Instance.SkillCooldownSetFill(_skillIndex, 1);
+            }
+
+            if (_enemyAudio)
+            {
+                _enemyAudio.PlayEnemyAttackingSound();
             }
 
             _skillHandler.SetMovementState(ActiveState);
