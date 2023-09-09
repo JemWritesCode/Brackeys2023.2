@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 7164153866814050886}
   - component: {fileID: 7994167100033995618}
   - component: {fileID: 1813968031260766151}
-  - component: {fileID: 6266183971859512879}
+  - component: {fileID: 1038629122466580112}
   - component: {fileID: 219810124832881833}
   - component: {fileID: 130917485790251680}
   m_Layer: 9
@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
---- !u!114 &6266183971859512879
+--- !u!114 &1038629122466580112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -608,7 +608,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4072534383238379809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2696b47287c0b8943b9bdb141fe16b55, type: 3}
+  m_Script: {fileID: 11500000, guid: e7312a3c467950c4cb22276e2433179b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Model: {fileID: 0}
@@ -624,7 +624,6 @@ MonoBehaviour:
   DisableControllerOnDeath: 1
   DisableModelOnDeath: 1
   DisableCollisionsOnDeath: 1
-  <EnemyAudio>k__BackingField: {fileID: 130917485790251680}
 --- !u!114 &219810124832881833
 MonoBehaviour:
   m_ObjectHideFlags: 0

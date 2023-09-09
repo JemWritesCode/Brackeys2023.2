@@ -1,6 +1,5 @@
 using FMODUnity;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 namespace JadePhoenix.Gameplay
@@ -12,7 +11,15 @@ namespace JadePhoenix.Gameplay
         [SerializeField] private EventReference enemyTaunt;
         [SerializeField] private EventReference enemyTakeHit;
 
-
+        private void Start()
+        {
+            if (TryGetComponent(out Health health))
+            {
+                Debug.Log($"Adding EnemyAudio OnDeath.OnHit delegates to Health component on: {health.name}");
+                health.OnDeath += PlayEnemyDefeatedSound;
+                health.OnHit += PlayEnemyTakeHitSound;
+            }
+        }
 
         public void PlayEnemyDefeatedSound()
         {
@@ -36,6 +43,12 @@ namespace JadePhoenix.Gameplay
             {
                 RuntimeManager.PlayOneShot(enemyTaunt);
             }
+        }
+
+        // Wrapper method for Health.OnHit delegate that passes an instigator param.
+        public void PlayEnemyTakeHitSound(GameObject instigator)
+        {
+            PlayEnemyTakeHitSound();
         }
 
         public void PlayEnemyTakeHitSound()
